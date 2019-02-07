@@ -2,7 +2,8 @@
 .page {
 
   .edit-link {
-    @include spacing(margin-bottom, 4rem);
+    @include spacing(margin-top, 2rem);
+    @include spacing(margin-bottom, 2rem);
 
     display: block;
     text-align: right;

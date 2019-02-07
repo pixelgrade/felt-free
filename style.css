@@ -4189,8 +4189,6 @@ fieldset {
 
 .edit-link {
   display: none;
-  position: absolute;
-  right: 10px;
   z-index: 0; }
   @media only screen and (min-width: 62.5em) {
     .edit-link {
@@ -9166,25 +9164,42 @@ ul.page-numbers[class][class] {
 
 .single .edit-link,
 .page .edit-link {
-  margin-bottom: 56px;
+  margin-top: 28px;
+  margin-bottom: 28px;
   display: block;
   text-align: right; }
   @media only screen and (max-width: 1360px) {
     .single .edit-link,
     .page .edit-link {
-      margin-bottom: 42.87081px; } }
+      margin-top: 22.17822px; } }
   @media only screen and (max-width: 1024px) {
     .single .edit-link,
     .page .edit-link {
-      margin-bottom: 34.72868px; } }
+      margin-top: 18.36066px; } }
   @media only screen and (max-width: 768px) {
     .single .edit-link,
     .page .edit-link {
-      margin-bottom: 29.18567px; } }
+      margin-top: 15.66434px; } }
   @media only screen and (max-width: 320px) {
     .single .edit-link,
     .page .edit-link {
-      margin-bottom: 25.16854px; } }
+      margin-top: 13.65854px; } }
+  @media only screen and (max-width: 1360px) {
+    .single .edit-link,
+    .page .edit-link {
+      margin-bottom: 22.17822px; } }
+  @media only screen and (max-width: 1024px) {
+    .single .edit-link,
+    .page .edit-link {
+      margin-bottom: 18.36066px; } }
+  @media only screen and (max-width: 768px) {
+    .single .edit-link,
+    .page .edit-link {
+      margin-bottom: 15.66434px; } }
+  @media only screen and (max-width: 320px) {
+    .single .edit-link,
+    .page .edit-link {
+      margin-bottom: 13.65854px; } }
 
 .single .entry-content,
 .page .entry-content {

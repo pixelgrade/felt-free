@@ -1,7 +1,5 @@
 .edit-link {
   display: none;
-  position: absolute;
-  right: 10px;
   z-index: 0;
 
   @include above(lap) {

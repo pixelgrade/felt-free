@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /*!
 Theme Name: Felt
-Theme URI: https://demos.pixelgrade.com/felt-lite/
 Author: Pixelgrade
 Author URI: https://pixelgrade.com
 Description: A magazine-style WordPress theme for publishers who want to showcase their fresh ideas.
@@ -4190,8 +4189,6 @@ fieldset {
 
 .edit-link {
   display: none;
-  position: absolute;
-  left: 10px;
   z-index: 0; }
   @media only screen and (min-width: 62.5em) {
     .edit-link {
@@ -9167,25 +9164,42 @@ ul.page-numbers[class][class] {
 
 .single .edit-link,
 .page .edit-link {
-  margin-bottom: 56px;
+  margin-top: 28px;
+  margin-bottom: 28px;
   display: block;
   text-align: left; }
   @media only screen and (max-width: 1360px) {
     .single .edit-link,
     .page .edit-link {
-      margin-bottom: 42.87081px; } }
+      margin-top: 22.17822px; } }
   @media only screen and (max-width: 1024px) {
     .single .edit-link,
     .page .edit-link {
-      margin-bottom: 34.72868px; } }
+      margin-top: 18.36066px; } }
   @media only screen and (max-width: 768px) {
     .single .edit-link,
     .page .edit-link {
-      margin-bottom: 29.18567px; } }
+      margin-top: 15.66434px; } }
   @media only screen and (max-width: 320px) {
     .single .edit-link,
     .page .edit-link {
-      margin-bottom: 25.16854px; } }
+      margin-top: 13.65854px; } }
+  @media only screen and (max-width: 1360px) {
+    .single .edit-link,
+    .page .edit-link {
+      margin-bottom: 22.17822px; } }
+  @media only screen and (max-width: 1024px) {
+    .single .edit-link,
+    .page .edit-link {
+      margin-bottom: 18.36066px; } }
+  @media only screen and (max-width: 768px) {
+    .single .edit-link,
+    .page .edit-link {
+      margin-bottom: 15.66434px; } }
+  @media only screen and (max-width: 320px) {
+    .single .edit-link,
+    .page .edit-link {
+      margin-bottom: 13.65854px; } }
 
 .single .entry-content,
 .page .entry-content {
@@ -10630,7 +10644,6 @@ a[rel='home'] {
 .c-navbar__zone--left {
   margin-top: 14px;
   margin-bottom: 21px;
-  min-height: 52px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -10902,14 +10915,29 @@ a[rel='home'] {
   .site-header-mobile {
     display: none; } }
 
+.c-navbar__zone--left,
+.c-navbar__zone--middle {
+  min-height: 52px; }
+
 .c-navbar__zone--left > .header.nav {
   opacity: 0; }
 
-.c-navbar__zone--middle:empty {
-  min-height: 52px; }
-
 .c-navbar__zone--middle > .header.nav {
-  opacity: 1; }
+  opacity: 1;
+  -webkit-animation: fade-in 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          animation: fade-in 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; }
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .site-title {
   font-size: 100px; }
