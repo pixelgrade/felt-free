@@ -4191,8 +4191,7 @@ fieldset {
 .edit-link {
   display: none;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 10px;
   z-index: 0; }
   @media only screen and (min-width: 62.5em) {
     .edit-link {
@@ -4370,6 +4369,9 @@ fieldset {
   list-style-position: inside; }
   .entry-content .wp-block-categories.aligncenter ul {
     list-style-position: inside; }
+
+.entry-content .wp-block-button__link {
+  text-decoration: none; }
 
 /**
  * Style Author Box displayed below post

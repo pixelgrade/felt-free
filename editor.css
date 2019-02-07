@@ -958,6 +958,8 @@
     list-style-position: inside; }
     .edit-post-visual-editor .wp-block-categories.aligncenter ul {
       list-style-position: inside; }
+  .edit-post-visual-editor .wp-block-button__link {
+    text-decoration: none; }
   .edit-post-visual-editor .editor-post-title__input {
     font-family: "HK Grotesk", sans-serif; }
   .edit-post-visual-editor.editor-styles-wrapper .editor-block-list__block,
