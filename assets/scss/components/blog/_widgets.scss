@@ -186,6 +186,7 @@
 // Widgets below content
 .widget-area--below-post {
   @include vertical-spacing(3rem);
+  @include spacing(margin-top, 8rem);
 
   .widget__title {
     @include fontsize(24px);

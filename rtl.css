@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
-Theme Name: Felt Lite
+Theme Name: Felt
 Theme URI: https://demos.pixelgrade.com/felt-lite/
 Author: Pixelgrade
 Author URI: https://pixelgrade.com
@@ -5927,10 +5927,6 @@ body {
 
 .no-customify .c-gallery--blog .c-card__frame {
   padding-top: 75%; }
-
-::-moz-selection {
-  background: #000000;
-  color: #FFFFFF; }
 
 ::selection {
   background: #000000;

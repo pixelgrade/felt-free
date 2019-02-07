@@ -176,6 +176,7 @@ body.page:not(.page-template-front-page) {
 
 .single-header {
   @include spacing(margin-bottom, -112px);
+  overflow: hidden;
   .u-container-sides-spacing {
     @include spacing(padding-bottom, 112px);
   }

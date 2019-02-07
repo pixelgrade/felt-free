@@ -621,7 +621,7 @@ function felt_customify_buttons_section( $section_options, $options ) {
 
 	$buttons = apply_filters( 'pixelgrade_button_selectors_array', array(
 		'.button',
-		'.c-btn',
+		'.c-btn:not(.c-promo__btn)',
 		'.c-comments-toggle__label',
 		'button[type=button]',
 		'button[type=reset]',
