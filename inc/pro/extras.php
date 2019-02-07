@@ -77,4 +77,4 @@ function felt_pro_custom_widgets_init() {
 		register_widget( 'Pixelgrade_PromoBoxWidget' );
 	}
 }
-add_action( 'widgets_init', 'felt_pro_archive_index_sidebar', 10 );
+add_action( 'widgets_init', 'felt_pro_custom_widgets_init', 32 );
