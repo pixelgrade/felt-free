@@ -1,0 +1,182 @@
+.single,
+.page {
+
+  .edit-link {
+    @include spacing(margin-bottom, 4rem);
+
+    display: block;
+    text-align: right;
+  }
+
+  .entry-content {
+    word-break: break-word;
+  }
+
+  .entry-footer {
+    position: relative;
+    
+    @include spacing(margin-top, 3rem);
+    @include spacing(margin-bottom, 3rem);
+  }
+
+  .entry-aside:empty {
+    display: none;
+  }
+}
+
+.single,
+.page {
+
+  .o-layout > * {
+    margin-top: 0;
+  }
+
+  .entry-header {
+    position: relative;
+    @include spacing(padding-top, 3rem);
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      @include spacing(padding-top, 8rem);
+    }
+
+    > :not(:last-child):not([class]) {
+      @include spacing(padding-bottom, .5rem)
+    }
+
+    > :not(:first-child) {
+      @include spacing(padding-top, 1rem)
+    }
+  }
+
+  .o-layout__main .entry-header {
+    padding-top: 0;
+  }
+
+  .entry-aside {
+    @include spacing(margin-bottom, 3rem);
+  }
+
+  .cat-links {
+    display: block
+  }
+
+  .entry-title {
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    @include wrap-text;
+  }
+
+  .entry-thumbnail {
+    @include spacing(padding-bottom, 4rem);
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.entry-image--portrait .entry-header {
+  @include spacing(padding-bottom, 3rem);
+}
+
+.post-password-form {
+  input[type="submit"] {
+    @include spacing(margin-top, 1rem);
+    width: 100%;
+  }
+}
+
+.page-links {
+  @include spacing(margin-top, 2rem);
+  @include spacing(margin-bottom, 2rem);
+  @extend .h5 !optional;
+  clear: both;
+
+  &:before, &:after {
+    content: none;
+  }
+}
+
+.entry-image--none {
+
+  .widget-area--post {
+    @include spacing(margin-top, -8rem);
+  }
+
+  .single-main {
+    position: relative;
+  }
+
+}
+
+.entry-image--portrait {
+
+  .widget-area--post {
+    float: right;
+    clear: right;
+
+    @include below(lap) {
+      order: 2;
+    }
+  }
+}
+
+.widget-area--post {
+
+  .widget + .widget {
+    @include spacing(padding-top, 4rem);
+
+    @include above(lap) {
+      .u-widget-title-sideways & .widget__title[class] {
+        @include spacing(margin-bottom, -4rem);
+      }
+    }
+  }
+}
+
+
+@include below(lap) {
+
+  .single {
+
+    .single-header .entry-thumbnail {
+      float: none;
+      max-width: 100%;
+    }
+
+    &.has-sidebar.entry-image--landscape .entry-thumbnail {
+      margin-right: 0;
+      padding-right: 0;
+    }
+
+    .widget-area--post[class] {
+      padding: 40px 0;
+    }
+  }
+}
+
+body.page:not(.page-template-front-page) {
+
+  .o-layout__main {
+    @include spacing(padding-top, 4rem);
+    @include spacing(padding-bottom, 4rem);
+  }
+
+  .entry-header {
+    @include spacing(padding-bottom, 4rem);
+  }
+
+}
+
+.single-header {
+  @include spacing(margin-bottom, -112px);
+  .u-container-sides-spacing {
+    @include spacing(padding-bottom, 112px);
+  }
+}

@@ -1,0 +1,16 @@
+node_modules
+bower_components
+components/tests/php/vendor
+
+.DS_Store
+.sass-cache
+.svn
+.idea
+*.sublime-project
+*.sublime-workspace
+
+*.map
+
+gulpconfig.json
+
+package-lock.json

@@ -1,0 +1,72 @@
+/*Label for Viw Pro Customizer Section*/
+[id*="felt_lite_style_view_pro"] .accordion-section-title:before {
+    content: "pro";
+    font-size: 10px;
+    background: #e0004d;
+    padding: 0 4px;
+    border-radius: 4px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-right: 5px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    position: absolute;
+    right: 30px;
+}
+
+.upsell-container .button-primary {
+    width: 100%;
+    cursor: pointer;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+    -webkit-transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    transition-property: background, background-color, color, box-shadow, -webkit-transform;
+    -webkit-transition-property: background, background-color, color, -webkit-transform, -webkit-box-shadow;
+    transition-property: background, background-color, color, -webkit-transform, -webkit-box-shadow;
+    transition-property: transform, background, background-color, color, box-shadow;
+    transition-property: transform, background, background-color, color, box-shadow, -webkit-transform, -webkit-box-shadow;
+    transition-property: transform, background, background-color, color, box-shadow, -webkit-transform;
+    border: 0;
+    text-align: center;
+    font-weight: 500;
+    background-color: #9660c6;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 1px transparent;
+    box-shadow: 0 0 1px transparent;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    font-size: 16px;
+    padding: 10px 16px 10px;
+    height: auto;
+    text-shadow: none;
+}
+
+.upsell-container .button-primary:hover,
+.upsell-container .button-primary:focus {
+    -webkit-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.7);
+    background-color: #9660c6;
+    transform: scale(1.05) translateY(-3px);
+}
+
+.customize-section-description .upsell-container li {
+    list-style: none;
+}
+
+/*Label for pro features*/
+ul.upsell-features li h4:before {
+    content: "pro";
+    font-size: 10px;
+    background: #e0004d;
+    padding: 4px;
+    border-radius: 4px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-right: 5px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+}

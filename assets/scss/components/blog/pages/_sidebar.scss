@@ -1,0 +1,52 @@
+$sidebar-width: 300px !default;
+
+.entry-content:not(.comment__content),
+.entry-footer,
+.entry-aside,
+.comments-area {
+
+  @include above(lap) {
+
+    body.single-post.entry-image--portrait.has-sidebar & {
+      border-right: 4rem solid transparent;
+    }
+
+    body.single-post.entry-image--portrait.has-sidebar.u-widget-title-sideways & {
+      border-right: 6.5rem solid transparent;
+    }
+  }
+}
+
+.single.has-sidebar {
+
+  &.entry-image--portrait {
+    @include above(lap) {
+      .entry-content:not(.comment__content),
+      .entry-footer,
+      .entry-aside,
+      .comments-area {
+        margin-right: $sidebar-width;
+      }
+    }
+  }
+
+  @media not screen and (min-width: 1124px) {
+    .entry-aside,
+    .entry-footer,
+    .comments-area {
+      padding-right: 0;
+    }
+  }
+}
+
+// Sidebar
+.widget-area--post {
+  @include above(lap) {
+    width: $sidebar-width;
+  }
+
+  @include below(lap) {
+    position: static !important;
+    float: none !important;
+  }
+}

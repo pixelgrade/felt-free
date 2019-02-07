@@ -1,0 +1,124 @@
+.post-navigation {
+    .nav-links {
+        &__label {
+            @include button;
+            @include button-directional;
+            @include fontsize(12px);
+
+            border: 0;
+
+            background-color: transparent;
+
+            font-weight: normal;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+
+            transition: all .5s cubic-bezier(.18, .61, .43, .99);
+            will-change: transform;
+
+            &:before {
+                width: 10px;
+            }
+
+            &:after {
+                border-width: 3px;
+            }
+
+            &:before,
+            &:after {
+                opacity: 1;
+                transition: transform .5s cubic-bezier(.18, .61, .43, .99),
+                opacity .5s cubic-bezier(.18, .61, .43, .99);
+                will-change: transform, opacity;
+            }
+
+            &.nav-links__label {
+                margin-bottom: 0;
+            }
+
+            &--previous {
+                @include button-directional--left;
+                @include spacing(padding-left, 1.5rem);
+
+                &:after {
+                    left: 0;
+                }
+
+                &:before {
+                    left: 3px;
+                }
+            }
+
+            &--next {
+                @include button-directional--right;
+                @include spacing(padding-right, 1.5rem);
+
+                &:after {
+                    right: 0;
+                }
+
+                &:before {
+                    right: 3px;
+                }
+            }
+        }
+
+        .nav-title[class] {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+
+.nav-links__label {
+    @include leading-map(map-merge($h5, (
+        spacing-top: false,
+        spacing-bottom: false
+    )));
+    padding-top: 0.6em;
+    padding-bottom: 0.5em;
+}
+
+.post-navigation {
+    .nav-previous {
+        text-align: left;
+
+        &:hover {
+            .nav-title {
+                transform: translateX(-10px);
+            }
+
+            .nav-links__label {
+                padding-left: 0;
+                transform: translateX(-10px);
+
+                &:before,
+                &:after {
+                    transform: translateX(-100%) translateY(-50%);
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    .nav-next {
+        text-align: right;
+
+        &:hover {
+            .nav-title {
+                transform: translateX(10px);
+            }
+
+            .nav-links__label {
+                padding-right: 0;
+                transform: translateX(10px);
+
+                &:before,
+                &:after {
+                    transform: translateX(100%) translateY(-50%);
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,134 @@
+@import "../../components/base/scss/defaults";
+@import "../../variations/felt/scss/settings";
+
+@import "../../assets/scss/tools/mixins";
+@import "../../components/base/scss/tools/all";
+@import "../../components/base/scss/mixins/all";
+
+$content-class: '.edit-post-visual-editor';
+
+#{$content-class} {
+  @import "base/blockquote";
+
+  .wp-block-quote[class][class] {
+    @include spacing(padding-left, 40px);
+    @include spacing(border-left-width, 10px);
+  }
+}
+
+.edit-post-visual-editor {
+  @import "../../components/base/scss/typography";
+  @import "../../components/base/scss/elements/two-column";
+  @import "../../components/base/scss/objects/btn";
+
+  @import "base/gutenberg";
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  .editor-post-title__input {
+    font-family: $theme-headings-font-family;
+  }
+
+  &.editor-styles-wrapper {
+    .editor-block-list__block,
+    .editor-post-title__block,
+    .wp-block-paragraph {
+      @include leading-map($body-font);
+      color: $body-text-color;
+    }
+  }
+
+  .wp-block-html .editor-plain-text {
+    color: inherit;
+  }
+
+  .wp-block-quote,
+  .wp-block-pullquote {
+    color: inherit;
+  }
+
+  .editor-rich-text__tinymce {
+    line-height: inherit;
+  }
+
+  .wp-block-quote p {
+    font-size: 1em;
+    line-height: inherit;
+  }
+
+  .wp-block-pullquote {
+
+    &.aligncenter,
+    &.alignnone,
+    &:not([class*="align"]) {
+
+      blockquote {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    &.alignright blockquote {
+      margin-right: 0;
+    }
+
+    &.alignleft blockquote {
+      margin-left: 0;
+    }
+  }
+
+  .wp-block-quote:not(.is-large):not(.is-style-large) {
+    border-color: $theme-accent-color;
+  }
+
+  .wp-block-quote__citation {
+    @include spacing(margin-top, $typography-spacing);
+
+    font-style: normal;
+    @include leading-map($cite-font);
+  }
+
+  .wp-block-gallery[class][class] {
+    .blocks-gallery-item {
+      margin-bottom: 16px;
+    }
+  }
+
+  .wp-block-categories {
+    ul {
+      list-style-position: inside;
+    }
+  }
+
+  pre {
+    font-size: 1em;
+  }
+
+  a {
+    color: $body-link-color;
+
+    img {
+      transition: opacity $transition--macro ease-out;
+    }
+
+    &:hover,
+    &:active {
+      color: $body-link-active-color;
+
+      img {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .wp-block-table {
+    td,
+    th {
+      border: 0;
+    }
+    &__cell-content {
+      padding: 0
+    }
+  }
+}

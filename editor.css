@@ -1,0 +1,1063 @@
+/* stylelint-disable */
+/* stylelint-enable */
+/* stylelint-disable */
+/* stylelint-enable */
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ */
+.edit-post-visual-editor blockquote {
+  position: relative;
+  padding-left: 40px;
+  border-left: solid #FF6000;
+  border-left-width: 10px; }
+  @media only screen and (max-width: 1360px) {
+    .edit-post-visual-editor blockquote {
+      padding-left: 31.21951px; } }
+  @media only screen and (max-width: 1024px) {
+    .edit-post-visual-editor blockquote {
+      padding-left: 25.6px; } }
+  @media only screen and (max-width: 768px) {
+    .edit-post-visual-editor blockquote {
+      padding-left: 21.69492px; } }
+  @media only screen and (max-width: 320px) {
+    .edit-post-visual-editor blockquote {
+      padding-left: 18.82353px; } }
+  @media only screen and (max-width: 1360px) {
+    .edit-post-visual-editor blockquote {
+      border-left-width: 9.69697px; } }
+  @media only screen and (max-width: 1024px) {
+    .edit-post-visual-editor blockquote {
+      border-left-width: 9.41176px; } }
+  @media only screen and (max-width: 768px) {
+    .edit-post-visual-editor blockquote {
+      border-left-width: 9.14286px; } }
+  @media only screen and (max-width: 320px) {
+    .edit-post-visual-editor blockquote {
+      border-left-width: 8.88889px; } }
+  .edit-post-visual-editor blockquote:not(:first-child) {
+    margin-top: 14px; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor blockquote:not(:first-child) {
+        margin-top: 12.89431px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor blockquote:not(:first-child) {
+        margin-top: 11.95049px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor blockquote:not(:first-child) {
+        margin-top: 11.13541px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor blockquote:not(:first-child) {
+        margin-top: 10.42442px; } }
+
+.edit-post-visual-editor .wp-block-quote[class][class] {
+  padding-left: 40px;
+  border-left-width: 10px; }
+  @media only screen and (max-width: 1360px) {
+    .edit-post-visual-editor .wp-block-quote[class][class] {
+      padding-left: 31.21951px; } }
+  @media only screen and (max-width: 1024px) {
+    .edit-post-visual-editor .wp-block-quote[class][class] {
+      padding-left: 25.6px; } }
+  @media only screen and (max-width: 768px) {
+    .edit-post-visual-editor .wp-block-quote[class][class] {
+      padding-left: 21.69492px; } }
+  @media only screen and (max-width: 320px) {
+    .edit-post-visual-editor .wp-block-quote[class][class] {
+      padding-left: 18.82353px; } }
+  @media only screen and (max-width: 1360px) {
+    .edit-post-visual-editor .wp-block-quote[class][class] {
+      border-left-width: 9.69697px; } }
+  @media only screen and (max-width: 1024px) {
+    .edit-post-visual-editor .wp-block-quote[class][class] {
+      border-left-width: 9.41176px; } }
+  @media only screen and (max-width: 768px) {
+    .edit-post-visual-editor .wp-block-quote[class][class] {
+      border-left-width: 9.14286px; } }
+  @media only screen and (max-width: 320px) {
+    .edit-post-visual-editor .wp-block-quote[class][class] {
+      border-left-width: 8.88889px; } }
+
+.edit-post-visual-editor {
+  /*------------------------------------*\
+    #BUTTONS
+\*------------------------------------*/
+  /**
+ * A simple button object.
+ */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
+  .edit-post-visual-editor p:not(:last-child),
+  .edit-post-visual-editor ul:not(:last-child), .edit-post-visual-editor ol:not(:last-child), .edit-post-visual-editor dl:not(:last-child),
+  .edit-post-visual-editor hr:not(:last-child),
+  .edit-post-visual-editor table:not(:last-child),
+  .edit-post-visual-editor .twocolumn:not(:last-child) {
+    margin-bottom: 42px; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor p:not(:last-child),
+      .edit-post-visual-editor ul:not(:last-child), .edit-post-visual-editor ol:not(:last-child), .edit-post-visual-editor dl:not(:last-child),
+      .edit-post-visual-editor hr:not(:last-child),
+      .edit-post-visual-editor table:not(:last-child),
+      .edit-post-visual-editor .twocolumn:not(:last-child) {
+        margin-bottom: 32.70073px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor p:not(:last-child),
+      .edit-post-visual-editor ul:not(:last-child), .edit-post-visual-editor ol:not(:last-child), .edit-post-visual-editor dl:not(:last-child),
+      .edit-post-visual-editor hr:not(:last-child),
+      .edit-post-visual-editor table:not(:last-child),
+      .edit-post-visual-editor .twocolumn:not(:last-child) {
+        margin-bottom: 26.77291px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor p:not(:last-child),
+      .edit-post-visual-editor ul:not(:last-child), .edit-post-visual-editor ol:not(:last-child), .edit-post-visual-editor dl:not(:last-child),
+      .edit-post-visual-editor hr:not(:last-child),
+      .edit-post-visual-editor table:not(:last-child),
+      .edit-post-visual-editor .twocolumn:not(:last-child) {
+        margin-bottom: 22.66442px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor p:not(:last-child),
+      .edit-post-visual-editor ul:not(:last-child), .edit-post-visual-editor ol:not(:last-child), .edit-post-visual-editor dl:not(:last-child),
+      .edit-post-visual-editor hr:not(:last-child),
+      .edit-post-visual-editor table:not(:last-child),
+      .edit-post-visual-editor .twocolumn:not(:last-child) {
+        margin-bottom: 19.64912px; } }
+  .edit-post-visual-editor blockquote {
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 50px;
+    line-height: 1.2;
+    font-weight: 700; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor blockquote {
+        font-size: 42.71845px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor blockquote {
+        font-size: 37.28814px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor blockquote {
+        font-size: 33.08271px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor blockquote {
+        font-size: 29.72973px; } }
+    .edit-post-visual-editor blockquote:not(:last-child) {
+      margin-bottom: 42px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor blockquote:not(:last-child) {
+          margin-bottom: 32.70073px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor blockquote:not(:last-child) {
+          margin-bottom: 26.77291px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor blockquote:not(:last-child) {
+          margin-bottom: 22.66442px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor blockquote:not(:last-child) {
+          margin-bottom: 19.64912px; } }
+    .edit-post-visual-editor blockquote footer, .edit-post-visual-editor blockquote cite {
+      display: block;
+      margin-top: 42px;
+      font-style: normal;
+      font-family: "HK Grotesk", sans-serif;
+      font-size: 14px;
+      line-height: 1.07;
+      font-weight: normal;
+      letter-spacing: 0.07143em;
+      text-transform: uppercase; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor blockquote footer, .edit-post-visual-editor blockquote cite {
+          margin-top: 32.70073px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor blockquote footer, .edit-post-visual-editor blockquote cite {
+          margin-top: 26.77291px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor blockquote footer, .edit-post-visual-editor blockquote cite {
+          margin-top: 22.66442px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor blockquote footer, .edit-post-visual-editor blockquote cite {
+          margin-top: 19.64912px; } }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor blockquote footer, .edit-post-visual-editor blockquote cite {
+          font-size: 13.82438px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor blockquote footer, .edit-post-visual-editor blockquote cite {
+          font-size: 13.65311px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor blockquote footer, .edit-post-visual-editor blockquote cite {
+          font-size: 13.48603px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor blockquote footer, .edit-post-visual-editor blockquote cite {
+          font-size: 13.32299px; } }
+      .edit-post-visual-editor blockquote footer a, .edit-post-visual-editor blockquote cite a {
+        border-bottom: 0 !important;
+        text-decoration: none !important; }
+  .edit-post-visual-editor h1 {
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 36px;
+    line-height: 1.22;
+    font-weight: 700;
+    color: #333131; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor h1 {
+        font-size: 31.61677px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor h1 {
+        font-size: 28.18505px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor h1 {
+        font-size: 25.42536px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor h1 {
+        font-size: 23.15789px; } }
+    .edit-post-visual-editor h1:not(:last-child) {
+      margin-bottom: 35px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor h1:not(:last-child) {
+          margin-bottom: 27.48466px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor h1:not(:last-child) {
+          margin-bottom: 22.62626px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor h1:not(:last-child) {
+          margin-bottom: 19.22747px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor h1:not(:last-child) {
+          margin-bottom: 16.71642px; } }
+  .edit-post-visual-editor h2 {
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 26px;
+    line-height: 1.19;
+    font-weight: 700;
+    color: #333131; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor h2 {
+        font-size: 24.04357px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor h2 {
+        font-size: 22.36096px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor h2 {
+        font-size: 20.89845px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor h2 {
+        font-size: 19.61551px; } }
+    .edit-post-visual-editor h2:not(:last-child) {
+      margin-bottom: 35px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor h2:not(:last-child) {
+          margin-bottom: 27.48466px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor h2:not(:last-child) {
+          margin-bottom: 22.62626px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor h2:not(:last-child) {
+          margin-bottom: 19.22747px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor h2:not(:last-child) {
+          margin-bottom: 16.71642px; } }
+  .edit-post-visual-editor h3 {
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 21px;
+    line-height: 1.19;
+    font-weight: 700;
+    color: #333131; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor h3 {
+        font-size: 20.13664px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor h3 {
+        font-size: 19.34147px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor h3 {
+        font-size: 18.60671px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor h3 {
+        font-size: 17.92574px; } }
+    .edit-post-visual-editor h3:not(:last-child) {
+      margin-bottom: 35px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor h3:not(:last-child) {
+          margin-bottom: 27.48466px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor h3:not(:last-child) {
+          margin-bottom: 22.62626px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor h3:not(:last-child) {
+          margin-bottom: 19.22747px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor h3:not(:last-child) {
+          margin-bottom: 16.71642px; } }
+  .edit-post-visual-editor h4 {
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 16px;
+    line-height: 1.19;
+    font-weight: 500;
+    color: #333131; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor h4 {
+        font-size: 15.70224px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor h4 {
+        font-size: 15.41536px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor h4 {
+        font-size: 15.13877px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor h4 {
+        font-size: 14.87194px; } }
+    .edit-post-visual-editor h4:not(:last-child) {
+      margin-bottom: 35px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor h4:not(:last-child) {
+          margin-bottom: 27.48466px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor h4:not(:last-child) {
+          margin-bottom: 22.62626px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor h4:not(:last-child) {
+          margin-bottom: 19.22747px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor h4:not(:last-child) {
+          margin-bottom: 16.71642px; } }
+  .edit-post-visual-editor h5 {
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 14px;
+    line-height: 1.07;
+    font-weight: normal;
+    letter-spacing: 0.07143em;
+    text-transform: uppercase;
+    color: #333131; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor h5 {
+        font-size: 13.82438px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor h5 {
+        font-size: 13.65311px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor h5 {
+        font-size: 13.48603px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor h5 {
+        font-size: 13.32299px; } }
+    .edit-post-visual-editor h5:not(:last-child) {
+      margin-bottom: 28px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor h5:not(:last-child) {
+          margin-bottom: 22.17822px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor h5:not(:last-child) {
+          margin-bottom: 18.36066px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor h5:not(:last-child) {
+          margin-bottom: 15.66434px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor h5:not(:last-child) {
+          margin-bottom: 13.65854px; } }
+  .edit-post-visual-editor h6 {
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 13px;
+    line-height: 1.23077;
+    font-weight: normal;
+    letter-spacing: 0.07692em;
+    text-transform: uppercase;
+    color: #FF6000; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor h6 {
+        font-size: 12.8691px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor h6 {
+        font-size: 12.74082px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor h6 {
+        font-size: 12.61507px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor h6 {
+        font-size: 12.49177px; } }
+    .edit-post-visual-editor h6:not(:last-child) {
+      margin-bottom: 14px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor h6:not(:last-child) {
+          margin-bottom: 12.89431px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor h6:not(:last-child) {
+          margin-bottom: 11.95049px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor h6:not(:last-child) {
+          margin-bottom: 11.13541px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor h6:not(:last-child) {
+          margin-bottom: 10.42442px; } }
+  .edit-post-visual-editor h1 + .edit-post-visual-editor h1:not(:first-child), .edit-post-visual-editor h2 + .edit-post-visual-editor h1:not(:first-child), .edit-post-visual-editor h3 + .edit-post-visual-editor h1:not(:first-child), .edit-post-visual-editor h4 + .edit-post-visual-editor h1:not(:first-child), .edit-post-visual-editor h5 + .edit-post-visual-editor h1:not(:first-child), .edit-post-visual-editor h6 + .edit-post-visual-editor h1:not(:first-child), .edit-post-visual-editor h1 + .edit-post-visual-editor h2:not(:first-child), .edit-post-visual-editor h2 + .edit-post-visual-editor h2:not(:first-child), .edit-post-visual-editor h3 + .edit-post-visual-editor h2:not(:first-child), .edit-post-visual-editor h4 + .edit-post-visual-editor h2:not(:first-child), .edit-post-visual-editor h5 + .edit-post-visual-editor h2:not(:first-child), .edit-post-visual-editor h6 + .edit-post-visual-editor h2:not(:first-child), .edit-post-visual-editor h1 + .edit-post-visual-editor h3:not(:first-child), .edit-post-visual-editor h2 + .edit-post-visual-editor h3:not(:first-child), .edit-post-visual-editor h3 + .edit-post-visual-editor h3:not(:first-child), .edit-post-visual-editor h4 + .edit-post-visual-editor h3:not(:first-child), .edit-post-visual-editor h5 + .edit-post-visual-editor h3:not(:first-child), .edit-post-visual-editor h6 + .edit-post-visual-editor h3:not(:first-child), .edit-post-visual-editor h1 + .edit-post-visual-editor h4:not(:first-child), .edit-post-visual-editor h2 + .edit-post-visual-editor h4:not(:first-child), .edit-post-visual-editor h3 + .edit-post-visual-editor h4:not(:first-child), .edit-post-visual-editor h4 + .edit-post-visual-editor h4:not(:first-child), .edit-post-visual-editor h5 + .edit-post-visual-editor h4:not(:first-child), .edit-post-visual-editor h6 + .edit-post-visual-editor h4:not(:first-child), .edit-post-visual-editor h1 + .edit-post-visual-editor h5:not(:first-child), .edit-post-visual-editor h2 + .edit-post-visual-editor h5:not(:first-child), .edit-post-visual-editor h3 + .edit-post-visual-editor h5:not(:first-child), .edit-post-visual-editor h4 + .edit-post-visual-editor h5:not(:first-child), .edit-post-visual-editor h5 + .edit-post-visual-editor h5:not(:first-child), .edit-post-visual-editor h6 + .edit-post-visual-editor h5:not(:first-child), .edit-post-visual-editor h1 + .edit-post-visual-editor h6:not(:first-child), .edit-post-visual-editor h2 + .edit-post-visual-editor h6:not(:first-child), .edit-post-visual-editor h3 + .edit-post-visual-editor h6:not(:first-child), .edit-post-visual-editor h4 + .edit-post-visual-editor h6:not(:first-child), .edit-post-visual-editor h5 + .edit-post-visual-editor h6:not(:first-child), .edit-post-visual-editor h6 + .edit-post-visual-editor h6:not(:first-child) {
+    margin-top: 0; }
+  .edit-post-visual-editor li ul, .edit-post-visual-editor li ol, .edit-post-visual-editor li dl {
+    margin-top: 7px; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor li ul, .edit-post-visual-editor li ol, .edit-post-visual-editor li dl {
+        margin-top: 6.92576px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor li ul, .edit-post-visual-editor li ol, .edit-post-visual-editor li dl {
+        margin-top: 6.85309px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor li ul, .edit-post-visual-editor li ol, .edit-post-visual-editor li dl {
+        margin-top: 6.78192px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor li ul, .edit-post-visual-editor li ol, .edit-post-visual-editor li dl {
+        margin-top: 6.71221px; } }
+  .edit-post-visual-editor ul {
+    padding-left: 28px;
+    list-style: disc; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor ul {
+        padding-left: 22.17822px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor ul {
+        padding-left: 18.36066px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor ul {
+        padding-left: 15.66434px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor ul {
+        padding-left: 13.65854px; } }
+  .edit-post-visual-editor ol {
+    padding-left: 28px;
+    list-style: decimal; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor ol {
+        padding-left: 22.17822px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor ol {
+        padding-left: 18.36066px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor ol {
+        padding-left: 15.66434px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor ol {
+        padding-left: 13.65854px; } }
+  .edit-post-visual-editor li:not(:last-child),
+  .edit-post-visual-editor dl > dl:not(:last-of-type),
+  .edit-post-visual-editor dl > dd:not(:last-of-type) {
+    margin-bottom: 7px; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor li:not(:last-child),
+      .edit-post-visual-editor dl > dl:not(:last-of-type),
+      .edit-post-visual-editor dl > dd:not(:last-of-type) {
+        margin-bottom: 6.92576px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor li:not(:last-child),
+      .edit-post-visual-editor dl > dl:not(:last-of-type),
+      .edit-post-visual-editor dl > dd:not(:last-of-type) {
+        margin-bottom: 6.85309px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor li:not(:last-child),
+      .edit-post-visual-editor dl > dl:not(:last-of-type),
+      .edit-post-visual-editor dl > dd:not(:last-of-type) {
+        margin-bottom: 6.78192px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor li:not(:last-child),
+      .edit-post-visual-editor dl > dl:not(:last-of-type),
+      .edit-post-visual-editor dl > dd:not(:last-of-type) {
+        margin-bottom: 6.71221px; } }
+  .edit-post-visual-editor dl:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .edit-post-visual-editor dt {
+    width: 33%;
+    float: left;
+    clear: both;
+    font-weight: bold; }
+  .edit-post-visual-editor dd {
+    width: 66%;
+    float: right;
+    clear: right; }
+  .edit-post-visual-editor pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    padding: 14px;
+    border: 1px solid; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor pre {
+        padding: 12.89431px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor pre {
+        padding: 11.95049px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor pre {
+        padding: 11.13541px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor pre {
+        padding: 10.42442px; } }
+    .edit-post-visual-editor pre:not(:last-child) {
+      margin-bottom: 28px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor pre:not(:last-child) {
+          margin-bottom: 22.17822px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor pre:not(:last-child) {
+          margin-bottom: 18.36066px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor pre:not(:last-child) {
+          margin-bottom: 15.66434px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor pre:not(:last-child) {
+          margin-bottom: 13.65854px; } }
+  .edit-post-visual-editor table {
+    width: 100%;
+    float: none;
+    border-collapse: collapse; }
+    .edit-post-visual-editor table:not(:last-child) {
+      margin-bottom: 42px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor table:not(:last-child) {
+          margin-bottom: 32.70073px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor table:not(:last-child) {
+          margin-bottom: 26.77291px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor table:not(:last-child) {
+          margin-bottom: 22.66442px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor table:not(:last-child) {
+          margin-bottom: 19.64912px; } }
+    .edit-post-visual-editor table th {
+      text-align: left; }
+    .edit-post-visual-editor table th,
+    .edit-post-visual-editor table td {
+      vertical-align: middle; }
+    .edit-post-visual-editor table tr,
+    .edit-post-visual-editor table thead,
+    .edit-post-visual-editor table tbody,
+    .edit-post-visual-editor table tfoot {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+    .edit-post-visual-editor table th,
+    .edit-post-visual-editor table td {
+      padding: 7px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor table th,
+        .edit-post-visual-editor table td {
+          padding: 6.92576px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor table th,
+        .edit-post-visual-editor table td {
+          padding: 6.85309px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor table th,
+        .edit-post-visual-editor table td {
+          padding: 6.78192px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor table th,
+        .edit-post-visual-editor table td {
+          padding: 6.71221px; } }
+    .edit-post-visual-editor table caption {
+      padding: 7px 0; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor table caption {
+          padding: 6.92576px 0; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor table caption {
+          padding: 6.85309px 0; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor table caption {
+          padding: 6.78192px 0; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor table caption {
+          padding: 6.71221px 0; } }
+    .edit-post-visual-editor table th:first-child,
+    .edit-post-visual-editor table td:first-child {
+      padding-left: 0; }
+    .edit-post-visual-editor table th:last-child,
+    .edit-post-visual-editor table td:last-child {
+      padding-right: 0; }
+  .edit-post-visual-editor a {
+    text-decoration: none; }
+    .u-underlined-links .edit-post-visual-editor a {
+      text-decoration: underline; }
+  .edit-post-visual-editor hr {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid;
+    margin: 0 auto; }
+  .edit-post-visual-editor b,
+  .edit-post-visual-editor strong {
+    font-weight: bold; }
+  .edit-post-visual-editor em,
+  .edit-post-visual-editor i,
+  .edit-post-visual-editor small {
+    font-style: italic; }
+  @media only screen and (min-width: 42.5em) {
+    .edit-post-visual-editor .twocolumn {
+      -webkit-column-gap: 28px;
+              column-gap: 28px;
+      -webkit-column-count: 2;
+              column-count: 2; } }
+  @media only screen and (min-width: 42.5em) and (max-width: 1360px) {
+    .edit-post-visual-editor .twocolumn {
+      -webkit-column-gap: 22.17822px;
+              column-gap: 22.17822px; } }
+  @media only screen and (min-width: 42.5em) and (max-width: 1024px) {
+    .edit-post-visual-editor .twocolumn {
+      -webkit-column-gap: 18.36066px;
+              column-gap: 18.36066px; } }
+  @media only screen and (min-width: 42.5em) and (max-width: 768px) {
+    .edit-post-visual-editor .twocolumn {
+      -webkit-column-gap: 15.66434px;
+              column-gap: 15.66434px; } }
+  @media only screen and (min-width: 42.5em) and (max-width: 320px) {
+    .edit-post-visual-editor .twocolumn {
+      -webkit-column-gap: 13.65854px;
+              column-gap: 13.65854px; } }
+  .edit-post-visual-editor .c-btn {
+    display: inline-block;
+    /* [1] */
+    vertical-align: middle;
+    /* [2] */
+    text-align: center;
+    /* [4] */
+    cursor: pointer;
+    /* [5] */
+    padding: 1.1em 1.75em;
+    border: 0 solid #222222;
+    margin: 0;
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 16px;
+    color: #FFF;
+    background-color: #FF6000;
+    border-radius: 0;
+    -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
+    transition: all 0.2s cubic-bezier(0, 0, 0.58, 1); }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor .c-btn {
+        font-size: 15.70224px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor .c-btn {
+        font-size: 15.41536px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor .c-btn {
+        font-size: 15.13877px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor .c-btn {
+        font-size: 14.87194px; } }
+    .u-buttons-rounded .edit-post-visual-editor .c-btn {
+      border-radius: 0.3em; }
+    .u-buttons-pill .edit-post-visual-editor .c-btn {
+      border-radius: 999em; }
+    .u-underlined-links .edit-post-visual-editor .c-btn {
+      text-decoration: none; }
+    .u-buttons-outline .edit-post-visual-editor .c-btn {
+      background: none;
+      border: 2px solid currentColor; }
+      .u-buttons-outline .edit-post-visual-editor .c-btn:hover, .u-buttons-outline .edit-post-visual-editor .c-btn:active, .u-buttons-outline .edit-post-visual-editor .c-btn:focus {
+        background: none; }
+    .edit-post-visual-editor .c-btn:hover, .edit-post-visual-editor .c-btn:active, .edit-post-visual-editor .c-btn:focus {
+      color: #FFF;
+      background-color: #000;
+      opacity: 0.8;
+      text-decoration: none;
+      border: initial; }
+    .edit-post-visual-editor .c-btn--default {
+      background-color: #111;
+      color: #FFF; }
+      .edit-post-visual-editor .c-btn--default:hover {
+        color: #FFF; }
+      .u-buttons-outline .edit-post-visual-editor .c-btn--default {
+        background: none; }
+  .edit-post-visual-editor .c-btn-directional {
+    position: relative; }
+    .edit-post-visual-editor .c-btn-directional:before, .edit-post-visual-editor .c-btn-directional:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      z-index: 100;
+      color: inherit;
+      margin-top: -1px;
+      -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
+      transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
+      -webkit-transition-property: -webkit-transform;
+      transition-property: -webkit-transform;
+      transition-property: transform;
+      transition-property: transform, -webkit-transform; }
+    .edit-post-visual-editor .c-btn-directional:before {
+      width: 35px;
+      height: 1px;
+      background-color: currentColor; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor .c-btn-directional:before {
+          width: 27.48466px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor .c-btn-directional:before {
+          width: 22.62626px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor .c-btn-directional:before {
+          width: 19.22747px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor .c-btn-directional:before {
+          width: 16.71642px; } }
+    .edit-post-visual-editor .c-btn-directional:after {
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      -webkit-transform: translate(0, calc(0.5px - 50%));
+              transform: translate(0, calc(0.5px - 50%)); }
+  .edit-post-visual-editor .c-btn-directional--left {
+    padding-left: 100px; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor .c-btn-directional--left {
+        padding-left: 72.72727px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor .c-btn-directional--left {
+        padding-left: 57.14286px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor .c-btn-directional--left {
+        padding-left: 47.05882px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor .c-btn-directional--left {
+        padding-left: 40px; } }
+    .edit-post-visual-editor .c-btn-directional--left:before {
+      left: 35px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor .c-btn-directional--left:before {
+          left: 27.48466px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor .c-btn-directional--left:before {
+          left: 22.62626px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor .c-btn-directional--left:before {
+          left: 19.22747px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor .c-btn-directional--left:before {
+          left: 16.71642px; } }
+    .edit-post-visual-editor .c-btn-directional--left:after {
+      left: 30px;
+      border-right: 5px solid currentColor; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor .c-btn-directional--left:after {
+          left: 23.7037px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor .c-btn-directional--left:after {
+          left: 19.59184px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor .c-btn-directional--left:after {
+          left: 16.69565px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor .c-btn-directional--left:after {
+          left: 14.54545px; } }
+    .edit-post-visual-editor .c-btn-directional--left:hover:before {
+      -webkit-transform: translate3d(-5px, 0, 0);
+              transform: translate3d(-5px, 0, 0); }
+    .edit-post-visual-editor .c-btn-directional--left:hover:after {
+      -webkit-transform: translate3d(-5px, calc(0.5px - 50%), 0);
+              transform: translate3d(-5px, calc(0.5px - 50%), 0); }
+  .edit-post-visual-editor .c-btn-directional--right {
+    padding-right: 6.5em;
+    text-align: left; }
+    .edit-post-visual-editor .c-btn-directional--right:before {
+      right: 2.33333em; }
+    .edit-post-visual-editor .c-btn-directional--right:after {
+      right: calc(7em/3 - 5px);
+      border-left: 5px solid currentColor; }
+    .edit-post-visual-editor .c-btn-directional--right:hover:before {
+      -webkit-transform: translate3d(5px, 0, 0);
+              transform: translate3d(5px, 0, 0); }
+    .edit-post-visual-editor .c-btn-directional--right:hover:after {
+      -webkit-transform: translate3d(5px, calc(0.5px - 50%), 0);
+              transform: translate3d(5px, calc(0.5px - 50%), 0); }
+  .edit-post-visual-editor .c-btn-text {
+    border: 0;
+    padding: 0;
+    background: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none; }
+  .edit-post-visual-editor .button[class][class][class][class][class] {
+    display: inline-block;
+    /* [1] */
+    vertical-align: middle;
+    /* [2] */
+    text-align: center;
+    /* [4] */
+    cursor: pointer;
+    /* [5] */
+    padding: 1.1em 1.75em;
+    border: 0 solid #222222;
+    margin: 0;
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 16px;
+    color: #FFF;
+    background-color: #FF6000;
+    border-radius: 0;
+    -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
+    transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
+    text-decoration: none; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor .button[class][class][class][class][class] {
+        font-size: 15.70224px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor .button[class][class][class][class][class] {
+        font-size: 15.41536px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor .button[class][class][class][class][class] {
+        font-size: 15.13877px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor .button[class][class][class][class][class] {
+        font-size: 14.87194px; } }
+    .u-buttons-rounded .edit-post-visual-editor .button[class][class][class][class][class] {
+      border-radius: 0.3em; }
+    .u-buttons-pill .edit-post-visual-editor .button[class][class][class][class][class] {
+      border-radius: 999em; }
+    .u-underlined-links .edit-post-visual-editor .button[class][class][class][class][class] {
+      text-decoration: none; }
+    .u-buttons-outline .edit-post-visual-editor .button[class][class][class][class][class] {
+      background: none;
+      border: 2px solid currentColor; }
+      .u-buttons-outline .edit-post-visual-editor .button[class][class][class][class][class]:hover, .u-buttons-outline .edit-post-visual-editor .button[class][class][class][class][class]:active, .u-buttons-outline .edit-post-visual-editor .button[class][class][class][class][class]:focus {
+        background: none; }
+    .edit-post-visual-editor .button[class][class][class][class][class]:hover, .edit-post-visual-editor .button[class][class][class][class][class]:active, .edit-post-visual-editor .button[class][class][class][class][class]:focus {
+      color: #FFF;
+      background-color: #000;
+      opacity: 0.8;
+      text-decoration: none;
+      border: initial; }
+    .edit-post-visual-editor .button[class][class][class][class][class].default {
+      background-color: #111;
+      color: #FFF; }
+      .edit-post-visual-editor .button[class][class][class][class][class].default:hover {
+        color: #FFF; }
+      .u-buttons-outline .edit-post-visual-editor .button[class][class][class][class][class].default {
+        background: none; }
+    .edit-post-visual-editor .button[class][class][class][class][class].full {
+      width: 100%; }
+    .edit-post-visual-editor .button[class][class][class][class][class].arrow {
+      position: relative;
+      padding-right: 6.5em;
+      text-align: left; }
+      .edit-post-visual-editor .button[class][class][class][class][class].arrow:before, .edit-post-visual-editor .button[class][class][class][class][class].arrow:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        z-index: 100;
+        color: inherit;
+        margin-top: -1px;
+        -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
+        transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
+        -webkit-transition-property: -webkit-transform;
+        transition-property: -webkit-transform;
+        transition-property: transform;
+        transition-property: transform, -webkit-transform; }
+      .edit-post-visual-editor .button[class][class][class][class][class].arrow:before {
+        width: 35px;
+        height: 1px;
+        background-color: currentColor; }
+        @media only screen and (max-width: 1360px) {
+          .edit-post-visual-editor .button[class][class][class][class][class].arrow:before {
+            width: 27.48466px; } }
+        @media only screen and (max-width: 1024px) {
+          .edit-post-visual-editor .button[class][class][class][class][class].arrow:before {
+            width: 22.62626px; } }
+        @media only screen and (max-width: 768px) {
+          .edit-post-visual-editor .button[class][class][class][class][class].arrow:before {
+            width: 19.22747px; } }
+        @media only screen and (max-width: 320px) {
+          .edit-post-visual-editor .button[class][class][class][class][class].arrow:before {
+            width: 16.71642px; } }
+      .edit-post-visual-editor .button[class][class][class][class][class].arrow:after {
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        -webkit-transform: translate(0, calc(0.5px - 50%));
+                transform: translate(0, calc(0.5px - 50%)); }
+      .edit-post-visual-editor .button[class][class][class][class][class].arrow:before {
+        right: 2.33333em; }
+      .edit-post-visual-editor .button[class][class][class][class][class].arrow:after {
+        right: calc(7em/3 - 5px);
+        border-left: 5px solid currentColor; }
+      .edit-post-visual-editor .button[class][class][class][class][class].arrow:hover:before {
+        -webkit-transform: translate3d(5px, 0, 0);
+                transform: translate3d(5px, 0, 0); }
+      .edit-post-visual-editor .button[class][class][class][class][class].arrow:hover:after {
+        -webkit-transform: translate3d(5px, calc(0.5px - 50%), 0);
+                transform: translate3d(5px, calc(0.5px - 50%), 0); }
+  .edit-post-visual-editor .wp-block-separator.is-style-dots:before {
+    color: inherit; }
+  .edit-post-visual-editor .wp-block-separator[class] {
+    border-bottom-color: currentColor;
+    margin: 1.5em auto; }
+    .edit-post-visual-editor .wp-block-separator[class]:not([class*="is-style"]) {
+      max-width: 100px; }
+  .edit-post-visual-editor .wp-block-audio[class] {
+    margin-left: 0;
+    margin-right: 0; }
+    .edit-post-visual-editor .wp-block-audio[class] audio {
+      width: 100%; }
+  .edit-post-visual-editor .wp-block-cover[class][class] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 1.125em;
+    margin-bottom: 1.125em; }
+    .edit-post-visual-editor .wp-block-cover[class][class] p {
+      position: relative;
+      -webkit-transform: none;
+              transform: none;
+      margin-bottom: 0; }
+  .edit-post-visual-editor p.wp-block-subhead {
+    color: inherit; }
+  .edit-post-visual-editor .wp-block-code,
+  .edit-post-visual-editor .wp-block-preformatted pre,
+  .edit-post-visual-editor .wp-block-verse pre,
+  .edit-post-visual-editor pre.wp-block-verse {
+    color: inherit; }
+  .edit-post-visual-editor .editor-block-list__layout .editor-block-list__block[data-align=left] .editor-block-list__block-edit {
+    margin-right: 0;
+    margin-bottom: 0; }
+  .edit-post-visual-editor .wp-block-image .alignleft,
+  .edit-post-visual-editor .editor-block-list__layout .editor-block-list__block[data-align=left] .editor-block-list__block-edit > * {
+    margin-top: 3em;
+    margin-bottom: 3em; }
+    @media only screen and (min-width: 899px) {
+      .edit-post-visual-editor .wp-block-image .alignleft,
+      .edit-post-visual-editor .editor-block-list__layout .editor-block-list__block[data-align=left] .editor-block-list__block-edit > * {
+        margin-right: 3em;
+        width: auto; } }
+  .edit-post-visual-editor .editor-block-list__layout .editor-block-list__block[data-align=right] .editor-block-list__block-edit {
+    margin-left: 0;
+    margin-bottom: 0; }
+  .edit-post-visual-editor .wp-block-image .alignright,
+  .edit-post-visual-editor .editor-block-list__layout .editor-block-list__block[data-align=right] .editor-block-list__block-edit > * {
+    margin-top: 3em;
+    margin-bottom: 3em; }
+    @media only screen and (min-width: 899px) {
+      .edit-post-visual-editor .wp-block-image .alignright,
+      .edit-post-visual-editor .editor-block-list__layout .editor-block-list__block[data-align=right] .editor-block-list__block-edit > * {
+        margin-left: 3em;
+        width: auto; } }
+  .edit-post-visual-editor .wp-block-image .aligncenter > figcaption {
+    display: block; }
+  .edit-post-visual-editor figure.wp-block-pullquote {
+    border: 0;
+    padding: 0; }
+  .edit-post-visual-editor .wp-block-pullquote[class] p {
+    font: inherit; }
+  .edit-post-visual-editor .wp-block-quote__citation,
+  .edit-post-visual-editor .wp-block-quote cite,
+  .edit-post-visual-editor .wp-block-quote footer {
+    color: inherit; }
+  .edit-post-visual-editor .wp-block-gallery[class] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  .edit-post-visual-editor .wp-block-categories.aligncenter {
+    text-align: center;
+    list-style-position: inside; }
+    .edit-post-visual-editor .wp-block-categories.aligncenter ul {
+      list-style-position: inside; }
+  .edit-post-visual-editor .editor-post-title__input {
+    font-family: "HK Grotesk", sans-serif; }
+  .edit-post-visual-editor.editor-styles-wrapper .editor-block-list__block,
+  .edit-post-visual-editor.editor-styles-wrapper .editor-post-title__block,
+  .edit-post-visual-editor.editor-styles-wrapper .wp-block-paragraph {
+    font-family: "Charter", serif;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #333131; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor.editor-styles-wrapper .editor-block-list__block,
+      .edit-post-visual-editor.editor-styles-wrapper .editor-post-title__block,
+      .edit-post-visual-editor.editor-styles-wrapper .wp-block-paragraph {
+        font-size: 19.28571px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor.editor-styles-wrapper .editor-block-list__block,
+      .edit-post-visual-editor.editor-styles-wrapper .editor-post-title__block,
+      .edit-post-visual-editor.editor-styles-wrapper .wp-block-paragraph {
+        font-size: 18.62069px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor.editor-styles-wrapper .editor-block-list__block,
+      .edit-post-visual-editor.editor-styles-wrapper .editor-post-title__block,
+      .edit-post-visual-editor.editor-styles-wrapper .wp-block-paragraph {
+        font-size: 18px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor.editor-styles-wrapper .editor-block-list__block,
+      .edit-post-visual-editor.editor-styles-wrapper .editor-post-title__block,
+      .edit-post-visual-editor.editor-styles-wrapper .wp-block-paragraph {
+        font-size: 17.41935px; } }
+  .edit-post-visual-editor .wp-block-html .editor-plain-text {
+    color: inherit; }
+  .edit-post-visual-editor .wp-block-quote,
+  .edit-post-visual-editor .wp-block-pullquote {
+    color: inherit; }
+  .edit-post-visual-editor .editor-rich-text__tinymce {
+    line-height: inherit; }
+  .edit-post-visual-editor .wp-block-quote p {
+    font-size: 1em;
+    line-height: inherit; }
+  .edit-post-visual-editor .wp-block-pullquote.aligncenter blockquote, .edit-post-visual-editor .wp-block-pullquote.alignnone blockquote, .edit-post-visual-editor .wp-block-pullquote:not([class*="align"]) blockquote {
+    margin-left: 0;
+    margin-right: 0; }
+  .edit-post-visual-editor .wp-block-pullquote.alignright blockquote {
+    margin-right: 0; }
+  .edit-post-visual-editor .wp-block-pullquote.alignleft blockquote {
+    margin-left: 0; }
+  .edit-post-visual-editor .wp-block-quote:not(.is-large):not(.is-style-large) {
+    border-color: #FF6000; }
+  .edit-post-visual-editor .wp-block-quote__citation {
+    margin-top: 42px;
+    font-style: normal;
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 14px;
+    line-height: 1.07;
+    font-weight: normal;
+    letter-spacing: 0.07143em;
+    text-transform: uppercase; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor .wp-block-quote__citation {
+        margin-top: 32.70073px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor .wp-block-quote__citation {
+        margin-top: 26.77291px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor .wp-block-quote__citation {
+        margin-top: 22.66442px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor .wp-block-quote__citation {
+        margin-top: 19.64912px; } }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor .wp-block-quote__citation {
+        font-size: 13.82438px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor .wp-block-quote__citation {
+        font-size: 13.65311px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor .wp-block-quote__citation {
+        font-size: 13.48603px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor .wp-block-quote__citation {
+        font-size: 13.32299px; } }
+  .edit-post-visual-editor .wp-block-gallery[class][class] .blocks-gallery-item {
+    margin-bottom: 16px; }
+  .edit-post-visual-editor .wp-block-categories ul {
+    list-style-position: inside; }
+  .edit-post-visual-editor pre {
+    font-size: 1em; }
+  .edit-post-visual-editor a {
+    color: #333131; }
+    .edit-post-visual-editor a img {
+      -webkit-transition: opacity 0.3s ease-out;
+      transition: opacity 0.3s ease-out; }
+    .edit-post-visual-editor a:hover, .edit-post-visual-editor a:active {
+      color: #191919; }
+      .edit-post-visual-editor a:hover img, .edit-post-visual-editor a:active img {
+        opacity: 0.8; }
+  .edit-post-visual-editor .wp-block-table td,
+  .edit-post-visual-editor .wp-block-table th {
+    border: 0; }
+  .edit-post-visual-editor .wp-block-table__cell-content {
+    padding: 0; }
+
+/*# sourceMappingURL=editor.css.map */

@@ -1,0 +1,31 @@
+$meta-title-font: () !default;
+$meta-category-items-font: () !default;
+$meta-tags-items-font: () !default;
+
+.entry-header {
+  .cats {
+    @include leading-map($meta-category-items-font);
+  }
+}
+
+.entry-content {
+  .cats {
+    &[class] > a {
+      @extend .meta__item--button;
+
+      // add spacing between category items
+      margin-top: 5px;
+      margin-right: 5px;
+      padding: .5em 1.25em;
+
+      // cleanup possible properties inherited by the anchor tag
+      text-decoration: none;
+      @include leading-map($meta-category-items-font);
+    }
+  }
+
+  .tags {
+    clear: both;
+  }
+
+}

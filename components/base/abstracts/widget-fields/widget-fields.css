@@ -1,0 +1,55 @@
+.pixelgrade_image_field input.button {
+	height: 34px;
+	line-height: 1;
+	margin-top: 15px;
+	width: 100%;
+}
+
+.pixelgrade_image_preview .aligncenter {
+	display: block;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.pixelgrade_image_preview {
+	max-height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+
+.pixelgrade_image_preview img {
+	height: auto;
+	margin: 10px 0;
+	max-width: 100%;
+}
+
+.pixelgrade_image_preview .clear-image {
+	position: absolute;
+	right: 5px;
+	top: 15px;
+}
+
+.pixelgrade_image_preview.no-image .clear-image {
+	display: none;
+}
+
+.pixelgrade_image_preview .clear-image:hover {
+	cursor: pointer;
+}
+
+#customize-theme-controls .widget-content .accordion-container .accordion-section.open .accordion-section-content {
+	max-height: 100%;
+	padding-top: 17px;
+	padding-bottom: 17px;
+}
+
+#customize-theme-controls .widget-content .accordion-container .accordion-section .accordion-section-content {
+	position: relative;
+	left: 0;
+	overflow: hidden;
+	max-height: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	/* transition: all .4s ease; */
+	color: #416b7e;
+}

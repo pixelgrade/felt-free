@@ -1,0 +1,10 @@
+blockquote {
+    position: relative;
+    @include spacing(padding-left, 40px);
+    border-left: solid $sm-color-secondary;
+    @include spacing(border-left-width, 10px);
+
+    &:not(:first-child) {
+        @include spacing(margin-top, 1rem);
+    }
+}

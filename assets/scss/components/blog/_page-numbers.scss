@@ -1,0 +1,53 @@
+ul.page-numbers {
+
+  // increased specificity of selector to overwrite woocommerce selectors
+  @include specific(2) {
+    display: flex;
+    align-items: center;
+
+    @include spacing(margin-top, 5rem);
+    @include spacing(margin-bottom, 2rem);
+    @include spacing(margin-left, -1rem);
+
+    list-style: none;
+    padding-left: 0;
+
+    @include leading-map($h5);
+
+    > * {
+      @include spacing(padding-left, 1rem);
+    }
+
+    li {
+      margin-bottom: 0;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:before,
+      &:after {
+        content: none;
+      }
+    }
+
+    .prev {
+      @include spacing(padding-right, 3rem);
+    }
+
+    .next {
+      @include spacing(padding-left, 3rem);
+    }
+
+    .next,
+    .prev {
+      @include leading-map($h3);
+
+      text-transform: none;
+
+      &:after {
+        padding: 0;
+      }
+    }
+  }
+}
