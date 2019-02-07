@@ -13,6 +13,9 @@ module.exports = {
 		imagesloaded: 'imagesLoaded',
 		'masonry-layout': 'Masonry',
 		'jquery-hoverintent': 'jQuery',
+		gsap: '_gsScope',
+		select2: 'jQuery',
+		'slick-carousel': 'jQuery',
 	},
 	optimization: {
 		splitChunks: {
@@ -44,7 +47,7 @@ module.exports = {
 		/**
 		 * Specify which extensions we want to look at for module bundling
 		 */
-		extensions: ['.ts', '.tsx', '.js']
+		extensions: ['.ts', '.tsx', '.js'],
 	},
 	module: {
 		/**

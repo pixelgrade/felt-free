@@ -67,5 +67,4 @@ export class Slideshow extends Carousel {
     }
     return -1;
   }
-
 }
