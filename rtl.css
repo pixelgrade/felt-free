@@ -9159,8 +9159,6 @@ ul.page-numbers[class][class] {
   position: relative;
   z-index: 11;
   overflow: hidden; }
-  .blog .site-main #posts-container {
-    margin-top: 16px; }
 
 .home .site-main {
   position: relative; }
@@ -10904,6 +10902,15 @@ a[rel='home'] {
   .site-header-mobile {
     display: none; } }
 
+.c-navbar__zone--left > .header.nav {
+  opacity: 0; }
+
+.c-navbar__zone--middle:empty {
+  min-height: 52px; }
+
+.c-navbar__zone--middle > .header.nav {
+  opacity: 1; }
+
 .site-title {
   font-size: 100px; }
   @media only screen and (min-width: 42.5em) {
@@ -10950,9 +10957,7 @@ h1.site-title {
   font-family: "Charter", serif;
   font-weight: normal;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: #FFF4E8;
-  mix-blend-mode: difference; }
+  text-transform: uppercase; }
   @media only screen and (max-width: 1360px) {
     .site-description {
       margin-top: 12.89431px; } }

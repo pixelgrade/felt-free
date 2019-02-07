@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /*!
 Theme Name: Felt
-Theme URI: https://demos.pixelgrade.com/felt-lite/
 Author: Pixelgrade
 Author URI: https://pixelgrade.com
 Description: A magazine-style WordPress theme for publishers who want to showcase their fresh ideas.
@@ -9159,8 +9158,6 @@ ul.page-numbers[class][class] {
   position: relative;
   z-index: 11;
   overflow: hidden; }
-  .blog .site-main #posts-container {
-    margin-top: 16px; }
 
 .home .site-main {
   position: relative; }
@@ -10632,7 +10629,6 @@ a[rel='home'] {
 .c-navbar__zone--left {
   margin-top: 14px;
   margin-bottom: 21px;
-  min-height: 52px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -10904,6 +10900,30 @@ a[rel='home'] {
   .site-header-mobile {
     display: none; } }
 
+.c-navbar__zone--left,
+.c-navbar__zone--middle {
+  min-height: 52px; }
+
+.c-navbar__zone--left > .header.nav {
+  opacity: 0; }
+
+.c-navbar__zone--middle > .header.nav {
+  opacity: 1;
+  -webkit-animation: fade-in 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          animation: fade-in 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards; }
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .site-title {
   font-size: 100px; }
   @media only screen and (min-width: 42.5em) {
@@ -10950,9 +10970,7 @@ h1.site-title {
   font-family: "Charter", serif;
   font-weight: normal;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: #FFF4E8;
-  mix-blend-mode: difference; }
+  text-transform: uppercase; }
   @media only screen and (max-width: 1360px) {
     .site-description {
       margin-top: 12.89431px; } }

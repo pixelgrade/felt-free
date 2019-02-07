@@ -99,16 +99,14 @@ a[rel='home'] {
   @include spacing(margin-top, 1rem);
   @include spacing(margin-bottom, 1.5rem);
 
-  min-height: 52px;
   justify-content: space-between;
-
   flex-wrap: nowrap;
 
-  & > * {
+  > * {
     flex: 1 1 auto;
   }
 
-  & > .search-trigger:first-child:last-child {
+  > .search-trigger:first-child:last-child {
     margin-left: auto;
     flex-grow: 0;
   }
@@ -389,4 +387,28 @@ a[rel='home'] {
   .site-header-mobile {
     display: none;
   }
+}
+
+// hack to keep height constant
+// and show logo only after it is moved from the left to the middle zone on init
+.c-navbar__zone--left,
+.c-navbar__zone--middle {
+  min-height: 52px;
+}
+
+.header.nav {
+
+  .c-navbar__zone--left > & {
+    opacity: 0;
+  }
+
+  .c-navbar__zone--middle > & {
+    opacity: 1;
+    animation: fade-in .3s $easeOutQuart forwards;
+  }
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }

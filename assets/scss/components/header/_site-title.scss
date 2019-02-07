@@ -39,9 +39,6 @@ h1.site-title {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 
-  background: $header-background-color;
-  mix-blend-mode: difference;
-
   @include below( 'lap' ) {
     display: none;
   }
