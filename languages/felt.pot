@@ -492,7 +492,7 @@ msgstr ""
 
 #: inc/lite/admin/about-page.php:20
 #: inc/lite/admin/about-page.php:22
-msgid "About Felt Lite"
+msgid "About Felt"
 msgstr ""
 
 #. translators: Main welcome title
@@ -534,7 +534,7 @@ msgid "Contact Support"
 msgstr ""
 
 #: inc/lite/admin/about-page.php:46
-msgid "We want to make sure you have the best experience using Felt Lite. If you <strong>do not have a paid upgrade</strong>, please post your question in our community forums."
+msgid "We want to make sure you have the best experience using Felt. If you <strong>do not have a paid upgrade</strong>, please post your question in our community forums."
 msgstr ""
 
 #: inc/lite/admin/about-page.php:53
@@ -544,7 +544,7 @@ msgstr ""
 
 #: inc/lite/admin/about-page.php:55
 #: inc/lite/admin/about-page.php:85
-msgid "Need more details? Please check our full documentation for detailed information on how to use Felt Lite."
+msgid "Need more details? Please check our full documentation for detailed information on how to use Felt."
 msgstr ""
 
 #: inc/lite/admin/about-page.php:56
@@ -683,7 +683,7 @@ msgid "No Credit Footer Link"
 msgstr ""
 
 #: inc/lite/admin/about-page.php:175
-msgid "You can easily remove the \"Theme: Felt Lite by Pixelgrade\" copyright from the footer area and make the theme yours from start to finish."
+msgid "You can easily remove the \"Theme: Felt by Pixelgrade\" copyright from the footer area and make the theme yours from start to finish."
 msgstr ""
 
 #: inc/lite/admin/about-page.php:183
@@ -2766,7 +2766,7 @@ msgid "Recent Posts"
 msgstr ""
 
 #: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:105
-msgid "👉 More Posts Source options (e.g. Category, Tag, Selected Posts) are available in the Pro version of Felt Lite. C'mon, aim for more, mate!"
+msgid "👉 More Posts Source options (e.g. Category, Tag, Selected Posts) are available in the Pro version of Felt. C'mon, aim for more, mate!"
 msgstr ""
 
 #: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:112
@@ -2818,7 +2818,7 @@ msgid "Secondary Meta:"
 msgstr ""
 
 #: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:193
-msgid "👉 More display options (e.g. Show Excerpt, Show Read More) are available in the Pro version of Felt Lite. Don't let us stop you!"
+msgid "👉 More display options (e.g. Show Excerpt, Show Read More) are available in the Pro version of Felt. Don't let us stop you!"
 msgstr ""
 
 #: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:205

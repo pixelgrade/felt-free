@@ -106,7 +106,7 @@ function felt_lite_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'felt_lite_customize_register' );
 
 /**
- * Generate a link to the Felt Lite info page.
+ * Generate a link to the Felt info page.
  */
 function felt_lite_get_pro_link() {
 	return 'https://pixelgrade.com/themes/blogging/felt-pro?utm_source=felt-lite-clients&utm_medium=customizer&utm_campaign=felt-lite';

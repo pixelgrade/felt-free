@@ -1,8 +1,8 @@
 <?php
 /**
- * Felt Lite Theme About Page logic.
+ * Felt Theme About Page logic.
  *
- * @package Felt Lite
+ * @package Felt
  */
 
 function felt_lite_admin_setup() {
@@ -17,11 +17,11 @@ function felt_lite_admin_setup() {
 	*/
 	$config = array(
 		// Menu name under Appearance.
-		'menu_name'               => esc_html__( 'About Felt Lite', '__theme_txtd' ),
+		'menu_name'               => esc_html__( 'About Felt', '__theme_txtd' ),
 		// Page title.
-		'page_name'               => esc_html__( 'About Felt Lite', '__theme_txtd' ),
+		'page_name'               => esc_html__( 'About Felt', '__theme_txtd' ),
 		/* translators: Main welcome title */
-		'welcome_title'         => sprintf( esc_html__( 'Welcome to %s! - Version ', '__theme_txtd' ), 'Felt Lite' ),
+		'welcome_title'         => sprintf( esc_html__( 'Welcome to %s! - Version ', '__theme_txtd' ), 'Felt' ),
 		// Main welcome content
 		'welcome_content'       => esc_html__( ' Felt is a free magazine‐style WordPress theme for publishers who want to showcase their fresh ideas. Thanks to the modular layout you can highlight what’s truly important for your tribe to enhance stronger bonds and become memorable. No matter if you are a blogger, journalist, designer or small entrepreneur, this theme will fit perfectly everytime.', '__theme_txtd' ),
 		/**
@@ -43,16 +43,16 @@ function felt_lite_admin_setup() {
 			'first' => array (
 				'title' => esc_html__( 'Contact Support','__theme_txtd' ),
 				'icon' => 'dashicons dashicons-sos',
-				'text' => wp_kses( __( 'We want to make sure you have the best experience using Felt Lite. If you <strong>do not have a paid upgrade</strong>, please post your question in our community forums.', '__theme_txtd' ), wp_kses_allowed_html() ),
+				'text' => wp_kses( __( 'We want to make sure you have the best experience using Felt. If you <strong>do not have a paid upgrade</strong>, please post your question in our community forums.', '__theme_txtd' ), wp_kses_allowed_html() ),
 				'button_label' => esc_html__( 'Contact Support','__theme_txtd' ),
-				'button_link' => esc_url( 'https://wordpress.org/support/theme/felt-lite' ),
+				'button_link' => esc_url( 'https://wordpress.org/support/theme/felt' ),
 				'is_button' => true,
 				'is_new_tab' => true
 			),
 			'second' => array(
 				'title' => esc_html__( 'Documentation','__theme_txtd' ),
 				'icon' => 'dashicons dashicons-book-alt',
-				'text' => esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use Felt Lite.','__theme_txtd' ),
+				'text' => esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use Felt.','__theme_txtd' ),
 				'button_label' => esc_html__( 'Read The Documentation','__theme_txtd' ),
 				'button_link' => 'https://pixelgrade.com/felt-lite-documentation/',
 				'is_button' => false,
@@ -74,7 +74,7 @@ function felt_lite_admin_setup() {
 				'title' => esc_html__( 'Recommended actions','__theme_txtd' ),
 				'text' => esc_html__( 'We have compiled a list of steps for you, to take make sure the experience you will have using one of our products is very easy to follow.','__theme_txtd' ),
 				'button_label' => esc_html__( 'Recommended actions','__theme_txtd' ),
-				'button_link' => esc_url( admin_url( 'themes.php?page=felt-lite-welcome&tab=recommended_actions' ) ),
+				'button_link' => esc_url( admin_url( 'themes.php?page=felt-welcome&tab=recommended_actions' ) ),
 				'button_ok_label' => esc_html__( 'You are good to go!','__theme_txtd' ),
 				'is_button' => false,
 				'recommended_actions' => true,
@@ -82,7 +82,7 @@ function felt_lite_admin_setup() {
 			),
 			'third' => array(
 				'title' => esc_html__( 'Read the documentation','__theme_txtd' ),
-				'text' => esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use Felt Lite.','__theme_txtd' ),
+				'text' => esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use Felt.','__theme_txtd' ),
 				'button_label' => esc_html__( 'Documentation','__theme_txtd' ),
 				'button_link' => 'https://pixelgrade.com/felt-lite-documentation/',
 				'is_button' => false,
@@ -92,7 +92,7 @@ function felt_lite_admin_setup() {
 		),
 		// Free vs pro array.
 		'free_pro'                => array(
-			'free_theme_name'     => 'Felt Lite',
+			'free_theme_name'     => 'Felt',
 			'pro_theme_name'      => 'Felt PRO',
 			'pro_theme_link'      => 'https://pixelgrade.com/themes/felt-pro/?utm_source=felt-lite-clients&utm_medium=about-page&utm_campaign=felt-lite',
 			/* translators: View link */
@@ -172,7 +172,7 @@ function felt_lite_admin_setup() {
 				),
 				array(
 					'title'       => esc_html__( 'No Credit Footer Link', '__theme_txtd' ),
-					'description' => esc_html__( 'You can easily remove the "Theme: Felt Lite by Pixelgrade" copyright from the footer area and make the theme yours from start to finish.', '__theme_txtd' ),
+					'description' => esc_html__( 'You can easily remove the "Theme: Felt by Pixelgrade" copyright from the footer area and make the theme yours from start to finish.', '__theme_txtd' ),
 					'is_in_lite'  => 'false',
 					'is_in_pro'   => 'true',
 				)

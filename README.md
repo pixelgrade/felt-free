@@ -1,9 +1,9 @@
 # Felt
 
-Felt Lite is a free magazine‐style WordPress theme for publishers who want to showcase their fresh ideas. Thanks to the modular layout you can highlight what’s truly important for your tribe to enhance stronger bonds and become memorable. No matter if you are a blogger, journalist, designer or small entrepreneur, this theme will fit perfectly everytime.
+Felt is a free magazine‐style WordPress theme for publishers who want to showcase their fresh ideas. Thanks to the modular layout you can highlight what’s truly important for your tribe to enhance stronger bonds and become memorable. No matter if you are a blogger, journalist, designer or small entrepreneur, this theme will fit perfectly everytime.
 
 ## Description
-Felt Lite is a free magazine-style WordPress theme for publishers who want to showcase their fresh ideas.
+Felt is a free magazine-style WordPress theme for publishers who want to showcase their fresh ideas.
 
 ## Installation
 1. In your admin panel, go to Appearance -> Themes and click the Add New button.
