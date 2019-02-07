@@ -6446,6 +6446,8 @@ ul.page-numbers[class][class] {
   .c-reading-bar > * {
     -ms-flex-preferred-size: calc(100% / 3);
         flex-basis: calc(100% / 3); }
+  .c-reading-bar .sd-social-icon .sd-content.sd-content ul li[class*='share-'] a.sd-button {
+    background: transparent !important; }
 
 .c-reading-bar__wrapper-title {
   font-family: "Charter", serif;
@@ -14155,6 +14157,8 @@ body #infinite-handle span {
       width: 18px;
       height: 18px;
       background-color: transparent; }
+    #content .sharedaddy[class] .sd-social-icon .sd-content.sd-content ul li[class*='share-'] a.sd-button:after {
+      display: none; }
   #content .sharedaddy[class] .sd-social-icon .sd-content.sd-content ul li[class*='share-'] a, #content .sharedaddy[class] .sd-social-icon .sd-content.sd-content ul li[class*='share-'] a:hover, #content .sharedaddy[class] .sd-social-icon .sd-content.sd-content ul li[class*='share-'] div.option a {
     padding: 9px; }
 
