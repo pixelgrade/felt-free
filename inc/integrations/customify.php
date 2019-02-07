@@ -303,19 +303,6 @@ function felt_customify_main_content_section( $section_options, $options ) {
 					'css'     => array(
 						array(
 							'property' => 'color',
-							'selector' => 'body,
-								.u-buttons-outline .comment-form .form-submit .submit,
-								.u-buttons-outline .c-comments-toggle__label',
-						),
-						array(
-							'property' => 'background-color',
-							'selector' => '
-								.u-buttons-solid.comment-form .form-submit .submit,
-								.u-buttons-solid.c-comments-toggle__label,
-								.widget_promo_box--dark::before',
-						),
-						array(
-							'property' => 'color',
 							'selector' => 'body, 
 								a,
 								a:hover,
@@ -333,7 +320,8 @@ function felt_customify_main_content_section( $section_options, $options ) {
 								.u-buttons-solid.comment-form .form-submit .submit,
 								.u-buttons-solid.c-comments-toggle__label, 
 								.menu--primary .sub-menu:after,
-								.widget_promo_box--dark::before',
+								.widget_promo_box--dark::before,
+								#content .sharedaddy[class] .sd-social-icon .sd-content.sd-content ul li[class*=\'share-\'] a.sd-button',
 						),
 						array(
 							'property' => 'border-color',
@@ -347,12 +335,6 @@ function felt_customify_main_content_section( $section_options, $options ) {
 				'main_content_body_link_active_color'  => array(
 					'default' => SM_COLOR_PRIMARY,
 					'css'     => array(
-						array(
-							'property' => 'color',
-							'selector' => '.entry-content a:not([class]):hover,
-								.entry-content a:not([class]):active,
-								.entry-content .c-btn-link',
-						),
 						array(
 							'property' => 'color',
 							'selector' => '.entry-content a:not([class]):hover,
@@ -573,7 +555,8 @@ function felt_customify_main_content_section( $section_options, $options ) {
                                 div.jetpack-recipe div.jetpack-recipe-directions ol li:after, div.jetpack-recipe div.jetpack-recipe-directions ul li:after,
                                 .menu--primary .sub-menu.sub-menu li[class].hover>a,
                                 .menu--primary .sub-menu.sub-menu li[class] a,
-                                .widget_promo_box--dark'
+                                .widget_promo_box--dark,
+                                #content .sharedaddy[class] .sd-social-icon .sd-content.sd-content ul li[class*=\'share-\'] a.sd-button:before'
 						),
 						array(
 							'property'        => 'color',
@@ -593,7 +576,8 @@ function felt_customify_main_content_section( $section_options, $options ) {
 						),
 						array(
 							'property'        => 'box-shadow',
-							'selector'        => '.entry-content a:not([class]):hover, 
+							'selector'        => '
+								.entry-content a:not([class]):hover, 
 								.comment__content a:hover, 
 								.widget a:hover,
 								.c-footer .widget a:hover',
