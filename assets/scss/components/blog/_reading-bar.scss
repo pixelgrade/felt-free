@@ -24,6 +24,16 @@
   & > * {
     flex-basis: calc(100% / 3);
   }
+
+  .sd-social-icon {
+    .sd-content.sd-content {
+      ul li[class*='share-'] {
+        a.sd-button {
+          background: transparent !important;
+        }
+      }
+    }
+  }
 }
 
 .c-reading-bar__wrapper-title {

@@ -5,7 +5,7 @@
 .c-author {
   @include spacing(padding-top, 3rem);
   @include spacing(padding-bottom, 3rem);
-  @include spacing(margin-top, 8rem);
+  @include spacing(margin-top, 6rem);
 
   border-top: 2px solid $color-dark;
   border-bottom: 2px solid $color-dark;

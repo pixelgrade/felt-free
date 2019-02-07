@@ -517,3 +517,12 @@ function felt_hkgrotesk_font_url() {
 }
 
 add_filter( 'pixelgrade_footer_use_jetpack_social_menu', '__return_true' );
+
+function felt_modify_embed_defaults() {
+	$content_width = pixelgrade_option( 'main_content_content_width', 720 );
+	return array(
+		'width'  => $content_width,
+		'height' => $content_width * 3/4
+	);
+}
+add_filter( 'embed_defaults', 'felt_modify_embed_defaults' );
