@@ -172,9 +172,6 @@ gulp.task( 'build', 'Remove unneeded files and folders from the build folder', [
         'components/phpunit*',
         'components/style.css',
         'variations',
-        'inc/pro',
-        'inc/pro.php'
-
     ];
 
     files_to_remove.forEach( function( e, k ) {

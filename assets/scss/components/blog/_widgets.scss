@@ -241,7 +241,7 @@
     @include widget-side-list;
   }
 
-  > .widget-last {
+  > .widget:last-child {
     @include specific(4) {
       position: sticky;
       top: 0;
@@ -255,10 +255,6 @@
     display: block;
     padding: 0;
     border: 0;
-  }
-
-  .widget--full .widget__title {
-    // text-align: left !important;
   }
 }
 

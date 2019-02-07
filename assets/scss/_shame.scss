@@ -123,7 +123,8 @@ p:empty {
 
       > .widget:last-child {
         @include spacing(margin-bottom, -4rem);
-        &:nth-of-type(2n) {
+
+        &:nth-of-type(2n):not(.dark):not(.highlighted):not(.widget_promo_box--dark) {
           margin-bottom: 0;
         }
       }
