@@ -29,3 +29,9 @@ Felt Lite is a free magazine‐style WordPress theme for publishers who want to 
 == Credits ==
 
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License.
+
+* Images: images by Soroush Karimi (https://stocksnap.io/author/35114) – [Source](https://stocksnap.io/photo/XT3HZBE9GI),
+Burst (https://stocksnap.io/author/burstshopify) – [Source](https://stocksnap.io/photo/LX71ZFLUKK),
+Rawpixel (https://stocksnap.io/author/rawpixel) – [Source](https://stocksnap.io/photo/EBXSDDE5IH),
+Rawpixel (https://stocksnap.io/author/rawpixel) – [Source](https://stocksnap.io/photo/LG7MWHTA8D),
+Nordwood (https://stocksnap.io/author/nordwood) – [Source](https://stocksnap.io/photo/KNSJXBFYFZ).
