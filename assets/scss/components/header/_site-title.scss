@@ -18,8 +18,6 @@
 .site-title.h1,
 h1.site-title {
   @include leading-map($logo-font);
-
-  color: $theme-text-color;
   text-transform: none;
   letter-spacing: 0;
 }

@@ -510,7 +510,9 @@ function felt_customify_main_content_section( $section_options, $options ) {
 				),
 
 				'main_content_heading_4_font' => array(
-					'selector' => $section_options['main_content']['options']['main_content_heading_4_font']['selector'] . ', .c-footer .widget .menu',
+					'selector' => $section_options['main_content']['options']['main_content_heading_4_font']['selector'] . ', 
+						.c-footer .menu
+					',
 					'default'  => array(
 						'font-family'    => VARIATION_SANS_SERIF_FONT,
 						'font-weight'    => '500',

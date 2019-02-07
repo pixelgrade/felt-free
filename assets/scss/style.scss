@@ -119,8 +119,17 @@ $content-class: '.entry-content';
 .sharedaddy {
   @include spacing(margin-top, 1rem);
 
-  &+& { @include spacing(margin-top, 2.5rem); }
+  & + & { @include spacing(margin-top, 2.5rem); }
   &:not(:last-child) { @include spacing(margin-bottom, 2.5rem); }
+}
+
+.menu {
+  list-style: none;
+  padding-left: 0;
+
+  .u-underlined-links & a {
+    text-decoration: none;
+  }
 }
 
 .entry-date + .entry-title {

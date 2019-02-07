@@ -5928,10 +5928,6 @@ body {
 .no-customify .c-gallery--blog .c-card__frame {
   padding-top: 75%; }
 
-::-moz-selection {
-  background: #000000;
-  color: #FFFFFF; }
-
 ::selection {
   background: #000000;
   color: #FFFFFF; }
@@ -11587,18 +11583,40 @@ h1.site-title {
           [id="footer-menu"] li a:before {
             right: -10.42442px; } }
 
-.widget .menu {
-  list-style: none;
-  padding-right: 0; }
-  .u-underlined-links .widget .menu a {
-    text-decoration: none; }
-
 .c-footer__zone--bottom {
   text-align: center; }
   .c-footer__zone--bottom .menu {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center; }
+    .c-footer__zone--bottom .menu ul {
+      margin-right: -28px; }
+      @media only screen and (max-width: 1360px) {
+        .c-footer__zone--bottom .menu ul {
+          margin-right: -22.17822px; } }
+      @media only screen and (max-width: 1024px) {
+        .c-footer__zone--bottom .menu ul {
+          margin-right: -18.36066px; } }
+      @media only screen and (max-width: 768px) {
+        .c-footer__zone--bottom .menu ul {
+          margin-right: -15.66434px; } }
+      @media only screen and (max-width: 320px) {
+        .c-footer__zone--bottom .menu ul {
+          margin-right: -13.65854px; } }
+    .c-footer__zone--bottom .menu li {
+      margin-right: 28px; }
+      @media only screen and (max-width: 1360px) {
+        .c-footer__zone--bottom .menu li {
+          margin-right: 22.17822px; } }
+      @media only screen and (max-width: 1024px) {
+        .c-footer__zone--bottom .menu li {
+          margin-right: 18.36066px; } }
+      @media only screen and (max-width: 768px) {
+        .c-footer__zone--bottom .menu li {
+          margin-right: 15.66434px; } }
+      @media only screen and (max-width: 320px) {
+        .c-footer__zone--bottom .menu li {
+          margin-right: 13.65854px; } }
   .c-footer__zone--bottom nav + .c-footer__copyright-text {
     margin-top: 14px; }
     @media only screen and (max-width: 1360px) {
@@ -14545,6 +14563,12 @@ body #infinite-handle span {
       .tags:not(:last-child),
       .sharedaddy:not(:last-child) {
         margin-bottom: 16.71642px; } }
+
+.menu {
+  list-style: none;
+  padding-right: 0; }
+  .u-underlined-links .menu a {
+    text-decoration: none; }
 
 .entry-date + .entry-title {
   padding-top: 42px; }

@@ -149,7 +149,7 @@ class Pixelgrade_Woocommerce_Customizer extends Pixelgrade_Singleton {
 					),
 					'main_content_body_text_color' => array(
 						'css' => array(
-							'xyz1' => array(
+							'woocommerce-checkout-order-background' => array(
 								'selector' => '.woocommerce-checkout .woocommerce-checkout:before',
 								'property' => 'background-color',
 							),
@@ -157,7 +157,7 @@ class Pixelgrade_Woocommerce_Customizer extends Pixelgrade_Singleton {
 					),
 					'main_content_content_background_color' => array(
 						'css' => array(
-							'xyz1' => array(
+							'woocommerce-menu-cart-color' => array(
 								'selector' => '.cart-count',
 								'property' => 'color',
 							),
@@ -165,7 +165,7 @@ class Pixelgrade_Woocommerce_Customizer extends Pixelgrade_Singleton {
 					),
 					'main_content_body_link_active_color' => array(
 						'css' => array(
-							'xyz1' => array(
+							'woocommerce-link-color' => array(
 								'property' => 'color',
 								'selector' => '
 									.woocommerce-categories a:hover,
@@ -176,11 +176,11 @@ class Pixelgrade_Woocommerce_Customizer extends Pixelgrade_Singleton {
 									.woocommerce p.stars a::before
 									'
 							),
-							'xyz2' => array(
+							'woocommerce-menu-cart-background-color' => array(
 								'property' => 'background-color',
 								'selector' => '.cart-count'
 							),
-							'xyz3' => array(
+							'woocommerce-radio-border-color' => array(
 								'selector' => 'input[type=radio]:checked',
 								'property' => 'border-color',
 							),

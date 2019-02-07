@@ -68,20 +68,17 @@
   }
 }
 
-.widget .menu {
-  list-style: none;
-  padding-left: 0;
-
-  .u-underlined-links & a {
-    text-decoration: none;
-  }
-}
-
 .c-footer__zone--bottom {
   text-align: center;
 
   .menu {
     justify-content: center;
+    @include spacing(margin-left, -1rem);
+
+    li {
+      @include spacing(margin-left, 1rem);
+      margin-bottom: 0;
+    }
   }
 
   nav + .c-footer__copyright-text {
