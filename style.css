@@ -14620,9 +14620,6 @@ body #infinite-handle span {
   word-wrap: normal !important;
   /* many screen reader and browser combinations announce broken words as they would appear visually */ }
 
-.widget--full .widget__title {
-  text-align: center; }
-
 p:empty {
   display: none; }
 
