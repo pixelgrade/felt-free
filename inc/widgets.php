@@ -110,13 +110,16 @@ function felt_widget_areas_init_front_page() {
 add_action( 'widgets_init', 'felt_widget_areas_init_front_page', 30 );
 
 /**
+ * Check if the Pro version is enabled.
+ * If so, some widgets description will be specific, regarding the widgets role.
+ *
  * @param string $id ID of the widget area
  *
  * @return string A specific message, regarding the status of the widget area.
  */
-function felt_pro_widget_description( $id ) {
+function felt_pro_widget_description($sidebar_id) {
 	if ( pixelgrade_user_has_access( 'pro-features' ) ) {
-		if ( $id === 'footer-featured' ) {
+		if ( $sidebar_id === 'footer-featured' ) {
 			return esc_html__( 'Site-wide widgets displayed above the Footer Area of your website.', '__theme_txtd' );
 		} else {
 			return esc_html__( 'Add widgets here.', '__theme_txtd' );
