@@ -114,8 +114,8 @@ add_action( 'widgets_init', 'felt_widget_areas_init_front_page', 30 );
  *
  * @return string A specific message, regarding the status of the widget area.
  */
-function felt_pro_widget_description($id) {
-	if ( ! pixelgrade_user_has_access( 'pro-features' ) ) {
+function felt_pro_widget_description( $id ) {
+	if ( pixelgrade_user_has_access( 'pro-features' ) ) {
 		if ( $id === 'footer-featured' ) {
 			return esc_html__( 'Site-wide widgets displayed above the Footer Area of your website.', '__theme_txtd' );
 		} else {
