@@ -79,10 +79,6 @@ if ( ! function_exists( 'felt_setup' ) ) {
 		add_image_size( 'felt-slide-image', 9999, 800, false );
 		// Used for hero image
 		add_image_size( 'felt-hero-image', 2700, 9999, false );
-		// Used for landscape images
-		add_image_size( 'pixelgrade_single_landscape', 1360, 9999, false );
-		// Used for portrait images
-		add_image_size( 'pixelgrade_single_portrait', 800, 9999, false );
 
 		/*
 		 * Add theme support for site logo
