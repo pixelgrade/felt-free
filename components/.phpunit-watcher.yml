@@ -1,4 +1,0 @@
-watch:
-directories:
-- ./tests
-fileMask: '*.php'
