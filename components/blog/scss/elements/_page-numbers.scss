@@ -1,0 +1,38 @@
+ul.page-numbers {
+  @include specific(2) {
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+    padding-left: 0;
+
+    @include spacing(margin-top, 5.5rem);
+    @include spacing(margin-left, -1rem);
+
+    & > * {
+      @include spacing(padding-left, 1rem);
+    }
+
+    li {
+      margin-bottom: 0;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:before,
+      &:after {
+        content: none;
+      }
+    }
+
+    .next,
+    .prev {
+      text-transform: none;
+
+      &:after {
+        padding: 0;
+      }
+    }
+  }
+}
