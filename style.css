@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /*!
 Theme Name: Felt
-Theme URI: https://wordpress.org/themes/felt/
 Author: Pixelgrade
 Author URI: https://pixelgrade.com
 Description: A magazine-style WordPress theme for publishers who want to showcase their fresh ideas.
@@ -9,16 +8,13 @@ Version: 2.3.0
 Tested up to: 5.0.3
 Requires at least: WordPress 4.9.6
 License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: LICENSE
 Text Domain: felt
 Domain Path: /languages/
 Tags: blog, entertainment, translation-ready, theme-options, featured-images, custom-colors, custom-menu, custom-logo, two-columns, three-columns, four-columns, editor-style, full-width-template, sticky-post, threaded-comments
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-
-Felt is based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
