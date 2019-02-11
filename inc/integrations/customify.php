@@ -33,7 +33,7 @@ add_filter( 'pixelgrade_customify_buttons_section_options', 'felt_customify_butt
 add_filter( 'pixelgrade_footer_customify_section_options', 'felt_customify_footer_section', 10, 2 );
 add_filter( 'pixelgrade_customify_blog_grid_section_options', 'felt_customify_blog_grid_section', 10, 2 );
 
-define( 'VARIATION_SERIF_FONT', 'Charter' );
+define( 'VARIATION_SERIF_FONT', 'Charis' );
 define( 'VARIATION_SANS_SERIF_FONT', 'HK Grotesk' );
 define( 'VARIATION_SITE_TITLE_FONT', 'Caudex' );
 
@@ -1236,9 +1236,9 @@ function felt_add_customify_theme_fonts( $fonts ) {
 		'src'      => get_template_directory_uri() . '/assets/fonts/hkgrotesk/stylesheet.css',
 		'variants' => array( '300', '400', '500', '700' )
 	);
-	$fonts['Charter']    = array(
-		'family'   => 'Charter',
-		'src'      => get_template_directory_uri() . '/assets/fonts/charter/stylesheet.css',
+	$fonts['Charis']    = array(
+		'family'   => 'Charis',
+		'src'      => get_template_directory_uri() . '/assets/fonts/charissil/stylesheet.css',
 		'variants' => array( '400', '400i', '700', '700i' )
 	);
 

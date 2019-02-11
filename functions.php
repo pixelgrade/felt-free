@@ -182,9 +182,9 @@ function felt_scripts() {
 	wp_enqueue_style( 'felt-google-fonts', felt_google_fonts_url() );
 
 	/* Default Self-hosted Fonts should be loaded when Customify is off */
-	if ( ! class_exists( 'PixCustomifyPlugin' ) ) {
-		wp_enqueue_style( 'felt-fonts-charter', felt_charter_font_url() );
-		$main_style_deps[] = 'felt-fonts-charter';
+	if ( ! class_exists( 'PixCustomifyPlugin' ) || ! pixelgrade_user_has_access( 'pro' ) ) {
+		wp_enqueue_style( 'felt-fonts-charissil', felt_charissil_font_url() );
+		$main_style_deps[] = 'felt-fonts-charissil';
 
 		wp_enqueue_style( 'felt-fonts-hkgrotesk', felt_hkgrotesk_font_url() );
 		$main_style_deps[] = 'felt-fonts-hkgrotesk';
@@ -202,8 +202,6 @@ function felt_scripts() {
 
 	wp_enqueue_script( 'felt-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array(), '20171201', true );
 	wp_enqueue_script( 'felt-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '20171201', true );
-
-	//The main script
 	wp_enqueue_script( 'felt-commons-scripts', get_theme_file_uri( '/assets/js/commons.js' ), array(), $theme->get( 'Version' ), true );
 	wp_enqueue_script( 'felt-scripts', get_theme_file_uri( '/assets/js/scripts'. $suffix .'.js' ), array( 'felt-commons-scripts', 'jquery', 'masonry', 'hoverIntent', 'felt-gsap', 'felt-select2', 'felt-slick' ), $theme->get( 'Version' ), true );
 
@@ -212,7 +210,7 @@ function felt_scripts() {
 	}
 
 	$translation_array = array(
-		'ajaxurl'      => esc_url( admin_url( 'admin-ajax.php' ) ),
+		'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),
 	);
 
 	wp_localize_script( 'felt-main-scripts', 'feltStrings', $translation_array );
@@ -222,7 +220,7 @@ add_action( 'wp_enqueue_scripts', 'felt_scripts' );
 function felt_gutenberg_styles() {
 	wp_enqueue_style( 'felt-gutenberg', get_theme_file_uri( '/editor.css' ), false );
 	wp_enqueue_style( 'felt-font-hkgrotesk', felt_hkgrotesk_font_url() );
-	wp_enqueue_style( 'felt-font-charter', felt_charter_font_url() );
+	wp_enqueue_style( 'felt-font-charissil', felt_charissil_font_url() );
 
 	$content_width = pixelgrade_option( 'main_content_content_width' );
 	$container_width = pixelgrade_option( 'main_content_container_width', 1300 ) - 300;

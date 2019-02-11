@@ -5455,7 +5455,7 @@ html {
   -webkit-font-smoothing: antialiased; }
 
 body {
-  font-family: "Charter", serif;
+  font-family: "Charis", serif;
   font-size: 20px;
   line-height: 1.5;
   color: #333131; }
@@ -5838,7 +5838,7 @@ body {
       font-size: 16.11789px; } }
 
 .c-card__excerpt {
-  font-family: "Charter", serif;
+  font-family: "Charis", serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
@@ -6451,7 +6451,7 @@ ul.page-numbers[class][class] {
     background: transparent !important; }
 
 .c-reading-bar__wrapper-title {
-  font-family: "Charter", serif;
+  font-family: "Charis", serif;
   font-size: 17px;
   font-weight: 300;
   letter-spacing: 0;
@@ -8932,7 +8932,7 @@ ul.page-numbers[class][class] {
       width: 100%;
       max-width: none; }
     .widget_top-posts ul li a {
-      font-family: "Charter", serif;
+      font-family: "Charis", serif;
       font-size: 18px;
       font-weight: 600; }
       @media only screen and (max-width: 1360px) {
@@ -10889,7 +10889,7 @@ a[rel='home'] {
   .c-navbar__label-text {
     margin-right: 10px;
     margin-top: 2px;
-    font-family: "Charter", serif;
+    font-family: "Charis", serif;
     font-size: 16px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -10986,7 +10986,7 @@ h1.site-title {
   border-radius: 10px;
   font-size: 14px;
   line-height: 1;
-  font-family: "Charter", serif;
+  font-family: "Charis", serif;
   font-weight: normal;
   letter-spacing: 0.1em;
   text-transform: uppercase; }
@@ -11327,7 +11327,7 @@ h1.site-title {
               transform: translateY(-50%);
       margin-right: 10px;
       background-color: transparent;
-      font-family: "Charter", serif;
+      font-family: "Charis", serif;
       font-weight: 600; }
     .menu--primary li[class*='children'] > a:after {
       content: none; }
@@ -11588,7 +11588,7 @@ h1.site-title {
         display: none; }
     [id="footer-menu"] li a {
       margin-right: 14px;
-      font-family: "Charter", serif;
+      font-family: "Charis", serif;
       font-size: 13px;
       font-weight: 400;
       letter-spacing: 0.07692em;
@@ -14088,7 +14088,7 @@ body #infinite-handle span {
   padding: 0 20px;
   background-color: #FFFFFF;
   border-top: 1px solid #e5e5e5;
-  font-family: "Charter", serif; }
+  font-family: "Charis", serif; }
   #infinite-footer .container {
     padding: 5px 0;
     width: auto !important;

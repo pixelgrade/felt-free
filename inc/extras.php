@@ -483,15 +483,15 @@ add_filter( 'pixelgrade_display_entry_header', 'felt_prevent_entry_title', 10, 2
  *
  * @return string
  */
-function felt_charter_font_url() {
+function felt_charissil_font_url() {
 
 	/* Translators: If there are characters in your language that are not
-	* supported by Charter, translate this to 'off'. Do not translate
+	* supported by Charis, translate this to 'off'. Do not translate
 	* into your own language.
 	*/
-	$charter = esc_html_x( 'on', 'Charter font: on or off', '__theme_txtd' );
-	if ( 'off' !== $charter ) {
-		return get_template_directory_uri() . '/assets/fonts/charter/stylesheet.css';
+	$charissil = esc_html_x( 'on', 'Charis font: on or off', '__theme_txtd' );
+	if ( 'off' !== $charissil ) {
+		return get_template_directory_uri() . '/assets/fonts/charissil/stylesheet.css';
 	}
 
 	return '';

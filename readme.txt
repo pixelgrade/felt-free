@@ -34,5 +34,6 @@ Images used in screenshot.jpg: photos by Soroush Karimi (https://stocksnap.io/au
 Felt Theme bundles the following third-party resources:
 * HK Grotesk font (c) 2015, [Alfredo Marco Pradil](hello@hanken.co) and HK Grotesk Cyrillic by [Stefan Peev](http://www.contextbg.net/), licensed under [SIL Open Font License v1.10](https://www.fontsquirrel.com/license/hk-grotesk)
 
+
 * commons.js: bundled scripts:
 rx.js script by mattpodwysocki (https://www.npmjs.com/~mattpodwysocki) and vvilhonen (https://www.npmjs.com/~vvilhonen), licensed under the [Apache 2.0](https://directory.fsf.org/wiki/License:Apache-2.0).

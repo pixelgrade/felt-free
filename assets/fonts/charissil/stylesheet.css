@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'Charis';
+    src: url('charissilb-webfont.woff2') format('woff2'),
+    url('charissilb-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Charis';
+    src: url('charissilbi-webfont.woff2') format('woff2'),
+    url('charissilbi-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Charis';
+    src: url('charissili-webfont.woff2') format('woff2'),
+    url('charissili-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Charis';
+    src: url('charissilr-webfont.woff2') format('woff2'),
+    url('charissilr-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
