@@ -191,9 +191,8 @@ function felt_scripts() {
 	}
 
 	/* The main theme stylesheet */
-	if ( ! is_rtl() ) {
-		wp_enqueue_style( 'felt-style', get_stylesheet_uri(), $main_style_deps, $theme->get( 'Version' ) );
-	}
+	wp_enqueue_style( 'felt-style', get_template_directory_uri() . '/style.css', $main_style_deps, $theme->get( 'Version' ) );
+	wp_style_add_data( 'felt-style', 'rtl', 'replace' );
 
 	/* Scripts */
 	wp_register_script( 'felt-gsap','//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js', array(), '2.0.2', true );
