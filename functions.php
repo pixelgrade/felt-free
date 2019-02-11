@@ -176,6 +176,7 @@ add_filter( 'tiled_gallery_content_width', 'felt_custom_tiled_gallery_width' );
 function felt_scripts() {
 	$theme = wp_get_theme();
 	$main_style_deps = array();
+	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
 	/* Default Google Fonts */
 	wp_enqueue_style( 'felt-google-fonts', felt_google_fonts_url() );
@@ -195,16 +196,16 @@ function felt_scripts() {
 	}
 
 	/* Scripts */
-	wp_register_script( 'felt-gsap','//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js', array(), null, true );
-	wp_register_script( 'felt-select2','//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js', array(), null, true );
-	wp_register_script( 'felt-slick','//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js', array(), null, true );
+	wp_register_script( 'felt-gsap','//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js', array(), '2.0.2', true );
+	wp_register_script( 'felt-select2','//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js', array(), '4.0.5', true );
+	wp_register_script( 'felt-slick','//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js', array(), '1.9.0', true );
 
 	wp_enqueue_script( 'felt-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array(), '20171201', true );
 	wp_enqueue_script( 'felt-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '20171201', true );
 
 	//The main script
 	wp_enqueue_script( 'felt-commons-scripts', get_theme_file_uri( '/assets/js/commons.js' ), array(), $theme->get( 'Version' ), true );
-	wp_enqueue_script( 'felt-scripts', get_theme_file_uri( '/assets/js/app.bundle.js' ), array( 'felt-commons-scripts', 'jquery', 'masonry', 'hoverIntent', 'felt-gsap', 'felt-select2', 'felt-slick' ), $theme->get( 'Version' ), true );
+	wp_enqueue_script( 'felt-scripts', get_theme_file_uri( '/assets/js/scripts'. $suffix .'.js' ), array( 'felt-commons-scripts', 'jquery', 'masonry', 'hoverIntent', 'felt-gsap', 'felt-select2', 'felt-slick' ), $theme->get( 'Version' ), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

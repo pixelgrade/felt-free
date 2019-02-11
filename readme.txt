@@ -1,15 +1,17 @@
 Theme Name: Felt
-Theme URI: https://pixelgrade.com/themes/felt/
 Author: Pixelgrade
 Author URI: https://pixelgrade.com
-Description: Felt is a free magazine-style WordPress theme for publishers who want to showcase their fresh ideas.
-Version: 1.0.0
+Description: A magazine-style WordPress theme for publishers who want to showcase their fresh ideas.
+Version: 2.3.0
+Requires at least: WordPress 4.9.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tested up to: 4.9.6
-Tags: translation-ready, theme-options, featured-images, custom-menu, custom-colors, two-columns, three-columns, four-columns
-Felt WordPress Theme, Copyright 2018 by Pixelgrade
-Felt is distributed under the terms of the GNU General Public License v2
+Text Domain: felt
+Domain Path: /languages/
+Tags: blog, entertainment, translation-ready, theme-options, featured-images, custom-colors, custom-menu, custom-logo, two-columns, three-columns, four-columns, editor-style,
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
 
 == Description ==
 
@@ -35,3 +37,6 @@ Burst (https://stocksnap.io/author/burstshopify) – [Source](https://stocksnap
 Rawpixel (https://stocksnap.io/author/rawpixel) – [Source](https://stocksnap.io/photo/EBXSDDE5IH),
 Rawpixel (https://stocksnap.io/author/rawpixel) – [Source](https://stocksnap.io/photo/LG7MWHTA8D),
 Nordwood (https://stocksnap.io/author/nordwood) – [Source](https://stocksnap.io/photo/KNSJXBFYFZ).
+
+* commons.js: bundled scripts:
+rx.js script by mattpodwysocki (https://www.npmjs.com/~mattpodwysocki) and vvilhonen (https://www.npmjs.com/~vvilhonen), licensed under the [Apache 2.0](https://directory.fsf.org/wiki/License:Apache-2.0).
