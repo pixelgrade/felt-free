@@ -27,7 +27,7 @@ if ( ! function_exists( 'felt_posted_on' ) ) {
 
 		$posted_on = sprintf(
 			/* translators: %s: The current post's posted date, in the post header */
-			esc_html_x( '%s', 'post date', '__theme_txtd' ),
+			esc_html_x( '%s', 'post date', '__theme_txtd' ), // @codingStandardsIgnoreLine
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
