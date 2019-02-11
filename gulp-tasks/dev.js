@@ -43,7 +43,7 @@ gulp.task( 'styles-main', 'Compiles main css files (ie. style.css editor-style.c
 gulp.task( 'styles-rtl', 'Generate rtl.css file based on style.css', function() {
 	return gulp.src( 'style.css' )
 	           .pipe( plugins.rtlcss() )
-	           .pipe( plugins.rename( 'rtl.css' ) )
+	           .pipe( plugins.rename( 'style-rtl.css' ) )
 	           .pipe( gulp.dest( '.' ) );
 } );
 
