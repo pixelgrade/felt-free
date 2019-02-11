@@ -6,6 +6,7 @@ Author: Pixelgrade
 Author URI: https://pixelgrade.com
 Description: A magazine-style WordPress theme for publishers who want to showcase their fresh ideas.
 Version: 2.3.0
+Tested up to: 5.0.3
 Requires at least: WordPress 4.9.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1774,18 +1775,14 @@ p .alignnone {
     .aligncenter,
     .alignnone {
       margin-bottom: 25.16854px; } }
-  .alignleft, .alignleft img,
-  .alignright,
+  .alignleft:not(.wp-block-gallery), .alignleft img,
+  .alignright:not(.wp-block-gallery),
   .alignright img,
-  .aligncenter,
+  .aligncenter:not(.wp-block-gallery),
   .aligncenter img,
-  .alignnone,
+  .alignnone:not(.wp-block-gallery),
   .alignnone img {
     display: block; }
-
-.alignnone,
-.aligncenter {
-  display: block; }
 
 .aligncenter {
   margin-left: auto;
@@ -4817,6 +4814,10 @@ fieldset {
             flex: 0 0 100%; }
   .comment-form p:not(:last-child) {
     margin-bottom: 2rem; }
+  .comment-form input[type="checkbox"] {
+    position: static;
+    margin-bottom: 0.25em;
+    vertical-align: middle; }
   .comment-form label {
     display: block;
     font-size: 90%;
