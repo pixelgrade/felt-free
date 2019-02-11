@@ -94,7 +94,7 @@ if ( ! class_exists( 'Pixelgrade_CategoriesImageGridWidget' ) ) :
 					'show_subcategories' => array(
 						'type'     => 'checkbox',
 						'label'    => esc_html__( 'Show Sub-categories', '__theme_txtd' ),
-						'desc'     => esc_html__( '', '__theme_txtd' ),
+						'desc'     => '',
 						'default'  => true,
 						'display_on'        => array(
 							'display' => true,
