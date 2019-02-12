@@ -90,7 +90,6 @@ function felt_customize_footer_config( $config ) {
 
 
 	if ( ! pixelgrade_user_has_access( 'pro-features' ) ) {
-		unset( $config['menu_locations']['footer'] );
 		unset( $config['sidebars']['sidebar-footer'] );
 	}
 
