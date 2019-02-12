@@ -34,6 +34,7 @@ Images used in screenshot.jpg: photos by Soroush Karimi (https://stocksnap.io/au
 The Felt Theme bundles the following third-party resources:
 * HK Grotesk font (c) 2015, [Alfredo Marco Pradil](hello@hanken.co) and HK Grotesk Cyrillic by [Stefan Peev](http://www.contextbg.net/), licensed under [SIL Open Font License v1.10](https://www.fontsquirrel.com/license/hk-grotesk)
 * Charis SIL (c) 1997-2008, [SIL International](http://scripts.sil.org/), licensed under [SIL Open Font License v1.0](https://www.fontsquirrel.com/license/Charis-SIL)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
-* bundled scripts in assets/js/commons.js: rx.js script by mattpodwysocki (https://www.npmjs.com/~mattpodwysocki) and vvilhonen (https://www.npmjs.com/~vvilhonen), licensed under the [Apache 2.0](https://directory.fsf.org/wiki/License:Apache-2.0).
+* normalize.css https://necolas.github.io/normalize.css/, (c) 2012-2016 Nicolas Gallagher and Jonathan Neal, licensed under [MIT](https://opensource.org/licenses/MIT)
+* slick http://kenwheeler.github.io/slick/, Copyright (c) 2017 [Ken Wheeler](https://github.com/kenwheeler), licensed under [MIT](https://opensource.org/licenses/MIT)
+* bundled scripts in assets/js/commons.js: rx.js script by mattpodwysocki (https://www.npmjs.com/~mattpodwysocki) and vvilhonen (https://www.npmjs.com/~vvilhonen), licensed under [Apache 2.0](https://directory.fsf.org/wiki/License:Apache-2.0).
 
