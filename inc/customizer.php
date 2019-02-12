@@ -91,7 +91,7 @@ function felt_sanitize_transparent_logo( $input ) {
 
 
 /* =========================
- * SANITIZATION FOR SETTINGS - EXAMPLES
+ * SANITIZATION FOR SETTINGS
  * ========================= */
 
 /**
@@ -134,10 +134,10 @@ function felt_sanitize_checkbox( $input ) {
  *
  * @see felt_customize_register()
  *
- * @return void
+ * @return string
  */
 function felt_customize_partial_blogname() {
-	bloginfo( 'name' );
+	return get_bloginfo( 'name', 'display' );
 }
 
 /**
@@ -145,10 +145,10 @@ function felt_customize_partial_blogname() {
  *
  * @see felt_customize_register()
  *
- * @return void
+ * @return string
  */
 function felt_customize_partial_blogdescription() {
-	bloginfo( 'description' );
+	return get_bloginfo( 'description', 'display' );
 }
 
 /**
@@ -174,5 +174,4 @@ function felt_customizer_partial_transparent_logo() {
 function felt_customize_preview_js() {
 	wp_enqueue_script( 'felt_customizer', pixelgrade_get_theme_file_uri( '/assets/js/customizer.js' ), array( 'customize-preview' ), '20171201', true );
 }
-
 add_action( 'customize_preview_init', 'felt_customize_preview_js' );
