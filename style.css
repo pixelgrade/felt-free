@@ -3,7 +3,7 @@ Theme Name: Felt
 Author: Pixelgrade
 Author URI: https://pixelgrade.com
 Description: A magazine-style WordPress theme for publishers who want to showcase their fresh ideas.
-Version: 2.3.0.1
+Version: 2.3.0.2
 Tested up to: 5.0.3
 Requires at least: WordPress 4.9.6
 License: GNU General Public License v2 or later
@@ -18,10 +18,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
-/* stylelint-disable */
-/* stylelint-enable */
-/* stylelint-disable */
-/* stylelint-enable */
+
 /* Slider */
 .slick-slider {
   position: relative;
