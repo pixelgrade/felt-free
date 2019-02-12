@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for the scroll down arrow for the full-screen hero
+ * The template for the scroll down arrow for the full-screen hero.
  *
  * @package Felt
  * @since Felt 1.0.0

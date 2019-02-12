@@ -1,3 +1,16 @@
+<?php
+/**
+ * The template part used for displaying the entry content.
+ *
+ * @package Felt
+ * @since 1.0.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+?>
+
 <div class="entry-content  u-content-width">
 	<?php
 	the_content( sprintf(

@@ -5,6 +5,11 @@
  * @package Felt
  * @since 1.0.0
  */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 ?>
 
 <div class="site-header-sticky  js-site-header-sticky">
@@ -21,7 +26,7 @@
 					if ( ! empty( $next_post ) && ! is_wp_error( $next_post ) ): ?>
 						<div class="c-reading-bar__wrapper-title  c-reading-bar__wrapper-title--next">
 							<label class="post-title__label"><?php esc_html_e( 'Next:', '__theme_txtd' ); ?></label>
-							<a class="post-title__post-name" href="<?php echo get_permalink( $next_post ); ?>">
+							<a class="post-title__post-name" href="<?php the_permalink( $next_post ); ?>">
 								<?php echo get_the_title( $next_post ); ?>
 							</a>
 						</div><!-- .c-reading-bar__wrapper-title -->

@@ -8,19 +8,8 @@
  * @global array $slides All the slides.
  * @global ...there are more
  *
- * This template can be overridden by copying it to a child theme or in the same theme
- * by putting it in template-parts/slides/slide-featured-post.php.
- *
- * HOWEVER, on occasion Pixelgrade will need to update template files and you
- * will need to copy the new files to your child theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see 	    https://pixelgrade.com
- * @author 		Pixelgrade
- * @package 	Components/Hero
- * @version     1.0.1
+ * @package Felt
+ * @since 2.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

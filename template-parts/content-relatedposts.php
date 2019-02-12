@@ -8,6 +8,10 @@
  * @since 1.0.0
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 //@todo Make sure that things go smoothly in the Customizer (Jetpack uses some dummy content in its logic)
 
 //we first need to know the bigger picture - the location this template part was loaded from

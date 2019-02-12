@@ -1,4 +1,16 @@
-<svg width="26px" height="27px" viewBox="0 0 26 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?php
+/**
+ * Template part for displaying the SVG icon search.
+ *
+ * @package Felt
+ * @since 1.0.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+?><svg width="26px" height="27px" viewBox="0 0 26 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g class="search-trigger__icon" transform="translate(-1379.000000, -34.000000)" fill="currentColor">
             <g transform="translate(42.000000, 0.000000)">

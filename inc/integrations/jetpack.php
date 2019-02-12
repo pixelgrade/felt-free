@@ -78,6 +78,11 @@ function felt_infinite_scroll_render() {
 	}
 }
 
+/**
+ * Activate the use of the Jetpack Social Menu in the footer component.
+ */
+add_filter( 'pixelgrade_footer_use_jetpack_social_menu', '__return_true' );
+
 /* ===================
  * Jetpack Sharing Options
  * =================== */

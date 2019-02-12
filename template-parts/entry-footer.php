@@ -1,3 +1,16 @@
+<?php
+/**
+ * The template part used for displaying the entry footer.
+ *
+ * @package Felt
+ * @since 1.0.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+?>
+
 <div class="entry-aside  u-content-width">
 	<?php
 	// The bellow post widget area

@@ -193,7 +193,7 @@ if ( ! class_exists( 'Felt_Lite_About_Page' ) ) {
 		public function ti_about_page_welcome_admin_notice() {
 			if ( ! empty( $this->notification ) ) {
 				echo '<div class="updated notice is-dismissible">';
-				echo wp_kses_post( $this->notification );
+				echo wp_kses_post( $this->notification ); // WPCS: XSS OK.
 				echo '</div>';
 			}
 		}
@@ -223,7 +223,7 @@ if ( ! class_exists( 'Felt_Lite_About_Page' ) ) {
 					echo '</h1>';
 				}
 				if ( ! empty( $welcome_content ) ) {
-					echo '<div class="about-text">' . wp_kses_post( $welcome_content ) . '</div>';
+					echo '<div class="about-text">' . wp_kses_post( $welcome_content ) . '</div>'; // WPCS: XSS OK.
 				}
 
 				echo '<a href="https://pixelgrade.com/" target="_blank" class="wp-badge epsilon-welcome-logo"></a>';
@@ -432,10 +432,10 @@ if ( ! class_exists( 'Felt_Lite_About_Page' ) ) {
 
 						echo '<div class="col">';
 						if ( ! empty( $getting_started_item['title'] ) ) {
-							echo '<h3>' . wp_kses_post( $getting_started_item['title'] ) . '</h3>';
+							echo '<h3>' . wp_kses_post( $getting_started_item['title'] ) . '</h3>'; // WPCS: XSS OK.
 						}
 						if ( ! empty( $getting_started_item['text'] ) ) {
-							echo '<p>' . wp_kses_post( $getting_started_item['text'] ) . '</p>';
+							echo '<p>' . wp_kses_post( $getting_started_item['text'] ) . '</p>'; // WPCS: XSS OK.
 						}
 						if ( ! empty( $getting_started_item['button_link'] ) && ! empty( $getting_started_item['button_label'] ) ) {
 
@@ -534,11 +534,11 @@ if ( ! class_exists( 'Felt_Lite_About_Page' ) ) {
 						}
 
 						if ( ! empty( $action_value['title'] ) ) {
-							echo '<h3>' . wp_kses_post( $action_value['title'] ) . '</h3>';
+							echo '<h3>' . wp_kses_post( $action_value['title'] ) . '</h3>'; // WPCS: XSS OK.
 						}
 
 						if ( ! empty( $action_value['description'] ) ) {
-							echo '<p>' . wp_kses_post( $action_value['description'] ) . '</p>';
+							echo '<p>' . wp_kses_post( $action_value['description'] ) . '</p>'; // WPCS: XSS OK.
 						}
 
 						if ( ! empty( $action_value['plugin_slug'] ) ) {
@@ -618,7 +618,7 @@ if ( ! class_exists( 'Felt_Lite_About_Page' ) ) {
 								echo '<span class="version">'. ( ! empty( $this->config['recommended_plugins']['version_label'] ) ? esc_html( $this->config['recommended_plugins']['version_label'] ) : '' ) . esc_html( $info->version ).'</span>';
 							}
 							if ( ! empty( $info->author ) ) {
-								echo '<span class="separator"> | </span>' . wp_kses_post( $info->author );
+								echo '<span class="separator"> | </span>' . wp_kses_post( $info->author ); // WPCS: XSS OK.
 							}
 
 							if ( ! empty( $info->name ) && ! empty( $active ) ) {
@@ -687,7 +687,7 @@ if ( ! class_exists( 'Felt_Lite_About_Page' ) ) {
 								echo '<div class="ti-about-page-child-theme-details">';
 								if ( $child['title'] != $this->theme_name ) {
 									echo '<div class="theme-details">';
-									echo '<span class="theme-name">' . wp_kses_post( $child['title'] ) . '</span>';
+									echo '<span class="theme-name">' . wp_kses_post( $child['title'] ) . '</span>'; // WPCS: XSS OK.
 									if ( ! empty( $child['download_link'] ) && ! empty( $child_themes['download_button_label'] ) ) {
 										echo '<a href="' . esc_url( $child['download_link'] ) . '" class="button button-primary install right">' . esc_html( $child_themes['download_button_label'] ) . '</a>';
 									}
@@ -729,12 +729,12 @@ if ( ! class_exists( 'Felt_Lite_About_Page' ) ) {
 							if ( ! empty( $support_step['icon'] ) ) {
 								echo '<i class="' . esc_attr( $support_step['icon'] ) . '"></i>';
 							}
-							echo wp_kses_post( $support_step['title'] );
+							echo wp_kses_post( $support_step['title'] ); // WPCS: XSS OK.
 							echo '</h3>';
 						}
 
 						if ( ! empty( $support_step['text'] ) ) {
-							echo '<p><i>' . wp_kses_post( $support_step['text'] ) . '</i></p>';
+							echo '<p><i>' . wp_kses_post( $support_step['text'] ) . '</i></p>'; // WPCS: XSS OK.
 						}
 
 						if ( ! empty( $support_step['button_link'] ) && ! empty( $support_step['button_label'] ) ) {
@@ -775,10 +775,10 @@ if ( ! class_exists( 'Felt_Lite_About_Page' ) ) {
 				echo '<div class="featured-section changelog">';
 				foreach ( $changelog as $release ) {
 					if ( ! empty( $release['title'] ) ) {
-						echo '<h2>' . wp_kses_post( $release['title'] ) . ' </h2 > ';
+						echo '<h2>' . wp_kses_post( $release['title'] ) . ' </h2 > '; // WPCS: XSS OK.
 					}
 					if ( ! empty( $release['changes'] ) ) {
-						echo wp_kses_post( implode( '<br/>', $release['changes'] ) );
+						echo wp_kses_post( implode( '<br/>', $release['changes'] ) ); // WPCS: XSS OK.
 					}
 				}
 				echo '</div><!-- .featured-section.changelog -->';
@@ -842,10 +842,10 @@ if ( ! class_exists( 'Felt_Lite_About_Page' ) ) {
 						if ( ! empty( $feature['title'] ) || ! empty( $feature['description'] ) ) {
 							echo '<td>';
 							if ( ! empty( $feature['title'] ) ) {
-								echo '<h3>' . wp_kses_post( $feature['title'] ) . '</h3>';
+								echo '<h3>' . wp_kses_post( $feature['title'] ) . '</h3>'; // WPCS: XSS OK.
 							}
 							if ( ! empty( $feature['description'] ) ) {
-								echo '<p>' . wp_kses_post( $feature['description'] ) . '</p>';
+								echo '<p>' . wp_kses_post( $feature['description'] ) . '</p>'; // WPCS: XSS OK.
 							}
 							echo '</td>';
 						}

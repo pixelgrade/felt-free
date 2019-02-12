@@ -87,7 +87,7 @@ function felt_body_classes( $classes ) {
 	}
 
 	// If we are on some archive and we don't display featured images (or placeholders), we need to keep the header short
-	if ( ( is_home() || is_archive() || is_search() ) && ! felt_display_featured_images() ) {
+	if ( ( is_home() || is_archive() || is_search() ) && ! pixelgrade_display_featured_images() ) {
 		$classes[] = 'u-site-header-short';
 	}
 
@@ -101,7 +101,6 @@ function felt_body_classes( $classes ) {
 
 	return $classes;
 }
-
 add_filter( 'body_class', 'felt_body_classes' );
 
 function felt_body_attributes( $attributes ) {
@@ -113,98 +112,7 @@ function felt_body_attributes( $attributes ) {
 
 	return $attributes;
 }
-
 add_filter( 'pixelgrade_body_attributes', 'felt_body_attributes', 10, 1 );
-
-/**
- * Display the classes for the blog wrapper.
- *
- * @param string|array $class Optional. One or more classes to add to the class list.
- * @param string|array $location Optional. The place (template) where the classes are displayed. This is a hint for filters.
- */
-function felt_blog_class( $class = '', $location = '' ) {
-	// Separates classes with a single space, collates classes
-	echo 'class="' . join( ' ', felt_get_blog_class( $class, $location ) ) . '"';
-}
-
-/**
- * Retrieve the classes for the portfolio wrapper as an array.
- *
- * @since Felt 1.0
- *
- * @param string|array $class Optional. One or more classes to add to the class list.
- * @param string|array $location Optional. The place (template) where the classes are displayed. This is a hint for filters.
- *
- * @return array Array of classes.
- */
-function felt_get_blog_class( $class = '', $location = '' ) {
-
-	$classes = array();
-
-	$classes[] = 'c-gallery c-gallery--blog';
-	// layout
-	$grid_layout       = pixelgrade_option( 'blog_grid_layout', 'regular' );
-	$grid_layout_class = "c-gallery--" . $grid_layout;
-	$classes[]         = $grid_layout_class;
-
-	if ( $grid_layout == 'masonry' ) {
-		$classes[] = 'js-masonry';
-	}
-
-	// items per row
-	$items_per_row          = intval( pixelgrade_option( 'blog_items_per_row', 3 ) );
-	$items_per_row_at_desk  = $items_per_row;
-	$items_per_row_at_lap   = $items_per_row == 1 ? 1 : $items_per_row > 4 ? $items_per_row - 1 : $items_per_row;
-	$items_per_row_at_small = $items_per_row_at_lap > 1 ? $items_per_row_at_lap - 1 : $items_per_row_at_lap;
-	$items_per_row_class    = 'o-grid--' . $items_per_row_at_desk . 'col-@desk o-grid--' . $items_per_row_at_lap . 'col-@lap o-grid--' . $items_per_row_at_small . 'col-@xsmall';
-	// title position
-	$title_position       = pixelgrade_option( 'blog_items_title_position', 'regular' );
-	$title_position_class = 'c-gallery--title-' . $title_position;
-
-	if ( $title_position == 'overlay' ) {
-		$title_alignment_class = 'c-gallery--title-' . pixelgrade_option( 'blog_items_title_alignment_overlay', 'bottom-left' );
-	} else {
-		$title_alignment_class = 'c-gallery--title-' . pixelgrade_option( 'blog_items_title_alignment_nearby', 'left' );
-	}
-
-	$classes[] = $title_position_class;
-	$classes[] = $title_alignment_class;
-	$classes[] = $items_per_row_class;
-
-	if ( ! empty( $class ) ) {
-		if ( ! is_array( $class ) ) {
-			$class = preg_split( '#\s+#', $class );
-		}
-		$classes = array_merge( $classes, $class );
-	} else {
-		// Ensure that we always coerce class to being an array.
-		$class = array();
-	}
-
-	$classes = array_map( 'esc_attr', $classes );
-
-	/**
-	 * Filters the list of CSS classes for the blog wrapper.
-	 *
-	 * @param array $classes An array of header classes.
-	 * @param array $class An array of additional classes added to the blog wrapper.
-	 * @param string|array $location The place (template) where the classes are displayed.
-	 */
-	$classes = apply_filters( 'felt_blog_class', $classes, $class, $location );
-
-	return array_unique( $classes );
-}
-
-/**
- * Add a pingback url auto-discovery header for singularly identifiable articles.
- */
-function felt_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="' . get_bloginfo( 'pingback_url', 'display' ) . '">';
-	}
-}
-
-add_action( 'wp_head', 'felt_pingback_header' );
 
 if ( ! function_exists( 'felt_google_fonts_url' ) ) :
 	/**
@@ -276,96 +184,43 @@ if ( ! function_exists( 'felt_google_fonts_url' ) ) :
 	} #function
 endif;
 
-if ( ! function_exists( 'felt_has_post_thumbnail' ) ) :
+/**
+ * Get the Charis SIL font URL
+ *
+ * @return string
+ */
+function felt_charissil_font_url() {
 
-	function felt_has_portrait_thumbnail( $post_id = null ) {
-
-		// $post is the current post
-		$post = get_post( $post_id );
-
-		$jetpack_show_single_featured_image = get_option( 'jetpack_content_featured_images_post', true );
-
-		// Bail if no post or the image is hidden from Jetpack's content options
-		if ( empty( $post ) || empty( $jetpack_show_single_featured_image ) ) {
-			return 'none';
-		}
-
-		$image_type = pixelgrade_get_image_aspect_ratio_type( get_post_thumbnail_id( $post ), 'none' );
-
-		if ( 'portrait' === $image_type ) {
-			return true;
-		}
-
-		return false;
+	/* Translators: If there are characters in your language that are not
+	* supported by Charis SIL, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$charissil = esc_html_x( 'on', 'Charis SIL font: on or off', '__theme_txtd' );
+	if ( 'off' !== $charissil ) {
+		return get_template_directory_uri() . '/assets/fonts/charissil/stylesheet.css';
 	}
 
-endif;
+	return '';
+}
 
-if ( ! function_exists( 'felt_has_landscape_thumbnail' ) ) :
-	/**
-	 * Get the class corresponding to the aspect ratio of the post featured image
-	 *
-	 * @since Felt 1.0
-	 *
-	 * @param int|WP_Post $post_id Optional. Post ID or post object.
-	 *
-	 * @return string Aspect ratio specific class.
-	 */
-	function felt_has_landscape_thumbnail( $post_id = null ) {
+/**
+ * Get the HK Grotesk font URL
+ *
+ * @return string
+ */
+function felt_hkgrotesk_font_url() {
 
-		// $post is the current post
-		$post = get_post( $post_id );
-
-		$jetpack_show_single_featured_image = get_option( 'jetpack_content_featured_images_post', true );
-
-		// Bail if no post or the image is hidden from Jetpack's content options
-		if ( empty( $post ) || empty( $jetpack_show_single_featured_image ) ) {
-			return 'none';
-		}
-
-		$image_type = pixelgrade_get_image_aspect_ratio_type( get_post_thumbnail_id( $post ), 'none' );
-
-		if ( 'landscape' === $image_type ) {
-			return true;
-		}
-
-		return false;
+	/* Translators: If there are characters in your language that are not
+	* supported by HK Grotesk, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$hk_grotesk = esc_html_x( 'on', 'HK Grotesk font: on or off', '__theme_txtd' );
+	if ( 'off' !== $hk_grotesk ) {
+		return get_template_directory_uri() . '/assets/fonts/hkgrotesk/stylesheet.css';
 	}
 
-endif;
-
-if ( ! function_exists( 'felt_has_no_thumbnail' ) ) :
-	/**
-	 * Get the class corresponding to the aspect ratio of the post featured image
-	 *
-	 * @since Felt 1.0
-	 *
-	 * @param int|WP_Post $post_id Optional. Post ID or post object.
-	 *
-	 * @return string Aspect ratio specific class.
-	 */
-	function felt_has_no_thumbnail( $post_id = null ) {
-
-		// $post is the current post
-		$post = get_post( $post_id );
-
-		$jetpack_show_single_featured_image = get_option( 'jetpack_content_featured_images_post', true );
-
-		// Bail if no post or the image is hidden from Jetpack's content options
-		if ( empty( $post ) || empty( $jetpack_show_single_featured_image ) ) {
-			return 'none';
-		}
-
-		$image_type = pixelgrade_get_image_aspect_ratio_type( get_post_thumbnail_id( $post ), 'none' );
-
-		if ( 'none' === $image_type ) {
-			return true;
-		}
-
-		return false;
-	} #function
-
-endif;
+	return '';
+}
 
 if ( ! function_exists( 'felt_comment_form_custom_fields' ) ) :
 	/**
@@ -413,7 +268,6 @@ function felt_mce_editor_buttons( $buttons ) {
 
 	return $buttons;
 }
-
 add_filter( 'mce_buttons_2', 'felt_mce_editor_buttons' );
 
 /**
@@ -441,10 +295,9 @@ function felt_mce_before_init( $settings ) {
 
 	return $settings;
 }
-
 add_filter( 'tiny_mce_before_init', 'felt_mce_before_init' );
 
-// Remove the main category from the category list since we will shot it separately
+// Remove the main category from the category list since we will show it separately
 add_filter( 'the_category_list', 'pixelgrade_remove_main_category_from_list', 10, 2 );
 
 /**
@@ -452,7 +305,7 @@ add_filter( 'the_category_list', 'pixelgrade_remove_main_category_from_list', 10
  *
  * @since Felt 1.0
  *
- * @param bool $display
+ * @param bool $show
  * @param string|array $location
  *
  * @return bool
@@ -474,49 +327,7 @@ function felt_prevent_entry_title( $show, $location ) {
 
 	return $show;
 }
-
 add_filter( 'pixelgrade_display_entry_header', 'felt_prevent_entry_title', 10, 2 );
-
-
-/**
- * Generate the HK Grotesk font URL
- *
- * @return string
- */
-function felt_charissil_font_url() {
-
-	/* Translators: If there are characters in your language that are not
-	* supported by Charis, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$charissil = esc_html_x( 'on', 'Charis font: on or off', '__theme_txtd' );
-	if ( 'off' !== $charissil ) {
-		return get_template_directory_uri() . '/assets/fonts/charissil/stylesheet.css';
-	}
-
-	return '';
-}
-
-/**
- * Generate the HK Grotesk font URL
- *
- * @return string
- */
-function felt_hkgrotesk_font_url() {
-
-	/* Translators: If there are characters in your language that are not
-	* supported by HK Grotesk, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$hk_grotesk = esc_html_x( 'on', 'HK Grotesk font: on or off', '__theme_txtd' );
-	if ( 'off' !== $hk_grotesk ) {
-		return get_template_directory_uri() . '/assets/fonts/hkgrotesk/stylesheet.css';
-	}
-
-	return '';
-}
-
-add_filter( 'pixelgrade_footer_use_jetpack_social_menu', '__return_true' );
 
 function felt_modify_embed_defaults() {
 	$content_width = pixelgrade_option( 'main_content_content_width', 720 );

@@ -1,6 +1,6 @@
 <?php
 /**
- *  This template is used to display the content of a featured post slide in the hero.
+ * This template is used to display the content of a featured post slide in the hero.
  *
  * @global int $slide_index The current slide index.
  * @global array $slide The current slide.
@@ -8,19 +8,8 @@
  * @global $location
  * @global ...there are more
  *
- * This template can be overridden by copying it to a child theme or in the same theme
- * by putting it in template-parts/slides/slide-content-featured-post.php.
- *
- * HOWEVER, on occasion Pixelgrade will need to update template files and you
- * will need to copy the new files to your child theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see        https://pixelgrade.com
- * @author        Pixelgrade
- * @package    Components/Hero
- * @version     1.0.0
+ * @package Felt
+ * @since 2.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -61,7 +50,7 @@ $link_post_label = trim( esc_html__( 'Read More', '__theme_txtd' ) );
 				<div class="c-meta">
 					<?php
 					if ( $primary_meta_output ) {
-						echo '<div class="c-meta__primary">' . $primary_meta_output . '</div>';
+						echo '<div class="c-meta__primary">' . $primary_meta_output . '</div>'; // WPCS: XSS OK.
 						// Add a separator if we also have secondary meta
 						if ( $secondary_meta_output ) {
 							echo '<div class="c-meta__separator js-card-meta-separator"></div>';
@@ -69,7 +58,7 @@ $link_post_label = trim( esc_html__( 'Read More', '__theme_txtd' ) );
 					}
 
 					if ( $secondary_meta_output ) {
-						echo '<div class="c-meta__secondary">' . $secondary_meta_output . '</div>';
+						echo '<div class="c-meta__secondary">' . $secondary_meta_output . '</div>'; // WPCS: XSS OK.
 					} ?>
 				</div>
 			</div>
@@ -90,7 +79,7 @@ $link_post_label = trim( esc_html__( 'Read More', '__theme_txtd' ) );
 		if ( ! empty( $link_project_label ) ) { ?>
 			<div class="c-hero__action">
 				<span class="link--arrow  light">
-					<?php echo $link_project_label ?>
+					<?php echo $link_project_label; // WPCS: XSS OK. ?>
 				</span>
 			</div>
 		<?php } ?>

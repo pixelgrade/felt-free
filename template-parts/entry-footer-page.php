@@ -1,4 +1,16 @@
-<?php if ( get_edit_post_link() ) : ?>
+<?php
+/**
+ * The template part used for displaying the entry footer for pages.
+ *
+ * @package Felt
+ * @since 1.0.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
+if ( get_edit_post_link() ) : ?>
     <footer class="entry-footer  u-content-width">
         <?php
         edit_post_link(
@@ -12,10 +24,9 @@
         );
         ?>
     </footer><!-- .entry-footer -->
-<?php endif; ?>
+<?php endif;
 
-<?php
 // If comments are open or we have at least one comment, load up the comment template.
 if ( comments_open() || get_comments_number() ) :
     pixelgrade_comments_template();
-endif; ?>
+endif;

@@ -669,7 +669,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 				<?php
 				if ( ! empty( $this->message ) && is_string( $this->message ) ) {
-					echo wp_kses_post( $this->message );
+					echo wp_kses_post( $this->message ); // WPCS: XSS OK.
 				}
 				?>
 				<?php $plugin_table->views(); ?>
@@ -957,8 +957,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				$activate = activate_plugin( $file_path );
 
 				if ( is_wp_error( $activate ) ) {
-					echo '<div id="message" class="error"><p>', wp_kses_post( $activate->get_error_message() ), '</p></div>',
-					'<p><a href="', esc_url( $this->get_tgmpa_url() ), '" target="_parent">', esc_html( $this->strings['return'] ), '</a></p>';
+					echo '<div id="message" class="error"><p>' . wp_kses_post( $activate->get_error_message() ) . '</p></div>' .
+					'<p><a href="' . esc_url( $this->get_tgmpa_url() ) . '" target="_parent">' . esc_html( $this->strings['return'] ) . '</a></p>';
 
 					return false; // End it here if there is an error with activation.
 				} else {
@@ -2410,7 +2410,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 						'<a href="%s"%s>%s</a>',
 						esc_url( $this->tgmpa->get_tgmpa_status_url( $type ) ),
 						( $type === $this->view_context ) ? ' class="current"' : '',
-						sprintf( $text, number_format_i18n( $count ) )
+						wp_kses_post( sprintf( $text, number_format_i18n( $count ) ) )
 					);
 				}
 			}

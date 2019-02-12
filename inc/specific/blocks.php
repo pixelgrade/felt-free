@@ -154,14 +154,14 @@ function variation_change_blog_component_config() {
 			'image-landscape' => array(
 				'extend' => 'blog/single-landscape',
 				'checks' => array(
-					'callback' => 'felt_has_portrait_thumbnail',
+					'callback' => 'pixelgrade_has_portrait_thumbnail',
 					'compare' => 'NOT'
 				),
 			),
 			'image-portrait'  => array(
 				'extend' => 'blog/single-portrait',
 				'checks' => array(
-					'callback' => 'felt_has_portrait_thumbnail'
+					'callback' => 'pixelgrade_has_portrait_thumbnail'
 				),
 			),
 		),
