@@ -117,7 +117,7 @@ function felt_lite_admin_setup() {
 					'is_in_pro'   => 'true',
 				),
 				array(
-					'title'       => esc_html__( 'New Widgets for Extra Flexiblity', '__theme_txtd' ),
+					'title'       => esc_html__( 'New Widgets for Extra Flexibility', '__theme_txtd' ),
 					'description' => esc_html__( 'Felt PRO gives you extra ways to showcase your articles in great style. Besides the Slideshow, Featured and Grid Posts widgets, the PRO version comes with much more: Carousel, List Posts, Categories Images, and many others.', '__theme_txtd' ),
 					'is_in_lite'  => 'false',
 					'is_in_pro'   => 'true',
