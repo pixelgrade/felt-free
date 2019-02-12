@@ -893,7 +893,6 @@ if ( ! class_exists( 'Felt_Lite_About_Page' ) ) {
 				wp_enqueue_script( 'plugin-install' );
 				wp_enqueue_script( 'updates' );
 
-				$recommended_actions         = isset( $this->config['recommended_actions'] ) ? $this->config['recommended_actions'] : array();
 				$required_actions = $this->get_required_actions();
 				wp_localize_script(
 					'ti-about-page-js', 'tiAboutPageObject', array(
