@@ -47,6 +47,8 @@ add_action( 'customize_controls_enqueue_scripts', 'felt_lite_customizer_assets' 
 
 /**
  * Add PRO Tab in Customizer
+ *
+ * @param WP_Customize_Manager $wp_customize
  */
 function felt_lite_customize_register( $wp_customize ) {
 	// View Pro
@@ -83,7 +85,7 @@ function felt_lite_customize_register( $wp_customize ) {
                         
                 </ul> %s </div>', '__theme_txtd'
 				),
-				sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( felt_lite_get_pro_link() ), esc_html__( 'Get Felt Pro', '__theme_txtd' ) )
+				sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( felt_get_pro_link() ), esc_html__( 'Get Felt Pro', '__theme_txtd' ) )
 			),
 		)
 	);
@@ -108,14 +110,19 @@ add_action( 'customize_register', 'felt_lite_customize_register' );
 /**
  * Generate a link to the Felt info page.
  */
-function felt_lite_get_pro_link() {
+function felt_get_pro_link() {
 	return 'https://pixelgrade.com/themes/blogging/felt-pro?utm_source=felt-lite-clients&utm_medium=customizer&utm_campaign=felt-lite';
 }
 
-function felt_lite_body_classes( $classes ) {
+function felt_lite_footer_credits_url( $url ) {
+	return 'https://pixelgrade.com/?utm_source=felt-lite-clients&utm_medium=footer&utm_campaign=felt-lite';
+}
+add_filter( 'pixelgrade_footer_credits_url', 'felt_lite_footer_credits_url' );
+
+function felt_lite_body_class( $classes ) {
 
 	$classes[] = 'lite-version';
 
 	return $classes;
 }
-add_filter( 'body_class', 'felt_lite_body_classes' );
+add_filter( 'body_class', 'felt_lite_body_class' );
