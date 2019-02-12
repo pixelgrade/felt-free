@@ -192,27 +192,24 @@ function felt_scripts() {
 
 	/* The main theme stylesheet */
 	wp_enqueue_style( 'felt-style', get_template_directory_uri() . '/style.css', $main_style_deps, $theme->get( 'Version' ) );
+
 	wp_style_add_data( 'felt-style', 'rtl', 'replace' );
 
 	/* Scripts */
-	wp_register_script( 'felt-gsap','//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js', array(), '2.0.2', true );
-	wp_register_script( 'felt-select2','//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js', array(), '4.0.5', true );
-	wp_register_script( 'felt-slick','//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js', array(), '1.9.0', true );
+	wp_register_script( 'gsap-tweenmax','//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js', array(), '2.0.2', true );
+	wp_register_script( 'select2','//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js', array(), '4.0.5', true );
+	wp_register_script( 'slick-carousel','//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js', array(), '1.9.0', true );
 
-	wp_enqueue_script( 'felt-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array(), '20171201', true );
-	wp_enqueue_script( 'felt-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '20171201', true );
 	wp_enqueue_script( 'felt-commons-scripts', get_theme_file_uri( '/assets/js/commons.js' ), array(), $theme->get( 'Version' ), true );
-	wp_enqueue_script( 'felt-scripts', get_theme_file_uri( '/assets/js/scripts'. $suffix .'.js' ), array( 'felt-commons-scripts', 'jquery', 'masonry', 'hoverIntent', 'felt-gsap', 'felt-select2', 'felt-slick' ), $theme->get( 'Version' ), true );
+	wp_enqueue_script( 'felt-scripts', get_theme_file_uri( '/assets/js/scripts' . $suffix . '.js' ), array( 'felt-commons-scripts', 'jquery', 'masonry', 'hoverIntent', 'gsap-tweenmax', 'select2', 'slick-carousel' ), $theme->get( 'Version' ), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	$translation_array = array(
+	wp_localize_script( 'felt-scripts', 'feltStrings', array(
 		'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),
-	);
-
-	wp_localize_script( 'felt-main-scripts', 'feltStrings', $translation_array );
+	) );
 }
 add_action( 'wp_enqueue_scripts', 'felt_scripts' );
 
