@@ -18,7 +18,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
-
+/* stylelint-disable */
+/* stylelint-enable */
+/* stylelint-disable */
+/* stylelint-enable */
 /* Slider */
 .slick-slider {
   position: relative;
@@ -4779,7 +4782,7 @@ fieldset {
 .bypostauthor {
   color: inherit; }
   .bypostauthor .comment__author {
-    color: #FF6000; }
+    color: #000; }
 
 .says {
   display: none; }

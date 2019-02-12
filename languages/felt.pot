@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Felt 2.3.0\n"
+"Project-Id-Version: Felt 2.3.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/felt\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-02-07T15:41:56+00:00\n"
+"POT-Creation-Date: 2019-02-12T15:42:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.1.0\n"
 "X-Domain: felt\n"
@@ -38,8 +38,10 @@ msgstr ""
 #: inc/widgets.php:34
 #: inc/widgets.php:46
 #: inc/widgets.php:90
-#: components/blog/class-Blog.php:732
-#: components/blog/class-Blog.php:749
+#: inc/widgets.php:125
+#: inc/pro/extras.php:61
+#: components/blog/class-Blog.php:738
+#: components/blog/class-Blog.php:750
 msgid "Add widgets here."
 msgstr ""
 
@@ -53,13 +55,6 @@ msgstr ""
 
 #: inc/widgets.php:55
 msgid "Front Page - Full Width Center"
-msgstr ""
-
-#: inc/widgets.php:57
-#: inc/widgets.php:68
-#: inc/widgets.php:79
-#: inc/widgets.php:101
-msgid "Ooops! This entire widget area does not support Pixelgrade Widgets. You want to stand out from the crowd, right? Upgrade to Felt PRO and unlock all features."
 msgstr ""
 
 #: inc/widgets.php:66
@@ -78,415 +73,464 @@ msgstr ""
 msgid "Footer - Featured Area"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:327
-#: inc/required-plugins.php:39
+#: inc/widgets.php:123
+msgid "Site-wide widgets displayed above the Footer Area of your website."
+msgstr ""
+
+#: inc/widgets.php:129
+msgid "Ooops! This entire widget area does not support Pixelgrade Widgets. You want to stand out from the crowd, right? Upgrade to Felt PRO and unlock all features."
+msgstr ""
+
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:327
+#: inc/pro/required-plugins.php:39
 msgid "Install Required Plugins"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:328
-#: inc/required-plugins.php:40
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:328
+#: inc/pro/required-plugins.php:40
 msgid "Install Plugins"
 msgstr ""
 
 #. translators: %s: plugin name.
-#: inc/required-plugins/class-tgm-plugin-activation.php:330
-#: inc/required-plugins.php:41
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:330
+#: inc/pro/required-plugins.php:41
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #. translators: %s: plugin name.
-#: inc/required-plugins/class-tgm-plugin-activation.php:332
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:332
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:333
-#: inc/required-plugins.php:43
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:333
+#: inc/pro/required-plugins.php:43
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #. translators: 1: plugin name(s).
-#: inc/required-plugins/class-tgm-plugin-activation.php:334
-#: inc/required-plugins.php:44
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:334
+#: inc/pro/required-plugins.php:44
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 
 #. translators: 1: plugin name(s).
-#: inc/required-plugins/class-tgm-plugin-activation.php:340
-#: inc/required-plugins.php:46
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:340
+#: inc/pro/required-plugins.php:46
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 
 #. translators: 1: plugin name(s).
-#: inc/required-plugins/class-tgm-plugin-activation.php:346
-#: inc/required-plugins.php:56
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:346
+#: inc/pro/required-plugins.php:56
 msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
 msgstr[0] ""
 
 #. translators: 1: plugin name(s).
-#: inc/required-plugins/class-tgm-plugin-activation.php:352
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:352
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 
 #. translators: 1: plugin name(s).
-#: inc/required-plugins/class-tgm-plugin-activation.php:358
-#: inc/required-plugins.php:50
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:358
+#: inc/pro/required-plugins.php:50
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 
 #. translators: 1: plugin name(s).
-#: inc/required-plugins/class-tgm-plugin-activation.php:364
-#: inc/required-plugins.php:52
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:364
+#: inc/pro/required-plugins.php:52
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:370
-#: inc/required-plugins.php:60
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:370
+#: inc/pro/required-plugins.php:60
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:375
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:375
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:380
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:380
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:385
-#: inc/required-plugins.php:62
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:385
+#: inc/pro/required-plugins.php:62
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:386
-#: inc/required-plugins/class-tgm-plugin-activation.php:827
-#: inc/required-plugins/class-tgm-plugin-activation.php:2533
-#: inc/required-plugins/class-tgm-plugin-activation.php:3580
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:386
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:827
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2533
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3580
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:387
-#: inc/required-plugins/class-tgm-plugin-activation.php:3159
-#: inc/required-plugins.php:63
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:387
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3159
+#: inc/pro/required-plugins.php:63
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:388
-#: inc/required-plugins/class-tgm-plugin-activation.php:2952
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:388
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2952
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 
 #. translators: 1: plugin name.
-#: inc/required-plugins/class-tgm-plugin-activation.php:390
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:390
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: inc/required-plugins/class-tgm-plugin-activation.php:392
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:392
 msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
 #. translators: 1: dashboard link.
-#: inc/required-plugins/class-tgm-plugin-activation.php:394
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:394
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:395
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:395
 msgid "Dismiss this notice"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:396
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:396
 msgid "There are one or more required or recommended plugins to install, update or activate."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:397
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:397
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:522
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:522
 msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:523
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:523
 msgid "Update Required"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:934
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:934
 msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:934
-#: inc/required-plugins/class-tgm-plugin-activation.php:937
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:934
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:937
 msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:937
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:937
 msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:1121
-#: inc/required-plugins/class-tgm-plugin-activation.php:2948
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:1121
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2948
 msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
 #. translators: %s: version number
-#: inc/required-plugins/class-tgm-plugin-activation.php:1982
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:1982
 msgid "TGMPA v%s"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2273
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2273
 msgid "Required"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2276
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2276
 msgid "Recommended"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2292
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2292
 msgid "WordPress Repository"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2295
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2295
 msgid "External Source"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2298
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2298
 msgid "Pre-Packaged"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2315
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2315
 msgid "Not Installed"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2319
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2319
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2321
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2321
 #: components/header/inc/class-Header-Customizer.php:319
 msgid "Active"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2327
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2327
 msgid "Required Update not Available"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2330
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2330
 msgid "Requires Update"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2333
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2333
 msgid "Update recommended"
 msgstr ""
 
 #. translators: 1: install status, 2: update status
-#: inc/required-plugins/class-tgm-plugin-activation.php:2342
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2342
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
 #. translators: 1: number of plugins.
-#: inc/required-plugins/class-tgm-plugin-activation.php:2388
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2388
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 
 #. translators: 1: number of plugins.
-#: inc/required-plugins/class-tgm-plugin-activation.php:2392
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2392
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 
 #. translators: 1: number of plugins.
-#: inc/required-plugins/class-tgm-plugin-activation.php:2396
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2396
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 
 #. translators: 1: number of plugins.
-#: inc/required-plugins/class-tgm-plugin-activation.php:2400
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2400
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2482
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2482
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2490
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2490
 msgid "Installed version:"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2498
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2498
 msgid "Minimum required version:"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2510
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2510
 msgid "Available version:"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2533
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2533
 msgid "No plugins to install, update or activate."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2547
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2547
 msgid "Plugin"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2548
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2548
 msgid "Source"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2549
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2549
 #: components/gallery-settings/jetpack-fallback/functions.gallery.php:80
 msgid "Type"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2553
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2553
 msgid "Version"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2554
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2554
 msgid "Status"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: inc/required-plugins/class-tgm-plugin-activation.php:2603
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2603
 msgid "Install %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: inc/required-plugins/class-tgm-plugin-activation.php:2608
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2608
 msgid "Update %2$s"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: inc/required-plugins/class-tgm-plugin-activation.php:2614
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2614
 msgid "Activate %2$s"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2684
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2684
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2717
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2717
 msgid "Install"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2723
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2723
 msgid "Update"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2726
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2726
 #: inc/lite/admin/about-page.php:186
 #: inc/lite/admin/about-page.php:200
 msgid "Activate"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2757
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2757
 msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2759
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2759
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2800
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2800
 msgid "No plugins are available to be installed at this time."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2802
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2802
 msgid "No plugins are available to be updated at this time."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2908
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2908
 msgid "No plugins were selected to be activated. No action taken."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:2934
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:2934
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:3158
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3158
 msgid "Plugin activation failed."
 msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: inc/required-plugins/class-tgm-plugin-activation.php:3498
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3498
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #. translators: 1: plugin name, 2: error message.
-#: inc/required-plugins/class-tgm-plugin-activation.php:3501
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3501
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: inc/required-plugins/class-tgm-plugin-activation.php:3503
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3503
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:3507
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3507
 msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: inc/required-plugins/class-tgm-plugin-activation.php:3509
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3509
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: inc/required-plugins/class-tgm-plugin-activation.php:3509
-#: inc/required-plugins/class-tgm-plugin-activation.php:3517
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3509
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3517
 msgid "Show Details"
 msgstr ""
 
 #. translators: 1: plugin name.
-#: inc/required-plugins/class-tgm-plugin-activation.php:3509
-#: inc/required-plugins/class-tgm-plugin-activation.php:3517
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3509
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3517
 msgid "Hide Details"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:3510
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3510
 msgid "All installations and activations have been completed."
 msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: inc/required-plugins/class-tgm-plugin-activation.php:3512
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3512
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:3515
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3515
 msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
 #. translators: 1: plugin name.
-#: inc/required-plugins/class-tgm-plugin-activation.php:3517
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3517
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: inc/required-plugins/class-tgm-plugin-activation.php:3518
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3518
 msgid "All installations have been completed."
 msgstr ""
 
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: inc/required-plugins/class-tgm-plugin-activation.php:3520
+#: inc/pro/required-plugins/class-tgm-plugin-activation.php:3520
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/lite/admin/ti-about-page/class-ti-about-page.php:903
+#. Template Name of the theme
+#: inc/pro/extras.php:45
+#: inc/pro/extras.php:59
+msgid "Archive Index"
+msgstr ""
+
+#: inc/pro/required-plugins.php:48
+msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
+msgstr[0] ""
+
+#: inc/pro/required-plugins.php:54
+msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
+msgstr[0] ""
+
+#: inc/pro/required-plugins.php:58
+msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
+msgstr[0] ""
+
+#: inc/pro/required-plugins.php:61
+msgid "Activate installed plugin"
+msgid_plural "Activate installed plugins"
+msgstr[0] ""
+
+#: inc/pro/required-plugins.php:64
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: inc/pro/template-tags.php:30
+#: components/blog/inc/extras.php:128
+msgid "Search"
+msgstr ""
+
+#: inc/pro/template-tags.php:53
+#: components/header/template-parts/header.php:47
+#: template-parts/site-header-sticky.php:23
+msgid "Menu"
+msgstr ""
+
+#: inc/lite/admin/ti-about-page/class-ti-about-page.php:902
 msgid "Activating"
 msgstr ""
 
@@ -607,7 +651,7 @@ msgid "The widget-based flexible system allows you to add your favorite widgets 
 msgstr ""
 
 #: inc/lite/admin/about-page.php:120
-msgid "New Widgets for Extra Flexiblity"
+msgid "New Widgets for Extra Flexibility"
 msgstr ""
 
 #: inc/lite/admin/about-page.php:121
@@ -716,12 +760,12 @@ msgstr ""
 msgid "The %s is not available in the Lite version, but hey, the Pro version is just around the corner!"
 msgstr ""
 
-#: inc/lite/extras.php:55
+#: inc/lite/extras.php:57
 msgid "View PRO Version"
 msgstr ""
 
 #. translators: The upsell link.
-#: inc/lite/extras.php:59
+#: inc/lite/extras.php:61
 msgid ""
 "<div class=\"upsell-container\">\n"
 "\t\t\t\t<h2>Need More? Go PRO</h2>\n"
@@ -750,90 +794,90 @@ msgid ""
 "                </ul> %s </div>"
 msgstr ""
 
-#: inc/lite/extras.php:86
+#: inc/lite/extras.php:88
 msgid "Get Felt Pro"
 msgstr ""
 
 #. Translators: If there are characters in your language that are not * supported by Playfair Display, translate this to 'off'. Do not translate * into your own language.
-#: inc/extras.php:227
+#: inc/extras.php:135
 msgctxt "Playfair Display font: on or off"
 msgid "on"
 msgstr ""
 
 #. Translators: If there are characters in your language that are not * supported by Lora, translate this to 'off'. Do not translate * into your own language.
-#: inc/extras.php:235
+#: inc/extras.php:143
 msgctxt "Lora font: on or off"
 msgid "on"
 msgstr ""
 
 #. Translators: If there are characters in your language that are not * supported by PT Serif, translate this to 'off'. Do not translate * into your own language.
-#: inc/extras.php:243
+#: inc/extras.php:151
 msgctxt "PT Serif font: on or off"
 msgid "on"
 msgstr ""
 
 #. Translators: If there are characters in your language that are not * supported by Montserrat, translate this to 'off'. Do not translate * into your own language.
-#: inc/extras.php:251
+#: inc/extras.php:159
 msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr ""
 
 #. translators: To add an additional character subset specific to your language, translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language.
-#: inc/extras.php:256
+#: inc/extras.php:164
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: inc/extras.php:388
+#. Translators: If there are characters in your language that are not * supported by Charis SIL, translate this to 'off'. Do not translate * into your own language.
+#: inc/extras.php:198
+msgctxt "Charis SIL font: on or off"
+msgid "on"
+msgstr ""
+
+#. Translators: If there are characters in your language that are not * supported by HK Grotesk, translate this to 'off'. Do not translate * into your own language.
+#: inc/extras.php:217
+msgctxt "HK Grotesk font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/extras.php:243
 #: inc/widgets/class-CategoriesImageGridWidget.php:64
 msgid "Name"
 msgstr ""
 
-#: inc/extras.php:389
+#: inc/extras.php:244
 msgid "Your name"
 msgstr ""
 
-#: inc/extras.php:393
+#: inc/extras.php:248
 msgid "Email"
 msgstr ""
 
-#: inc/extras.php:394
+#: inc/extras.php:249
 msgid "your@email.com"
 msgstr ""
 
-#: inc/extras.php:398
-#: components/blog/inc/template-tags.php:470
+#: inc/extras.php:253
+#: components/blog/inc/template-tags.php:469
 msgid "Website"
 msgstr ""
 
-#: inc/extras.php:431
+#: inc/extras.php:285
 #: inc/widgets/class-PromoBoxWidget.php:54
 #: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:79
 msgid "Display"
 msgstr ""
 
-#: inc/extras.php:432
+#: inc/extras.php:286
 msgid "Intro Text"
 msgstr ""
 
-#: inc/extras.php:433
+#: inc/extras.php:287
 msgid "Dropcap"
 msgstr ""
 
-#: inc/extras.php:434
+#: inc/extras.php:288
 msgid "Button Directional &#8594;"
-msgstr ""
-
-#. Translators: If there are characters in your language that are not * supported by Charter, translate this to 'off'. Do not translate * into your own language.
-#: inc/extras.php:492
-msgctxt "Charter font: on or off"
-msgid "on"
-msgstr ""
-
-#. Translators: If there are characters in your language that are not * supported by HK Grotesk, translate this to 'off'. Do not translate * into your own language.
-#: inc/extras.php:511
-msgctxt "HK Grotesk font: on or off"
-msgid "on"
 msgstr ""
 
 #: inc/customizer.php:41
@@ -913,7 +957,7 @@ msgid "Choose if you want to display the titles above the widgets or rotate them
 msgstr ""
 
 #: inc/integrations/customify.php:178
-#: components/blog/inc/class-Blog-Customizer.php:1349
+#: components/blog/inc/class-Blog-Customizer.php:1350
 #: components/portfolio/inc/class-Portfolio-Customizer.php:311
 msgid "Above"
 msgstr ""
@@ -952,65 +996,6 @@ msgstr ""
 
 #: inc/components.php:48
 msgid "Main Menu"
-msgstr ""
-
-#: inc/required-plugins.php:48
-msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
-msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
-msgstr[0] ""
-
-#: inc/required-plugins.php:54
-msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
-msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
-msgstr[0] ""
-
-#: inc/required-plugins.php:58
-msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
-msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
-msgstr[0] ""
-
-#: inc/required-plugins.php:61
-msgid "Activate installed plugin"
-msgid_plural "Activate installed plugins"
-msgstr[0] ""
-
-#: inc/required-plugins.php:64
-msgid "All plugins installed and activated successfully. %s"
-msgstr ""
-
-#. translators: %s: The current post's posted date, in the post header
-#: inc/template-tags.php:30
-#: components/blog/inc/template-tags.php:860
-msgctxt "post date"
-msgid "%s"
-msgstr ""
-
-#: inc/template-tags.php:35
-#: components/blog/inc/template-tags.php:865
-msgctxt "post author"
-msgid "by"
-msgstr ""
-
-#: inc/template-tags.php:100
-#: components/woocommerce/inc/class-Woocommerce-Layout.php:144
-#: components/blog/inc/template-tags.php:829
-#: components/blog/class-Blog.php:181
-msgctxt "previous set of posts"
-msgid "&laquo; Previous"
-msgstr ""
-
-#: inc/template-tags.php:101
-#: components/woocommerce/inc/class-Woocommerce-Layout.php:145
-#: components/blog/inc/template-tags.php:830
-#: components/blog/class-Blog.php:182
-msgctxt "next set of posts"
-msgid "Next &raquo;"
-msgstr ""
-
-#: inc/template-tags.php:102
-#: components/blog/inc/template-tags.php:831
-#: components/blog/class-Blog.php:183
-msgid "Posts navigation"
 msgstr ""
 
 #: inc/widgets/featured-posts/class-FeaturedPosts-CarouselWidget.php:35
@@ -1056,18 +1041,18 @@ msgid "Original"
 msgstr ""
 
 #: inc/widgets/featured-posts/class-FeaturedPosts-CarouselWidget.php:95
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:169
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:222
 msgid "Portrait"
 msgstr ""
 
 #: inc/widgets/featured-posts/class-FeaturedPosts-CarouselWidget.php:96
-#: components/blog/inc/class-Blog-Customizer.php:998
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:170
+#: components/blog/inc/class-Blog-Customizer.php:999
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:223
 msgid "Square"
 msgstr ""
 
 #: inc/widgets/featured-posts/class-FeaturedPosts-CarouselWidget.php:97
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:171
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:224
 msgid "Landscape"
 msgstr ""
 
@@ -1139,10 +1124,10 @@ msgstr ""
 #: components/woocommerce/inc/class-Woocommerce-Customizer.php:236
 #: components/blog/inc/class-Blog-Customizer.php:211
 #: components/blog/inc/class-Blog-Customizer.php:219
-#: components/blog/inc/class-Blog-Customizer.php:974
-#: components/blog/inc/class-Blog-Customizer.php:981
-#: components/blog/inc/class-Blog-Customizer.php:1178
-#: components/blog/inc/class-Blog-Customizer.php:1187
+#: components/blog/inc/class-Blog-Customizer.php:975
+#: components/blog/inc/class-Blog-Customizer.php:982
+#: components/blog/inc/class-Blog-Customizer.php:1179
+#: components/blog/inc/class-Blog-Customizer.php:1188
 #: components/portfolio/inc/class-Portfolio-Customizer.php:140
 #: components/portfolio/inc/class-Portfolio-Customizer.php:149
 #: components/header/inc/class-Header-Customizer.php:146
@@ -1224,7 +1209,7 @@ msgstr ""
 #: inc/widgets/class-CategoriesImageGridWidget.php:43
 #: inc/widgets/class-CategoriesImageGridWidget.php:188
 #: components/blog/inc/extras.php:35
-#: components/blog/inc/template-tags.php:212
+#: components/blog/inc/template-tags.php:211
 msgid "Categories"
 msgstr ""
 
@@ -1241,7 +1226,7 @@ msgid "Selected Categories"
 msgstr ""
 
 #: inc/widgets/class-CategoriesImageGridWidget.php:61
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:255
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:164
 msgid "Order by:"
 msgstr ""
 
@@ -1284,10 +1269,10 @@ msgstr ""
 #: components/woocommerce/inc/class-Woocommerce-Customizer.php:237
 #: components/blog/inc/class-Blog-Customizer.php:212
 #: components/blog/inc/class-Blog-Customizer.php:359
-#: components/blog/inc/class-Blog-Customizer.php:975
-#: components/blog/inc/class-Blog-Customizer.php:1005
-#: components/blog/inc/class-Blog-Customizer.php:1179
-#: components/blog/inc/class-Blog-Customizer.php:1456
+#: components/blog/inc/class-Blog-Customizer.php:976
+#: components/blog/inc/class-Blog-Customizer.php:1006
+#: components/blog/inc/class-Blog-Customizer.php:1180
+#: components/blog/inc/class-Blog-Customizer.php:1457
 #: components/portfolio/inc/class-Portfolio-Customizer.php:141
 #: components/portfolio/inc/class-Portfolio-Customizer.php:418
 #: components/header/inc/class-Header-Customizer.php:147
@@ -1336,7 +1321,7 @@ msgid "Row"
 msgstr ""
 
 #: components/footer/inc/class-Footer-Customizer.php:215
-#: components/blog/inc/class-Blog-Customizer.php:375
+#: components/blog/inc/class-Blog-Customizer.php:376
 msgid "Body Text Color"
 msgstr ""
 
@@ -1348,7 +1333,11 @@ msgstr ""
 msgid "Footer Background"
 msgstr ""
 
-#: components/footer/inc/template-tags.php:206
+#: components/footer/inc/template-tags.php:198
+msgid "Back to Top"
+msgstr ""
+
+#: components/footer/inc/template-tags.php:211
 msgid "Made with love by %s."
 msgstr ""
 
@@ -1362,11 +1351,11 @@ msgstr ""
 
 #: components/woocommerce/inc/class-Woocommerce-Customizer.php:238
 #: components/blog/inc/class-Blog-Customizer.php:213
-#: components/blog/inc/class-Blog-Customizer.php:513
-#: components/blog/inc/class-Blog-Customizer.php:976
-#: components/blog/inc/class-Blog-Customizer.php:1057
-#: components/blog/inc/class-Blog-Customizer.php:1180
-#: components/blog/inc/class-Blog-Customizer.php:1548
+#: components/blog/inc/class-Blog-Customizer.php:514
+#: components/blog/inc/class-Blog-Customizer.php:977
+#: components/blog/inc/class-Blog-Customizer.php:1058
+#: components/blog/inc/class-Blog-Customizer.php:1181
+#: components/blog/inc/class-Blog-Customizer.php:1549
 #: components/portfolio/inc/class-Portfolio-Customizer.php:142
 #: components/portfolio/inc/class-Portfolio-Customizer.php:498
 #: components/header/inc/class-Header-Customizer.php:148
@@ -1374,12 +1363,30 @@ msgstr ""
 msgid "Fonts"
 msgstr ""
 
-#: components/woocommerce/inc/class-Woocommerce-Layout.php:150
+#: components/woocommerce/inc/class-Woocommerce-Layout.php:145
+#: components/blog/inc/template-tags.php:829
+#: components/blog/class-Blog.php:181
+msgctxt "previous set of posts"
+msgid "&laquo; Previous"
+msgstr ""
+
+#: components/woocommerce/inc/class-Woocommerce-Layout.php:146
+#: components/blog/inc/template-tags.php:830
+#: components/blog/class-Blog.php:182
+msgctxt "next set of posts"
+msgid "Next &raquo;"
+msgstr ""
+
+#: components/woocommerce/inc/class-Woocommerce-Layout.php:151
 msgid "Sale!"
 msgstr ""
 
-#: components/woocommerce/inc/class-Woocommerce-Layout.php:212
+#: components/woocommerce/inc/class-Woocommerce-Layout.php:213
 msgid "Your cart"
+msgstr ""
+
+#: components/woocommerce/inc/class-Woocommerce-Layout.php:249
+msgid "My Cart"
 msgstr ""
 
 #: components/woocommerce/inc/template-tags.php:46
@@ -1431,15 +1438,15 @@ msgid "Thumbnail Grid"
 msgstr ""
 
 #: components/gallery-settings/class-GallerySettings.php:57
-#: components/blog/inc/class-Blog-Customizer.php:1429
-#: components/blog/inc/class-Blog-Customizer.php:1444
+#: components/blog/inc/class-Blog-Customizer.php:1430
+#: components/blog/inc/class-Blog-Customizer.php:1445
 #: components/portfolio/inc/class-Portfolio-Customizer.php:391
 #: components/portfolio/inc/class-Portfolio-Customizer.php:406
 #: components/hero/inc/class-Hero-Metaboxes.php:568
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:183
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:196
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:325
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:335
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:253
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:265
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:321
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:331
 msgid "None"
 msgstr ""
 
@@ -1452,7 +1459,7 @@ msgid "X-Large"
 msgstr ""
 
 #: components/gallery-settings/class-GallerySettings.php:178
-#: components/blog/inc/class-Blog-Customizer.php:1249
+#: components/blog/inc/class-Blog-Customizer.php:1250
 #: components/portfolio/inc/class-Portfolio-Customizer.php:211
 msgid "Masonry"
 msgstr ""
@@ -1478,7 +1485,7 @@ msgid "The  image will be displayed on the Portfolio Grid as a thumbnail for the
 msgstr ""
 
 #: components/featured-image/inc/class-FeaturedImage-Metaboxes.php:89
-#: components/blog/inc/class-Blog-Customizer.php:1522
+#: components/blog/inc/class-Blog-Customizer.php:1523
 #: components/portfolio/inc/class-Portfolio-Customizer.php:472
 msgid "Thumbnail Hover"
 msgstr ""
@@ -1528,7 +1535,7 @@ msgid "Site Container Sides Spacing"
 msgstr ""
 
 #: components/blog/inc/class-Blog-Customizer.php:244
-#: components/blog/inc/class-Blog-Customizer.php:1212
+#: components/blog/inc/class-Blog-Customizer.php:1213
 #: components/portfolio/inc/class-Portfolio-Customizer.php:174
 msgid "Adjust the space separating the site content and the sides of the browser."
 msgstr ""
@@ -1561,467 +1568,462 @@ msgstr ""
 msgid "Page Title Color"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:387
+#: components/blog/inc/class-Blog-Customizer.php:388
 msgid "Body Link Color"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:399
+#: components/blog/inc/class-Blog-Customizer.php:400
 msgid "Body Link Active Color"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:411
+#: components/blog/inc/class-Blog-Customizer.php:412
 msgid "Underlined Body Links"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:417
+#: components/blog/inc/class-Blog-Customizer.php:418
 msgid "Headings Color"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:421
-#: components/blog/inc/class-Blog-Customizer.php:684
+#: components/blog/inc/class-Blog-Customizer.php:422
+#: components/blog/inc/class-Blog-Customizer.php:685
 msgid "Heading 1"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:433
-#: components/blog/inc/class-Blog-Customizer.php:723
+#: components/blog/inc/class-Blog-Customizer.php:434
+#: components/blog/inc/class-Blog-Customizer.php:724
 msgid "Heading 2"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:445
-#: components/blog/inc/class-Blog-Customizer.php:763
+#: components/blog/inc/class-Blog-Customizer.php:446
+#: components/blog/inc/class-Blog-Customizer.php:764
 msgid "Heading 3"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:457
-#: components/blog/inc/class-Blog-Customizer.php:804
+#: components/blog/inc/class-Blog-Customizer.php:458
+#: components/blog/inc/class-Blog-Customizer.php:805
 msgid "Heading 4"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:469
-#: components/blog/inc/class-Blog-Customizer.php:844
+#: components/blog/inc/class-Blog-Customizer.php:470
+#: components/blog/inc/class-Blog-Customizer.php:845
 msgid "Heading 5"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:481
-#: components/blog/inc/class-Blog-Customizer.php:884
+#: components/blog/inc/class-Blog-Customizer.php:482
+#: components/blog/inc/class-Blog-Customizer.php:885
 msgid "Heading 6"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:495
+#: components/blog/inc/class-Blog-Customizer.php:496
 msgid "Backgrounds"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:499
+#: components/blog/inc/class-Blog-Customizer.php:500
 msgid "Content Background Color"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:518
+#: components/blog/inc/class-Blog-Customizer.php:519
 msgid "Page Title Font"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:558
+#: components/blog/inc/class-Blog-Customizer.php:559
 msgid "Body Text Font"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:598
+#: components/blog/inc/class-Blog-Customizer.php:599
 msgid "Content Text Font"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:638
+#: components/blog/inc/class-Blog-Customizer.php:639
 msgid "Quote Block Font"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:679
+#: components/blog/inc/class-Blog-Customizer.php:680
 msgid "Headings Fonts"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:969
+#: components/blog/inc/class-Blog-Customizer.php:970
 msgid "Buttons"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:985
+#: components/blog/inc/class-Blog-Customizer.php:986
 msgid "Buttons Style"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:986
+#: components/blog/inc/class-Blog-Customizer.php:987
 msgid "Choose the default button style."
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:989
+#: components/blog/inc/class-Blog-Customizer.php:990
 msgid "Solid"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:990
+#: components/blog/inc/class-Blog-Customizer.php:991
 msgid "Outline"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:995
+#: components/blog/inc/class-Blog-Customizer.php:996
 msgid "Buttons Shape"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:999
+#: components/blog/inc/class-Blog-Customizer.php:1000
 msgid "Rounded"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1000
+#: components/blog/inc/class-Blog-Customizer.php:1001
 msgid "Pill"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1009
+#: components/blog/inc/class-Blog-Customizer.php:1010
 msgid "Button Color"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1037
+#: components/blog/inc/class-Blog-Customizer.php:1038
 msgid "Button Text Color"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1061
+#: components/blog/inc/class-Blog-Customizer.php:1062
 msgid "Button Font"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1173
+#: components/blog/inc/class-Blog-Customizer.php:1174
 msgid "Blog Grid Items"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1191
+#: components/blog/inc/class-Blog-Customizer.php:1192
 msgid "Blog Grid Max Width"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1192
+#: components/blog/inc/class-Blog-Customizer.php:1193
 msgid "Adjust the max width of the blog area."
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1211
+#: components/blog/inc/class-Blog-Customizer.php:1212
 #: components/portfolio/inc/class-Portfolio-Customizer.php:173
 msgid "Container Sides Spacing"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1240
+#: components/blog/inc/class-Blog-Customizer.php:1241
 #: components/portfolio/inc/class-Portfolio-Customizer.php:202
 msgid "Items Grid"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1244
+#: components/blog/inc/class-Blog-Customizer.php:1245
 #: components/portfolio/inc/class-Portfolio-Customizer.php:206
 msgid "Grid Layout"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1245
+#: components/blog/inc/class-Blog-Customizer.php:1246
 #: components/portfolio/inc/class-Portfolio-Customizer.php:207
 msgid "Choose whether the items display in a fixed height regular grid, or in a packed style layout."
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1248
+#: components/blog/inc/class-Blog-Customizer.php:1249
 #: components/portfolio/inc/class-Portfolio-Customizer.php:210
 msgid "Regular Grid"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1250
+#: components/blog/inc/class-Blog-Customizer.php:1251
 #: components/portfolio/inc/class-Portfolio-Customizer.php:212
 msgid "Mosaic"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1251
+#: components/blog/inc/class-Blog-Customizer.php:1252
 #: components/portfolio/inc/class-Portfolio-Customizer.php:213
 msgid "Packed"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1256
+#: components/blog/inc/class-Blog-Customizer.php:1257
 #: components/portfolio/inc/class-Portfolio-Customizer.php:218
 msgid "Items Aspect Ratio"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1257
+#: components/blog/inc/class-Blog-Customizer.php:1258
 msgid "Change the images ratio from landscape to portrait."
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1278
+#: components/blog/inc/class-Blog-Customizer.php:1279
 #: components/portfolio/inc/class-Portfolio-Customizer.php:240
 msgid "Items per Row"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1279
+#: components/blog/inc/class-Blog-Customizer.php:1280
 #: components/portfolio/inc/class-Portfolio-Customizer.php:241
 msgid "Set the desktop-based number of columns you want and we automatically make it right for other screen sizes."
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1297
+#: components/blog/inc/class-Blog-Customizer.php:1298
 #: components/portfolio/inc/class-Portfolio-Customizer.php:259
 msgid "Items Vertical Spacing"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1298
-#: components/blog/inc/class-Blog-Customizer.php:1319
+#: components/blog/inc/class-Blog-Customizer.php:1299
+#: components/blog/inc/class-Blog-Customizer.php:1320
 #: components/portfolio/inc/class-Portfolio-Customizer.php:260
 #: components/portfolio/inc/class-Portfolio-Customizer.php:281
 msgid "Adjust the spacing between individual items in your grid."
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1318
+#: components/blog/inc/class-Blog-Customizer.php:1319
 #: components/portfolio/inc/class-Portfolio-Customizer.php:280
 msgid "Items Horizontal Spacing"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1341
+#: components/blog/inc/class-Blog-Customizer.php:1342
 #: components/portfolio/inc/class-Portfolio-Customizer.php:303
 msgid "Items Title"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1345
+#: components/blog/inc/class-Blog-Customizer.php:1346
 #: components/portfolio/inc/class-Portfolio-Customizer.php:307
 msgid "Title Position"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1346
+#: components/blog/inc/class-Blog-Customizer.php:1347
 #: components/portfolio/inc/class-Portfolio-Customizer.php:308
 msgid "Choose whether the items titles are placed nearby the thumbnail or show as an overlay cover on  mouse over."
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1350
+#: components/blog/inc/class-Blog-Customizer.php:1351
 #: components/portfolio/inc/class-Portfolio-Customizer.php:312
 msgid "Below"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1351
+#: components/blog/inc/class-Blog-Customizer.php:1352
 #: components/portfolio/inc/class-Portfolio-Customizer.php:313
 msgid "Overlay"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1356
+#: components/blog/inc/class-Blog-Customizer.php:1357
 #: components/portfolio/inc/class-Portfolio-Customizer.php:318
 msgid "Title Alignment (Above/Below)"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1357
+#: components/blog/inc/class-Blog-Customizer.php:1358
 #: components/portfolio/inc/class-Portfolio-Customizer.php:319
 msgid "Adjust the alignment of your title."
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1360
+#: components/blog/inc/class-Blog-Customizer.php:1361
 #: components/portfolio/inc/class-Portfolio-Customizer.php:322
 msgid "← Left"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1361
+#: components/blog/inc/class-Blog-Customizer.php:1362
 #: components/portfolio/inc/class-Portfolio-Customizer.php:323
 msgid "↔ Center"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1362
+#: components/blog/inc/class-Blog-Customizer.php:1363
 #: components/portfolio/inc/class-Portfolio-Customizer.php:324
 msgid "→ Right"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1368
+#: components/blog/inc/class-Blog-Customizer.php:1369
 #: components/portfolio/inc/class-Portfolio-Customizer.php:330
 msgid "Title Alignment (Overlay)"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1369
+#: components/blog/inc/class-Blog-Customizer.php:1370
 #: components/portfolio/inc/class-Portfolio-Customizer.php:331
 msgid "Adjust the alignment of your hover title."
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1372
+#: components/blog/inc/class-Blog-Customizer.php:1373
 #: components/portfolio/inc/class-Portfolio-Customizer.php:334
 msgid "↑ Top     ← Left"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1373
+#: components/blog/inc/class-Blog-Customizer.php:1374
 #: components/portfolio/inc/class-Portfolio-Customizer.php:335
 msgid "↑ Top     ↔ Center"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1374
+#: components/blog/inc/class-Blog-Customizer.php:1375
 #: components/portfolio/inc/class-Portfolio-Customizer.php:336
 msgid "↑ Top     → Right"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1376
+#: components/blog/inc/class-Blog-Customizer.php:1377
 #: components/portfolio/inc/class-Portfolio-Customizer.php:338
 msgid "↕ Middle     ← Left"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1377
+#: components/blog/inc/class-Blog-Customizer.php:1378
 #: components/portfolio/inc/class-Portfolio-Customizer.php:339
 msgid "↕ Middle     ↔ Center"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1378
+#: components/blog/inc/class-Blog-Customizer.php:1379
 #: components/portfolio/inc/class-Portfolio-Customizer.php:340
 msgid "↕ Middle     → Right"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1380
+#: components/blog/inc/class-Blog-Customizer.php:1381
 #: components/portfolio/inc/class-Portfolio-Customizer.php:342
 msgid "↓ bottom     ← Left"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1381
+#: components/blog/inc/class-Blog-Customizer.php:1382
 #: components/portfolio/inc/class-Portfolio-Customizer.php:343
 msgid "↓ bottom     ↔ Center"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1382
+#: components/blog/inc/class-Blog-Customizer.php:1383
 #: components/portfolio/inc/class-Portfolio-Customizer.php:344
 msgid "↓ bottom     → Right"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1391
+#: components/blog/inc/class-Blog-Customizer.php:1392
 #: components/portfolio/inc/class-Portfolio-Customizer.php:353
 msgid "Title Visibility"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1391
-#: components/blog/inc/class-Blog-Customizer.php:1409
+#: components/blog/inc/class-Blog-Customizer.php:1392
+#: components/blog/inc/class-Blog-Customizer.php:1410
 #: components/portfolio/inc/class-Portfolio-Customizer.php:353
 #: components/portfolio/inc/class-Portfolio-Customizer.php:371
 msgid "Select whether to show or hide the summary."
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1395
+#: components/blog/inc/class-Blog-Customizer.php:1396
 #: components/portfolio/inc/class-Portfolio-Customizer.php:357
 msgid "Show Title"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1402
+#: components/blog/inc/class-Blog-Customizer.php:1403
 #: components/portfolio/inc/class-Portfolio-Customizer.php:364
 msgid "Items Excerpt"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1409
+#: components/blog/inc/class-Blog-Customizer.php:1410
 #: components/portfolio/inc/class-Portfolio-Customizer.php:371
 msgid "Excerpt Visibility"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1413
+#: components/blog/inc/class-Blog-Customizer.php:1414
 #: components/portfolio/inc/class-Portfolio-Customizer.php:375
 msgid "Show Excerpt Text"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1420
+#: components/blog/inc/class-Blog-Customizer.php:1421
 #: components/portfolio/inc/class-Portfolio-Customizer.php:382
 msgid "Items Meta"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1425
+#: components/blog/inc/class-Blog-Customizer.php:1426
 #: components/portfolio/inc/class-Portfolio-Customizer.php:387
 msgid "Primary Meta Section"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1426
+#: components/blog/inc/class-Blog-Customizer.php:1427
 #: components/portfolio/inc/class-Portfolio-Customizer.php:388
 msgid "Set the meta info that display around the title. "
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1430
-#: components/blog/inc/class-Blog-Customizer.php:1445
-#: components/portfolio/inc/class-Portfolio-Customizer.php:392
-#: components/portfolio/inc/class-Portfolio-Customizer.php:407
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:184
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:326
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:336
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:348
-msgid "Category"
-msgstr ""
-
 #: components/blog/inc/class-Blog-Customizer.php:1431
 #: components/blog/inc/class-Blog-Customizer.php:1446
-#: components/portfolio/inc/class-Portfolio-Customizer.php:393
-#: components/portfolio/inc/class-Portfolio-Customizer.php:408
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:329
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:339
-msgid "Author"
+#: components/portfolio/inc/class-Portfolio-Customizer.php:392
+#: components/portfolio/inc/class-Portfolio-Customizer.php:407
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:254
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:322
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:332
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:344
+msgid "Category"
 msgstr ""
 
 #: components/blog/inc/class-Blog-Customizer.php:1432
 #: components/blog/inc/class-Blog-Customizer.php:1447
-#: components/portfolio/inc/class-Portfolio-Customizer.php:394
-#: components/portfolio/inc/class-Portfolio-Customizer.php:409
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:197
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:257
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:327
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:337
-msgid "Date"
+#: components/portfolio/inc/class-Portfolio-Customizer.php:393
+#: components/portfolio/inc/class-Portfolio-Customizer.php:408
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:325
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:335
+msgid "Author"
 msgstr ""
 
 #: components/blog/inc/class-Blog-Customizer.php:1433
 #: components/blog/inc/class-Blog-Customizer.php:1448
-#: components/blog/inc/extras.php:62
-#: components/blog/inc/template-tags.php:225
-#: components/portfolio/inc/class-Portfolio-Customizer.php:395
-#: components/portfolio/inc/class-Portfolio-Customizer.php:410
-#: components/portfolio/inc/template-tags.php:66
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:328
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:338
-msgid "Tags"
+#: components/portfolio/inc/class-Portfolio-Customizer.php:394
+#: components/portfolio/inc/class-Portfolio-Customizer.php:409
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:166
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:266
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:323
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:333
+msgid "Date"
 msgstr ""
 
 #: components/blog/inc/class-Blog-Customizer.php:1434
 #: components/blog/inc/class-Blog-Customizer.php:1449
+#: components/blog/inc/extras.php:62
+#: components/blog/inc/template-tags.php:224
+#: components/portfolio/inc/class-Portfolio-Customizer.php:395
+#: components/portfolio/inc/class-Portfolio-Customizer.php:410
+#: components/portfolio/inc/template-tags.php:66
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:324
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:334
+msgid "Tags"
+msgstr ""
+
+#: components/blog/inc/class-Blog-Customizer.php:1435
+#: components/blog/inc/class-Blog-Customizer.php:1450
 #: components/portfolio/inc/class-Portfolio-Customizer.php:396
 #: components/portfolio/inc/class-Portfolio-Customizer.php:411
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:330
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:340
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:326
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:336
 msgid "Comments"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1440
+#: components/blog/inc/class-Blog-Customizer.php:1441
 #: components/portfolio/inc/class-Portfolio-Customizer.php:402
 msgid "Secondary Meta Section"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1460
+#: components/blog/inc/class-Blog-Customizer.php:1461
 #: components/portfolio/inc/class-Portfolio-Customizer.php:422
 msgid "Item Title Color"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1472
+#: components/blog/inc/class-Blog-Customizer.php:1473
 #: components/portfolio/inc/class-Portfolio-Customizer.php:434
 msgid "Meta Primary Color"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1484
+#: components/blog/inc/class-Blog-Customizer.php:1485
 #: components/portfolio/inc/class-Portfolio-Customizer.php:446
 msgid "Meta Secondary Color"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1496
+#: components/blog/inc/class-Blog-Customizer.php:1497
 msgid "Item Excerpt Color"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1508
+#: components/blog/inc/class-Blog-Customizer.php:1509
 #: components/portfolio/inc/class-Portfolio-Customizer.php:458
 msgid "Thumbnail Background"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1522
+#: components/blog/inc/class-Blog-Customizer.php:1523
 #: components/portfolio/inc/class-Portfolio-Customizer.php:472
 msgid "Customize the mouse over effect for your thumbnails."
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1526
+#: components/blog/inc/class-Blog-Customizer.php:1527
 #: components/portfolio/inc/class-Portfolio-Customizer.php:476
 msgid "Thumbnail Background Opacity"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1553
+#: components/blog/inc/class-Blog-Customizer.php:1554
 #: components/portfolio/inc/class-Portfolio-Customizer.php:503
 msgid "Item Title Font"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1593
+#: components/blog/inc/class-Blog-Customizer.php:1594
 #: components/portfolio/inc/class-Portfolio-Customizer.php:541
 msgid "Item Meta Font"
 msgstr ""
 
-#: components/blog/inc/class-Blog-Customizer.php:1633
+#: components/blog/inc/class-Blog-Customizer.php:1634
 msgid "Item Excerpt Font"
-msgstr ""
-
-#: components/blog/inc/extras.php:35
-#: components/blog/inc/extras.php:62
-msgid "%1$s"
 msgstr ""
 
 #: components/blog/inc/extras.php:126
@@ -2030,10 +2032,6 @@ msgstr ""
 
 #: components/blog/inc/extras.php:127
 msgid "Search here"
-msgstr ""
-
-#: components/blog/inc/extras.php:128
-msgid "Search"
 msgstr ""
 
 #: components/blog/inc/extras.php:167
@@ -2054,76 +2052,92 @@ msgstr ""
 msgid "Add CSS that will only be applied to this post."
 msgstr ""
 
-#: components/blog/inc/template-tags.php:204
+#: components/blog/inc/template-tags.php:203
 msgid "Main Category"
 msgstr ""
 
-#: components/blog/inc/template-tags.php:243
+#: components/blog/inc/template-tags.php:242
 #: components/portfolio/inc/template-tags.php:81
 msgid "No Comments"
 msgstr ""
 
-#: components/blog/inc/template-tags.php:245
+#: components/blog/inc/template-tags.php:244
 #: components/portfolio/inc/template-tags.php:83
 msgid "%d Comment"
 msgid_plural "%d Comments"
 msgstr[0] ""
 
-#: components/blog/inc/template-tags.php:304
+#: components/blog/inc/template-tags.php:303
 msgid "Post navigation"
 msgstr ""
 
-#: components/blog/inc/template-tags.php:311
+#: components/blog/inc/template-tags.php:310
 msgid "Previous article"
 msgstr ""
 
-#: components/blog/inc/template-tags.php:319
+#: components/blog/inc/template-tags.php:318
 msgid "Next article"
 msgstr ""
 
-#: components/blog/inc/template-tags.php:459
+#: components/blog/inc/template-tags.php:458
 msgid "View all posts by %s"
 msgstr ""
 
-#: components/blog/inc/template-tags.php:459
+#: components/blog/inc/template-tags.php:458
 msgid "All posts"
 msgstr ""
 
 #. translators: %s: post title
-#: components/blog/inc/template-tags.php:641
+#: components/blog/inc/template-tags.php:640
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post
-#: components/blog/inc/template-tags.php:648
+#: components/blog/inc/template-tags.php:647
 #: components/blog/template-parts/entry-footer-page.php:34
-#: template-parts/entry-footer-page.php:7
+#: template-parts/entry-footer-page.php:19
 msgid "Edit %s"
 msgstr ""
 
-#: components/blog/inc/template-tags.php:675
+#: components/blog/inc/template-tags.php:674
 msgid "Pingback:"
 msgstr ""
 
-#: components/blog/inc/template-tags.php:675
+#: components/blog/inc/template-tags.php:674
 msgid "(Edit)"
 msgstr ""
 
-#: components/blog/inc/template-tags.php:691
+#: components/blog/inc/template-tags.php:690
 msgid "%s <span class=\"says\">says:</span>"
 msgstr ""
 
 #. translators: 1: comment date, 2: comment time
-#: components/blog/inc/template-tags.php:702
+#: components/blog/inc/template-tags.php:701
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: components/blog/inc/template-tags.php:706
+#: components/blog/inc/template-tags.php:705
 msgid "Edit"
 msgstr ""
 
-#: components/blog/inc/template-tags.php:710
+#: components/blog/inc/template-tags.php:709
 msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: components/blog/inc/template-tags.php:831
+#: components/blog/class-Blog.php:183
+msgid "Posts navigation"
+msgstr ""
+
+#. translators: %s: The current post's posted date, in the post header
+#: components/blog/inc/template-tags.php:860
+msgctxt "post date"
+msgid "%s"
+msgstr ""
+
+#: components/blog/inc/template-tags.php:865
+msgctxt "post author"
+msgid "by"
 msgstr ""
 
 #. Template Name of the theme
@@ -2143,26 +2157,26 @@ msgid "Begin typing your search above and press return to search."
 msgstr ""
 
 #: components/blog/template-parts/search-overlay.php:20
-#: template-parts/search-overlay.php:13
+#: template-parts/search-overlay.php:18
 msgid "Press Esc to cancel."
 msgstr ""
 
 #: components/blog/template-parts/search-overlay.php:24
-#: template-parts/search-overlay.php:16
+#: template-parts/search-overlay.php:21
 msgid "Close overlay search"
 msgstr ""
 
 #. translators: %s: Name of current post.
 #: components/blog/template-parts/content-single.php:119
 #: components/blog/template-parts/entry-content.php:29
-#: template-parts/entry-content.php:5
+#: template-parts/entry-content.php:18
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: components/blog/template-parts/content-single.php:133
 #: components/blog/template-parts/entry-content.php:36
 #: components/blog/template-parts/content-page.php:131
-#: template-parts/entry-content.php:10
+#: template-parts/entry-content.php:23
 msgid "Pages:"
 msgstr ""
 
@@ -2171,12 +2185,12 @@ msgid "Search Results for: %s"
 msgstr ""
 
 #: components/blog/template-parts/content-none.php:33
-#: template-parts/content-none.php:15
+#: template-parts/content-none.php:19
 msgid "Nothing Found"
 msgstr ""
 
 #: components/blog/template-parts/content-none.php:39
-#: template-parts/content-none.php:17
+#: template-parts/content-none.php:21
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
@@ -2189,20 +2203,20 @@ msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searc
 msgstr ""
 
 #: components/blog/template-parts/content-relatedposts.php:69
-#: template-parts/content-relatedposts.php:55
+#: template-parts/content-relatedposts.php:59
 msgid "Related Posts"
 msgstr ""
 
 #: components/blog/template-parts/content.php:114
-#: template-parts/slides/slide-content-featured-post.php:44
+#: template-parts/slides/slide-content-featured-post.php:33
 msgid "Read More"
 msgstr ""
 
-#: components/blog/class-Blog.php:727
+#: components/blog/class-Blog.php:733
 msgid "Sidebar"
 msgstr ""
 
-#: components/blog/class-Blog.php:747
+#: components/blog/class-Blog.php:748
 msgid "Below Post"
 msgstr ""
 
@@ -2686,11 +2700,6 @@ msgstr ""
 msgid "Header Left"
 msgstr ""
 
-#: components/header/template-parts/header.php:47
-#: template-parts/site-header-sticky.php:18
-msgid "Menu"
-msgstr ""
-
 #: components/base/inc/class-CustomLoopsForPages.php:389
 msgid "You haven't provided a slug for the loop template part for the %s page template custom loop."
 msgstr ""
@@ -2761,128 +2770,128 @@ msgid "Posts Source:"
 msgstr ""
 
 #: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:103
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:347
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:343
 msgid "Recent Posts"
 msgstr ""
 
 #: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:105
-msgid "👉 More Posts Source options (e.g. Category, Tag, Selected Posts) are available in the Pro version of Felt. C'mon, aim for more, mate!"
+msgid "👉 More Posts Source options (e.g. Category, Tag, Selected Posts) are available in the Pro version of %s. C'mon, aim for more, mate!"
 msgstr ""
 
 #: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:112
 msgid "Category:"
 msgstr ""
 
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:129
-msgid "Number of posts:"
-msgstr ""
-
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:144
-msgid "Prevent Duplicate Posts"
-msgstr ""
-
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:145
-msgid "The posts displayed by this widget won't show up in the next widgets."
-msgstr ""
-
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:154
-msgid "Number of columns:"
-msgstr ""
-
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:156
-msgid "1 Column"
-msgstr ""
-
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:157
-msgid "2 Columns"
-msgstr ""
-
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:158
-msgid "3 Columns"
-msgstr ""
-
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:159
-msgid "4 Columns"
-msgstr ""
-
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:167
-msgid "Image Aspect Ratio:"
-msgstr ""
-
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:181
-msgid "Primary Meta:"
-msgstr ""
-
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:192
-msgid "Secondary Meta:"
-msgstr ""
-
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:193
-msgid "👉 More display options (e.g. Show Excerpt, Show Read More) are available in the Pro version of Felt. Don't let us stop you!"
-msgstr ""
-
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:205
-msgid "Label:"
-msgstr ""
-
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:206
-msgid "View More"
-msgstr ""
-
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:221
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:130
 msgid "Tag:"
 msgstr ""
 
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:239
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:148
 msgid "Post IDs:"
 msgstr ""
 
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:240
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:149
 msgid "Use Posts IDs, separated by commas, to show only a set of specific posts."
 msgstr ""
 
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:258
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:167
 msgid "Most Popular"
 msgstr ""
 
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:275
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:182
+msgid "Number of posts:"
+msgstr ""
+
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:197
+msgid "Prevent Duplicate Posts"
+msgstr ""
+
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:198
+msgid "The posts displayed by this widget won't show up in the next widgets."
+msgstr ""
+
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:207
+msgid "Number of columns:"
+msgstr ""
+
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:209
+msgid "1 Column"
+msgstr ""
+
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:210
+msgid "2 Columns"
+msgstr ""
+
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:211
+msgid "3 Columns"
+msgstr ""
+
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:212
+msgid "4 Columns"
+msgstr ""
+
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:220
+msgid "Image Aspect Ratio:"
+msgstr ""
+
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:235
 msgid "Show Excerpt"
 msgstr ""
 
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:284
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:244
 msgid "Show \"Read More\" Link"
 msgstr ""
 
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:293
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:251
+msgid "Primary Meta:"
+msgstr ""
+
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:262
+msgid "Secondary Meta:"
+msgstr ""
+
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:263
+msgid "👉 More display options (e.g. Show Excerpt, Show Read More) are available in the Pro version of %s. Don't let us stop you!"
+msgstr ""
+
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:275
 msgid "Show View More Button"
 msgstr ""
 
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:349
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:289
+msgid "Label:"
+msgstr ""
+
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:290
+msgid "View More"
+msgstr ""
+
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:345
 msgid "Tag"
 msgstr ""
 
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:350
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:346
 msgid "Selected Posts"
 msgstr ""
 
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:370
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:366
 msgid "Your featured posts."
 msgstr ""
 
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:377
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:373
 msgid "Featured Posts"
 msgstr ""
 
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:779
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:883
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:775
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:879
 msgid "All"
 msgstr ""
 
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:803
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:799
 msgid "Please define some categories first."
 msgstr ""
 
-#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:904
+#: components/base/abstracts/class-FeaturedPosts-BaseWidget.php:900
 msgid "Please define some tags first."
 msgstr ""
 
@@ -2894,18 +2903,18 @@ msgstr ""
 msgid "Front Page"
 msgstr ""
 
-#: template-parts/search-overlay.php:13
+#: template-parts/search-overlay.php:18
 msgid "Begin typing your search above and press return to search. "
 msgstr ""
 
-#: template-parts/site-header-sticky.php:23
+#: template-parts/site-header-sticky.php:28
 msgid "Next:"
 msgstr ""
 
-#: template-parts/site-header-sticky.php:30
+#: template-parts/site-header-sticky.php:35
 msgid "Reading:"
 msgstr ""
 
-#: template-parts/site-header-sticky.php:35
+#: template-parts/site-header-sticky.php:40
 msgid "Share:"
 msgstr ""
