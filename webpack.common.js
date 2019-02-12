@@ -47,6 +47,12 @@ module.exports = {
 			})
 		],
 	},
+	plugins: [
+		new webpack.BannerPlugin({
+			banner: '@codingStandardsIgnoreFile\nphpcs:ignoreFile',
+			include: 'commons.js'
+		})
+	],
 	/**
 	 * This is where our bundled stuff is saved and the public path is what we link to in our script tags
 	 */
@@ -98,6 +104,7 @@ module.exports = {
 					loader: "ts-loader"
 				}]
 			},
+
 		]
 	},
 };

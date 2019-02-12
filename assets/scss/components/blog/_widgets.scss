@@ -1,3 +1,4 @@
+
 .widget {
 
   ul:not(:last-child) {
@@ -265,3 +266,195 @@
     text-align: center;
   }
 }
+
+.widget--stripe {
+  position: relative;
+  @include spacing(padding-bottom, 4rem);
+  @include spacing(margin-top, 4rem);
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    width: calc(50vw - 50%);
+    height: 100%;
+    background-color: inherit;
+    z-index: 1;
+  }
+
+  &:after {
+    left: 100%;
+  }
+
+  &:before {
+    right: 100%;
+  }
+}
+
+.o-layout__main,
+.o-layout__side,
+.o-layout__full {
+
+  &:not(.widget-area) {
+    @include spacing(padding-top, 4rem);
+  }
+}
+
+.o-layout {
+  @include spacing(padding-bottom, 4rem);
+
+  &:not(.o-layout--blog) > .widget-area {
+
+    &.o-layout__full:last-child {
+
+      > .widget:last-child {
+        @include spacing(margin-bottom, -4rem);
+
+        &:nth-of-type(2n):not(.dark):not(.highlighted):not(.widget_promo_box--dark) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .widget:not(.widget_categories):not(.highlighted):not(.widget_promo_box):not(.jetpack_subscription_widget) {
+    @include spacing(padding-top, 4rem);
+
+    @include above(lap) {
+      .u-widget-title-sideways & .widget__title {
+        @include spacing(margin-bottom, -4rem);
+      }
+    }
+  }
+
+  .widget.highlighted,
+  .widget.dark {
+    border-top: 0 solid transparent;
+    @include spacing(border-top-width, 4rem);
+    background-clip: padding-box;
+  }
+
+  .widget_promo_box,
+  .widget_categories {
+    @include spacing(margin-top, 4rem);
+  }
+}
+
+// More Hacks
+.o-layout .widget-area--footer-featured > .widget:nth-of-type(2n+1):last-child {
+
+  &:not(.highlighted):not(.widget_promo_box):not(.jetpack_subscription_widget) {
+    margin-bottom: 0;
+  }
+}
+
+.widget:nth-of-type(2n),
+.highlighted,
+.widget_promo_box,
+.jetpack_subscription_widget {
+
+  .o-layout .o-layout__full & + & {
+    margin-top: 1px;
+  }
+}
+
+.singular .content-area + .u-container-sides-spacing .o-layout__full {
+
+  > .highlighted,
+  > .widget_promo_box,
+  > .jetpack_subscription_widget {
+    &:first-child {
+      margin-top: 1px;
+    }
+  }
+}
+
+// Helper Classes for Widgets
+// .dark: swith the colors to dark
+.widget.dark {
+  @extend .widget--stripe;
+  background-color: $footer-background-color;
+  color: $footer-text-color;
+
+  .widget__title,
+  h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+  }
+
+}
+
+// Spacings
+.highlighted,
+.dark {
+  @include spacing(padding, 3rem);
+
+  .o-layout--blog .o-layout__side & {
+    @include spacing(padding, 2rem);
+  }
+
+
+
+  @include above(lap) {
+
+    &.widget--full {
+      padding: 4rem;
+    }
+  }
+}
+
+.widget_promo_box--dark,
+.dark,
+.highlighted {
+  & + &.widget {
+    margin-top: 0 !important; //it's overwritten by .o-layout__full selectors below
+    border-top: 0;
+  }
+}
+
+.o-layout__full:last-child {
+  &:nth-of-type(2n) .widget:nth-of-type(2n+1),
+  &:nth-of-type(2n+1) .widget:nth-of-type(2n) {
+    margin-bottom: 0;
+  }
+}
+
+.o-layout__full:nth-of-type(2n) .widget:nth-of-type(2n+1),
+.o-layout__full:nth-of-type(2n+1) .widget:nth-of-type(2n) {
+  @extend .widget--stripe;
+  position: relative;
+
+  &:not(.widget_promo_box--dark):not(.dark) {
+    background-color: $header-background-color;
+
+    .slick-list:after {
+      background-color: $header-background-color;
+    }
+  }
+
+  a {
+    box-shadow: none;
+  }
+
+  &.widget_categories {
+    @include spacing(padding-top, 2rem);
+    @include spacing(padding-bottom, 2rem);
+    border: 0;
+  }
+}
+
+.widget_categories_image_grid,
+.c-card__frame,
+.entry-thumbnail {
+
+  img {
+    transition: opacity .15s ease-out;
+
+    &:not(.is-loaded):not(.emoji) {
+      opacity: 0;
+    }
+  }
+}
+
+@import '../promo';
