@@ -139,27 +139,27 @@ function felt_custom_widgets_init() {
 	 */
 
 	// The Featured Posts - Grid Widget
-	require_once pixelgrade_get_parent_theme_file_path( 'inc/widgets/featured-posts/class-FeaturedPosts-GridWidget.php' );
+	require_once pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'widgets/featured-posts/class-FeaturedPosts-GridWidget.php' );
 	register_widget( 'Pixelgrade_FeaturedPosts_GridWidget' );
 
 	// The Featured Posts - List Widget
-	require_once pixelgrade_get_parent_theme_file_path( 'inc/widgets/featured-posts/class-FeaturedPosts-ListWidget.php' );
+	require_once pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'widgets/featured-posts/class-FeaturedPosts-ListWidget.php' );
 	register_widget( 'Pixelgrade_FeaturedPosts_ListWidget' );
 
 	// The Featured Posts - 5 Cards Layout Widget
-	require_once pixelgrade_get_parent_theme_file_path( 'inc/widgets/featured-posts/class-FeaturedPosts-5CardsWidget.php' );
+	require_once pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'widgets/featured-posts/class-FeaturedPosts-5CardsWidget.php' );
 	register_widget( 'Pixelgrade_FeaturedPosts_5CardsWidget' );
 
 	// The Featured Posts - 6 Cards Layout Widget
-	require_once pixelgrade_get_parent_theme_file_path( 'inc/widgets/featured-posts/class-FeaturedPosts-6CardsWidget.php' );
+	require_once pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'widgets/featured-posts/class-FeaturedPosts-6CardsWidget.php' );
 	register_widget( 'Pixelgrade_FeaturedPosts_6CardsWidget' );
 
 	// The Featured Posts - Slideshow Widget
-	require_once pixelgrade_get_parent_theme_file_path( 'inc/widgets/featured-posts/class-FeaturedPosts-SlideshowWidget.php' );
+	require_once pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'widgets/featured-posts/class-FeaturedPosts-SlideshowWidget.php' );
 	register_widget( 'Pixelgrade_FeaturedPosts_SlideshowWidget' );
 
 	// The Featured Posts - Carousel Widget
-	require_once pixelgrade_get_parent_theme_file_path( 'inc/widgets/featured-posts/class-FeaturedPosts-CarouselWidget.php' );
+	require_once pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'widgets/featured-posts/class-FeaturedPosts-CarouselWidget.php' );
 	register_widget( 'Pixelgrade_FeaturedPosts_CarouselWidget' );
 
 	/**
@@ -167,7 +167,7 @@ function felt_custom_widgets_init() {
 	 */
 
 	// The Categories Image Grid Widget
-	require_once pixelgrade_get_parent_theme_file_path( 'inc/widgets/class-CategoriesImageGridWidget.php' );
+	require_once pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'widgets/class-CategoriesImageGridWidget.php' );
 	register_widget( 'Pixelgrade_CategoriesImageGridWidget' );
 }
 

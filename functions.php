@@ -128,21 +128,6 @@ if ( ! function_exists( 'felt_setup' ) ) {
 		 * @link https://make.wordpress.org/core/2016/11/10/visible-edit-shortcuts-in-the-customizer-preview/
 		 */
 		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		/*
-		 * Declare support for the Pixelgrade Components the theme uses.
-		 * Please note that some components will load regardless (like Base, Blog, Header, Footer).
-		 * It is safe although to declare support for all that you use (for future proofing).
-		 */
-		add_theme_support( 'pixelgrade-base-component' );
-		add_theme_support( 'pixelgrade-blog-component' );
-		add_theme_support( 'pixelgrade-header-component' );
-		add_theme_support( 'pixelgrade-footer-component' );
-		add_theme_support( 'pixelgrade-gallery-settings-component' );
-
-		if ( pixelgrade_user_has_access( 'woocommerce' ) ) {
-			add_theme_support( 'pixelgrade-woocommerce-component' );
-		}
 	}
 }
 add_action( 'after_setup_theme', 'felt_setup' );
@@ -182,7 +167,7 @@ function felt_scripts() {
 	wp_enqueue_style( 'felt-google-fonts', felt_google_fonts_url() );
 
 	/* Default Self-hosted Fonts should be loaded when Customify is off */
-	if ( ! class_exists( 'PixCustomifyPlugin' ) || ! pixelgrade_user_has_access( 'pro' ) ) {
+	if ( ! class_exists( 'PixCustomifyPlugin' ) || ! pixelgrade_user_has_access( 'pro-features' ) ) {
 		wp_enqueue_style( 'felt-fonts-charissil', felt_charissil_font_url() );
 		$main_style_deps[] = 'felt-fonts-charissil';
 

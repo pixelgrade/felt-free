@@ -2,20 +2,15 @@
 /**
  * Custom functions related to the Components Blocks system.
  *
- * Development notice: This file is synced from the variations directory! Do not edit in the `inc` directory!
- *
  * @package Felt
  * @since 1.0.0
  */
 
 /**
  * Register new blog blocks, besides the ones provided by the blog component.
- *
- * @param string $component_slug The component's slug.
- * @param array $component_config The component entire component config.
  */
 
-function variation_change_blog_component_config() {
+function felt_change_blog_component_config() {
 
 	Pixelgrade_BlocksManager()->registerBlock( 'blog/single-portrait', array(
 		'extend' => 'blog/default',
@@ -217,4 +212,4 @@ function variation_change_blog_component_config() {
 
 }
 
-add_action( 'pixelgrade_blog_after_register_blocks', 'variation_change_blog_component_config', 20 );
+add_action( 'pixelgrade_blog_after_register_blocks', 'felt_change_blog_component_config', 20 );

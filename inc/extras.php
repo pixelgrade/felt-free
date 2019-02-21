@@ -337,3 +337,13 @@ function felt_modify_embed_defaults() {
 	);
 }
 add_filter( 'embed_defaults', 'felt_modify_embed_defaults' );
+
+function felt_maybe_load_pro_features() {
+	if ( true === pixelgrade_user_has_access( 'pro-features' ) ) {
+		pixelgrade_autoload_dir( 'inc/pro' );
+	} else {
+		pixelgrade_autoload_dir( 'inc/lite' );
+	}
+}
+// We want to do this as early as possible. So the zero priority is as intended.
+add_action( 'after_setup_theme', 'felt_maybe_load_pro_features', 0 );

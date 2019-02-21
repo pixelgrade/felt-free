@@ -1,10 +1,31 @@
 <?php
 /**
- * This file is responsible for adjusting the Pixelgrade Components to this theme's specific needs.
+ * Handle the specific Components integration.
  *
  * @package Felt
  * @since 1.0.0
  */
+
+/**
+ * Setup components by adding support for the ones needed.
+ */
+function felt_setup_components() {
+	/*
+	 * Declare support for the Pixelgrade Components the theme uses.
+	 * Please note that some components will load regardless (like Base, Blog, Header, Footer).
+	 * It is safe although to declare support for all that you use (for future proofing).
+	 */
+	add_theme_support( 'pixelgrade-base-component' );
+	add_theme_support( 'pixelgrade-blog-component' );
+	add_theme_support( 'pixelgrade-header-component' );
+	add_theme_support( 'pixelgrade-footer-component' );
+	add_theme_support( 'pixelgrade-gallery-settings-component' );
+
+	if ( pixelgrade_user_has_access( 'woocommerce' ) ) {
+		add_theme_support( 'pixelgrade-woocommerce-component' );
+	}
+}
+add_action( 'after_setup_theme', 'felt_setup_components', 10 );
 
 /*========================*/
 /* CUSTOMIZING THE HEADER */
@@ -110,5 +131,21 @@ add_filter( 'pixelgrade_footer_display_sidebar', 'felt_prevent_footer_sidebar_on
 
 /**
  * END CUSTOMIZING THE FOOTERs
+ * ==========================
+ */
+
+/*========================*/
+/* CUSTOMIZING WOOCOMMERCE */
+/*========================*/
+
+function felt_output_dropcap_in_single_product_page() {
+	global $product;
+
+	echo '<div class="header-dropcap">' . esc_html( substr( $product->get_title(), 0, 1 ) ) . '</div>';
+}
+add_action( 'woocommerce_single_product_summary', 'felt_output_dropcap_in_single_product_page', 6 );
+
+/**
+ * END CUSTOMIZING WOOCOMMERCE
  * ==========================
  */
