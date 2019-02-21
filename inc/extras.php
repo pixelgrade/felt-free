@@ -236,18 +236,18 @@ if ( ! function_exists( 'felt_comment_form_custom_fields' ) ) :
 
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
-		$aria_req  = ( $req ? ' aria-required="true"' : '' );
+		$aria_req  = ( $req ? 'aria-required="true"' : '' );
 
 		$fields = array_merge( $fields, array(
 			'author' =>
 				'<p class="comment-form-author"><label for="author">' . esc_html__( 'Name', '__theme_txtd' ) . ( $req ? '*' : '' ) . '</label> ' .
 				'<input id="author" name="author" type="text" placeholder="' . esc_attr__( 'Your name', '__theme_txtd' ) . '" value="' . esc_attr( $commenter['comment_author'] ) .
-				'"' . $aria_req . ' /></p>',
+				'" ' . $aria_req . ' /></p>',
 
 			'email' =>
 				'<p class="comment-form-email"><label for="email">' . esc_html__( 'Email', '__theme_txtd' ) . ( $req ? '*' : '' ) . '</label> ' .
 				'<input id="email" name="email" type="text" placeholder="' . esc_attr__( 'your@email.com', '__theme_txtd' ) . '" value="' . esc_attr( $commenter['comment_author_email'] ) .
-				'"' . $aria_req . ' /></p>',
+				'" ' . $aria_req . ' /></p>',
 
 			'url' =>
 				'<p class="comment-form-url"><label for="url">' . esc_html__( 'Website', '__theme_txtd' ) . '</label>' .
