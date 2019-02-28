@@ -168,10 +168,10 @@ function felt_scripts() {
 
 	/* Default Self-hosted Fonts should be loaded when Customify is off */
 	if ( ! class_exists( 'PixCustomifyPlugin' ) || ! pixelgrade_user_has_access( 'pro-features' ) ) {
-		wp_enqueue_style( 'felt-fonts-charissil', felt_charissil_font_url() );
+		wp_register_style( 'felt-fonts-charissil', felt_charissil_font_url() );
 		$main_style_deps[] = 'felt-fonts-charissil';
 
-		wp_enqueue_style( 'felt-fonts-hkgrotesk', felt_hkgrotesk_font_url() );
+		wp_register_style( 'felt-fonts-hkgrotesk', felt_hkgrotesk_font_url() );
 		$main_style_deps[] = 'felt-fonts-hkgrotesk';
 	}
 
@@ -187,10 +187,6 @@ function felt_scripts() {
 
 	wp_enqueue_script( 'felt-commons-scripts', get_theme_file_uri( '/assets/js/commons.js' ), array(), $theme->get( 'Version' ), true );
 	wp_enqueue_script( 'felt-scripts', get_theme_file_uri( '/assets/js/scripts' . $suffix . '.js' ), array( 'felt-commons-scripts', 'jquery', 'masonry', 'hoverIntent', 'gsap-tweenmax', 'select2', 'slick-carousel' ), $theme->get( 'Version' ), true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 
 	wp_localize_script( 'felt-scripts', 'feltStrings', array(
 		'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),
