@@ -148,13 +148,13 @@ function felt_lite_admin_setup() {
 				),
 				array(
 					'title'       => esc_html__( 'Flexible Color Scheme with Style Manager', '__theme_txtd' ),
-					'description' => esc_html__( 'Showcase your unique style in an easy and smart way by using an intuitive inter­face that allows you to change color palettes and fonts with a few clicks until they fully represent you and match your particular needs.','__theme_txtd' ),
+					'description' => esc_html__( 'Showcase your unique style in an easy and smart way by using an intuitive interface that allows you to change color palettes and fonts with a few clicks until they fully represent you and match your particular needs.','__theme_txtd' ),
 					'is_in_lite'  => 'false',
 					'is_in_pro'   => 'true',
 				),
 				array(
 					'title'       => esc_html__( 'Advanced Typography Settings', '__theme_txtd' ),
-					'description' => esc_html__( 'Adjust your fonts by taking advantage of a play­ground with 600+ fonts variety you can wisely choose from at any moment.','__theme_txtd' ),
+					'description' => esc_html__( 'Adjust your fonts by taking advantage of a playground with 600+ fonts variety you can wisely choose from at any moment.','__theme_txtd' ),
 					'is_in_lite'  => 'false',
 					'is_in_pro'   => 'true',
 				),

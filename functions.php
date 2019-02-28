@@ -159,7 +159,7 @@ add_filter( 'tiled_gallery_content_width', 'felt_custom_tiled_gallery_width' );
  * Enqueue scripts and styles.
  */
 function felt_scripts() {
-	$theme = wp_get_theme();
+	$theme           = wp_get_theme( get_template() );
 	$main_style_deps = array();
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
