@@ -11,11 +11,9 @@ const escKeyCode = 27;
 export class SearchOverlay extends BaseComponent {
 
   private $body: JQuery = $( 'body' );
-  private $document: JQuery = $( document );
+  private $document: JQuery<Document> = $( document );
   private $searchField: JQuery = $( '.c-search-overlay' ).find( '.search-field' );
-  private closeSub: Observable<Event>;
   private keyupSub: Observable<Event>;
-  private subscriptionActive: boolean = true;
   private keyupSubscriptionActive: boolean = true;
 
   constructor() {
@@ -24,20 +22,15 @@ export class SearchOverlay extends BaseComponent {
   }
 
   public destroy() {
-    this.subscriptionActive = false;
     this.keyupSubscriptionActive = false;
     this.$document.off( 'click.SearchOverlay' );
   }
 
   public bindEvents() {
     this.$document.on( 'click.SearchOverlay', openClass, this.open.bind( this ) );
+    this.$document.on( 'click.SearchOverlay', closeClass, this.close.bind( this ) );
 
-    this.closeSub = Rx.DOM.click(document.querySelector(closeClass));
     this.keyupSub = Rx.DOM.keyup(document.querySelector('body' ));
-
-    this.closeSub
-        .takeWhile( () => this.subscriptionActive )
-        .subscribe( this.close.bind( this ) );
   }
 
   public createKeyupSubscription() {

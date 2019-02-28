@@ -118,7 +118,7 @@ function pixelgrade_footer_the_sidebar( $sidebar_id, $sidebar_settings ) {
  * @param array  $args An array with options for the wp_nav_menu() function.
  * @param string $menu_location Optional. The menu location id (slug) to process.
  *
- * @return false|void
+ * @return false|string
  */
 function pixelgrade_footer_the_nav_menu( $args, $menu_location = '' ) {
 	$defaults = array(
@@ -185,7 +185,7 @@ function pixelgrade_footer_get_nav_menu( $args, $menu_location = '' ) {
  */
 function pixelgrade_footer_the_back_to_top_link() {
 	if ( pixelgrade_user_has_access( 'pro-features' ) ) {
-		echo pixelgrade_footer_get_back_to_top_link();
+		echo pixelgrade_footer_get_back_to_top_link(); // WPCS: XSS OK.
 	}
 }
 
@@ -211,31 +211,32 @@ function pixelgrade_footer_the_copyright() {
 	if ( pixelgrade_user_has_access( 'pro-features' ) ) {
 		$copyright_text = pixelgrade_footer_get_copyright_content();
 		if ( ! empty( $copyright_text ) ) {
-			$output .= '<div class="c-footer__copyright-text">' . PHP_EOL;
+			$output .= "<div class=\"c-footer__copyright-text\">\n";
 
-			$output .= $copyright_text . PHP_EOL;
+			$output .= $copyright_text . "\n";
 
 			$hide_credits = pixelgrade_option( 'footer_hide_credits', false );
 			if ( empty( $hide_credits ) ) {
-				$output .= pixelgrade_get_footer_credits() . PHP_EOL;
+				$output .= pixelgrade_get_footer_credits() . "\n";
 			}
 
-			$output .= '</div>' . PHP_EOL;
+			$output .= "</div>\n";
 		}
 	} else {
-		$output .= '<div class="c-footer__copyright-text">' . PHP_EOL;
+		$output .= "<div class=\"c-footer__copyright-text\">\n";
 
+		/* translators: %year%: current year  %site-title%: the site title */
 		$copyright_text = pixelgrade_parse_content_tags( esc_html__( '&copy; %year% %site-title%.', '__components_txtd' ) );
 		if ( ! empty( $copyright_text ) ) {
-			$output .= $copyright_text . PHP_EOL;
+			$output .= $copyright_text . "\n";
 		}
 
-		$output .= pixelgrade_get_footer_credits() . PHP_EOL;
+		$output .= pixelgrade_get_footer_credits() . "\n";
 
-		$output .= '</div>' . PHP_EOL;
+		$output .= "</div>\n";
 	}
 
-	echo apply_filters( 'pixelgrade_footer_the_copyright', $output );
+	echo apply_filters( 'pixelgrade_footer_the_copyright', $output ); // WPCS: XSS OK.
 }
 /**
  * Get the footer copyright content (HTML or simple text).
@@ -245,6 +246,7 @@ function pixelgrade_footer_the_copyright() {
  * @return bool|string
  */
 function pixelgrade_footer_get_copyright_content() {
+	/* translators: %year%: current year  %site-title%: the site title */
 	$copyright_text = pixelgrade_option( 'copyright_text', esc_html__( '&copy; %year% %site-title%.', '__components_txtd' ) );
 	if ( ! empty( $copyright_text ) ) {
 		// We need to parse any tags present.
@@ -257,7 +259,8 @@ function pixelgrade_footer_get_copyright_content() {
 }
 
 function pixelgrade_get_footer_credits() {
-	return '<span class="c-footer__credits">' . sprintf( esc_html__( 'Theme: %s by %s.', '__components_txtd' ), pixelgrade_get_original_theme_name(), '<a href="' . esc_url( pixelgrade_get_footer_credits_url() ) . '" target="_blank">Pixelgrade</a>' ) . '</span>';
+	/* translators: 1: the original theme name 2: Pixelgrade site link */
+	return '<span class="c-footer__credits">' . sprintf( esc_html__( 'Theme: %1$s by %2$s.', '__components_txtd' ), pixelgrade_get_original_theme_name(), '<a href="' . esc_url( pixelgrade_get_footer_credits_url() ) . '" target="_blank">Pixelgrade</a>' ) . '</span>';
 }
 
 function pixelgrade_get_footer_credits_url() {
