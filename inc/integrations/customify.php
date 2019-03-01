@@ -1182,7 +1182,6 @@ function links_box_shadow_cb( value, selector, property, unit ) {
 }" . PHP_EOL;
 	wp_add_inline_script( 'customify-previewer-scripts', $js );
 }
-
 add_action( 'customize_preview_init', 'links_box_shadow_cb_customizer_preview', 20 );
 
 function links_hover_box_shadow_cb( $value, $selector, $property, $unit ) {
@@ -1219,7 +1218,6 @@ function links_hover_box_shadow_cb( value, selector, property, unit ) {
 }" . PHP_EOL;
 	wp_add_inline_script( 'customify-previewer-scripts', $js );
 }
-
 add_action( 'customize_preview_init', 'links_hover_box_shadow_cb_customizer_preview', 20 );
 
 function felt_inverted_site_header_height( $value, $selector, $property, $unit ) {
@@ -1244,5 +1242,4 @@ function felt_add_customify_theme_fonts( $fonts ) {
 
 	return $fonts;
 }
-
 add_filter( 'customify_theme_fonts', 'felt_add_customify_theme_fonts' );
