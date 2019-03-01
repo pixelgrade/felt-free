@@ -535,7 +535,9 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
     .edit-post-visual-editor table th,
     .edit-post-visual-editor table td {
-      padding: 7px; }
+      padding: 7px;
+      max-width: 100%;
+      white-space: nowrap; }
       @media only screen and (max-width: 1360px) {
         .edit-post-visual-editor table th,
         .edit-post-visual-editor table td {
@@ -655,7 +657,7 @@
     .edit-post-visual-editor .c-btn:hover, .edit-post-visual-editor .c-btn:active, .edit-post-visual-editor .c-btn:focus {
       color: #FFF;
       background-color: #000;
-      opacity: 0.8;
+      opacity: 1;
       text-decoration: none;
       border: initial; }
     .edit-post-visual-editor .c-btn--default {
@@ -820,7 +822,7 @@
     .edit-post-visual-editor .button[class][class][class][class][class]:hover, .edit-post-visual-editor .button[class][class][class][class][class]:active, .edit-post-visual-editor .button[class][class][class][class][class]:focus {
       color: #FFF;
       background-color: #000;
-      opacity: 0.8;
+      opacity: 1;
       text-decoration: none;
       border: initial; }
     .edit-post-visual-editor .button[class][class][class][class][class].default {
