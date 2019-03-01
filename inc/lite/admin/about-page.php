@@ -23,7 +23,7 @@ function felt_lite_admin_setup() {
 		/* translators: Main welcome title */
 		'welcome_title'         => sprintf( esc_html__( 'Welcome to %s! - Version ', '__theme_txtd' ), 'Felt' ),
 		// Main welcome content
-		'welcome_content'       => esc_html__( ' Felt is a free magazine‐style WordPress theme for publishers who want to showcase their fresh ideas. Thanks to the modular layout you can highlight what’s truly important for your tribe to enhance stronger bonds and become memorable. No matter if you are a blogger, journalist, designer or small entrepreneur, this theme will fit perfectly everytime.', '__theme_txtd' ),
+		'welcome_content'       => esc_html__( ' Felt is a free magazine-style WordPress theme for publishers who want to showcase their fresh ideas. Thanks to the modular layout you can highlight what’s truly important for your tribe to enhance stronger bonds and become memorable. No matter if you are a blogger, journalist, designer or small entrepreneur, this theme will fit perfectly everytime.', '__theme_txtd' ),
 		/**
 		 * Tabs array.
 		 *

@@ -545,7 +545,7 @@ msgid "Welcome to %s! - Version "
 msgstr ""
 
 #: inc/lite/admin/about-page.php:26
-msgid " Felt is a free magazine‐style WordPress theme for publishers who want to showcase their fresh ideas. Thanks to the modular layout you can highlight what’s truly important for your tribe to enhance stronger bonds and become memorable. No matter if you are a blogger, journalist, designer or small entrepreneur, this theme will fit perfectly everytime."
+msgid " Felt is a free magazine-style WordPress theme for publishers who want to showcase their fresh ideas. Thanks to the modular layout you can highlight what’s truly important for your tribe to enhance stronger bonds and become memorable. No matter if you are a blogger, journalist, designer or small entrepreneur, this theme will fit perfectly everytime."
 msgstr ""
 
 #: inc/lite/admin/about-page.php:34

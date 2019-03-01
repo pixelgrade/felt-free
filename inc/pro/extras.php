@@ -59,7 +59,7 @@ function felt_pro_archive_index_sidebar() {
 		'description'   => esc_html__( 'Add widgets here.', '__theme_txtd' ),
 		'before_widget' => '<section id="%1$s" class="widget widget--content %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget__title h3”><span>',
+		'before_title'  => '<h2 class="widget__title h3"><span>',
 		'after_title'   => '</span></h2>',
 	) );
 }

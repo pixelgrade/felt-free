@@ -8,11 +8,11 @@ Requires PHP: 5.3.0
 License: GPLv2 or later
 License URI: LICENSE
 
-Felt is a free magazine‐style WordPress theme for publishers who want to showcase their fresh ideas.
+Felt is a free magazine-style WordPress theme for publishers who want to showcase their fresh ideas.
 
 == Description ==
 
-Felt is a free magazine‐style WordPress theme for publishers of all kinds who want to showcase their fresh ideas. Thanks to the modular layout, multiple widget areas and a hand-full of custom and unique widgets, you can highlight what’s truly important for your tribe and stand out from the crowd. Its responsive design, multilingual support, and compatibility with the new Gutenberg editor will allow you to adapt this theme to multiple usage scenarios and personalize it to match your needs. No matter if you are a blogger, journalist, designer, DIY artist, photographer or small entrepreneur, this theme will fit perfectly every time.
+Felt is a free magazine-style WordPress theme for publishers of all kinds who want to showcase their fresh ideas. Thanks to the modular layout, multiple widget areas and a hand-full of custom and unique widgets, you can highlight what’s truly important for your tribe and stand out from the crowd. Its responsive design, multilingual support, and compatibility with the new Gutenberg editor will allow you to adapt this theme to multiple usage scenarios and personalize it to match your needs. No matter if you are a blogger, journalist, designer, DIY artist, photographer or small entrepreneur, this theme will fit perfectly every time.
 
 == Installation ==
 
