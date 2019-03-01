@@ -36,6 +36,6 @@ The Felt Theme bundles the following third-party resources:
 * Charis SIL (c) 2009, [SIL International](http://software.sil.org/products/), licensed under [SIL Open Font License v1.0](https://www.fontsquirrel.com/license/Charis-SIL)
 
 * normalize.css https://necolas.github.io/normalize.css/, (c) 2012-2016 Nicolas Gallagher and Jonathan Neal, licensed under [MIT](https://opensource.org/licenses/MIT)
+* rxjs by [ReactiveX](https://github.com/ReactiveX), licensed under [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+* select2 by [Kevin Brown](https://kevin-brown.com/), licensed under [MIT](https://opensource.org/licenses/MIT)
 * slick http://kenwheeler.github.io/slick/, Copyright (c) 2017 [Ken Wheeler](https://github.com/kenwheeler), licensed under [MIT](https://opensource.org/licenses/MIT)
-* bundled scripts in assets/js/commons.js: rx.js script by mattpodwysocki (https://www.npmjs.com/~mattpodwysocki) and vvilhonen (https://www.npmjs.com/~vvilhonen), licensed under [Apache 2.0](https://directory.fsf.org/wiki/License:Apache-2.0).
-
