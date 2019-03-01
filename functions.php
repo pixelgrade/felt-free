@@ -181,12 +181,11 @@ function felt_scripts() {
 	wp_style_add_data( 'felt-style', 'rtl', 'replace' );
 
 	/* Scripts */
-	wp_register_script( 'gsap-tweenmax','//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js', array(), '2.0.2', true );
-	wp_register_script( 'select2','//cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js', array(), '4.0.5', true );
-	wp_register_script( 'slick-carousel','//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js', array(), '1.9.0', true );
+	wp_register_script( 'tweenmax','//cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js', array(), '2.0.2', true );
+	wp_register_script( 'select2',get_theme_file_uri( '/assets/js/select2' . $suffix . '.js' ), array(), '4.0.5', true );
+	wp_register_script( 'slick',get_theme_file_uri( '/assets/js/slick' . $suffix . '.js' ), array(), '1.9.0', true );
 
-	wp_enqueue_script( 'felt-commons-scripts', get_theme_file_uri( '/assets/js/commons.js' ), array(), $theme->get( 'Version' ), true );
-	wp_enqueue_script( 'felt-scripts', get_theme_file_uri( '/assets/js/scripts' . $suffix . '.js' ), array( 'felt-commons-scripts', 'jquery', 'masonry', 'hoverIntent', 'gsap-tweenmax', 'select2', 'slick-carousel' ), $theme->get( 'Version' ), true );
+	wp_enqueue_script( 'felt-scripts', get_theme_file_uri( '/assets/js/scripts' . $suffix . '.js' ), array( 'jquery', 'masonry', 'hoverIntent', 'tweenmax', 'select2', 'slick' ), $theme->get( 'Version' ), true );
 
 	wp_localize_script( 'felt-scripts', 'feltStrings', array(
 		'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),
