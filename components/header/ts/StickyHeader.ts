@@ -18,6 +18,7 @@ export class StickyHeader extends BaseComponent {
   private $body: JQuery = $( 'body' );
   private $document: JQuery = $( document );
   private $mainMenu: JQuery = $( '.menu--primary' );
+  private $secondaryMenu: JQuery = $( '.menu--secondary' );
   private $mainMenuItems: JQueryExtended = this.$mainMenu.find( 'li' );
   private $readingBar: JQuery = $( '.js-reading-bar' );
   private $stickyHeader: JQuery = $( '.js-site-header-sticky' );
@@ -177,7 +178,13 @@ export class StickyHeader extends BaseComponent {
     if ( this.$mainMenu.length === 1 ) {
       this.$mainMenu = this.$mainMenu
         .clone( true, true )
-        .appendTo( this.$stickyHeader.find( '.c-navbar' ) );
+        .appendTo( this.$stickyHeader.find( '.c-navigation-bar__middle' ) );
+    }
+
+    if ( this.$secondaryMenu.length === 1 ) {
+      this.$secondaryMenu = this.$secondaryMenu
+          .clone( true, true )
+          .appendTo( this.$stickyHeader.find( '.c-navigation-bar__left' ) );
     }
 
     this.$stickyHeader
@@ -332,7 +339,10 @@ export class StickyHeader extends BaseComponent {
       this.$searchTrigger.clone().appendTo( $( '.c-navbar__zone--left' ) );
     }
 
-    this.$searchTrigger.clone().appendTo( $( '.site-header-sticky .c-navbar' ) );
+    const $newSearchTrigger = this.$searchTrigger.clone();
+
+    $newSearchTrigger.find( 'span' ).removeAttr( 'class' );
+    $newSearchTrigger.appendTo( $( '.c-navigation-bar__right' ) );
 
     this.$searchTrigger.remove();
   }

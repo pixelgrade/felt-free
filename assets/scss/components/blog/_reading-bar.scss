@@ -225,3 +225,24 @@
 .c-reading-progress::-moz-progress-bar {
   background-color: currentColor;
 }
+
+.c-navigation-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  > * {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.c-navigation-bar__left,
+.c-navigation-bar__right {
+  flex: 1 0 30%;
+}
+
+.c-navigation-bar__middle {
+  flex: 1 0 auto;
+  justify-content: center;
+}
