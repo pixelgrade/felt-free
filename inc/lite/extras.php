@@ -90,13 +90,12 @@ function felt_lite_customize_register( $wp_customize ) {
 		)
 	);
 
+	// This is just an empty control so that the section will show up.
 	$wp_customize->add_setting(
 		'felt_lite_style_view_pro_desc', array(
 			'default'           => '',
-			'sanitize_callback' => 'felt_sanitize_checkbox',
 		)
 	);
-
 	$wp_customize->add_control(
 		'felt_lite_style_view_pro_desc', array(
 			'section' => 'felt_lite_style_view_pro',
@@ -104,7 +103,6 @@ function felt_lite_customize_register( $wp_customize ) {
 		)
 	);
 }
-
 add_action( 'customize_register', 'felt_lite_customize_register' );
 
 /**
