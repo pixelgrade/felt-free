@@ -980,6 +980,10 @@ function felt_customify_header_section( $section_options, $options ) {
 								.site-header-sticky .c-navbar,
 								.site-header-sticky .c-navbar li'
 				),
+				array(
+					'property' => 'background-color',
+					'selector' => '.site-header-sticky .cart-count'
+				),
 			),
 		),
 		'header_sticky_active_links_color' => array(
@@ -1012,6 +1016,10 @@ function felt_customify_header_section( $section_options, $options ) {
 				array(
 					'property' => 'background-color',
 					'selector' => '.site-header-sticky, .c-reading-bar'
+				),
+				array(
+					'property' => 'color',
+					'selector' => '.site-header-sticky .cart-count'
 				),
 			),
 		),

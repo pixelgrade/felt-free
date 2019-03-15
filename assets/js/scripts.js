@@ -1104,9 +1104,11 @@ function () {
     value: function onCustomizerRender() {
       var exWindow = window;
       return Observable_Observable.create(function (observer) {
+        var callback = observer.next.bind(observer);
+
         if (exWindow.wp && exWindow.wp.customize && exWindow.wp.customize.selectiveRefresh) {
-          exWindow.wp.customize.selectiveRefresh.bind('partial-content-rendered', function (placement) {
-            observer.onNext($(placement.container));
+          exWindow.wp.customize.selectiveRefresh.bind('partial-content-rendered', function (value) {
+            callback(value);
           });
         }
       });
@@ -1116,9 +1118,11 @@ function () {
     value: function onCustomizerChange() {
       var exWindow = window;
       return Observable_Observable.create(function (observer) {
+        var callback = observer.next.bind(observer);
+
         if (exWindow.wp && exWindow.wp.customize) {
-          exWindow.wp.customize.bind('change', function (setting) {
-            observer.onNext(setting);
+          exWindow.wp.customize.bind('change', function (value) {
+            callback(value);
           });
         }
       });
@@ -1829,7 +1833,7 @@ function () {
     this.$body = external_jQuery_default()('body');
     this.$window = external_jQuery_default()(window);
     this.$html = external_jQuery_default()('html');
-    this.ev = external_jQuery_default()();
+    this.ev = external_jQuery_default()({});
     this.frameRendered = false;
     this.subscriptionActive = true;
     this.$html.toggleClass('is-IE', Helper_Helper.getIEversion() && Helper_Helper.getIEversion() < 12);
@@ -2418,6 +2422,7 @@ function (_BaseComponent) {
     _this.$body = external_jQuery_default()('body');
     _this.$document = external_jQuery_default()(document);
     _this.$mainMenu = external_jQuery_default()('.menu--primary');
+    _this.$secondaryMenu = external_jQuery_default()('.menu--secondary');
     _this.$mainMenuItems = _this.$mainMenu.find('li');
     _this.$readingBar = external_jQuery_default()('.js-reading-bar');
     _this.$stickyHeader = external_jQuery_default()('.js-site-header-sticky');
@@ -2580,7 +2585,11 @@ function (_BaseComponent) {
 
 
       if (this.$mainMenu.length === 1) {
-        this.$mainMenu = this.$mainMenu.clone(true, true).appendTo(this.$stickyHeader.find('.c-navbar'));
+        this.$mainMenu = this.$mainMenu.clone(true, true).appendTo(this.$stickyHeader.find('.c-navigation-bar__middle'));
+      }
+
+      if (this.$secondaryMenu.length === 1) {
+        this.$secondaryMenu = this.$secondaryMenu.clone(true, true).appendTo(this.$stickyHeader.find('.c-navigation-bar__left'));
       }
 
       this.$stickyHeader.find('.c-navbar').css('height', this.$stickyHeader.height()); // this.$readingBar = null;
@@ -2724,7 +2733,9 @@ function (_BaseComponent) {
         this.$searchTrigger.clone().appendTo(external_jQuery_default()('.c-navbar__zone--left'));
       }
 
-      this.$searchTrigger.clone().appendTo(external_jQuery_default()('.site-header-sticky .c-navbar'));
+      var $newSearchTrigger = this.$searchTrigger.clone();
+      $newSearchTrigger.find('span').removeAttr('class');
+      $newSearchTrigger.appendTo(external_jQuery_default()('.c-navigation-bar__right'));
       this.$searchTrigger.remove();
     }
   }]);
