@@ -110,21 +110,6 @@ function felt_sanitize_header_position( $input ) {
 	return '';
 }
 
-/**
- * Sanitize the checkbox.
- *
- * @param boolean $input .
- *
- * @return boolean true if is 1 or '1', false if anything else
- */
-function felt_sanitize_checkbox( $input ) {
-	if ( 1 == $input ) {
-		return true;
-	} else {
-		return false;
-	}
-}
-
 /* ============================
  * Customizer rendering helpers
  * ============================ */
