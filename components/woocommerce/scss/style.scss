@@ -12,7 +12,6 @@ $woocommerce-mobile-breakpoint: 768px;
 
 @import "sale-flash";
 @import "mini-cart";
-@import "menu-item";
 
 @import "cart";
 @import "checkout";
@@ -20,6 +19,31 @@ $woocommerce-mobile-breakpoint: 768px;
 .entry-title--woocommerce,
 .woocommerce-products-header__title {
     text-align: center;
+}
+
+.menu-item--cart a {
+    padding-right: 2em;
+    position: relative;
+}
+
+.cart-count {
+    display: inline-block;
+    position: relative;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    transform: scale(0.7);
+    margin-left: 0.2em;
+    margin-right: -0.5em;
+
+    span {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        white-space: nowrap;
+    }
 }
 
 .woocommerce-message {

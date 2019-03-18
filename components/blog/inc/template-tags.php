@@ -272,8 +272,13 @@ if ( ! function_exists( 'pixelgrade_get_post_meta' ) ) {
  *
  * @param array $args Optional. See get_the_post_navigation() for available arguments.
  *                    Default empty array.
+ * @return void
  */
 function pixelgrade_the_post_navigation( $args = array() ) {
+    if ( true === apply_filters( 'pixelgrade_prevent_post_navigation', false ) ) {
+        return;
+    }
+
 	echo pixelgrade_get_the_post_navigation( $args ); // @codingStandardsIgnoreLine
 }
 
@@ -308,7 +313,7 @@ if ( ! function_exists( 'pixelgrade_get_the_post_navigation' ) ) {
 		$navigation = '';
 
 		$previous = get_previous_post_link(
-			'<div class="nav-previous"><span class="nav-links__label  nav-links__label--previous">' . esc_html__( 'Previous article', '__components_txtd' ) . '</span><span class="h3 nav-title  nav-title--previous">%link</span></div>',
+			'<div class="nav-previous"><span class="nav-links__label  nav-links__label--previous">' . esc_html__( 'Previous article', '__components_txtd' ) . '</span><span class="nav-title  nav-title--previous">%link</span></div>',
 			$args['prev_text'],
 			$args['in_same_term'],
 			$args['excluded_terms'],
@@ -316,7 +321,7 @@ if ( ! function_exists( 'pixelgrade_get_the_post_navigation' ) ) {
 		);
 
 		$next = get_next_post_link(
-			'<div class="nav-next"><span class="nav-links__label  nav-links__label--next">' . esc_html__( 'Next article', '__components_txtd' ) . '</span><span class="h3 nav-title  nav-title--next">%link</span></div>',
+			'<div class="nav-next"><span class="nav-links__label  nav-links__label--next">' . esc_html__( 'Next article', '__components_txtd' ) . '</span><span class="nav-title  nav-title--next">%link</span></div>',
 			$args['next_text'],
 			$args['in_same_term'],
 			$args['excluded_terms'],
@@ -328,11 +333,9 @@ if ( ! function_exists( 'pixelgrade_get_the_post_navigation' ) ) {
 			$navigation = _navigation_markup( $previous . $next, 'post-navigation', $args['screen_reader_text'] );
 		}
 
-		return $navigation;
+		return apply_filters( 'pixelgrade_get_the_post_navigation', $navigation, $args );
 	}
 }
-
-add_action('pixelgrade_after_article', 'pixelgrade_get_the_post_navigation', 15 );
 
 /**
  * Display the HTML of the author info box
