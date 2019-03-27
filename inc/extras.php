@@ -101,6 +101,7 @@ function felt_body_classes( $classes ) {
 
 	return $classes;
 }
+
 add_filter( 'body_class', 'felt_body_classes' );
 
 function felt_body_attributes( $attributes ) {
@@ -112,6 +113,7 @@ function felt_body_attributes( $attributes ) {
 
 	return $attributes;
 }
+
 add_filter( 'pixelgrade_body_attributes', 'felt_body_attributes', 10, 1 );
 
 if ( ! function_exists( 'felt_google_fonts_url' ) ) :
@@ -268,6 +270,7 @@ function felt_mce_editor_buttons( $buttons ) {
 
 	return $buttons;
 }
+
 add_filter( 'mce_buttons_2', 'felt_mce_editor_buttons' );
 
 /**
@@ -285,9 +288,10 @@ function felt_mce_before_init( $settings ) {
 		array( 'title' => esc_html__( 'Display', '__theme_txtd' ), 'block' => 'h1', 'classes' => 'h0' ),
 		array( 'title' => esc_html__( 'Intro Text', '__theme_txtd' ), 'selector' => 'p', 'classes' => 'intro' ),
 		array( 'title' => esc_html__( 'Dropcap', '__theme_txtd' ), 'inline' => 'span', 'classes' => 'dropcap' ),
-		array( 'title'    => esc_html__( 'Button Directional &#8594;', '__theme_txtd' ),
-		       'selector' => 'a',
-		       'classes'  => 'c-btn-directional  c-btn-directional--right'
+		array(
+			'title'    => esc_html__( 'Button Directional &#8594;', '__theme_txtd' ),
+			'selector' => 'a',
+			'classes'  => 'c-btn-directional  c-btn-directional--right'
 		),
 	);
 
@@ -295,6 +299,7 @@ function felt_mce_before_init( $settings ) {
 
 	return $settings;
 }
+
 add_filter( 'tiny_mce_before_init', 'felt_mce_before_init' );
 
 // Remove the main category from the category list since we will show it separately
@@ -327,15 +332,18 @@ function felt_prevent_entry_title( $show, $location ) {
 
 	return $show;
 }
+
 add_filter( 'pixelgrade_display_entry_header', 'felt_prevent_entry_title', 10, 2 );
 
 function felt_modify_embed_defaults() {
 	$content_width = pixelgrade_option( 'main_content_content_width', 720 );
+
 	return array(
 		'width'  => $content_width,
-		'height' => $content_width * 3/4
+		'height' => $content_width * 3 / 4
 	);
 }
+
 add_filter( 'embed_defaults', 'felt_modify_embed_defaults' );
 
 function felt_maybe_load_pro_features() {
@@ -345,5 +353,76 @@ function felt_maybe_load_pro_features() {
 		pixelgrade_autoload_dir( 'inc/lite' );
 	}
 }
+
 // We want to do this as early as possible. So the zero priority is as intended.
 add_action( 'after_setup_theme', 'felt_maybe_load_pro_features', 0 );
+
+function felt_free_themes_notification() {
+	global $pagenow;
+	if ( $pagenow == 'themes.php' ) { ?>
+        <div class="pxg-notice notice is-dismissible">
+            <ul class="pxg-wizard">
+                <li class="pxg-wizard__step pxg-wizard__step--done">
+                    <span class="pxg-wizard__label">Theme</span>
+                    <span class="pxg-wizard__progress"><b></b></span>
+                </li>
+                <li class="pxg-wizard__step">
+                    <span class="pxg-wizard__label">Pixelgrade Care&reg;</span>
+                    <span class="pxg-wizard__progress"><b></b></span>
+                </li>
+                <li class="pxg-wizard__step">
+                    <span class="pxg-wizard__label">Site setup</span>
+                    <span class="pxg-wizard__progress"><b></b></span>
+                </li>
+                <li class="pxg-wizard__step">
+                    <span class="pxg-wizard__label">Ready!</span>
+                    <span class="pxg-wizard__progress"><b></b></span>
+                </li>
+            </ul>
+            <div class="pxg-notice__wrap">
+                <div class="pxg-notice__media">
+                    <?php
+                    $theme = wp_get_theme();
+                    $parent = $theme->parent();
+                    if ( $parent ) {
+                        $theme = $parent;
+                    }
+                    $screenshot = $theme->get_screenshot();
+                    if ( $screenshot ) { ?>
+                        <img src="<?php echo $screenshot; ?>">
+                    <?php } ?>
+                </div>
+                <div class="pxg-notice__body">
+                    <h1>Thanks for installing <?php echo $theme->get( 'Name' ); ?>, you're awesome!<br>Let's make an experience out of it.</h1>
+                    <p>We've prepared a special onboarding setup that helps you get started and configure your upcoming website in style. Let's make it shine!</p>
+                    <ul>
+                        <li>
+                            <i></i>
+                            <span><strong>Recommended plugins</strong> to boost your site.</span>
+                        </li>
+                        <li>
+                            <i></i>
+                            <span><strong>Starter Content</strong> to make your site look like the demo.</span>
+                        </li>
+                        <li>
+                            <i></i>
+                            <span><strong>Premium Support</strong> to assist you all the way.</span>
+                        </li>
+                    </ul>
+                    <button class="pxg-button">Install Pixelgrade Care&reg;</button>
+                </div>
+            </div>
+        </div>
+	<?php }
+}
+
+add_action( 'admin_notices', 'felt_free_themes_notification' );
+
+function felt_free_themes_notification_css() {
+	global $pagenow;
+	if ( $pagenow == 'themes.php' ) {
+		wp_register_style( 'felt_notification_css', get_template_directory_uri() . '/inc/lite/admin/wizard.css', false );
+		wp_enqueue_style( 'felt_notification_css' );
+	}
+}
+add_action( 'admin_enqueue_scripts', 'felt_free_themes_notification_css' );

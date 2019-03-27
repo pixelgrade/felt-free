@@ -1,0 +1,244 @@
+$purple: #9562C6;
+$gray: #71777c;
+$gray-light: #CCCCCC;
+
+@mixin pxg-mark {
+    transform: rotate(-135deg);
+
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        display: block;
+        width: 2px;
+        height: 9px;
+        margin-left: -3px;
+        margin-top: -4px;
+        background-color: currentColor;
+    }
+
+    &:after {
+        width: 6px;
+        height: 2px;
+    }
+}
+
+.pxg-notice {
+
+    *, :before, :after {
+        box-sizing: border-box;
+    }
+}
+
+.pxg-notice[class] {
+    position: relative;
+    margin-top: 100px;
+    border-left: 0;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    font-size: 14px;
+    line-height: 1.5;
+    color: $gray;
+
+    p {
+        font: inherit;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 18px;
+        line-height: 1.32;
+        padding: 0;
+    }
+
+    @media only screen and (min-width: 600px) {
+        font-size: 16px;
+
+        h1 {
+            font-size: 25px;
+        }
+    }
+}
+
+.pxg-wizard {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+
+    width: 100%;
+    height: 100px;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+
+    @media only screen and (min-width: 600px) {
+        font-size: inherit;
+    }
+}
+
+.pxg-wizard__step {
+    flex: 1 1 auto;
+    text-align: center;
+
+    @media only screen and (min-width: 600px) {
+        flex: 0 1 200px;
+    }
+}
+
+.pxg-wizard__step--done {
+    color: $purple;
+
+    span {
+        color: inherit;
+
+        b {
+            background-color: currentColor;
+            @include pxg-mark;
+
+            &:before,
+            &:after {
+                color: #FFFFFF;
+            }
+        }
+    }
+}
+
+.pxg-wizard__label {
+    display: block;
+}
+
+.pxg-wizard__progress {
+    display: flex;
+    align-items: center;
+    color: $gray-light;
+    margin-top: 10px;
+
+    &:before,
+    &:after {
+        content: "";
+        height: 4px;
+        background-color: currentColor;
+        flex-grow: 1;
+    }
+
+    b {
+        display: block;
+        width: 22px;
+        height: 22px;
+        border: 3px solid currentColor;
+        border-radius: 50%;
+    }
+}
+
+$pxg-notice-spacing: 30px;
+$pxg-notice-mobile-spacing: 20px;
+
+.pxg-notice__wrap {
+    padding-bottom: $pxg-notice-mobile-spacing;
+
+    > * {
+        padding-top: $pxg-notice-mobile-spacing;
+        padding-left: $pxg-notice-mobile-spacing;
+    }
+
+    @media only screen and (min-width: 600px) {
+        padding-bottom: $pxg-notice-spacing;
+
+        > * {
+            padding-top: $pxg-notice-spacing;
+            padding-left: $pxg-notice-spacing;
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.pxg-notice__media {
+    flex: 0 0 50%;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.pxg-notice__body {
+    flex: 0 0 50%;
+
+    @media only screen and (min-width: 1300px) {
+        padding-left: 80px;
+        padding-right: 40px;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+
+        i {
+            position: relative;
+            display: block;
+            flex-shrink: 0;
+
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+            border: 2px solid currentColor;
+            border-radius: 50%;
+
+            font-style: normal;
+            color: $purple;
+            @include pxg-mark;
+        }
+    }
+}
+
+.pxg-button {
+    background-color: $purple;
+    color: #FFFFFF;
+
+    padding: 18px 35px 19px;
+    margin-top: 20px;
+    border-radius: 4px;
+
+    -webkit-font-smoothing: antialiased;
+
+    box-shadow:
+        0 16px 32px rgba(42, 54, 52, 0.1),
+        0 16px 16px rgba(42, 54, 52, 0.1),
+        0 8px 8px rgba(42, 54, 52, 0.1),
+        0 4px 4px rgba(42, 54, 52, 0.1);
+
+    transform: perspective(1px) translateZ(0);
+    transition: all .15s ease-out;
+    outline: none;
+
+    &:hover {
+        transform: scale(1.05) translateY(-3px);
+
+        box-shadow:
+            0 64px 128px rgba(42, 54, 52, 0.1),
+            0 32px 64px rgba(42, 54, 52, 0.1),
+            0 16px 32px rgba(42, 54, 52, 0.1),
+            0 16px 16px rgba(42, 54, 52, 0.1),
+            0 8px 8px rgba(42, 54, 52, 0.1),
+            0 4px 4px rgba(42, 54, 52, 0.1);
+    }
+
+    &:active {
+        transform: perspective(1px) translateY(2px) translateZ(0);
+        transition-duration: .05s;
+        box-shadow: none;
+    }
+}

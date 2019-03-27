@@ -157,6 +157,8 @@ gulp.task('watch', 'Watch for changes to various files and process them', ['comp
 	// watch for theme related CSS changes
 	gulp.watch(['variations/' + variation + '/**/*.scss', 'assets/scss/**/*.scss'], ['styles-main'])
 
+	gulp.watch('assets/scss/admin/*.scss', ['styles-admin'])
+
 	// watch for components related CSS changes
 	// exclude the docs directory since that is not a true component; also exclude . directories
 	gulp.watch(['components/**/*.scss', '!components/docs/**/*', '!components/.*/**/*'], ['styles-components', 'styles-main'])

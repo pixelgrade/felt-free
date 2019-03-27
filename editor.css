@@ -89,6 +89,14 @@
   /**
  * A simple button object.
  */
+  /**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; }
   .edit-post-visual-editor p:not(:last-child),
@@ -193,202 +201,6 @@
       .edit-post-visual-editor blockquote footer a, .edit-post-visual-editor blockquote cite a {
         border-bottom: 0 !important;
         text-decoration: none !important; }
-  .edit-post-visual-editor h1 {
-    font-family: "HK Grotesk", sans-serif;
-    font-size: 36px;
-    line-height: 1.22;
-    font-weight: 700;
-    color: #333131; }
-    @media only screen and (max-width: 1360px) {
-      .edit-post-visual-editor h1 {
-        font-size: 31.61677px; } }
-    @media only screen and (max-width: 1024px) {
-      .edit-post-visual-editor h1 {
-        font-size: 28.18505px; } }
-    @media only screen and (max-width: 768px) {
-      .edit-post-visual-editor h1 {
-        font-size: 25.42536px; } }
-    @media only screen and (max-width: 320px) {
-      .edit-post-visual-editor h1 {
-        font-size: 23.15789px; } }
-    .edit-post-visual-editor h1:not(:last-child) {
-      margin-bottom: 35px; }
-      @media only screen and (max-width: 1360px) {
-        .edit-post-visual-editor h1:not(:last-child) {
-          margin-bottom: 27.48466px; } }
-      @media only screen and (max-width: 1024px) {
-        .edit-post-visual-editor h1:not(:last-child) {
-          margin-bottom: 22.62626px; } }
-      @media only screen and (max-width: 768px) {
-        .edit-post-visual-editor h1:not(:last-child) {
-          margin-bottom: 19.22747px; } }
-      @media only screen and (max-width: 320px) {
-        .edit-post-visual-editor h1:not(:last-child) {
-          margin-bottom: 16.71642px; } }
-  .edit-post-visual-editor h2 {
-    font-family: "HK Grotesk", sans-serif;
-    font-size: 26px;
-    line-height: 1.19;
-    font-weight: 700;
-    color: #333131; }
-    @media only screen and (max-width: 1360px) {
-      .edit-post-visual-editor h2 {
-        font-size: 24.04357px; } }
-    @media only screen and (max-width: 1024px) {
-      .edit-post-visual-editor h2 {
-        font-size: 22.36096px; } }
-    @media only screen and (max-width: 768px) {
-      .edit-post-visual-editor h2 {
-        font-size: 20.89845px; } }
-    @media only screen and (max-width: 320px) {
-      .edit-post-visual-editor h2 {
-        font-size: 19.61551px; } }
-    .edit-post-visual-editor h2:not(:last-child) {
-      margin-bottom: 35px; }
-      @media only screen and (max-width: 1360px) {
-        .edit-post-visual-editor h2:not(:last-child) {
-          margin-bottom: 27.48466px; } }
-      @media only screen and (max-width: 1024px) {
-        .edit-post-visual-editor h2:not(:last-child) {
-          margin-bottom: 22.62626px; } }
-      @media only screen and (max-width: 768px) {
-        .edit-post-visual-editor h2:not(:last-child) {
-          margin-bottom: 19.22747px; } }
-      @media only screen and (max-width: 320px) {
-        .edit-post-visual-editor h2:not(:last-child) {
-          margin-bottom: 16.71642px; } }
-  .edit-post-visual-editor h3 {
-    font-family: "HK Grotesk", sans-serif;
-    font-size: 21px;
-    line-height: 1.19;
-    font-weight: 700;
-    color: #333131; }
-    @media only screen and (max-width: 1360px) {
-      .edit-post-visual-editor h3 {
-        font-size: 20.13664px; } }
-    @media only screen and (max-width: 1024px) {
-      .edit-post-visual-editor h3 {
-        font-size: 19.34147px; } }
-    @media only screen and (max-width: 768px) {
-      .edit-post-visual-editor h3 {
-        font-size: 18.60671px; } }
-    @media only screen and (max-width: 320px) {
-      .edit-post-visual-editor h3 {
-        font-size: 17.92574px; } }
-    .edit-post-visual-editor h3:not(:last-child) {
-      margin-bottom: 35px; }
-      @media only screen and (max-width: 1360px) {
-        .edit-post-visual-editor h3:not(:last-child) {
-          margin-bottom: 27.48466px; } }
-      @media only screen and (max-width: 1024px) {
-        .edit-post-visual-editor h3:not(:last-child) {
-          margin-bottom: 22.62626px; } }
-      @media only screen and (max-width: 768px) {
-        .edit-post-visual-editor h3:not(:last-child) {
-          margin-bottom: 19.22747px; } }
-      @media only screen and (max-width: 320px) {
-        .edit-post-visual-editor h3:not(:last-child) {
-          margin-bottom: 16.71642px; } }
-  .edit-post-visual-editor h4 {
-    font-family: "HK Grotesk", sans-serif;
-    font-size: 16px;
-    line-height: 1.19;
-    font-weight: 500;
-    color: #333131; }
-    @media only screen and (max-width: 1360px) {
-      .edit-post-visual-editor h4 {
-        font-size: 15.70224px; } }
-    @media only screen and (max-width: 1024px) {
-      .edit-post-visual-editor h4 {
-        font-size: 15.41536px; } }
-    @media only screen and (max-width: 768px) {
-      .edit-post-visual-editor h4 {
-        font-size: 15.13877px; } }
-    @media only screen and (max-width: 320px) {
-      .edit-post-visual-editor h4 {
-        font-size: 14.87194px; } }
-    .edit-post-visual-editor h4:not(:last-child) {
-      margin-bottom: 35px; }
-      @media only screen and (max-width: 1360px) {
-        .edit-post-visual-editor h4:not(:last-child) {
-          margin-bottom: 27.48466px; } }
-      @media only screen and (max-width: 1024px) {
-        .edit-post-visual-editor h4:not(:last-child) {
-          margin-bottom: 22.62626px; } }
-      @media only screen and (max-width: 768px) {
-        .edit-post-visual-editor h4:not(:last-child) {
-          margin-bottom: 19.22747px; } }
-      @media only screen and (max-width: 320px) {
-        .edit-post-visual-editor h4:not(:last-child) {
-          margin-bottom: 16.71642px; } }
-  .edit-post-visual-editor h5 {
-    font-family: "HK Grotesk", sans-serif;
-    font-size: 14px;
-    line-height: 1.07;
-    font-weight: normal;
-    letter-spacing: 0.07143em;
-    text-transform: uppercase;
-    color: #333131; }
-    @media only screen and (max-width: 1360px) {
-      .edit-post-visual-editor h5 {
-        font-size: 13.82438px; } }
-    @media only screen and (max-width: 1024px) {
-      .edit-post-visual-editor h5 {
-        font-size: 13.65311px; } }
-    @media only screen and (max-width: 768px) {
-      .edit-post-visual-editor h5 {
-        font-size: 13.48603px; } }
-    @media only screen and (max-width: 320px) {
-      .edit-post-visual-editor h5 {
-        font-size: 13.32299px; } }
-    .edit-post-visual-editor h5:not(:last-child) {
-      margin-bottom: 28px; }
-      @media only screen and (max-width: 1360px) {
-        .edit-post-visual-editor h5:not(:last-child) {
-          margin-bottom: 22.17822px; } }
-      @media only screen and (max-width: 1024px) {
-        .edit-post-visual-editor h5:not(:last-child) {
-          margin-bottom: 18.36066px; } }
-      @media only screen and (max-width: 768px) {
-        .edit-post-visual-editor h5:not(:last-child) {
-          margin-bottom: 15.66434px; } }
-      @media only screen and (max-width: 320px) {
-        .edit-post-visual-editor h5:not(:last-child) {
-          margin-bottom: 13.65854px; } }
-  .edit-post-visual-editor h6 {
-    font-family: "HK Grotesk", sans-serif;
-    font-size: 13px;
-    line-height: 1.23077;
-    font-weight: normal;
-    letter-spacing: 0.07692em;
-    text-transform: uppercase;
-    color: #FF6000; }
-    @media only screen and (max-width: 1360px) {
-      .edit-post-visual-editor h6 {
-        font-size: 12.8691px; } }
-    @media only screen and (max-width: 1024px) {
-      .edit-post-visual-editor h6 {
-        font-size: 12.74082px; } }
-    @media only screen and (max-width: 768px) {
-      .edit-post-visual-editor h6 {
-        font-size: 12.61507px; } }
-    @media only screen and (max-width: 320px) {
-      .edit-post-visual-editor h6 {
-        font-size: 12.49177px; } }
-    .edit-post-visual-editor h6:not(:last-child) {
-      margin-bottom: 14px; }
-      @media only screen and (max-width: 1360px) {
-        .edit-post-visual-editor h6:not(:last-child) {
-          margin-bottom: 12.89431px; } }
-      @media only screen and (max-width: 1024px) {
-        .edit-post-visual-editor h6:not(:last-child) {
-          margin-bottom: 11.95049px; } }
-      @media only screen and (max-width: 768px) {
-        .edit-post-visual-editor h6:not(:last-child) {
-          margin-bottom: 11.13541px; } }
-      @media only screen and (max-width: 320px) {
-        .edit-post-visual-editor h6:not(:last-child) {
-          margin-bottom: 10.42442px; } }
   .edit-post-visual-editor h1 + .edit-post-visual-editor h1:not(:first-child), .edit-post-visual-editor h2 + .edit-post-visual-editor h1:not(:first-child), .edit-post-visual-editor h3 + .edit-post-visual-editor h1:not(:first-child), .edit-post-visual-editor h4 + .edit-post-visual-editor h1:not(:first-child), .edit-post-visual-editor h5 + .edit-post-visual-editor h1:not(:first-child), .edit-post-visual-editor h6 + .edit-post-visual-editor h1:not(:first-child), .edit-post-visual-editor h1 + .edit-post-visual-editor h2:not(:first-child), .edit-post-visual-editor h2 + .edit-post-visual-editor h2:not(:first-child), .edit-post-visual-editor h3 + .edit-post-visual-editor h2:not(:first-child), .edit-post-visual-editor h4 + .edit-post-visual-editor h2:not(:first-child), .edit-post-visual-editor h5 + .edit-post-visual-editor h2:not(:first-child), .edit-post-visual-editor h6 + .edit-post-visual-editor h2:not(:first-child), .edit-post-visual-editor h1 + .edit-post-visual-editor h3:not(:first-child), .edit-post-visual-editor h2 + .edit-post-visual-editor h3:not(:first-child), .edit-post-visual-editor h3 + .edit-post-visual-editor h3:not(:first-child), .edit-post-visual-editor h4 + .edit-post-visual-editor h3:not(:first-child), .edit-post-visual-editor h5 + .edit-post-visual-editor h3:not(:first-child), .edit-post-visual-editor h6 + .edit-post-visual-editor h3:not(:first-child), .edit-post-visual-editor h1 + .edit-post-visual-editor h4:not(:first-child), .edit-post-visual-editor h2 + .edit-post-visual-editor h4:not(:first-child), .edit-post-visual-editor h3 + .edit-post-visual-editor h4:not(:first-child), .edit-post-visual-editor h4 + .edit-post-visual-editor h4:not(:first-child), .edit-post-visual-editor h5 + .edit-post-visual-editor h4:not(:first-child), .edit-post-visual-editor h6 + .edit-post-visual-editor h4:not(:first-child), .edit-post-visual-editor h1 + .edit-post-visual-editor h5:not(:first-child), .edit-post-visual-editor h2 + .edit-post-visual-editor h5:not(:first-child), .edit-post-visual-editor h3 + .edit-post-visual-editor h5:not(:first-child), .edit-post-visual-editor h4 + .edit-post-visual-editor h5:not(:first-child), .edit-post-visual-editor h5 + .edit-post-visual-editor h5:not(:first-child), .edit-post-visual-editor h6 + .edit-post-visual-editor h5:not(:first-child), .edit-post-visual-editor h1 + .edit-post-visual-editor h6:not(:first-child), .edit-post-visual-editor h2 + .edit-post-visual-editor h6:not(:first-child), .edit-post-visual-editor h3 + .edit-post-visual-editor h6:not(:first-child), .edit-post-visual-editor h4 + .edit-post-visual-editor h6:not(:first-child), .edit-post-visual-editor h5 + .edit-post-visual-editor h6:not(:first-child), .edit-post-visual-editor h6 + .edit-post-visual-editor h6:not(:first-child) {
     margin-top: 0; }
   .edit-post-visual-editor li ul, .edit-post-visual-editor li ol, .edit-post-visual-editor li dl {
@@ -628,7 +440,6 @@
     font-size: 16px;
     color: #FFF;
     background-color: #FF6000;
-    border-radius: 0;
     -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
     transition: all 0.2s cubic-bezier(0, 0, 0.58, 1); }
     @media only screen and (max-width: 1360px) {
@@ -644,7 +455,7 @@
       .edit-post-visual-editor .c-btn {
         font-size: 14.87194px; } }
     .u-buttons-rounded .edit-post-visual-editor .c-btn {
-      border-radius: 0.3em; }
+      border-radius: .3em; }
     .u-buttons-pill .edit-post-visual-editor .c-btn {
       border-radius: 999em; }
     .u-underlined-links .edit-post-visual-editor .c-btn {
@@ -654,12 +465,6 @@
       border: 2px solid currentColor; }
       .u-buttons-outline .edit-post-visual-editor .c-btn:hover, .u-buttons-outline .edit-post-visual-editor .c-btn:active, .u-buttons-outline .edit-post-visual-editor .c-btn:focus {
         background: none; }
-    .edit-post-visual-editor .c-btn:hover, .edit-post-visual-editor .c-btn:active, .edit-post-visual-editor .c-btn:focus {
-      color: #FFF;
-      background-color: #000;
-      opacity: 1;
-      text-decoration: none;
-      border: initial; }
     .edit-post-visual-editor .c-btn--default {
       background-color: #111;
       color: #FFF; }
@@ -792,7 +597,6 @@
     font-size: 16px;
     color: #FFF;
     background-color: #FF6000;
-    border-radius: 0;
     -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
     transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
     text-decoration: none; }
@@ -809,7 +613,7 @@
       .edit-post-visual-editor .button[class][class][class][class][class] {
         font-size: 14.87194px; } }
     .u-buttons-rounded .edit-post-visual-editor .button[class][class][class][class][class] {
-      border-radius: 0.3em; }
+      border-radius: .3em; }
     .u-buttons-pill .edit-post-visual-editor .button[class][class][class][class][class] {
       border-radius: 999em; }
     .u-underlined-links .edit-post-visual-editor .button[class][class][class][class][class] {
@@ -819,12 +623,6 @@
       border: 2px solid currentColor; }
       .u-buttons-outline .edit-post-visual-editor .button[class][class][class][class][class]:hover, .u-buttons-outline .edit-post-visual-editor .button[class][class][class][class][class]:active, .u-buttons-outline .edit-post-visual-editor .button[class][class][class][class][class]:focus {
         background: none; }
-    .edit-post-visual-editor .button[class][class][class][class][class]:hover, .edit-post-visual-editor .button[class][class][class][class][class]:active, .edit-post-visual-editor .button[class][class][class][class][class]:focus {
-      color: #FFF;
-      background-color: #000;
-      opacity: 1;
-      text-decoration: none;
-      border: initial; }
     .edit-post-visual-editor .button[class][class][class][class][class].default {
       background-color: #111;
       color: #FFF; }
