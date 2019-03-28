@@ -16,9 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="u-header-sides-spacing">
 		<div class="site-header-sticky__wrapper">
 
-			<nav class="c-navbar c-navbar--dropdown">
+            <nav class="c-navbar c-navbar--dropdown">
 
-				<?php if ( is_single() && ! is_attachment() ) { ?>
+                <?php if ( is_single() && ! is_attachment() ) { ?>
 
                     <div class="c-reading-bar  js-reading-bar  u-header-sides-spacing">
                         <div class="c-reading-bar__wrapper-menu-trigger"><button class="c-reading-bar__menu-trigger  js-sticky-menu-trigger"><?php esc_html_e( 'Menu', '__theme_txtd' ); ?></button></div>
@@ -44,15 +44,18 @@ if ( ! defined( 'ABSPATH' ) ) {
                         </div><!-- .c-reading-bar__wrapper-social -->
                     </div><!-- .c-reading-bar -->
 
-				<?php } ?>
+                <?php } ?>
 
                 <div class="c-navigation-bar">
                     <div class="c-navigation-bar__left"></div>
-                    <div class="c-navigation-bar__middle"></div>
+                    <div class="c-navigation-bar__middle">
+
+                    </div>
                     <div class="c-navigation-bar__right"></div>
                 </div>
 
-			</nav><!-- .c-navbar.c-navbar--dropdown -->
+            </nav><!-- .c-navbar.c-navbar--dropdown -->
+
 		</div><!-- .site-header-sticky__wrapper -->
 	</div><!-- .u-header-sides-spacing -->
 

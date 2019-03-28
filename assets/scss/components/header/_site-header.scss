@@ -216,6 +216,43 @@ a[rel='home'] {
   }
 }
 
+.c-navigation-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  @include spacing(margin-left, -30px);
+
+  > * {
+    display: flex;
+    align-items: center;
+    @include spacing(margin-left, 30px);
+  }
+}
+
+.c-navigation-bar__middle {
+  justify-content: center;
+}
+
+@include above(desk) {
+
+  .c-navigation-bar__left,
+  .c-navigation-bar__right {
+    flex: 1 1 10%;
+  }
+
+  .c-navigation-bar__middle {
+    flex: 0 1 auto;
+  }
+}
+
+.c-navigation-bar__left[class] ul {
+  @include spacing(margin-left, -30px);
+}
+
+.c-navigation-bar__left[class] li {
+  @include spacing(margin-left, 30px);
+}
+
 .home {
   .c-reading-bar {
     opacity: 0;

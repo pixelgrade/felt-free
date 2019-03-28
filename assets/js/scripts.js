@@ -1481,6 +1481,7 @@ function (_BaseComponent) {
     _this.$body = jquery__WEBPACK_IMPORTED_MODULE_0___default()('body');
     _this.$document = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document);
     _this.$mainMenu = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu--primary');
+    _this.$secondaryMenu = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu--secondary');
     _this.$mainMenuItems = _this.$mainMenu.find('li');
     _this.$readingBar = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-reading-bar');
     _this.$stickyHeader = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-site-header-sticky');
@@ -1638,12 +1639,17 @@ function (_BaseComponent) {
 
       if (this.$mainMenu.length === 0) {
         this.$mainMenu = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.menu--secondary');
+        this.$secondaryMenu = jquery__WEBPACK_IMPORTED_MODULE_0___default()({});
       } // If there is a menu, either the "true" main one or the fallback one,
       // clone it and append it to the reading bar.
 
 
       if (this.$mainMenu.length === 1) {
-        this.$mainMenu = this.$mainMenu.clone(true, true).appendTo(this.$stickyHeader.find('.c-navbar'));
+        this.$mainMenu = this.$mainMenu.clone(true, true).appendTo(this.$stickyHeader.find('.c-navigation-bar__middle'));
+      }
+
+      if (this.$secondaryMenu.length === 1) {
+        this.$secondaryMenu = this.$secondaryMenu.clone(true, true).appendTo(this.$stickyHeader.find('.c-navigation-bar__left'));
       }
 
       this.$stickyHeader.find('.c-navbar').css('height', this.$stickyHeader.height()); // this.$readingBar = null;
@@ -1679,7 +1685,7 @@ function (_BaseComponent) {
           jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).addClass('prevent-one');
         }); // Replace the label text and make it visible
 
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.c-navbar__label-text ').html(jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-menu-mobile-label').html()).removeClass('screen-reader-text');
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.c-navbar__label-text').html(jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-menu-mobile-label').html()).removeClass('screen-reader-text');
         this.isMobileHeaderInitialised = true;
       }
     }
@@ -1784,10 +1790,10 @@ function (_BaseComponent) {
         this.$searchTrigger.clone().wrap('<li class="menu-item"></li>').parent().appendTo($headerSocialNavigation.find('.menu'));
       } else {
         // Or directly to zone left if there is no social navigation
-        this.$searchTrigger.clone().appendTo(jquery__WEBPACK_IMPORTED_MODULE_0___default()('.c-navbar__zone--left'));
+        this.$searchTrigger.clone().appendTo('.c-navbar__zone--left');
       }
 
-      this.$searchTrigger.clone().appendTo(jquery__WEBPACK_IMPORTED_MODULE_0___default()('.site-header-sticky .c-navbar'));
+      this.$searchTrigger.clone().appendTo('.c-navigation-bar__right').find('.screen-reader-text').removeClass('screen-reader-text');
       this.$searchTrigger.remove();
     }
   }]);

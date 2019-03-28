@@ -6526,36 +6526,6 @@ ul.page-numbers[class][class] {
 .c-reading-progress::-moz-progress-bar {
   background-color: currentColor; }
 
-.c-navigation-bar {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; }
-  .c-navigation-bar > * {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
-
-.c-navigation-bar__left,
-.c-navigation-bar__right {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 30%;
-          flex: 1 0 30%; }
-
-.c-navigation-bar__middle {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-
 .widget ul:not(:last-child) {
   margin-bottom: 28px; }
   @media only screen and (max-width: 1360px) {
@@ -11257,6 +11227,94 @@ a[rel='home'] {
     -webkit-transform: none;
             transform: none;
     pointer-events: auto; }
+
+.c-navigation-bar {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: -30px; }
+  @media only screen and (max-width: 1360px) {
+    .c-navigation-bar {
+      margin-left: -23.7037px; } }
+  @media only screen and (max-width: 1024px) {
+    .c-navigation-bar {
+      margin-left: -19.59184px; } }
+  @media only screen and (max-width: 768px) {
+    .c-navigation-bar {
+      margin-left: -16.69565px; } }
+  @media only screen and (max-width: 320px) {
+    .c-navigation-bar {
+      margin-left: -14.54545px; } }
+  .c-navigation-bar > * {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 30px; }
+    @media only screen and (max-width: 1360px) {
+      .c-navigation-bar > * {
+        margin-left: 23.7037px; } }
+    @media only screen and (max-width: 1024px) {
+      .c-navigation-bar > * {
+        margin-left: 19.59184px; } }
+    @media only screen and (max-width: 768px) {
+      .c-navigation-bar > * {
+        margin-left: 16.69565px; } }
+    @media only screen and (max-width: 320px) {
+      .c-navigation-bar > * {
+        margin-left: 14.54545px; } }
+
+.c-navigation-bar__middle {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+@media only screen and (min-width: 80em) {
+  .c-navigation-bar__left,
+  .c-navigation-bar__right {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 10%;
+            flex: 1 1 10%; }
+  .c-navigation-bar__middle {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto; } }
+
+.c-navigation-bar__left[class] ul {
+  margin-left: -30px; }
+  @media only screen and (max-width: 1360px) {
+    .c-navigation-bar__left[class] ul {
+      margin-left: -23.7037px; } }
+  @media only screen and (max-width: 1024px) {
+    .c-navigation-bar__left[class] ul {
+      margin-left: -19.59184px; } }
+  @media only screen and (max-width: 768px) {
+    .c-navigation-bar__left[class] ul {
+      margin-left: -16.69565px; } }
+  @media only screen and (max-width: 320px) {
+    .c-navigation-bar__left[class] ul {
+      margin-left: -14.54545px; } }
+
+.c-navigation-bar__left[class] li {
+  margin-left: 30px; }
+  @media only screen and (max-width: 1360px) {
+    .c-navigation-bar__left[class] li {
+      margin-left: 23.7037px; } }
+  @media only screen and (max-width: 1024px) {
+    .c-navigation-bar__left[class] li {
+      margin-left: 19.59184px; } }
+  @media only screen and (max-width: 768px) {
+    .c-navigation-bar__left[class] li {
+      margin-left: 16.69565px; } }
+  @media only screen and (max-width: 320px) {
+    .c-navigation-bar__left[class] li {
+      margin-left: 14.54545px; } }
 
 .home .c-reading-bar {
   opacity: 0;
