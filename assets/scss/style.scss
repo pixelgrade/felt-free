@@ -184,6 +184,9 @@ $content-class: '.entry-content';
   }
 }
 
+.woocommerce-checkout-title span {
+  font-size: 1.38em;
+}
 
 // dirty overwrites - should be cleaned regularly
 @import 'shame';

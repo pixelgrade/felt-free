@@ -14931,6 +14931,9 @@ body #infinite-handle span {
     width: 8px;
     height: 8px; } }
 
+.woocommerce-checkout-title span {
+  font-size: 1.38em; }
+
 .screen-reader-text {
   position: absolute;
   margin: -1px;
