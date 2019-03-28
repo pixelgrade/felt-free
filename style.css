@@ -6586,6 +6586,9 @@ ul.page-numbers[class][class] {
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0; }
+  .widget_nav_menu ul ul,
+  .widget_pages ul ul {
+    margin-top: 11px; }
 
 .widget_nav_menu li:not(:last-child),
 .widget_pages li:not(:last-child) {
@@ -14879,10 +14882,12 @@ body #infinite-handle span {
       .sharedaddy:not(:last-child) {
         margin-bottom: 16.71642px; } }
 
-.menu {
+.menu,
+.sub-menu {
   list-style: none;
   padding-left: 0; }
-  .u-underlined-links .menu a {
+  .u-underlined-links .menu a, .u-underlined-links
+  .sub-menu a {
     text-decoration: none; }
 
 .entry-date + .entry-title {

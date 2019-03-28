@@ -57,11 +57,16 @@
 
 .widget_nav_menu,
 .widget_pages {
+
   ul {
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 0;
     padding-bottom: 0;
+
+    ul {
+      margin-top: 11px;
+    }
   }
 
   li:not(:last-child) {

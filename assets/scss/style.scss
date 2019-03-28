@@ -122,7 +122,8 @@ $content-class: '.entry-content';
   &:not(:last-child) { @include spacing(margin-bottom, 2.5rem); }
 }
 
-.menu {
+.menu,
+.sub-menu {
   list-style: none;
   padding-left: 0;
 
