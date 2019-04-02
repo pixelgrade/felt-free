@@ -1832,7 +1832,7 @@ function () {
     this.$body = external_jQuery_default()('body');
     this.$window = external_jQuery_default()(window);
     this.$html = external_jQuery_default()('html');
-    this.ev = external_jQuery_default()({});
+    this.ev = external_jQuery_default()();
     this.frameRendered = false;
     this.subscriptionActive = true;
     this.$html.toggleClass('is-IE', Helper_Helper.getIEversion() && Helper_Helper.getIEversion() < 12);
@@ -2579,7 +2579,7 @@ function (_BaseComponent) {
 
       if (this.$mainMenu.length === 0) {
         this.$mainMenu = external_jQuery_default()('.menu--secondary');
-        this.$secondaryMenu = external_jQuery_default()({});
+        this.$secondaryMenu = external_jQuery_default()();
       } // If there is a menu, either the "true" main one or the fallback one,
       // clone it and append it to the reading bar.
 

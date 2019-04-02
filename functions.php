@@ -229,7 +229,3 @@ add_action( 'admin_enqueue_scripts', 'felt_load_wp_admin_style' );
  * ==================================================
  */
 pixelgrade_autoload_dir( 'inc' );
-
-// @todo remove these filters in next production build
-add_filter( 'pixelgrade_enable_pro_features', '__return_true' );
-add_filter( 'pixelgrade_enable_woocommerce', '__return_true' );
