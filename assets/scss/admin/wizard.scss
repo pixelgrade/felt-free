@@ -94,6 +94,23 @@ $gray-light: #CCCCCC;
     }
 }
 
+.pxg-wizard__step--current {
+  color: $purple;
+
+  span {
+    color: inherit;
+
+    b {
+      background-color: currentColor;
+
+      &:before,
+      &:after {
+        color: #FFFFFF;
+      }
+    }
+  }
+}
+
 .pxg-wizard__step--done {
     color: $purple;
 

@@ -57,11 +57,11 @@
           -ms-flex: 0 1 200px;
               flex: 0 1 200px; } }
 
-.pxg-wizard__step--done {
+.pxg-wizard__step--done, .pxg-wizard__step--current {
   color: #9562C6; }
-  .pxg-wizard__step--done span {
+  .pxg-wizard__step--done span, .pxg-wizard__step--current span {
     color: inherit; }
-    .pxg-wizard__step--done span b {
+    .pxg-wizard__step--done span b, .pxg-wizard__step--current span b {
       background-color: currentColor;
       -webkit-transform: rotate(-135deg);
               transform: rotate(-135deg); }
