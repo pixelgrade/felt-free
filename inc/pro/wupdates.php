@@ -91,7 +91,7 @@ function wupdates_add_id_M2lXe( $ids = array() ) {
 
 	// Now add the predefined details about this product
 	// Do not tamper with these please!!!
-	$ids[ $slug ] = array( 'name' => 'Felt', 'slug' => 'felt', 'id' => 'M2lXe', 'type' => 'theme', 'digest' => '6389d50bb298534d0d551fe77e200a3d', );
+	$ids[ $slug ] = array( 'name' => 'Felt', 'slug' => 'felt', 'id' => 'M2lXe', 'type' => 'theme_modular', 'digest' => '8b91d4b46eba5f541ea502eba2365fbd', );
 
 	return $ids;
 }

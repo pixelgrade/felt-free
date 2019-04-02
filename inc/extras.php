@@ -332,7 +332,6 @@ function felt_prevent_entry_title( $show, $location ) {
 
 	return $show;
 }
-
 add_filter( 'pixelgrade_display_entry_header', 'felt_prevent_entry_title', 10, 2 );
 
 function felt_modify_embed_defaults() {
@@ -343,8 +342,27 @@ function felt_modify_embed_defaults() {
 		'height' => $content_width * 3 / 4
 	);
 }
-
 add_filter( 'embed_defaults', 'felt_modify_embed_defaults' );
+
+/**
+ * Handle the WUpdates theme identification.
+ *
+ * @param array $ids
+ *
+ * @return array
+ */
+function felt_wupdates_add_id_wporg( $ids = array() ) {
+	// First get the theme directory name (unique)
+	$slug = basename( get_template_directory() );
+
+	// Now add the predefined details about this product
+	// Do not tamper with these please!!!
+	$ids[ $slug ] = array( 'name' => 'Felt', 'slug' => 'felt', 'id' => 'M2lXe', 'type' => 'theme_modular_wporg', 'digest' => '6ab62dce327084698cf55c46dfb846ce', );
+
+	return $ids;
+}
+// The 5 priority is intentional to allow for pro to overwrite.
+add_filter( 'wupdates_gather_ids', 'felt_wupdates_add_id_wporg', 5, 1 );
 
 function felt_maybe_load_pro_features() {
 	if ( true === pixelgrade_user_has_access( 'pro-features' ) ) {
@@ -353,6 +371,5 @@ function felt_maybe_load_pro_features() {
 		pixelgrade_autoload_dir( 'inc/lite' );
 	}
 }
-
 // We want to do this as early as possible. So the zero priority is as intended.
 add_action( 'after_setup_theme', 'felt_maybe_load_pro_features', 0 );
