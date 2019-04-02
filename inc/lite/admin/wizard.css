@@ -3,8 +3,10 @@
           box-sizing: border-box; }
 
 .pxg-notice[class] {
+  display: block;
   position: relative;
   margin-top: 100px;
+  margin-bottom: 100px;
   border-left: 0;
   padding-left: 0;
   padding-top: 0;
@@ -57,11 +59,20 @@
           -ms-flex: 0 1 200px;
               flex: 0 1 200px; } }
 
-.pxg-wizard__step--done, .pxg-wizard__step--current {
+.pxg-wizard__step--current {
   color: #9562C6; }
-  .pxg-wizard__step--done span, .pxg-wizard__step--current span {
+  .pxg-wizard__step--current span {
     color: inherit; }
-    .pxg-wizard__step--done span b, .pxg-wizard__step--current span b {
+    .pxg-wizard__step--current span b {
+      background-color: currentColor; }
+      .pxg-wizard__step--current span b:before, .pxg-wizard__step--current span b:after {
+        color: #FFFFFF; }
+
+.pxg-wizard__step--done {
+  color: #9562C6; }
+  .pxg-wizard__step--done span {
+    color: inherit; }
+    .pxg-wizard__step--done span b {
       background-color: currentColor;
       -webkit-transform: rotate(-135deg);
               transform: rotate(-135deg); }
@@ -195,6 +206,7 @@
   transition: all .15s ease-out;
   outline: none; }
   .pxg-button:hover {
+    cursor: pointer;
     -webkit-transform: scale(1.05) translateY(-3px);
             transform: scale(1.05) translateY(-3px);
     -webkit-box-shadow: 0 64px 128px rgba(42, 54, 52, 0.1), 0 32px 64px rgba(42, 54, 52, 0.1), 0 16px 32px rgba(42, 54, 52, 0.1), 0 16px 16px rgba(42, 54, 52, 0.1), 0 8px 8px rgba(42, 54, 52, 0.1), 0 4px 4px rgba(42, 54, 52, 0.1);
@@ -206,3 +218,30 @@
             transition-duration: .05s;
     -webkit-box-shadow: none;
             box-shadow: none; }
+  .pxg-button.state--plugin-activating, .pxg-button.state--plugin-installing {
+    color: #23282d;
+    border: 0;
+    background-color: #eee;
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 75%, transparent);
+    background-size: 50px 50px;
+    animation: progress-bg-anim 2s linear infinite;
+    -webkit-animation: progress-bg-anim 2s linear infinite; }
+  .pxg-button.state--error {
+    background-color: #E3004A; }
+  .pxg-button:disabled {
+    cursor: not-allowed; }
+
+@-webkit-keyframes progress-bg-anim {
+  0% {
+    background-position: 0 0; }
+  100% {
+    background-position: 50px 50px; } }
+
+@keyframes progress-bg-anim {
+  0% {
+    background-position: 0 0; }
+  100% {
+    background-position: 50px 50px; } }
+
+.notice {
+  display: none; }
