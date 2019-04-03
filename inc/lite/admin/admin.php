@@ -1,6 +1,6 @@
 <?php
 /**
- * Felt Theme About Page logic.
+ * Felt Theme admin dashboard logic.
  *
  * @package Felt
  */
@@ -211,5 +211,11 @@ function felt_lite_admin_setup() {
 		),
 	);
 	Felt_Lite_About_Page::init( $config );
+
+	/**
+	 * Load and initialize Pixelgrade Care notice logic.
+	 */
+	require_once 'pixcare-notice/class-notice.php';
+	PixelgradeCare_Install_Notice::init();
 }
 add_action( 'after_setup_theme', 'felt_lite_admin_setup' );

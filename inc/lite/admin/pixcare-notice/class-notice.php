@@ -1,11 +1,18 @@
 <?php
 /**
- * Pixelgrade Care notice logic.
+ * Pixelgrade Care install/activate notice class.
  *
  * @package Felt
  */
 
 class PixelgradeCare_Install_Notice {
+
+	/**
+	 * The only instance.
+	 * @var     PixelgradeCare_Install_Notice
+	 * @access  protected
+	 */
+	protected static $_instance = null;
 
 	public function __construct() {
 		$this->addHooks();
@@ -207,7 +214,6 @@ class PixelgradeCare_Install_Notice {
 	 * Process ajax call to dismiss notice.
 	 */
 	public function dismiss_notice() {
-
 		// Check nonce.
 		check_ajax_referer( 'pixcare_install_dismiss_admin_notice', 'nonce_dismiss' );
 
@@ -229,5 +235,38 @@ class PixelgradeCare_Install_Notice {
 		// If the theme is about to be deactivated, we want to clear the notice dismissal so next time it is active, it will show.
 		set_theme_mod( 'pixcare_install_notice_dismissed', false );
 	}
+
+	public static function init() {
+		return self::instance();
+	}
+
+	/**
+	 * Main PixelgradeCare_Install_Notice Instance
+	 *
+	 * Ensures only one instance of PixelgradeCare_Install_Notice is loaded or can be loaded.
+	 *
+	 * @static
+	 *
+	 * @return PixelgradeCare_Install_Notice Main PixelgradeCare_Install_Notice instance
+	 */
+	public static function instance() {
+		if ( is_null( self::$_instance ) ) {
+			self::$_instance = new self();
+		}
+		return self::$_instance;
+	} // End instance().
+
+	/**
+	 * Cloning is forbidden.
+	 */
+	public function __clone() {
+		_doing_it_wrong( __FUNCTION__, esc_html( __( 'Cheatin&#8217; huh?' ) ), null );
+	} // End __clone().
+
+	/**
+	 * Unserializing instances of this class is forbidden.
+	 */
+	public function __wakeup() {
+		_doing_it_wrong( __FUNCTION__, esc_html( __( 'Cheatin&#8217; huh?' ) ), null );
+	} // End __wakeup().
 }
-$pixcare_install_notice = new PixelgradeCare_Install_Notice();
