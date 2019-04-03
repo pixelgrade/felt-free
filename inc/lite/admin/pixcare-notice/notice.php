@@ -1,11 +1,11 @@
 <?php
 /**
- * Felt Pixelgrade Care notice logic.
+ * Pixelgrade Care notice logic.
  *
  * @package Felt
  */
 
-class PixelgradeCare_Notice {
+class PixelgradeCare_Install_Notice {
 
 	public function __construct() {
 		$this->addHooks();
@@ -223,5 +223,4 @@ class PixelgradeCare_Notice {
 		set_theme_mod( 'pixcare_install_notice_dismissed', false );
 	}
 }
-
-$pixcare_notice = new PixelgradeCare_Notice();
+$pixcare_install_notice = new PixelgradeCare_Install_Notice();
