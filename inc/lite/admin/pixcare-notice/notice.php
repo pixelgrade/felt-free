@@ -89,16 +89,18 @@ class PixelgradeCare_Install_Notice {
 
 				<div class="pixcare-notice__wrap">
 					<div class="pixcare-notice__media">
-						<?php
-						$theme = wp_get_theme();
-						$parent = $theme->parent();
-						if ( $parent ) {
-							$theme = $parent;
-						}
-						$screenshot = $theme->get_screenshot();
-						if ( $screenshot ) { ?>
-							<img src="<?php echo $screenshot; ?>" alt="Theme screenshot">
-						<?php } ?>
+                        <div class="pixcare-notice__screenshot">
+                            <?php
+                            $theme = wp_get_theme();
+                            $parent = $theme->parent();
+                            if ( $parent ) {
+                                $theme = $parent;
+                            }
+                            $screenshot = $theme->get_screenshot();
+                            if ( $screenshot ) { ?>
+                                <img src="<?php echo $screenshot; ?>" alt="Theme screenshot">
+                            <?php } ?>
+                        </div>
 					</div>
 					<div class="pixcare-notice__body">
 						<h1><?php echo wp_kses( sprintf( __( 'Thanks for installing %s, you\'re awesome!<br>Let\'s make an experience out of it.', '__theme_txtd' ),  $theme->get( 'Name' ) ), wp_kses_allowed_html('post') ); ?></h1>
@@ -115,7 +117,12 @@ class PixelgradeCare_Install_Notice {
 							</li>
 						</ul>
 						<div class="message js-plugin-message"></div>
-						<button class="pixcare-notice-button js-handle-pixcare"><?php echo $button_text ?></button>
+						<button class="pixcare-notice-button js-handle-pixcare">
+                            <span class="pixcare-notice-button__text"><?php echo $button_text ?></span>
+                            <span class="pixcare-notice-button__overlay">
+                                <span class="pixcare-notice-button__text"><?php echo $button_text ?></span>
+                            </span>
+                        </button>
 
 						<noscript>
 							<button type="submit" class="notice-dismiss"><span class="screen-reader-text"><?php esc_html_e( 'Dismiss this notice.', '__theme_txtd' ); ?></span></button>
