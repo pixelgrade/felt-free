@@ -200,7 +200,6 @@ class PixelgradeCare_Install_Notice {
 	 * Process ajax call to dismiss notice.
 	 */
 	public function dismiss_notice() {
-
 		// Check nonce.
 		check_ajax_referer( 'pixcare_install_dismiss_admin_notice', 'nonce_dismiss' );
 
