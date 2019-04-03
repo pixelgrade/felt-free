@@ -1,14 +1,9 @@
 <?php
 
 /**
- * Theme About page logic.
+ * Admin Dashboard logic.
  */
-require pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'admin/about-page.php' ); // @codingStandardsIgnoreLines
-
-/**
- * Pixelgrade Care notice logic.
- */
-require pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'admin/pixcare-notice/notice.php' ); // @codingStandardsIgnoreLines
+require pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'admin/admin.php' ); // @codingStandardsIgnoreLines
 
 /**
  * Check if the widget is only available for the Pro version.
