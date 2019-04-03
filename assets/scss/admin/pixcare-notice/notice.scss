@@ -26,14 +26,14 @@ $gray-light: #CCCCCC;
   }
 }
 
-.pxg-notice {
+.pixcare-notice__container {
 
   *, :before, :after {
     box-sizing: border-box;
   }
 }
 
-.pxg-notice[class] {
+.pixcare-notice__container[class] {
   display: block;
   position: relative;
   margin-top: 100px;
@@ -158,23 +158,23 @@ $gray-light: #CCCCCC;
   }
 }
 
-$pxg-notice-spacing: 30px;
-$pxg-notice-mobile-spacing: 20px;
+$pixcare-notice-spacing: 30px;
+$pixcare-notice-mobile-spacing: 20px;
 
-.pxg-notice__wrap {
-  padding-bottom: $pxg-notice-mobile-spacing;
+.pixcare-notice__wrap {
+  padding-bottom: $pixcare-notice-mobile-spacing;
 
   > * {
-    padding-top: $pxg-notice-mobile-spacing;
-    padding-left: $pxg-notice-mobile-spacing;
+    padding-top: $pixcare-notice-mobile-spacing;
+    padding-left: $pixcare-notice-mobile-spacing;
   }
 
   @media only screen and (min-width: 600px) {
-    padding-bottom: $pxg-notice-spacing;
+    padding-bottom: $pixcare-notice-spacing;
 
     > * {
-      padding-top: $pxg-notice-spacing;
-      padding-left: $pxg-notice-spacing;
+      padding-top: $pixcare-notice-spacing;
+      padding-left: $pixcare-notice-spacing;
     }
   }
 
@@ -184,7 +184,7 @@ $pxg-notice-mobile-spacing: 20px;
   }
 }
 
-.pxg-notice__media {
+.pixcare-notice__media {
   flex: 0 0 50%;
 
   img {
@@ -192,7 +192,7 @@ $pxg-notice-mobile-spacing: 20px;
   }
 }
 
-.pxg-notice__body {
+.pixcare-notice__body {
   flex: 0 0 50%;
 
   @media only screen and (min-width: 1300px) {
@@ -223,7 +223,7 @@ $pxg-notice-mobile-spacing: 20px;
   }
 }
 
-.pxg-button {
+.pixcare-notice-button {
   background-color: $purple;
   color: #FFFFFF;
 

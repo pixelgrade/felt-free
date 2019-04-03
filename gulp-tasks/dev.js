@@ -78,13 +78,13 @@ gulp.task('styles-admin', 'Compiles Sass and uses autoprefixer', function () {
 		log(c.red('> ') + err.file.split('/')[err.file.split('/').length - 1] + ' ' + c.underline('line ' + err.line) + ': ' + err.message)
 	}
 
-	return gulp.src('assets/scss/admin/*.scss')
+	return gulp.src('assets/scss/admin/**/*.scss')
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.sass().on('error', logError))
 		.pipe(plugins.autoprefixer())
 		// .pipe(csscomb())
 		// .pipe(chmod(644))
-		.pipe(gulp.dest('./inc/lite/admin/'))
+		.pipe(gulp.dest('./inc/lite/admin'))
 })
 
 gulp.task('eol', function () {
