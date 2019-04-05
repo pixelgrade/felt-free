@@ -70,4 +70,4 @@ function felt_register_required_plugins() {
 	tgmpa( $plugins, $config );
 
 }
-add_action( 'tgmpa_register', 'felt_register_required_plugins', 999 );
+add_action( 'tgmpa_register', 'felt_register_required_plugins', 995 );

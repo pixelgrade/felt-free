@@ -65,4 +65,5 @@ function felt_pro_register_required_plugins() {
 	tgmpa( $plugins );
 
 }
-add_action( 'tgmpa_register', 'felt_pro_register_required_plugins', 999 );
+// It is important that the priority here is lower than that of the free theme hook.
+add_action( 'tgmpa_register', 'felt_pro_register_required_plugins', 990 );
