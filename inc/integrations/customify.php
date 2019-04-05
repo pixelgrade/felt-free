@@ -1015,7 +1015,10 @@ function felt_customify_header_section( $section_options, $options ) {
 			'css'     => array(
 				array(
 					'property' => 'background-color',
-					'selector' => '.site-header-sticky, .c-reading-bar'
+					'selector' => '
+						.site-header-sticky, 
+						.c-reading-bar,
+						.woocommerce-store-notice[class][class]'
 				),
 				array(
 					'property' => 'color',
