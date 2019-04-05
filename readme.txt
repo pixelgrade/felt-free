@@ -3,7 +3,7 @@ Contributors: pixelgrade, babbardel, vlad.olaru, razvanonofrei
 Tags: blog, entertainment, translation-ready, theme-options, featured-images, custom-colors, custom-menu, custom-logo, two-columns, three-columns, four-columns, editor-style, full-width-template, sticky-post, threaded-comments, rtl-language-support
 Requires at least: 4.9.9
 Tested up to: 5.1.0
-Stable tag: 2.4.0
+Stable tag: 2.4.0.1
 Requires PHP: 5.3.0
 License: GPLv2 or later
 License URI: LICENSE
