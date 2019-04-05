@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Theme About page logic.
+ * Admin Dashboard logic.
  */
-require pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'admin/about-page.php' ); // @codingStandardsIgnoreLines
+require pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'admin/admin.php' ); // @codingStandardsIgnoreLines
 
 /**
  * Check if the widget is only available for the Pro version.
@@ -124,72 +124,3 @@ function felt_lite_body_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'felt_lite_body_class' );
-
-function felt_free_themes_notification() {
-	global $pagenow;
-	if ( $pagenow == 'themes.php' ) { ?>
-		<div class="pxg-notice notice is-dismissible">
-			<ul class="pxg-wizard">
-				<li class="pxg-wizard__step pxg-wizard__step--done">
-					<span class="pxg-wizard__label">Theme</span>
-					<span class="pxg-wizard__progress"><b></b></span>
-				</li>
-				<li class="pxg-wizard__step">
-					<span class="pxg-wizard__label">Pixelgrade Care&reg;</span>
-					<span class="pxg-wizard__progress"><b></b></span>
-				</li>
-				<li class="pxg-wizard__step">
-					<span class="pxg-wizard__label">Site setup</span>
-					<span class="pxg-wizard__progress"><b></b></span>
-				</li>
-				<li class="pxg-wizard__step">
-					<span class="pxg-wizard__label">Ready!</span>
-					<span class="pxg-wizard__progress"><b></b></span>
-				</li>
-			</ul>
-			<div class="pxg-notice__wrap">
-				<div class="pxg-notice__media">
-					<?php
-					$theme = wp_get_theme();
-					$parent = $theme->parent();
-					if ( $parent ) {
-						$theme = $parent;
-					}
-					$screenshot = $theme->get_screenshot();
-					if ( $screenshot ) { ?>
-						<img src="<?php echo $screenshot; ?>">
-					<?php } ?>
-				</div>
-				<div class="pxg-notice__body">
-					<h1>Thanks for installing <?php echo $theme->get( 'Name' ); ?>, you're awesome!<br>Let's make an experience out of it.</h1>
-					<p>We've prepared a special onboarding setup that helps you get started and configure your upcoming website in style. Let's make it shine!</p>
-					<ul>
-						<li>
-							<i></i>
-							<span><strong>Recommended plugins</strong> to boost your site.</span>
-						</li>
-						<li>
-							<i></i>
-							<span><strong>Starter Content</strong> to make your site look like the demo.</span>
-						</li>
-						<li>
-							<i></i>
-							<span><strong>Premium Support</strong> to assist you all the way.</span>
-						</li>
-					</ul>
-					<button class="pxg-button">Install Pixelgrade Care&reg;</button>
-				</div>
-			</div>
-		</div>
-	<?php }
-}
-add_action( 'admin_notices', 'felt_free_themes_notification' );
-
-function felt_free_themes_notification_css() {
-	global $pagenow;
-	if ( $pagenow == 'themes.php' ) {
-		wp_register_style( 'felt_notification_css', get_template_directory_uri() . '/inc/lite/admin/wizard.css', false );
-		wp_enqueue_style( 'felt_notification_css' );
-	}
-}
-add_action( 'admin_enqueue_scripts', 'felt_free_themes_notification_css' );
