@@ -200,7 +200,7 @@ class PixelgradeCare_Install_Notice {
 				'btnActivate' => esc_html__( 'Activate the Pixelgrade Care&reg; plugin', '__theme_txtd' ),
 				'btnActivating' => esc_html__( 'Activating Pixelgrade Care&reg;...', '__theme_txtd' ),
 				'btnRedirectingToSetup' => esc_html__( 'Opening the Pixelgrade Care&reg; setup...', '__theme_txtd' ),
-				'btnError' => esc_html__( 'Something went wrong. Please refresh the page 🙏 and try again...', '__theme_txtd' ),
+				'btnError' => esc_html__( 'Please refresh the page 🙏 and try again...', '__theme_txtd' ),
 				'installedSuccessfully' => esc_html__( 'Plugin installed successfully.', '__theme_txtd' ),
 				'activatedSuccessfully' => esc_html__( 'Plugin activated successfully.', '__theme_txtd' ),
 				'redirectingToSetup' => esc_html__( 'Opening the Pixelgrade Care&reg; setup in a couple of seconds.', '__theme_txtd' ),
