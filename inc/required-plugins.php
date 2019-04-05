@@ -27,11 +27,6 @@ function felt_register_required_plugins() {
 			'version'            => '1.4.9.4',
 			'is_automatic'       => false,
 		),
-		array(
-			'name'      => 'Contact Form Builder for WordPress – Conversion Tools by HubSpot',
-			'slug'      => 'leadin',
-			'required'  => false,
-		),
 	);
 
 	$config = array(
