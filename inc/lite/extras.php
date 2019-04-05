@@ -94,6 +94,7 @@ function felt_lite_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'felt_lite_style_view_pro_desc', array(
 			'default'           => '',
+			'sanitize_callback' => '__return_true',
 		)
 	);
 	$wp_customize->add_control(
