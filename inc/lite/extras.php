@@ -43,7 +43,7 @@ function felt_lite_customizer_assets() {
 	wp_enqueue_style( 'felt_lite_customizer_style', get_template_directory_uri() . '/inc/lite/admin/customizer.css', null, '1.0.0', false );
 }
 
-add_action( 'customize_controls_enqueue_scripts', 'felt_lite_customizer_assets' );
+add_action( 'admin_enqueue_scripts', 'felt_lite_customizer_assets' );
 
 /**
  * Add PRO Tab in Customizer
