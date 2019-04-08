@@ -1321,10 +1321,8 @@ function () {
 
       parameters = parameters[1].split('&');
 
-      var _arr = Array.from(Array(parameters.length).keys());
-
-      for (var _i = 0; _i < _arr.length; _i++) {
-        var i = _arr[_i];
+      for (var _i = 0, _Array$from = Array.from(Array(parameters.length).keys()); _i < _Array$from.length; _i++) {
+        var i = _Array$from[_i];
         var parameter = parameters[i].split('=');
 
         if (parameter[0] === param) {

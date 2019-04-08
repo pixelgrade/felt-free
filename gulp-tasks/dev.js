@@ -74,29 +74,35 @@ function stylesComponents() {
 stylesComponents.description = 'Compiles components Sass and uses autoprefixer';
 gulp.task('styles-components', stylesComponents )
 
-function stylesSequence(cb) {
-	gulp.series('typeline-config', 'typeline-phpconfig', 'styles-components', 'styles-main', 'styles-rtl')(cb);
-}
-stylesSequence.description = 'Compile all styles';
-gulp.task('styles', stylesSequence )
-
 function stylesAdmin() {
 
-	function handleError (err, res) {
-		log(c.red('Sass failed to compile'))
-		log(c.red('> ') + err.file.split('/')[err.file.split('/').length - 1] + ' ' + c.underline('line ' + err.line) + ': ' + err.message)
-	}
-
-	return gulp.src('assets/scss/admin/**/*.scss')
+	return gulp.src('inc/lite/admin/scss/**/*.scss')
 		.pipe(plugins.sourcemaps.init())
 		.pipe(plugins.sass().on('error', logError))
 		.pipe(plugins.autoprefixer())
-		// .pipe(csscomb())
-		// .pipe(chmod(644))
-		.pipe(gulp.dest('./inc/lite/admin'))
+		.pipe(plugins.replace(/^@charset \"UTF-8\";\n/gm, ''))
+		.pipe(gulp.dest('./inc/lite/admin/css'))
 }
 stylesAdmin.description = 'Compiles WordPress admin Sass and uses autoprefixer';
 gulp.task('styles-admin', stylesAdmin )
+
+function stylesPixcareNotice() {
+
+	return gulp.src('inc/lite/admin/pixcare-notice/*.scss')
+		.pipe(plugins.sourcemaps.init())
+		.pipe(plugins.sass().on('error', logError))
+		.pipe(plugins.autoprefixer())
+		.pipe(plugins.replace(/^@charset \"UTF-8\";\n/gm, ''))
+		.pipe(gulp.dest('./inc/lite/admin/pixcare-notice'))
+}
+stylesAdmin.description = 'Compiles PixCare admin notice Sass and uses autoprefixer';
+gulp.task('styles-pixcare-notice', stylesPixcareNotice )
+
+function stylesSequence(cb) {
+	gulp.series('typeline-config', 'typeline-phpconfig', 'styles-components', 'styles-main', 'styles-rtl', 'styles-pixcare-notice', 'styles-admin')(cb);
+}
+stylesSequence.description = 'Compile all styles';
+gulp.task('styles', stylesSequence )
 
 function fixEol() {
 	return gulp.src('assets/js/commons.js')

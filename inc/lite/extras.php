@@ -40,15 +40,9 @@ add_filter( 'pixelgrade_sidebar_not_supported_message', 'felt_lite_widgets_messa
  * Assets that will be loaded for the customizer sidebar
  */
 function felt_lite_customizer_assets() {
-	wp_enqueue_style( 'felt_lite_customizer_style', get_template_directory_uri() . '/inc/lite/admin/customizer.css', null, '1.0.0', false );
+	wp_enqueue_style( 'felt_lite_customizer_style', get_template_directory_uri() . '/inc/lite/admin/css/customizer.css', array(), '2.4.0.2', false );
 }
-
 add_action( 'customize_controls_enqueue_scripts', 'felt_lite_customizer_assets' );
-
-function felt_lite_admin_assets($hook) {
-	wp_enqueue_style( 'felt_lite_admin_style', get_template_directory_uri() . '/inc/lite/admin/admin.css', null, '1.0.0', false );
-}
-add_action( 'admin_enqueue_scripts', 'felt_lite_admin_assets' );
 
 /**
  * Add PRO Tab in Customizer
