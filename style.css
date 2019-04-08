@@ -15144,8 +15144,8 @@ body {
     content: '';
     position: absolute;
     top: 0;
-    right: -100vw;
-    left: -100vw;
+    right: calc(50% - 50vw);
+    left: calc(50% - 50vw);
     bottom: 0;
     background-color: #FFF4E8;
     z-index: -1; }
