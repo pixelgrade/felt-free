@@ -15143,8 +15143,8 @@ body {
     content: '';
     position: absolute;
     top: 0;
-    left: -100vw;
-    right: -100vw;
+    left: calc(50% - 50vw);
+    right: calc(50% - 50vw);
     bottom: 0;
     background-color: #FFF4E8;
     z-index: -1; }
