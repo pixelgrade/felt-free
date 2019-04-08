@@ -43,7 +43,12 @@ function felt_lite_customizer_assets() {
 	wp_enqueue_style( 'felt_lite_customizer_style', get_template_directory_uri() . '/inc/lite/admin/customizer.css', null, '1.0.0', false );
 }
 
-add_action( 'admin_enqueue_scripts', 'felt_lite_customizer_assets' );
+add_action( 'customize_controls_enqueue_scripts', 'felt_lite_customizer_assets' );
+
+function felt_lite_admin_assets($hook) {
+	wp_enqueue_style( 'felt_lite_admin_style', get_template_directory_uri() . '/inc/lite/admin/admin.css', null, '1.0.0', false );
+}
+add_action( 'admin_enqueue_scripts', 'felt_lite_admin_assets' );
 
 /**
  * Add PRO Tab in Customizer
@@ -53,7 +58,7 @@ add_action( 'admin_enqueue_scripts', 'felt_lite_customizer_assets' );
 function felt_lite_customize_register( $wp_customize ) {
 	// View Pro
 	$wp_customize->add_section(
-		'felt_lite_style_view_pro', array(
+		'pro__section', array(
 			'title'       => '' . esc_html__( 'View PRO Version', '__theme_txtd' ),
 			'priority'    => 2,
 			'description' => sprintf(
@@ -99,7 +104,7 @@ function felt_lite_customize_register( $wp_customize ) {
 	);
 	$wp_customize->add_control(
 		'felt_lite_style_view_pro_desc', array(
-			'section' => 'felt_lite_style_view_pro',
+			'section' => 'pro__section',
 			'type'    => 'hidden',
 		)
 	);
