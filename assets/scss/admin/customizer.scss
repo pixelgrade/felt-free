@@ -1,49 +1,61 @@
-/*Label for Viw Pro Customizer Section*/
+$label-bg-color: #DE1651;
+$label-border-radius: 8px;
+$label-font-size: 14px;
 
-[id*="felt_lite_style_view_pro"] .accordion-section-title:before {
-  content: "pro";
-  font-size: 10px;
-  background: #e0004d;
-  padding: 0 4px;
-  border-radius: 4px;
-  color: #fff;
-  text-transform: uppercase;
-  margin-right: 5px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-  position: absolute;
-  right: 30px;
+$button-bg-color: #8E65C0;
+
+/* Label for Viw Pro Customizer Section */
+
+[id*="pro__section"] {
+  .accordion-section-title:before {
+    position: absolute;
+    right: 30px;
+
+    content: "pro";
+    display: inline-block;
+    margin-right: 5px;
+    padding: 4px 12px;
+    border-radius: $label-border-radius;
+
+    font-size: $label-font-size;
+    font-weight: 300;
+    line-height: 1;
+
+    background-color: $label-bg-color;
+    color: #ffffff;
+    text-transform: capitalize;
+  }
 }
 
-.upsell-container .button-primary {
-  width: 100%;
-  cursor: pointer;
-  transition-duration: .2s;
-  transition-timing-function: cubic-bezier(0,0,.58,1);
-  transition-property: background,background-color,color,box-shadow,-webkit-transform;
-  transition-property: transform,background,background-color,color,box-shadow;
-  transition-property: transform,background,background-color,color,box-shadow,-webkit-transform;
-  border: 0;
-  text-align: center;
-  font-weight: 500;
-  background-color: #9660c6;
-  border-radius: 4px;
-  box-shadow: 0 0 1px transparent;
-  -webkit-font-smoothing: antialiased;
-  -webkit-tap-highlight-color: transparent;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  font-size: 16px;
-  padding: 10px 16px 10px;
-  height: auto;
-  text-shadow: none;
-}
+/* Styling for buttons */
 
-.upsell-container .button-primary:hover,
-.upsell-container .button-primary:focus {
-  box-shadow: 0 10px 20px -10px rgba(0,0,0,.7);
-  background-color: #9660c6;
-  transform: scale(1.05) translateY(-3px);
+.upsell-container {
+  .button-primary {
+    width: 100%;
+    cursor: pointer;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(0,0,.58,1);
+    transition-property: transform,background,background-color,color,box-shadow,-webkit-transform;
+    border: 0;
+    text-align: center;
+    font-weight: 500;
+    background-color: $button-bg-color;
+    border-radius: 4px;
+    box-shadow: 0 0 1px transparent;
+    transform: perspective(1px) translateZ(0);
+    font-size: 16px;
+    padding: 10px 16px 10px;
+    height: auto;
+    text-shadow: none;
+    &:hover,
+    &:focus {
+      box-shadow: 0 10px 20px -10px rgba(0,0,0,.7);
+      transform: scale(1.05) translateY(-3px);
+
+      // We need to do this to overwrite WordPress default blue for buttons
+      background-color: $button-bg-color;
+    }
+  }
 }
 
 .customize-section-description .upsell-container li {
@@ -52,14 +64,18 @@
 
 /*Label for pro features*/
 
-ul.upsell-features li h4:before {
+.upsell-features h4:before {
   content: "pro";
-  font-size: 10px;
-  background: #e0004d;
-  padding: 4px;
-  border-radius: 4px;
-  color: #fff;
-  text-transform: uppercase;
+  display: inline-block;
   margin-right: 5px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+  padding: 4px 12px;
+  border-radius: $label-border-radius;
+
+  font-size: $label-font-size;
+  font-weight: 300;
+  line-height: 1;
+
+  background-color: $label-bg-color;
+  color: #ffffff;
+  text-transform: capitalize;
 }
