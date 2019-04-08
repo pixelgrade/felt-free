@@ -5,7 +5,7 @@
  * @version 1.0.0
  */
 
-var gulp = require('gulp-help')(require('gulp')),
+var gulp = require( 'gulp' ),
 	plugins = require('gulp-load-plugins')(),
 	del = require('del'),
 	bs = require('browser-sync'),
@@ -25,7 +25,7 @@ function logError (err, res) {
 	log(c.red('> ') + err.file.split('/')[err.file.split('/').length - 1] + ' ' + c.underline('line ' + err.line) + ': ' + err.message)
 }
 
-gulp.task('styles-main', 'Compiles main css files (ie. style.css editor-style.css)', function () {
+function stylesMain() {
 	let variation = 'felt'
 
 	if (argv.variation !== undefined) {
@@ -39,24 +39,29 @@ gulp.task('styles-main', 'Compiles main css files (ie. style.css editor-style.cs
 		.pipe(plugins.sourcemaps.write('.'))
 		.pipe(plugins.replace(/^@charset \"UTF-8\";\n/gm, ''))
 		.pipe(gulp.dest('.'))
-})
+}
+stylesMain.description = 'Compiles main css files (ie. style.css editor-style.css)';
+gulp.task('styles-main', stylesMain )
 
-gulp.task('styles-rtl', 'Generate rtl.css file based on style.css', function () {
+function stylesRtl() {
 	return gulp.src('style.css')
 		.pipe(plugins.rtlcss())
 		.pipe(plugins.rename('style-rtl.css'))
 		.pipe(gulp.dest('.'))
-})
+}
+stylesRtl.description = 'Generate style-rtl.css file based on style.css';
+gulp.task('styles-rtl', stylesRtl )
 
-gulp.task('styles-process', function () {
+function stylesProcess() {
 	return gulp.src('style.css')
 		.pipe(plugins.sourcemaps.init({loadMaps: true}))
 		// @todo some processing
 		.pipe(plugins.sourcemaps.write('.'))
 		.pipe(gulp.dest('.'))
-})
+}
+gulp.task('styles-process', stylesProcess)
 
-gulp.task('styles-components', 'Compiles Sass and uses autoprefixer', function () {
+function stylesComponents() {
 	return gulp.src(['components/**/*.scss', '!components/docs/**/*', '!components/.*/**/*'])
 		.pipe(plugins.sass().on('error', logError))
 		.pipe(plugins.autoprefixer())
@@ -65,13 +70,17 @@ gulp.task('styles-components', 'Compiles Sass and uses autoprefixer', function (
 			path.dirname += '/css'
 		}))
 		.pipe(gulp.dest('./components'))
-})
+}
+stylesComponents.description = 'Compiles components Sass and uses autoprefixer';
+gulp.task('styles-components', stylesComponents )
 
-gulp.task('styles', 'Compile styles', function (cb) {
-	plugins.sequence('typeline-config', 'typeline-phpconfig', 'styles-components', 'styles-main', 'styles-rtl', cb)
-})
+function stylesSequence(cb) {
+	gulp.series('typeline-config', 'typeline-phpconfig', 'styles-components', 'styles-main', 'styles-rtl')(cb);
+}
+stylesSequence.description = 'Compile all styles';
+gulp.task('styles', stylesSequence )
 
-gulp.task('styles-admin', 'Compiles Sass and uses autoprefixer', function () {
+function stylesAdmin() {
 
 	function handleError (err, res) {
 		log(c.red('Sass failed to compile'))
@@ -85,13 +94,16 @@ gulp.task('styles-admin', 'Compiles Sass and uses autoprefixer', function () {
 		// .pipe(csscomb())
 		// .pipe(chmod(644))
 		.pipe(gulp.dest('./inc/lite/admin'))
-})
+}
+stylesAdmin.description = 'Compiles WordPress admin Sass and uses autoprefixer';
+gulp.task('styles-admin', stylesAdmin )
 
-gulp.task('eol', function () {
+function fixEol() {
 	return gulp.src('assets/js/commons.js')
 		.pipe(eol())
 		.pipe(gulp.dest('assets/js/'))
-})
+}
+gulp.task('eol', fixEol )
 
 // -----------------------------------------------------------------------------
 // Scripts
@@ -106,17 +118,19 @@ var jsFiles = [
 	'./assets/js/main/wrapper-end.js'
 ]
 
-gulp.task('scripts', 'Concatenate all JS into main.js and wrap all code in a closure', function () {
+function scripts() {
 	return gulp.src(jsFiles)
 		.pipe(plugins.concat('main.js'))
 		.pipe(gulp.dest('./assets/js/'))
-})
+}
+scripts.description = 'Concatenate all JS into main.js and wrap all code in a closure';
+gulp.task('scripts', scripts )
 
 // -----------------------------------------------------------------------------
 // Variation specific/synced files
 // -----------------------------------------------------------------------------
 
-gulp.task('sync-variation-specific-files', [], function () {
+function syncVariationSpecificFiles() {
 	let variation = 'felt'
 
 	if (argv.variation !== undefined) {
@@ -127,7 +141,8 @@ gulp.task('sync-variation-specific-files', [], function () {
 
 	return gulp.src('./variations/' + variation + '/synced/**/*')
 		.pipe(gulp.dest('.'))
-})
+}
+gulp.task('sync-variation-specific-files', syncVariationSpecificFiles )
 
 // -----------------------------------------------------------------------------
 // Watch tasks
@@ -141,7 +156,7 @@ gulp.task('sync-variation-specific-files', [], function () {
 // to run those tasks more frequently, set up a new watch task here.
 // -----------------------------------------------------------------------------
 
-gulp.task('watch', 'Watch for changes to various files and process them', ['compile'], function () {
+function watchStart() {
 	let variation = 'felt'
 
 	if (argv.variation !== undefined) {
@@ -165,7 +180,15 @@ gulp.task('watch', 'Watch for changes to various files and process them', ['comp
 
 	// watch for JavaScript changes
 	gulp.watch('assets/js/**/*.js', ['scripts'])
-})
+}
+watchStart.description = 'Watch for changes to various files and process them';
+gulp.task('watch-start', watchStart )
+
+function watchSequence(cb) {
+	return gulp.series( 'compile', 'watch-start' )(cb);
+}
+watchSequence.description = 'Compile and watch for changes to various JSON, SCSS and JS files and process them';
+gulp.task('watch', watchSequence )
 
 // -----------------------------------------------------------------------------
 // Browser Sync using Proxy server
@@ -180,7 +203,7 @@ gulp.task('watch', 'Watch for changes to various files and process them', ['comp
 // Usage: gulp browser-sync-proxy --port 8080
 // -----------------------------------------------------------------------------
 
-gulp.task('browser-sync', false, function () {
+function browserSync() {
 	bs({
 		// Point this to your pre-existing server.
 		proxy: config.baseurl + (
@@ -194,4 +217,5 @@ gulp.task('browser-sync', false, function () {
 			console.log(bs.options)
 		}
 	})
-})
+}
+gulp.task('browser-sync', browserSync )
