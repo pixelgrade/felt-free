@@ -5867,6 +5867,20 @@ body {
   @media only screen and (max-width: 320px) {
     .c-author__description {
       margin-top: -10.42442px; } }
+  .c-author__description:not(last-child) {
+    margin-bottom: 21px; }
+    @media only screen and (max-width: 1360px) {
+      .c-author__description:not(last-child) {
+        margin-bottom: 16.77903px; } }
+    @media only screen and (max-width: 1024px) {
+      .c-author__description:not(last-child) {
+        margin-bottom: 13.97089px; } }
+    @media only screen and (max-width: 768px) {
+      .c-author__description:not(last-child) {
+        margin-bottom: 11.96794px; } }
+    @media only screen and (max-width: 320px) {
+      .c-author__description:not(last-child) {
+        margin-bottom: 10.46729px; } }
 
 .c-author__avatar + .c-author__details {
   padding-left: 42px; }
@@ -5914,9 +5928,11 @@ body {
     display: inline-block;
     vertical-align: middle; }
   .c-author__footer a {
-    text-decoration: none; }
+    text-decoration: none;
+    -webkit-transition: all 0.15s ease-out;
+    transition: all 0.15s ease-out; }
     .c-author__footer a:hover {
-      text-decoration: underline; }
+      color: inherit; }
 
 .c-card__meta[class][class] a {
   text-decoration: none;
@@ -12422,7 +12438,7 @@ h1.site-title {
       .dropcap:not(:last-child) {
         margin-bottom: 10.42442px; } }
   .dropcap[class] {
-    font-size: 105px;
+    font-size: 5.4em;
     line-height: 0.9; }
   .dropcap[class]:before, .dropcap[class]:after {
     content: none; }
@@ -15743,7 +15759,8 @@ body {
     .header-meta {
       font-size: 10.61735px; } }
   .header-meta .byline {
-    text-transform: capitalize; }
+    text-transform: capitalize;
+    font-weight: bold; }
     .header-meta .byline .by {
       display: none; }
   .header-meta .posted-on {
