@@ -329,16 +329,19 @@
 
     @include above(lap) {
       .u-widget-title-sideways & .widget__title {
-        @include spacing(margin-bottom, -4rem);
+        @include spacing(margin-bottom, -4.3rem);
       }
     }
   }
 
+  .widget.widget_promo_box--dark,
   .widget.highlighted,
   .widget.dark {
     border-top: 0 solid transparent;
     @include spacing(border-top-width, 4rem);
     background-clip: padding-box;
+
+    margin-top: 0 !important;
   }
 
   .widget_promo_box,
@@ -346,6 +349,30 @@
     @include spacing(margin-top, 4rem);
   }
 }
+
+.widget-area--footer-featured {
+  @include spacing(margin-top, 4rem);
+
+  > .widget:first-child {
+    border-top-width: 0;
+    margin-top: 0;
+  }
+}
+
+.widget.widget_promo_box--dark,
+.widget.highlighted,
+.widget.dark {
+
+  .widget-area--footer-featured & + & {
+    border-top-width: 0;
+    margin-top: 0;
+  }
+}
+
+.content-area + .u-container-sides-spacing:not(.site-footer) .widget-area--footer-featured {
+  margin-top: 1px;
+}
+
 
 // More Hacks
 .o-layout .widget-area--footer-featured > .widget:nth-of-type(2n+1):last-child {
@@ -391,6 +418,7 @@
 }
 
 // Spacings
+.widget_promo_box--dark,
 .highlighted,
 .dark {
   @include spacing(padding, 3rem);
@@ -406,15 +434,6 @@
     &.widget--full {
       padding: 4rem;
     }
-  }
-}
-
-.widget_promo_box--dark,
-.dark,
-.highlighted {
-  & + &.widget {
-    margin-top: 0 !important; //it's overwritten by .o-layout__full selectors below
-    border-top: 0;
   }
 }
 

@@ -168,9 +168,6 @@ function felt_scripts() {
 
 	/* Default Self-hosted Fonts should be loaded when Customify is off */
 	if ( ! class_exists( 'PixCustomifyPlugin' ) || ! pixelgrade_user_has_access( 'pro-features' ) ) {
-		wp_register_style( 'felt-fonts-charissil', felt_charissil_font_url() );
-		$main_style_deps[] = 'felt-fonts-charissil';
-
 		wp_register_style( 'felt-fonts-hkgrotesk', felt_hkgrotesk_font_url() );
 		$main_style_deps[] = 'felt-fonts-hkgrotesk';
 	}
@@ -196,7 +193,6 @@ add_action( 'wp_enqueue_scripts', 'felt_scripts' );
 function felt_gutenberg_styles() {
 	wp_enqueue_style( 'felt-gutenberg', get_theme_file_uri( '/editor.css' ), false );
 	wp_enqueue_style( 'felt-font-hkgrotesk', felt_hkgrotesk_font_url() );
-	wp_enqueue_style( 'felt-font-charissil', felt_charissil_font_url() );
 
 	$content_width = pixelgrade_option( 'main_content_content_width' );
 	$container_width = pixelgrade_option( 'main_content_container_width', 1300 ) - 300;

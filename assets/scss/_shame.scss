@@ -183,3 +183,86 @@ body {
 .lite-version .menu--primary li[class*=children]>a:after {
   display: none;
 }
+
+.c-author__links {
+
+  a, a:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  a {
+    transition: opacity .2s ease-out;
+  }
+
+  a:hover {
+    opacity: 0.5;
+  }
+}
+
+.c-author__footer[class] {
+  color: inherit;
+}
+
+.c-author__description[class] {
+  @include spacing(margin-bottom, 1.5rem);
+}
+
+.c-author {
+  @include spacing(margin-top, 4rem);
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.intro[class] {
+  font-size: 1.2em;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: -0.01em;
+}
+
+.entry-content .cats__title {
+  flex-basis: 100%;
+  @include spacing(margin-bottom, 10px);
+}
+
+.cats,
+.tags,
+.sharedaddy {
+
+  &:not(:last-child) {
+    @include spacing(margin-bottom, 2rem);
+  }
+}
+
+.cats,
+.tags {
+
+  * + &[class] {
+    @include spacing(margin-top, 2rem);
+  }
+}
+
+* + .sharedaddy[class] {
+  @include spacing(margin-top, 3rem);
+}
+
+.entry-content .cats[class] > a:hover {
+  color: #FFFFFF;
+  opacity: 0.7;
+}
+
+.entry-content .tags > a {
+  font-style: inherit;
+}
+
+#content .sharedaddy[class] .sd-button {
+  padding: 0.71em 1.1em 0.69em 1.3em;
+}
+
+.single,
+.page {
+  .entry-header > .header-meta {
+    @include spacing(padding-top, 1.5rem);
+  }
+}

@@ -33,7 +33,7 @@ $promo-media-width:   32%   !default;
   color: $color-white;
   transform: translateZ(0);
 
-  &[class]:before {
+  &[class][class][class]:before {
     width: auto;
     left: calc(50% - 50vw);
     right: calc(50% - 50vw);
@@ -42,7 +42,7 @@ $promo-media-width:   32%   !default;
     z-index: -1;
   }
 
-  &[class]:after {
+  &[class][class][class]:after {
     content: none;
   }
 

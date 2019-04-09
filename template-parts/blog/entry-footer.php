@@ -11,14 +11,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 
-<div class="entry-aside  u-content-width">
-	<?php
-	// The bellow post widget area
-	get_sidebar( 'below-post' );
-	pixelgrade_the_author_info_box();
-	?>
-</div>
-
 <footer class="entry-footer  u-content-width">
 	<div class="entry-footer__wrapper">
 		<?php pixelgrade_entry_footer(); ?>

@@ -33,7 +33,7 @@ add_filter( 'pixelgrade_customify_buttons_section_options', 'felt_customify_butt
 add_filter( 'pixelgrade_footer_customify_section_options', 'felt_customify_footer_section', 10, 2 );
 add_filter( 'pixelgrade_customify_blog_grid_section_options', 'felt_customify_blog_grid_section', 10, 2 );
 
-define( 'VARIATION_SERIF_FONT', 'Charis' );
+define( 'VARIATION_SERIF_FONT', 'PT Serif' );
 define( 'VARIATION_SANS_SERIF_FONT', 'HK Grotesk' );
 define( 'VARIATION_SITE_TITLE_FONT', 'Caudex' );
 
@@ -297,6 +297,12 @@ function felt_customify_main_content_section( $section_options, $options ) {
 				// [Section] COLORS
 				'main_content_page_title_color'        => array(
 					'default' => SM_DARK_PRIMARY,
+					'css' => array(
+						array(
+							'property' => 'background-color',
+							'selector' => ''
+						)
+					),
 				),
 				'main_content_body_text_color'         => array(
 					'default' => SM_DARK_SECONDARY,
@@ -321,7 +327,8 @@ function felt_customify_main_content_section( $section_options, $options ) {
 								.u-buttons-solid.c-comments-toggle__label, 
 								.menu--primary .sub-menu:after,
 								.widget_promo_box--dark::before,
-								#content .sharedaddy[class] .sd-social-icon .sd-content.sd-content ul li[class*=\'share-\'] a.sd-button',
+								#content .sharedaddy[class] .sd-social-icon .sd-content.sd-content ul li[class*=\'share-\'] a.sd-button,
+								.entry-content .cats[class] > a',
 						),
 						array(
 							'property' => 'border-color',
@@ -435,16 +442,15 @@ function felt_customify_main_content_section( $section_options, $options ) {
 					'default' => array(
 						'font-family'    => VARIATION_SERIF_FONT,
 						'font-weight'    => '400',
-						'font-size'      => 17,
-						'line-height'    => 1.6,
+						'font-size'      => 20,
+						'line-height'    => 1.5,
 						'letter-spacing' => 0,
 						'text-transform' => 'none',
 					),
 				),
 
 				'main_content_quote_block_font' => array(
-					'selector' => '
-						.entry-content blockquote,
+					'selector' => $section_options['main_content']['options']['main_content_quote_block_font']['selector'] . ',
 						.edit-post-visual-editor[class][class] blockquote,
 						',
 					'default'  => array(
@@ -474,13 +480,16 @@ function felt_customify_main_content_section( $section_options, $options ) {
 						'font-family'    => VARIATION_SANS_SERIF_FONT,
 						'font-weight'    => '700',
 						'font-size'      => 26,
-						'line-height'    => 1.,
+						'line-height'    => 1.2,
 						'letter-spacing' => 0,
 						'text-transform' => 'none',
 					),
 				),
 
 				'main_content_heading_3_font' => array(
+					'selector' => $section_options['main_content']['options']['main_content_heading_4_font']['selector'] . ', 
+						.post-navigation .nav-title
+					',
 					'default' => array(
 						'font-family'    => VARIATION_SANS_SERIF_FONT,
 						'font-weight'    => '700',
@@ -493,7 +502,10 @@ function felt_customify_main_content_section( $section_options, $options ) {
 
 				'main_content_heading_4_font' => array(
 					'selector' => $section_options['main_content']['options']['main_content_heading_4_font']['selector'] . ', 
-						.c-footer .menu
+						.c-footer .menu,
+						.entry-content .sd-content,
+						.header-meta,
+						.intro
 					',
 					'default'  => array(
 						'font-family'    => VARIATION_SANS_SERIF_FONT,
@@ -506,7 +518,6 @@ function felt_customify_main_content_section( $section_options, $options ) {
 				),
 
 				'main_content_heading_5_font' => array(
-					'selector' => '.entry-content h5, .h5, h5, .header-meta, .nav-links__label',
 					'default'  => array(
 						'font-family'    => VARIATION_SANS_SERIF_FONT,
 						'font-weight'    => '700',
@@ -518,6 +529,17 @@ function felt_customify_main_content_section( $section_options, $options ) {
 				),
 
 				'main_content_heading_6_font'           => array(
+					'selector' => $section_options['main_content']['options']['main_content_heading_6_font']['selector'] . ',
+						.comment-reply-title a, 
+						.comment__metadata a, 
+						.edit-link a, 
+						.logged-in-as a, 
+						.reply a,
+						.entry-content .cats[class] > a,
+						.entry-content .cats[class] > a:hover,
+						.post-navigation .nav-links__label,
+						.c-author__links
+					',
 					'default' => array(
 						'font-family'    => VARIATION_SANS_SERIF_FONT,
 						'font-weight'    => '500',
@@ -616,9 +638,9 @@ function felt_customify_buttons_section( $section_options, $options ) {
 		'input[type=submit]',
 		'div.jetpack-recipe .jetpack-recipe-print[class] a',
 		'.featured-posts__more',
-		'.entry-content .cats[class] > a',
 		'.meta__item--button',
 		'[id="subscribe-submit"]',
+		'.button[class][class][class][class][class]'
 	) );
 
 	$buttons_default = implode( ',', $buttons );
@@ -1104,7 +1126,12 @@ function felt_customify_footer_section( $section_options, $options ) {
 					'css'     => array(
 						array(
 							'property' => 'color',
-							'selector' => '.c-footer, .widget.dark'
+							'selector' => '
+								.c-footer, 
+								.widget.dark, 
+								.widget-area--side .widget_promo_box--dark,
+								.widget-area--main .widget_promo_box--dark,
+								.widget-area--below-post .widget_promo_box--dark'
 						),
 					),
 				),
@@ -1116,7 +1143,12 @@ function felt_customify_footer_section( $section_options, $options ) {
 					'css'     => array(
 						array(
 							'property' => 'background-color',
-							'selector' => '.u-footer-background, .widget.dark',
+							'selector' => '
+								.u-footer-background, 
+								.widget.dark, 
+								.widget-area--side .widget_promo_box--dark,
+								.widget-area--main .widget_promo_box--dark,
+								.widget-area--below-post .widget_promo_box--dark',
 						),
 					),
 				),
@@ -1244,11 +1276,6 @@ function felt_add_customify_theme_fonts( $fonts ) {
 		'family'   => 'HK Grotesk',
 		'src'      => get_template_directory_uri() . '/assets/fonts/hkgrotesk/stylesheet.css',
 		'variants' => array( '300', '400', '500', '700' )
-	);
-	$fonts['Charis']    = array(
-		'family'   => 'Charis',
-		'src'      => get_template_directory_uri() . '/assets/fonts/charissil/stylesheet.css',
-		'variants' => array( '400', '400i', '700', '700i' )
 	);
 
 	return $fonts;

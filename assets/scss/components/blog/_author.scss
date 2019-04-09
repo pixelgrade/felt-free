@@ -14,6 +14,10 @@
 .c-author__description {
   @include fontsize(15px);
   @include spacing(margin-top, -1rem);
+
+  &:not(last-child) {
+    @include spacing(margin-bottom, 1.5rem);
+  }
 }
 
 .c-author__avatar + .c-author__details {
@@ -54,9 +58,11 @@
 
   a {
     text-decoration: none;
+    transition: all 0.15s ease-out;
 
     &:hover {
-      text-decoration: underline;
+      // text-decoration: underline;
+      color: inherit;
     }
   }
 }

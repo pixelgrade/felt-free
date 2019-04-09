@@ -164,9 +164,6 @@ $content-class: '.entry-content';
   }
 
   .widget__title {
-    //text-align: center;
-    // Disabled because it was ruining alignment of
-    // widget titles in footer
 
     &[class][class] span {
       font-size: inherit;

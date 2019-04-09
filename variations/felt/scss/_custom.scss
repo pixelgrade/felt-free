@@ -1,5 +1,5 @@
 // custom appearance for main navigation
-.c-navbar .c-navbar__zone--right .menu-main-menu-container {
+.c-navbar .c-navbar__zone--right > [class^="menu"][class*="container"] {
 
   @include above(lap) {
     border-top: 1px solid;
@@ -50,9 +50,9 @@
 
   @include leading-map((
     font-family: $theme-headings-font-family,
-    font-size: 14px,
+    font-size: 0.95em,
     line-height: (17/14),
-    font-weight: 500
+    font-weight: 400
   ));
 
   &:before {
@@ -61,6 +61,10 @@
     border-top: 1px solid;
     width: 1em;
     margin-right: .5em;
+  }
+
+  .u-underlined-links & {
+    text-decoration: none;
   }
 }
 
@@ -212,15 +216,13 @@
 
   .byline {
     text-transform: capitalize;
+    font-weight: bold;
 
     .by {
       display: none;
     }
   }
 
-  .posted-on {
-    text-transform: none;
-  }
   .u-underlined-links & {
     a {
       text-decoration: none;
@@ -466,3 +468,17 @@ ul.page-numbers {
     display: none;
   }
 }
+
+.u-underlined-links .c-card__footer a {
+  text-decoration: none;
+}
+
+// Margin bottom
+.mb-0 { margin-bottom: 0;     }
+.mb-1 { margin-bottom: 1rem;  }
+.mb-2 { margin-bottom: 2rem;  }
+
+// Margin top
+.mt-0 { margin-top: 0;        }
+.mt-1 { margin-top: 1rem;     }
+.mt-2 { margin-top: 2rem;     }

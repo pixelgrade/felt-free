@@ -796,19 +796,19 @@ small {
             transform: translate(0, calc(0.5px - 50%)); }
 
 .c-btn-directional--left {
-  padding-left: 100px; }
+  padding-left: 120px; }
   @media only screen and (max-width: 862px) {
     .c-btn-directional--left {
-      padding-left: 72.72727px; } }
+      padding-left: 85.33333px; } }
   @media only screen and (max-width: 770px) {
     .c-btn-directional--left {
-      padding-left: 57.14286px; } }
+      padding-left: 66.2069px; } }
   @media only screen and (max-width: 460px) {
     .c-btn-directional--left {
-      padding-left: 47.05882px; } }
+      padding-left: 54.08451px; } }
   @media only screen and (max-width: 320px) {
     .c-btn-directional--left {
-      padding-left: 40px; } }
+      padding-left: 45.71429px; } }
   .c-btn-directional--left:before {
     left: 35px; }
     @media only screen and (max-width: 862px) {
@@ -846,8 +846,20 @@ small {
             transform: translate3d(-5px, calc(0.5px - 50%), 0); }
 
 .c-btn-directional--right {
-  padding-right: 6.5em;
+  padding-right: 120px;
   text-align: left; }
+  @media only screen and (max-width: 862px) {
+    .c-btn-directional--right {
+      padding-right: 85.33333px; } }
+  @media only screen and (max-width: 770px) {
+    .c-btn-directional--right {
+      padding-right: 66.2069px; } }
+  @media only screen and (max-width: 460px) {
+    .c-btn-directional--right {
+      padding-right: 54.08451px; } }
+  @media only screen and (max-width: 320px) {
+    .c-btn-directional--right {
+      padding-right: 45.71429px; } }
   .c-btn-directional--right:before {
     right: 2.33333em; }
   .c-btn-directional--right:after {
@@ -921,7 +933,7 @@ small {
     width: 100%; }
   .button[class][class][class][class][class].arrow {
     position: relative;
-    padding-right: 6.5em;
+    padding-right: 120px;
     text-align: left; }
     .button[class][class][class][class][class].arrow:before, .button[class][class][class][class][class].arrow:after {
       content: '';
@@ -960,6 +972,18 @@ small {
       border-bottom: 5px solid transparent;
       -webkit-transform: translate(0, calc(0.5px - 50%));
               transform: translate(0, calc(0.5px - 50%)); }
+    @media only screen and (max-width: 862px) {
+      .button[class][class][class][class][class].arrow {
+        padding-right: 85.33333px; } }
+    @media only screen and (max-width: 770px) {
+      .button[class][class][class][class][class].arrow {
+        padding-right: 66.2069px; } }
+    @media only screen and (max-width: 460px) {
+      .button[class][class][class][class][class].arrow {
+        padding-right: 54.08451px; } }
+    @media only screen and (max-width: 320px) {
+      .button[class][class][class][class][class].arrow {
+        padding-right: 45.71429px; } }
     .button[class][class][class][class][class].arrow:before {
       right: 2.33333em; }
     .button[class][class][class][class][class].arrow:after {
