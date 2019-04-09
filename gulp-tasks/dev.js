@@ -9,8 +9,7 @@ var gulp = require( 'gulp' ),
 	plugins = require('gulp-load-plugins')(),
 	del = require('del'),
 	bs = require('browser-sync'),
-	argv = require('yargs').argv,
-	eol = require('gulp-eol')
+	argv = require('yargs').argv;
 
 var u = plugins.util,
 	c = plugins.util.colors,
@@ -103,13 +102,6 @@ function stylesSequence(cb) {
 }
 stylesSequence.description = 'Compile all styles';
 gulp.task('styles', stylesSequence )
-
-function fixEol() {
-	return gulp.src('assets/js/commons.js')
-		.pipe(eol())
-		.pipe(gulp.dest('assets/js/'))
-}
-gulp.task('eol', fixEol )
 
 // -----------------------------------------------------------------------------
 // Scripts
