@@ -619,6 +619,7 @@ function felt_customify_buttons_section( $section_options, $options ) {
 		'.entry-content .cats[class] > a',
 		'.meta__item--button',
 		'[id="subscribe-submit"]',
+		'.button[class][class][class][class][class]'
 	) );
 
 	$buttons_default = implode( ',', $buttons );
