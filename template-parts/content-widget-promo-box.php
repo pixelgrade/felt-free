@@ -39,7 +39,7 @@ if ( ! empty( $headline ) || ! empty( $description ) || ( ! empty( $button_text 
 
 		<?php if ( ! empty( $button_text ) && ! empty( $button_url ) ) { ?>
 			<div class="c-promo__action">
-				<a href="<?php echo esc_url( $button_url ); ?>" class="c-promo__btn c-btn"><?php echo $button_text; // WPCS: XSS OK. ?></a>
+				<a href="<?php echo esc_url( $button_url ); ?>" class="c-promo__btn c-btn c-btn-directional c-btn-directional--right"><?php echo $button_text; // WPCS: XSS OK. ?></a>
 			</div>
 		<?php } ?>
 
