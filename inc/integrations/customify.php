@@ -474,7 +474,7 @@ function felt_customify_main_content_section( $section_options, $options ) {
 						'font-family'    => VARIATION_SANS_SERIF_FONT,
 						'font-weight'    => '700',
 						'font-size'      => 26,
-						'line-height'    => 1.,
+						'line-height'    => 1.2,
 						'letter-spacing' => 0,
 						'text-transform' => 'none',
 					),
