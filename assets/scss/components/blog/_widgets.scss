@@ -329,7 +329,7 @@
 
     @include above(lap) {
       .u-widget-title-sideways & .widget__title {
-        @include spacing(margin-bottom, -4rem);
+        @include spacing(margin-bottom, -4.3rem);
       }
     }
   }

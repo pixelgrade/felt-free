@@ -50,9 +50,9 @@
 
   @include leading-map((
     font-family: $theme-headings-font-family,
-    font-size: 14px,
+    font-size: 0.95em,
     line-height: (17/14),
-    font-weight: 500
+    font-weight: 400
   ));
 
   &:before {
@@ -216,6 +216,7 @@
 
   .byline {
     text-transform: capitalize;
+    font-weight: bold;
 
     .by {
       display: none;

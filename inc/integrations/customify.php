@@ -297,6 +297,12 @@ function felt_customify_main_content_section( $section_options, $options ) {
 				// [Section] COLORS
 				'main_content_page_title_color'        => array(
 					'default' => SM_DARK_PRIMARY,
+					'css' => array(
+						array(
+							'property' => 'background-color',
+							'selector' => ''
+						)
+					),
 				),
 				'main_content_body_text_color'         => array(
 					'default' => SM_DARK_SECONDARY,
@@ -321,7 +327,8 @@ function felt_customify_main_content_section( $section_options, $options ) {
 								.u-buttons-solid.c-comments-toggle__label, 
 								.menu--primary .sub-menu:after,
 								.widget_promo_box--dark::before,
-								#content .sharedaddy[class] .sd-social-icon .sd-content.sd-content ul li[class*=\'share-\'] a.sd-button',
+								#content .sharedaddy[class] .sd-social-icon .sd-content.sd-content ul li[class*=\'share-\'] a.sd-button,
+								.entry-content .cats[class] > a',
 						),
 						array(
 							'property' => 'border-color',
@@ -522,7 +529,13 @@ function felt_customify_main_content_section( $section_options, $options ) {
 				),
 
 				'main_content_heading_6_font'           => array(
-					'selector' => $section_options['main_content']['options']['main_content_heading_6_font']['selector'] . ', 
+					'selector' => $section_options['main_content']['options']['main_content_heading_6_font']['selector'] . ',
+						.comment-reply-title a, 
+						.comment__metadata a, 
+						.edit-link a, 
+						.logged-in-as a, 
+						.reply a,
+						.entry-content .cats[class] > a,
 						.post-navigation .nav-links__label,
 						.c-author__links
 					',
@@ -624,7 +637,6 @@ function felt_customify_buttons_section( $section_options, $options ) {
 		'input[type=submit]',
 		'div.jetpack-recipe .jetpack-recipe-print[class] a',
 		'.featured-posts__more',
-		'.entry-content .cats[class] > a',
 		'.meta__item--button',
 		'[id="subscribe-submit"]',
 		'.button[class][class][class][class][class]'

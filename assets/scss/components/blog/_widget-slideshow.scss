@@ -96,6 +96,9 @@
       bottom: 2.5rem;
       left: 0;
       right: 0;
+      .slick-active {
+        color: inherit;
+      }
     }
   }
 
