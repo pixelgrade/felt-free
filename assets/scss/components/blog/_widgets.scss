@@ -334,11 +334,14 @@
     }
   }
 
+  .widget.widget_promo_box--dark,
   .widget.highlighted,
   .widget.dark {
     border-top: 0 solid transparent;
     @include spacing(border-top-width, 4rem);
     background-clip: padding-box;
+
+    margin-top: 0;
   }
 
   .widget_promo_box,
@@ -391,6 +394,7 @@
 }
 
 // Spacings
+.widget_promo_box--dark,
 .highlighted,
 .dark {
   @include spacing(padding, 3rem);
@@ -406,15 +410,6 @@
     &.widget--full {
       padding: 4rem;
     }
-  }
-}
-
-.widget_promo_box--dark,
-.dark,
-.highlighted {
-  & + &.widget {
-    margin-top: 0 !important; //it's overwritten by .o-layout__full selectors below
-    border-top: 0;
   }
 }
 
