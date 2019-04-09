@@ -7029,7 +7029,7 @@ ul.page-numbers[class][class] {
     border-top: 0 solid transparent;
     border-top-width: 56px;
     background-clip: padding-box;
-    margin-top: 0; }
+    margin-top: 0 !important; }
     @media only screen and (max-width: 1360px) {
       .o-layout .widget.widget_promo_box--dark,
       .o-layout .widget.highlighted,

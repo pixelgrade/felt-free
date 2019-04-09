@@ -341,7 +341,7 @@
     @include spacing(border-top-width, 4rem);
     background-clip: padding-box;
 
-    margin-top: 0;
+    margin-top: 0 !important;
   }
 
   .widget_promo_box,
