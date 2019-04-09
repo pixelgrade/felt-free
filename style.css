@@ -7070,6 +7070,43 @@ ul.page-numbers[class][class] {
       .o-layout .widget_categories {
         margin-top: 25.16854px; } }
 
+.widget-area--footer-featured {
+  margin-top: 56px; }
+  @media only screen and (max-width: 1360px) {
+    .widget-area--footer-featured {
+      margin-top: 42.87081px; } }
+  @media only screen and (max-width: 1024px) {
+    .widget-area--footer-featured {
+      margin-top: 34.72868px; } }
+  @media only screen and (max-width: 768px) {
+    .widget-area--footer-featured {
+      margin-top: 29.18567px; } }
+  @media only screen and (max-width: 320px) {
+    .widget-area--footer-featured {
+      margin-top: 25.16854px; } }
+  .widget-area--footer-featured > .widget:first-child {
+    border-top-width: 0;
+    margin-top: 0; }
+
+.widget-area--footer-featured .widget.widget_promo_box--dark + .widget.widget_promo_box--dark, .widget-area--footer-featured
+.widget.highlighted + .widget.widget_promo_box--dark, .widget-area--footer-featured
+.widget.dark + .widget.widget_promo_box--dark, .widget-area--footer-featured .widget.widget_promo_box--dark +
+.widget.highlighted, .widget-area--footer-featured
+.widget.highlighted +
+.widget.highlighted, .widget-area--footer-featured
+.widget.dark +
+.widget.highlighted, .widget-area--footer-featured .widget.widget_promo_box--dark +
+.widget.dark, .widget-area--footer-featured
+.widget.highlighted +
+.widget.dark, .widget-area--footer-featured
+.widget.dark +
+.widget.dark {
+  border-top-width: 0;
+  margin-top: 0; }
+
+.content-area + .u-container-sides-spacing:not(.site-footer) .widget-area--footer-featured {
+  margin-top: 1px; }
+
 .o-layout .widget-area--footer-featured > .widget:nth-of-type(2n+1):last-child:not(.highlighted):not(.widget_promo_box):not(.jetpack_subscription_widget) {
   margin-bottom: 0; }
 
@@ -15337,6 +15374,10 @@ body {
   @media only screen and (max-width: 320px) {
     * + .sharedaddy[class] {
       margin-top: 19.64912px; } }
+
+.entry-content .cats[class] > a:hover {
+  color: #FFFFFF;
+  opacity: 0.7; }
 
 .entry-content .tags > a {
   font-style: inherit; }

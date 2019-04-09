@@ -536,6 +536,7 @@ function felt_customify_main_content_section( $section_options, $options ) {
 						.logged-in-as a, 
 						.reply a,
 						.entry-content .cats[class] > a,
+						.entry-content .cats[class] > a:hover,
 						.post-navigation .nav-links__label,
 						.c-author__links
 					',

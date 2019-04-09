@@ -247,6 +247,11 @@ body {
   @include spacing(margin-top, 3rem);
 }
 
+.entry-content .cats[class] > a:hover {
+  color: #FFFFFF;
+  opacity: 0.7;
+}
+
 .entry-content .tags > a {
   font-style: inherit;
 }

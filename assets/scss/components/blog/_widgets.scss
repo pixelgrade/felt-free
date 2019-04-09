@@ -350,6 +350,30 @@
   }
 }
 
+.widget-area--footer-featured {
+  @include spacing(margin-top, 4rem);
+
+  > .widget:first-child {
+    border-top-width: 0;
+    margin-top: 0;
+  }
+}
+
+.widget.widget_promo_box--dark,
+.widget.highlighted,
+.widget.dark {
+
+  .widget-area--footer-featured & + & {
+    border-top-width: 0;
+    margin-top: 0;
+  }
+}
+
+.content-area + .u-container-sides-spacing:not(.site-footer) .widget-area--footer-featured {
+  margin-top: 1px;
+}
+
+
 // More Hacks
 .o-layout .widget-area--footer-featured > .widget:nth-of-type(2n+1):last-child {
 
