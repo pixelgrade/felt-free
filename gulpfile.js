@@ -27,7 +27,7 @@ if ( fs.existsSync( './gulpconfig.json' ) ) {
 // with the latest configurations
 // -----------------------------------------------------------------------------
 function compileAll( cb ) {
-	return gulp.parallel( 'styles', 'scripts' )(cb);
+	return gulp.parallel( 'styles' )(cb);
 }
 compileAll.description = 'Runs all compilation tasks in sequence';
 gulp.task( 'compile', compileAll );

@@ -43,10 +43,6 @@
       @include spacing(padding-top, 8rem);
     }
 
-    > :not(:last-child):not([class]) {
-      @include spacing(padding-bottom, .5rem)
-    }
-
     > :not(:first-child) {
       @include spacing(padding-top, 1rem)
     }
@@ -83,7 +79,7 @@
 }
 
 .entry-image--portrait .entry-header {
-  @include spacing(padding-bottom, 3rem);
+  @include spacing(padding-bottom, 2rem);
 }
 
 .post-password-form {

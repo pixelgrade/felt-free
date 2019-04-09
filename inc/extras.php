@@ -187,25 +187,6 @@ if ( ! function_exists( 'felt_google_fonts_url' ) ) :
 endif;
 
 /**
- * Get the Charis SIL font URL
- *
- * @return string
- */
-function felt_charissil_font_url() {
-
-	/* Translators: If there are characters in your language that are not
-	* supported by Charis SIL, translate this to 'off'. Do not translate
-	* into your own language.
-	*/
-	$charissil = esc_html_x( 'on', 'Charis SIL font: on or off', '__theme_txtd' );
-	if ( 'off' !== $charissil ) {
-		return get_template_directory_uri() . '/assets/fonts/charissil/stylesheet.css';
-	}
-
-	return '';
-}
-
-/**
  * Get the HK Grotesk font URL
  *
  * @return string
@@ -373,3 +354,6 @@ function felt_maybe_load_pro_features() {
 }
 // We want to do this as early as possible. So the zero priority is as intended.
 add_action( 'after_setup_theme', 'felt_maybe_load_pro_features', 0 );
+
+add_filter( 'pixelgrade_add_categories_to_content', '__return_true', 9999 );
+add_filter( 'pixelgrade_add_tags_to_content', '__return_true', 9999 );

@@ -765,7 +765,7 @@
   .edit-post-visual-editor.editor-styles-wrapper .editor-block-list__block,
   .edit-post-visual-editor.editor-styles-wrapper .editor-post-title__block,
   .edit-post-visual-editor.editor-styles-wrapper .wp-block-paragraph {
-    font-family: "Charis", serif;
+    font-family: "PT Serif", serif;
     font-size: 20px;
     line-height: 1.5;
     color: #333131; }

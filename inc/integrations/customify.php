@@ -33,7 +33,7 @@ add_filter( 'pixelgrade_customify_buttons_section_options', 'felt_customify_butt
 add_filter( 'pixelgrade_footer_customify_section_options', 'felt_customify_footer_section', 10, 2 );
 add_filter( 'pixelgrade_customify_blog_grid_section_options', 'felt_customify_blog_grid_section', 10, 2 );
 
-define( 'VARIATION_SERIF_FONT', 'Charis' );
+define( 'VARIATION_SERIF_FONT', 'PT Serif' );
 define( 'VARIATION_SANS_SERIF_FONT', 'HK Grotesk' );
 define( 'VARIATION_SITE_TITLE_FONT', 'Caudex' );
 
@@ -435,16 +435,15 @@ function felt_customify_main_content_section( $section_options, $options ) {
 					'default' => array(
 						'font-family'    => VARIATION_SERIF_FONT,
 						'font-weight'    => '400',
-						'font-size'      => 17,
-						'line-height'    => 1.6,
+						'font-size'      => 20,
+						'line-height'    => 1.5,
 						'letter-spacing' => 0,
 						'text-transform' => 'none',
 					),
 				),
 
 				'main_content_quote_block_font' => array(
-					'selector' => '
-						.entry-content blockquote,
+					'selector' => $section_options['main_content']['options']['main_content_quote_block_font']['selector'] . ',
 						.edit-post-visual-editor[class][class] blockquote,
 						',
 					'default'  => array(
@@ -481,6 +480,9 @@ function felt_customify_main_content_section( $section_options, $options ) {
 				),
 
 				'main_content_heading_3_font' => array(
+					'selector' => $section_options['main_content']['options']['main_content_heading_4_font']['selector'] . ', 
+						.post-navigation .nav-title
+					',
 					'default' => array(
 						'font-family'    => VARIATION_SANS_SERIF_FONT,
 						'font-weight'    => '700',
@@ -493,7 +495,10 @@ function felt_customify_main_content_section( $section_options, $options ) {
 
 				'main_content_heading_4_font' => array(
 					'selector' => $section_options['main_content']['options']['main_content_heading_4_font']['selector'] . ', 
-						.c-footer .menu
+						.c-footer .menu,
+						.entry-content .sd-content,
+						.header-meta,
+						.intro
 					',
 					'default'  => array(
 						'font-family'    => VARIATION_SANS_SERIF_FONT,
@@ -506,7 +511,6 @@ function felt_customify_main_content_section( $section_options, $options ) {
 				),
 
 				'main_content_heading_5_font' => array(
-					'selector' => '.entry-content h5, .h5, h5, .header-meta, .nav-links__label',
 					'default'  => array(
 						'font-family'    => VARIATION_SANS_SERIF_FONT,
 						'font-weight'    => '700',
@@ -518,6 +522,10 @@ function felt_customify_main_content_section( $section_options, $options ) {
 				),
 
 				'main_content_heading_6_font'           => array(
+					'selector' => $section_options['main_content']['options']['main_content_heading_6_font']['selector'] . ', 
+						.post-navigation .nav-links__label,
+						.c-author__links
+					',
 					'default' => array(
 						'font-family'    => VARIATION_SANS_SERIF_FONT,
 						'font-weight'    => '500',
@@ -1244,11 +1252,6 @@ function felt_add_customify_theme_fonts( $fonts ) {
 		'family'   => 'HK Grotesk',
 		'src'      => get_template_directory_uri() . '/assets/fonts/hkgrotesk/stylesheet.css',
 		'variants' => array( '300', '400', '500', '700' )
-	);
-	$fonts['Charis']    = array(
-		'family'   => 'Charis',
-		'src'      => get_template_directory_uri() . '/assets/fonts/charissil/stylesheet.css',
-		'variants' => array( '400', '400i', '700', '700i' )
 	);
 
 	return $fonts;

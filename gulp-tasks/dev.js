@@ -106,27 +106,6 @@ function fixEol() {
 gulp.task('eol', fixEol )
 
 // -----------------------------------------------------------------------------
-// Scripts
-// -----------------------------------------------------------------------------
-
-var jsFiles = [
-	'./assets/js/vendor/*.js',
-	'./assets/js/main/wrapper-start.js',
-	'./assets/js/modules/*.js',
-	'./assets/js/main/unsorted.js',
-	'./assets/js/main/main.js',
-	'./assets/js/main/wrapper-end.js'
-]
-
-function scripts() {
-	return gulp.src(jsFiles)
-		.pipe(plugins.concat('main.js'))
-		.pipe(gulp.dest('./assets/js/'))
-}
-scripts.description = 'Concatenate all JS into main.js and wrap all code in a closure';
-gulp.task('scripts', scripts )
-
-// -----------------------------------------------------------------------------
 // Variation specific/synced files
 // -----------------------------------------------------------------------------
 
@@ -164,31 +143,35 @@ function watchStart() {
 	}
 
 	// watch for Typeline config changes
-	gulp.watch([
+	gulp.watch( [
 		'inc/integrations/typeline-config.json',
 		'inc/integrations/typeline-config-editor.json'
-	], ['typeline-config', 'typeline-phpconfig'])
+	], gulp.parallel( 'typeline-config', 'typeline-phpconfig' ) )
 
 	// watch for theme related CSS changes
-	gulp.watch(['variations/' + variation + '/**/*.scss', 'assets/scss/**/*.scss'], ['styles-main'])
+	gulp.watch( ['variations/' + variation + '/**/*.scss', 'assets/scss/**/*.scss'], stylesMain )
 
-	gulp.watch('assets/scss/admin/*.scss', ['styles-admin'])
+	gulp.watch( 'assets/scss/admin/*.scss', stylesAdmin )
 
 	// watch for components related CSS changes
 	// exclude the docs directory since that is not a true component; also exclude . directories
-	gulp.watch(['components/**/*.scss', '!components/docs/**/*', '!components/.*/**/*'], ['styles-components', 'styles-main'])
+	gulp.watch( [
+		'components/**/*.scss',
+		'!components/docs/**/*',
+		'!components/.*/**/*'
+	], gulp.series( 'styles-components', 'styles-main' ) )
 
 	// watch for JavaScript changes
-	gulp.watch('assets/js/**/*.js', ['scripts'])
+	// gulp.watch('assets/js/**/*.js', ['scripts'])
 }
 watchStart.description = 'Watch for changes to various files and process them';
-gulp.task('watch-start', watchStart )
+gulp.task( 'watch-start', watchStart )
 
 function watchSequence(cb) {
 	return gulp.series( 'compile', 'watch-start' )(cb);
 }
 watchSequence.description = 'Compile and watch for changes to various JSON, SCSS and JS files and process them';
-gulp.task('watch', watchSequence )
+gulp.task( 'watch', watchSequence )
 
 // -----------------------------------------------------------------------------
 // Browser Sync using Proxy server

@@ -1,5 +1,5 @@
 // custom appearance for main navigation
-.c-navbar .c-navbar__zone--right .menu-main-menu-container {
+.c-navbar .c-navbar__zone--right > [class^="menu"][class*="container"] {
 
   @include above(lap) {
     border-top: 1px solid;
@@ -218,9 +218,6 @@
     }
   }
 
-  .posted-on {
-    text-transform: none;
-  }
   .u-underlined-links & {
     a {
       text-decoration: none;
@@ -465,4 +462,8 @@ ul.page-numbers {
   li[class*=children] > a:before {
     display: none;
   }
+}
+
+.u-underlined-links .c-card__footer a {
+  text-decoration: none;
 }
