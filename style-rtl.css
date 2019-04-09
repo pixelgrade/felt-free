@@ -7261,14 +7261,14 @@ ul.page-numbers[class][class] {
   color: #FFFFFF;
   -webkit-transform: translateZ(0);
           transform: translateZ(0); }
-  .widget_promo_box--dark[class]:before {
+  .widget_promo_box--dark[class][class][class]:before {
     width: auto;
     right: calc(50% - 50vw);
     left: calc(50% - 50vw);
     background-color: #1c1c1c;
     opacity: 0.95;
     z-index: -1; }
-  .widget_promo_box--dark[class]:after {
+  .widget_promo_box--dark[class][class][class]:after {
     content: none; }
   .widget_promo_box--dark .c-promo__title,
   .widget_promo_box--dark .c-promo__subtitle {
