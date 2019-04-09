@@ -1125,7 +1125,7 @@ function felt_customify_footer_section( $section_options, $options ) {
 					'css'     => array(
 						array(
 							'property' => 'color',
-							'selector' => '.c-footer, .widget.dark, .widget.widget_promo_box--dark'
+							'selector' => '.c-footer, .widget.dark, .widget-area--side .widget_promo_box--dark'
 						),
 					),
 				),
@@ -1137,7 +1137,7 @@ function felt_customify_footer_section( $section_options, $options ) {
 					'css'     => array(
 						array(
 							'property' => 'background-color',
-							'selector' => '.u-footer-background, .widget.dark, .widget.widget_promo_box--dark',
+							'selector' => '.u-footer-background, .widget.dark, .widget-area--side .widget_promo_box--dark',
 						),
 					),
 				),
