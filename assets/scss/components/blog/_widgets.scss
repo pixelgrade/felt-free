@@ -182,13 +182,6 @@
   }
 }
 
-// Footer Featured Area
-.widget-area--footer-featured {
-  .o-layout & .widget-first.dark {
-    border-top-width: 0;
-  }
-}
-
 // Widgets below content
 .widget-area--below-post {
   @include vertical-spacing(3rem);
@@ -334,14 +327,14 @@
     }
   }
 
-  .widget.widget_promo_box--dark,
+  .widget.widget_promo_box,
   .widget.highlighted,
   .widget.dark {
     border-top: 0 solid transparent;
     @include spacing(border-top-width, 4rem);
     background-clip: padding-box;
 
-    margin-top: 0 !important;
+    margin-top: 0;
   }
 
   .widget_promo_box,
@@ -359,7 +352,7 @@
   }
 }
 
-.widget.widget_promo_box--dark,
+.widget.widget_promo_box,
 .widget.highlighted,
 .widget.dark {
 
@@ -369,37 +362,11 @@
   }
 }
 
-.content-area + .u-container-sides-spacing:not(.site-footer) .widget-area--footer-featured {
-  margin-top: 1px;
-}
-
-
 // More Hacks
 .o-layout .widget-area--footer-featured > .widget:nth-of-type(2n+1):last-child {
 
   &:not(.highlighted):not(.widget_promo_box):not(.jetpack_subscription_widget) {
     margin-bottom: 0;
-  }
-}
-
-.widget:nth-of-type(2n),
-.highlighted,
-.widget_promo_box,
-.jetpack_subscription_widget {
-
-  .o-layout .o-layout__full & + & {
-    margin-top: 1px;
-  }
-}
-
-.singular .content-area + .u-container-sides-spacing .o-layout__full {
-
-  > .highlighted,
-  > .widget_promo_box,
-  > .jetpack_subscription_widget {
-    &:first-child {
-      margin-top: 1px;
-    }
   }
 }
 
@@ -418,7 +385,7 @@
 }
 
 // Spacings
-.widget_promo_box--dark,
+.widget_promo_box,
 .highlighted,
 .dark {
   @include spacing(padding, 3rem);
@@ -427,13 +394,15 @@
     @include spacing(padding, 2rem);
   }
 
-
-
   @include above(lap) {
 
     &.widget--full {
       padding: 4rem;
     }
+  }
+
+  .o-layout .widget-area--footer-featured &.widget-first {
+    border-top-width: 0;
   }
 }
 

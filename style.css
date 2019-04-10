@@ -6786,9 +6786,6 @@ ul.page-numbers[class][class] {
       -webkit-transform: none;
               transform: none; }
 
-.o-layout .widget-area--footer-featured .widget-first.dark {
-  border-top-width: 0; }
-
 .widget-area--below-post {
   margin-top: 112px; }
   .widget-area--below-post > :not(:first-child) {
@@ -7023,30 +7020,30 @@ ul.page-numbers[class][class] {
   @media only screen and (min-width: 62.5em) and (max-width: 320px) {
     .u-widget-title-sideways .o-layout .widget:not(.widget_categories):not(.highlighted):not(.widget_promo_box):not(.jetpack_subscription_widget) .widget__title {
       margin-bottom: -26.7407px; } }
-  .o-layout .widget.widget_promo_box--dark,
+  .o-layout .widget.widget_promo_box,
   .o-layout .widget.highlighted,
   .o-layout .widget.dark {
     border-top: 0 solid transparent;
     border-top-width: 56px;
     background-clip: padding-box;
-    margin-top: 0 !important; }
+    margin-top: 0; }
     @media only screen and (max-width: 1360px) {
-      .o-layout .widget.widget_promo_box--dark,
+      .o-layout .widget.widget_promo_box,
       .o-layout .widget.highlighted,
       .o-layout .widget.dark {
         border-top-width: 42.87081px; } }
     @media only screen and (max-width: 1024px) {
-      .o-layout .widget.widget_promo_box--dark,
+      .o-layout .widget.widget_promo_box,
       .o-layout .widget.highlighted,
       .o-layout .widget.dark {
         border-top-width: 34.72868px; } }
     @media only screen and (max-width: 768px) {
-      .o-layout .widget.widget_promo_box--dark,
+      .o-layout .widget.widget_promo_box,
       .o-layout .widget.highlighted,
       .o-layout .widget.dark {
         border-top-width: 29.18567px; } }
     @media only screen and (max-width: 320px) {
-      .o-layout .widget.widget_promo_box--dark,
+      .o-layout .widget.widget_promo_box,
       .o-layout .widget.highlighted,
       .o-layout .widget.dark {
         border-top-width: 25.16854px; } }
@@ -7088,14 +7085,14 @@ ul.page-numbers[class][class] {
     border-top-width: 0;
     margin-top: 0; }
 
-.widget-area--footer-featured .widget.widget_promo_box--dark + .widget.widget_promo_box--dark, .widget-area--footer-featured
-.widget.highlighted + .widget.widget_promo_box--dark, .widget-area--footer-featured
-.widget.dark + .widget.widget_promo_box--dark, .widget-area--footer-featured .widget.widget_promo_box--dark +
+.widget-area--footer-featured .widget.widget_promo_box + .widget.widget_promo_box, .widget-area--footer-featured
+.widget.highlighted + .widget.widget_promo_box, .widget-area--footer-featured
+.widget.dark + .widget.widget_promo_box, .widget-area--footer-featured .widget.widget_promo_box +
 .widget.highlighted, .widget-area--footer-featured
 .widget.highlighted +
 .widget.highlighted, .widget-area--footer-featured
 .widget.dark +
-.widget.highlighted, .widget-area--footer-featured .widget.widget_promo_box--dark +
+.widget.highlighted, .widget-area--footer-featured .widget.widget_promo_box +
 .widget.dark, .widget-area--footer-featured
 .widget.highlighted +
 .widget.dark, .widget-area--footer-featured
@@ -7104,43 +7101,8 @@ ul.page-numbers[class][class] {
   border-top-width: 0;
   margin-top: 0; }
 
-.content-area + .u-container-sides-spacing:not(.site-footer) .widget-area--footer-featured {
-  margin-top: 1px; }
-
 .o-layout .widget-area--footer-featured > .widget:nth-of-type(2n+1):last-child:not(.highlighted):not(.widget_promo_box):not(.jetpack_subscription_widget) {
   margin-bottom: 0; }
-
-.o-layout .o-layout__full .widget:nth-of-type(2n) + .widget:nth-of-type(2n), .o-layout .o-layout__full
-.highlighted + .widget:nth-of-type(2n), .o-layout .o-layout__full
-.widget_promo_box + .widget:nth-of-type(2n), .o-layout .o-layout__full
-.jetpack_subscription_widget + .widget:nth-of-type(2n), .o-layout .o-layout__full .widget:nth-of-type(2n) +
-.highlighted, .o-layout .o-layout__full
-.highlighted +
-.highlighted, .o-layout .o-layout__full
-.widget_promo_box +
-.highlighted, .o-layout .o-layout__full
-.jetpack_subscription_widget +
-.highlighted, .o-layout .o-layout__full .widget:nth-of-type(2n) +
-.widget_promo_box, .o-layout .o-layout__full
-.highlighted +
-.widget_promo_box, .o-layout .o-layout__full
-.widget_promo_box +
-.widget_promo_box, .o-layout .o-layout__full
-.jetpack_subscription_widget +
-.widget_promo_box, .o-layout .o-layout__full .widget:nth-of-type(2n) +
-.jetpack_subscription_widget, .o-layout .o-layout__full
-.highlighted +
-.jetpack_subscription_widget, .o-layout .o-layout__full
-.widget_promo_box +
-.jetpack_subscription_widget, .o-layout .o-layout__full
-.jetpack_subscription_widget +
-.jetpack_subscription_widget {
-  margin-top: 1px; }
-
-.singular .content-area + .u-container-sides-spacing .o-layout__full > .highlighted:first-child,
-.singular .content-area + .u-container-sides-spacing .o-layout__full > .widget_promo_box:first-child,
-.singular .content-area + .u-container-sides-spacing .o-layout__full > .jetpack_subscription_widget:first-child {
-  margin-top: 1px; }
 
 .widget.dark {
   background-color: #1C1C1C;
@@ -7149,59 +7111,63 @@ ul.page-numbers[class][class] {
   .widget.dark h1, .widget.dark h2, .widget.dark h3, .widget.dark h4, .widget.dark h5, .widget.dark h6 {
     color: inherit; }
 
-.widget_promo_box--dark,
+.widget_promo_box,
 .highlighted,
 .dark {
   padding: 42px; }
   @media only screen and (max-width: 1360px) {
-    .widget_promo_box--dark,
+    .widget_promo_box,
     .highlighted,
     .dark {
       padding: 32.70073px; } }
   @media only screen and (max-width: 1024px) {
-    .widget_promo_box--dark,
+    .widget_promo_box,
     .highlighted,
     .dark {
       padding: 26.77291px; } }
   @media only screen and (max-width: 768px) {
-    .widget_promo_box--dark,
+    .widget_promo_box,
     .highlighted,
     .dark {
       padding: 22.66442px; } }
   @media only screen and (max-width: 320px) {
-    .widget_promo_box--dark,
+    .widget_promo_box,
     .highlighted,
     .dark {
       padding: 19.64912px; } }
-  .o-layout--blog .o-layout__side .widget_promo_box--dark, .o-layout--blog .o-layout__side
+  .o-layout--blog .o-layout__side .widget_promo_box, .o-layout--blog .o-layout__side
   .highlighted, .o-layout--blog .o-layout__side
   .dark {
     padding: 28px; }
     @media only screen and (max-width: 1360px) {
-      .o-layout--blog .o-layout__side .widget_promo_box--dark, .o-layout--blog .o-layout__side
+      .o-layout--blog .o-layout__side .widget_promo_box, .o-layout--blog .o-layout__side
       .highlighted, .o-layout--blog .o-layout__side
       .dark {
         padding: 22.17822px; } }
     @media only screen and (max-width: 1024px) {
-      .o-layout--blog .o-layout__side .widget_promo_box--dark, .o-layout--blog .o-layout__side
+      .o-layout--blog .o-layout__side .widget_promo_box, .o-layout--blog .o-layout__side
       .highlighted, .o-layout--blog .o-layout__side
       .dark {
         padding: 18.36066px; } }
     @media only screen and (max-width: 768px) {
-      .o-layout--blog .o-layout__side .widget_promo_box--dark, .o-layout--blog .o-layout__side
+      .o-layout--blog .o-layout__side .widget_promo_box, .o-layout--blog .o-layout__side
       .highlighted, .o-layout--blog .o-layout__side
       .dark {
         padding: 15.66434px; } }
     @media only screen and (max-width: 320px) {
-      .o-layout--blog .o-layout__side .widget_promo_box--dark, .o-layout--blog .o-layout__side
+      .o-layout--blog .o-layout__side .widget_promo_box, .o-layout--blog .o-layout__side
       .highlighted, .o-layout--blog .o-layout__side
       .dark {
         padding: 13.65854px; } }
   @media only screen and (min-width: 62.5em) {
-    .widget_promo_box--dark.widget--full,
+    .widget_promo_box.widget--full,
     .highlighted.widget--full,
     .dark.widget--full {
       padding: 4rem; } }
+  .o-layout .widget-area--footer-featured .widget_promo_box.widget-first, .o-layout .widget-area--footer-featured
+  .highlighted.widget-first, .o-layout .widget-area--footer-featured
+  .dark.widget-first {
+    border-top-width: 0; }
 
 .o-layout__full:last-child:nth-of-type(2n) .widget:nth-of-type(2n+1),
 .o-layout__full:last-child:nth-of-type(2n+1) .widget:nth-of-type(2n) {
