@@ -182,7 +182,7 @@ function felt_scripts() {
 	wp_register_script( 'select2',get_theme_file_uri( '/assets/js/select2' . $suffix . '.js' ), array(), '4.0.5', true );
 	wp_register_script( 'slick',get_theme_file_uri( '/assets/js/slick' . $suffix . '.js' ), array(), '1.9.0', true );
 
-	wp_enqueue_script( 'felt-scripts', get_theme_file_uri( '/assets/js/scripts' . $suffix . '.js' ), array( 'jquery', 'masonry', 'hoverIntent', 'tweenmax', 'select2', 'slick' ), $theme->get( 'Version' ), true );
+	wp_enqueue_script( 'felt-scripts', get_theme_file_uri( '/assets/js/scripts' . $suffix . '.js' ), array( 'jquery', 'masonry', 'imagesloaded', 'hoverIntent', 'tweenmax', 'select2', 'slick' ), $theme->get( 'Version' ), true );
 
 	wp_localize_script( 'felt-scripts', 'feltStrings', array(
 		'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),
