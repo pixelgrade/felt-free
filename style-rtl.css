@@ -16234,6 +16234,9 @@ ul.page-numbers {
 .u-underlined-links .c-card__footer a {
   text-decoration: none; }
 
+.highlighted {
+  background-color: #FFF4E8; }
+
 .mb-0 {
   margin-bottom: 0; }
 

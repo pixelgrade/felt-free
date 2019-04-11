@@ -88,7 +88,7 @@ $header-font: (
 $content-container-width: 1300px;
 $content-sides-spacing: 70px;
 $content-vertical-spacing: 0;
-$content-width: 720px;
+$content-width: 885px;
 $content-border-width: 0;
 $content-border-color: transparent;
 // ----------------------------------------
@@ -120,7 +120,7 @@ $blockquote-font: (
 $body-font: (
   font-family: $theme-body-font-family,
   font-size: 20px,
-  line-height: 1.5,
+  line-height: 1.6,
 );
 
 $page-title-font: (
@@ -212,7 +212,9 @@ $cite-font: map-merge($h5, (
 ));
 
 $typography-intro-font: (
+  font-family: $theme-headings-font-family,
   font-size: 24px,
+  line-height: (36/24),
   letter-spacing: (-.5em/24),
 );
 

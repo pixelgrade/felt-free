@@ -212,7 +212,7 @@
 
 // custom appearance for meta on single posts
 .header-meta {
-  @include leading-map($meta-category-items-font);
+  @include leading-map($h4);
 
   .byline {
     text-transform: capitalize;
@@ -453,7 +453,7 @@ ul.page-numbers {
 
 .single {
   .entry-title {
-    font-weight: 300;
+    // font-weight: 300;
   }
 
   &:not(.entry-image--none) {
@@ -471,6 +471,11 @@ ul.page-numbers {
 
 .u-underlined-links .c-card__footer a {
   text-decoration: none;
+}
+
+// Used for widgets
+.highlighted {
+  background-color: $sm-color-tertiary;
 }
 
 // Margin bottom
