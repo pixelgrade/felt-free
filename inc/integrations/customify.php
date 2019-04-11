@@ -419,7 +419,7 @@ function felt_customify_main_content_section( $section_options, $options ) {
 					'default'  => array(
 						'font-family'    => VARIATION_SERIF_FONT,
 						'font-weight'    => '400',
-						'font-size'      => 17,
+						'font-size'      => 20,
 						'line-height'    => 1.6,
 						'letter-spacing' => 0,
 						'text-transform' => 'none',
