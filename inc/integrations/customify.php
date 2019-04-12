@@ -419,7 +419,7 @@ function felt_customify_main_content_section( $section_options, $options ) {
 					'default'  => array(
 						'font-family'    => VARIATION_SERIF_FONT,
 						'font-weight'    => '400',
-						'font-size'      => 17,
+						'font-size'      => 20,
 						'line-height'    => 1.6,
 						'letter-spacing' => 0,
 						'text-transform' => 'none',
@@ -630,6 +630,7 @@ function felt_customify_buttons_section( $section_options, $options ) {
 	$buttons = apply_filters( 'pixelgrade_button_selectors_array', array(
 		'.button',
 		'.c-btn:not(.c-promo__btn)',
+		'.widget_promo_box--light .c-promo__btn',
 		'.c-comments-toggle__label',
 		'button[type=button]',
 		'button[type=reset]',
@@ -1148,7 +1149,8 @@ function felt_customify_footer_section( $section_options, $options ) {
 								.widget.dark, 
 								.widget-area--side .widget_promo_box--dark,
 								.widget-area--main .widget_promo_box--dark,
-								.widget-area--below-post .widget_promo_box--dark',
+								.widget-area--below-post .widget_promo_box--dark,
+								.widget_promo_box--dark[class][class][class]:before',
 						),
 					),
 				),
