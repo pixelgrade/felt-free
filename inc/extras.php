@@ -95,7 +95,7 @@ function felt_body_classes( $classes ) {
 		$classes[] = 'is-customizer-preview';
 	}
 
-	if ( 'sideways' === pixelgrade_option( 'widgets_title_position' ) ) {
+	if ( (pixelgrade_option( 'widgets_title_position' === 'sideways') || ( false === pixelgrade_user_has_access( 'pro-features' ) ) ) ) {
 		$classes[] = 'u-widget-title-sideways';
 	}
 
