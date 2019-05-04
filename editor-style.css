@@ -1438,7 +1438,7 @@ body {
   background: none; }
 
 .u-content-width > :not([class*="align"]):not([class*="gallery"]) {
-  max-width: 720px;
+  max-width: 885px;
   margin-left: auto;
   margin-right: auto; }
   .u-content-width > :not([class*="align"]):not([class*="gallery"]) .button[data-mce-selected] {

@@ -70,19 +70,19 @@ add_action( 'customize_register', 'felt_customize_register' );
  * SANITIZATION FOR LOGO
  * ========================= */
 
-function felt_sanitize_transparent_logo( $input ) {
+function felt_sanitize_transparent_logo( $attachment_id ) {
 
 	$mimes_allowed = array(
 		'jpg|jpeg|jpe' => 'image/jpeg',
 		'gif'          => 'image/gif',
 		'png'          => 'image/png'
 	);
-	$extension     = get_post_mime_type( $input );
+	$attachment_mime_type = get_post_mime_type( $attachment_id );
 
 	//if file has a valid mime type return input, otherwise return FALSE
-	foreach ( $mimes_allowed as $mime ) {
-		if ( $extension == $mime ) {
-			return $input;
+	foreach ( $mimes_allowed as $mime_type ) {
+		if ( $attachment_mime_type == $mime_type ) {
+			return $attachment_id;
 		}
 	}
 
