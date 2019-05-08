@@ -947,7 +947,8 @@ function felt_customify_header_section( $section_options, $options ) {
 							'property' => 'background-color',
 							'selector' => '.woocommerce-header:after,
 								.woocommerce-product-archive:after,
-								.woocommerce-product-header:after'
+								.woocommerce-product-header:after, 
+								.single-product .woocommerce-notices-wrapper:after'
 						),
 					),
 				),

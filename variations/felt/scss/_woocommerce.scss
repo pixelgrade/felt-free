@@ -19,6 +19,10 @@
     }
 }
 
+.woocommerce-product-header:after {
+    left: -100vw;
+}
+
 @include below( lap ) {
     .woocommerce-product-header:after {
         content: none;

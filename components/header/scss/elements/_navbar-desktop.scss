@@ -8,6 +8,7 @@
 .u-header-height {
   height: $header-height;
 }
+
 .c-navbar {
   @extend %flex-center-all;
 
@@ -50,7 +51,6 @@
   text-align: right;
 }
 
-.c-navbar__checkbox,
 .c-navbar__label {
   display: none;
 }

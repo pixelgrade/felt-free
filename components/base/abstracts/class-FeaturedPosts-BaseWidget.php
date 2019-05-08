@@ -129,8 +129,8 @@ if ( ! class_exists( 'Pixelgrade_FeaturedPosts_BaseWidget' ) ) :
 						'disabled' => true,
 						'type'              => 'select',
 						'label'             => esc_html__( 'Tag:', '__components_txtd' ),
-						'callback'          => array( null, 'tagsDropdown' ),
-						'sanitize_callback' => array( null, 'sanitizeTag' ),
+						'callback'          => array( $this, 'tagsDropdown' ),
+						'sanitize_callback' => array( $this, 'sanitizeTag' ),
 						// We need to do custom sanitization for custom generated selects.
 						'default'           => 0,
 						'display_on'        => array(
@@ -509,10 +509,10 @@ if ( ! class_exists( 'Pixelgrade_FeaturedPosts_BaseWidget' ) ) :
 					 */
 					do_action( 'pixelgrade_widget_before_' . $this->id, $args, $instance );
 
-					echo $args['before_widget']; // @codingStandardsIgnoreLine
+					echo $args['before_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 					if ( ! empty( $title ) ) {
-						echo $args['before_title'] . $title . $args['after_title']; // @codingStandardsIgnoreLine
+						echo $args['before_title'] . $title . $args['after_title']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					}
 
 					/**
@@ -555,7 +555,7 @@ if ( ! class_exists( 'Pixelgrade_FeaturedPosts_BaseWidget' ) ) :
 							do_action( 'pixelgrade_featured_posts_widget_before_post' . $this->id, $post_index, $posts );
 
 							// We use include so the template parts gets access to all the variables defined above.
-							include $found_template; // @codingStandardsIgnoreLine
+							include $found_template; // phpcs:ignore
 
 							/**
 							 * Fires after the widget post.
@@ -602,7 +602,7 @@ if ( ! class_exists( 'Pixelgrade_FeaturedPosts_BaseWidget' ) ) :
 						}
 
 						if ( ! empty( $view_more_link ) && ! is_wp_error( $view_more_link ) ) {
-							echo '<div class="featured-posts__footer"><a class="featured-posts__more" href="' . esc_url( $view_more_link ) . '">' . $view_more_label . '</a></div>'; // @codingStandardsIgnoreLine
+							echo '<div class="featured-posts__footer"><a class="featured-posts__more" href="' . esc_url( $view_more_link ) . '">' . wp_kses( $view_more_label, wp_kses_allowed_html() ) . '</a></div>';
 						}
 					}
 					?>
@@ -620,7 +620,7 @@ if ( ! class_exists( 'Pixelgrade_FeaturedPosts_BaseWidget' ) ) :
 					 */
 					do_action( 'pixelgrade_featured_posts_widget_end' . $this->id, $instance, $args );
 
-					echo $args['after_widget']; // @codingStandardsIgnoreLine
+					echo $args['after_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 					/**
 					 * Fires after the widget markup, including the closing </section>.
@@ -804,7 +804,7 @@ if ( ! class_exists( 'Pixelgrade_FeaturedPosts_BaseWidget' ) ) :
 
 			if ( ! empty( $desc ) ) {
 				$output .= "<br />\n";
-				$output .= '<small>' . $desc . "</small>\n";
+				$output .= '<small>' . wp_kses_post( $desc ) . "</small>\n";
 			}
 
 			$output .= "</p>\n";
@@ -873,7 +873,7 @@ if ( ! class_exists( 'Pixelgrade_FeaturedPosts_BaseWidget' ) ) :
 			$output .= '<p class="pixelgrade-featured-posts-widget-' . esc_attr( $field_name ) . $this->displayOnClass( $field_name, $field_config ) . '" style="' . ( empty( $field_config['hidden'] ) ? '' : 'display: none;' ) . '" ' . $this->displayOnAttributes( $field_name, $field_config ) . ">\n";
 
 			if ( ! empty( $label ) ) {
-				$output .= '<label class="customize-control-title" for="' . esc_attr( $this->get_field_id( $field_name ) ) . '">' . $label . "</label>\n";
+				$output .= '<label class="customize-control-title" for="' . esc_attr( $this->get_field_id( $field_name ) ) . '">' . wp_kses_post( $label ) . "</label>\n";
 			}
 
 			$args         = array(
@@ -905,7 +905,7 @@ if ( ! class_exists( 'Pixelgrade_FeaturedPosts_BaseWidget' ) ) :
 
 			if ( ! empty( $desc ) ) {
 				$output .= "<br />\n";
-				$output .= '<small>' . $desc . "</small>\n";
+				$output .= '<small>' . wp_kses_post( $desc ) . "</small>\n";
 			}
 
 			$output .= "</p>\n";

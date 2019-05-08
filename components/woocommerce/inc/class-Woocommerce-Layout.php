@@ -64,8 +64,14 @@ class Pixelgrade_Woocommerce_Layout extends Pixelgrade_Singleton {
 		add_filter( 'body_class', array( $this, 'removeSidebarClass' ), 30 );
 		add_filter( 'components_entry_header_classes', array( $this, 'alterEntryHeaderClassList' ), 30, 1 );
 
-		add_action( 'woocommerce_before_single_product_summary', array( $this, 'addStartWrapperBeforeSingleProductSummary' ), 1 );
-		add_action( 'woocommerce_after_single_product_summary', array( $this, 'addEndWrapperAfterSingleProductSummary' ), 1 );
+		add_action( 'woocommerce_before_single_product_summary', array(
+			$this,
+			'addStartWrapperBeforeSingleProductSummary'
+		), 1 );
+		add_action( 'woocommerce_after_single_product_summary', array(
+			$this,
+			'addEndWrapperAfterSingleProductSummary'
+		), 1 );
 		add_action( 'pixelgrade_before_header', array( $this, 'outputMiniCart' ), 1 );
 
 		// add various opening and closing tags to wrap upsells and related products
@@ -98,24 +104,32 @@ class Pixelgrade_Woocommerce_Layout extends Pixelgrade_Singleton {
 
 		add_action( 'woocommerce_single_product_summary', array( $this, 'singleProductHeaderStart' ), 3 );
 		add_action( 'woocommerce_single_product_summary', array( $this, 'singleProductHeaderEnd' ), 11 );
+
+		add_action( 'pixelgrade_before_card_frame_end', array( $this, 'appendSaleFlashToCard' ) );
+		add_action( 'pixelgrade_before_card_frame_end', array( $this, 'appendAddToCartToCardAside' ) );
+		add_filter( 'woocommerce_output_related_products_args', array( $this, 'limitRelatedPostsCount' ), 20 );
 	}
 
 	public function outputAjaxAddToCartButton() {
-		/** @var WC_Product $product */
-		global $product;
+		if ( 'product' !== get_post_type() ) {
+			return;
+		}
+
+		$product = wc_get_product();
 
 		if ( $product->is_type( 'simple' ) ) {
 			woocommerce_template_loop_add_to_cart( array(
 				'class' => 'c-btn  add_to_cart_button  ajax_add_to_cart'
 			) );
 		}
-    }
+	}
 
 	public function addTemplatePartPaths( $template, $slug, $name ) {
 		$located = pixelgrade_locate_template_part( $slug, 'woocommerce', $name );
 		if ( $located ) {
 			return $located;
 		}
+
 		return $template;
 	}
 
@@ -124,6 +138,7 @@ class Pixelgrade_Woocommerce_Layout extends Pixelgrade_Singleton {
 		if ( $located_components ) {
 			return $located_components;
 		}
+
 		return $located;
 	}
 
@@ -133,11 +148,12 @@ class Pixelgrade_Woocommerce_Layout extends Pixelgrade_Singleton {
 		} elseif ( is_woo_archive() ) {
 			$templates[] = 'components/woocommerce/templates/archive-product.php';
 		}
+
 		return $templates;
 	}
 
 	public function alterLoopStart( $loop_start ) {
-		return '<div class="' . join( ' ', pixelgrade_get_blog_grid_class() ) . '">';
+		return '<div class="' . esc_attr( join( ' ', pixelgrade_get_woocommerce_grid_class() ) ) . '">';
 	}
 
 	public function alterLoopEnd( $loop_end ) {
@@ -147,6 +163,7 @@ class Pixelgrade_Woocommerce_Layout extends Pixelgrade_Singleton {
 	public function alterPaginationArgs( $args ) {
 		$args['prev_text'] = esc_html_x( '&laquo; Previous', 'previous set of posts', '__components_txtd' );
 		$args['next_text'] = esc_html_x( 'Next &raquo;', 'next set of posts', '__components_txtd' );
+
 		return $args;
 	}
 
@@ -160,9 +177,9 @@ class Pixelgrade_Woocommerce_Layout extends Pixelgrade_Singleton {
 		}
 
 		if ( is_cart() ) {
-			$classes = array_diff( $classes, array( 'h0' ) );
+			$classes   = array_diff( $classes, array( 'h0' ) );
 			$classes[] = 'h1';
-        }
+		}
 
 		return $classes;
 	}
@@ -171,6 +188,7 @@ class Pixelgrade_Woocommerce_Layout extends Pixelgrade_Singleton {
 		if ( is_product() ) {
 			$classes = array_diff( $classes, array( 'has-sidebar' ) );
 		}
+
 		return $classes;
 	}
 
@@ -207,33 +225,35 @@ class Pixelgrade_Woocommerce_Layout extends Pixelgrade_Singleton {
 	}
 
 	public function outputMiniCart() {
-	    if ( ! is_cart() ) {
-            ob_start(); ?>
-            <div class="c-mini-cart">
-                <div class="c-mini-cart__overlay"></div>
-                <div class="c-mini-cart__flyout">
-                    <div class="c-mini-cart__header">
-                        <h5 class="c-mini-cart__title"><?php echo esc_html__( 'Your cart', '__components_txtd' ); ?></h5>
-                        <div class="c-mini-cart__close"></div>
-                    </div>
-                    <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+		if ( ! is_cart() ) { ?>
+
+        <div class="c-mini-cart">
+            <div class="c-mini-cart__overlay"></div>
+            <div class="c-mini-cart__flyout">
+                <div class="c-mini-cart__header">
+                    <h5 class="c-mini-cart__title"><?php esc_html_e( 'Your cart', '__components_txtd' ); ?></h5>
+                    <div class="c-mini-cart__close"></div>
                 </div>
+				<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
             </div>
-            <?php echo ob_get_clean(); // WPCS: XSS OK.
-        }
+        </div>
+
+		<?php }
 	}
 
 	public function removeHeaderFromCheckout( $allow ) {
-		if ( is_checkout() ) {
+		if ( is_checkout() && ! is_order_received_page() ) {
 			$allow = false;
 		}
+
 		return $allow;
 	}
 
 	public function removeFooterFromCheckout( $allow ) {
-		if ( is_checkout() ) {
+		if ( is_checkout() && ! is_order_received_page() ) {
 			$allow = false;
 		}
+
 		return $allow;
 	}
 
@@ -246,51 +266,92 @@ class Pixelgrade_Woocommerce_Layout extends Pixelgrade_Singleton {
 		$cart_count_span = '';
 
 		if ( $cart_item_count ) {
-			$cart_count_span = '<div class="cart-count"><span>' . $cart_item_count . '</span></div>';
+			$cart_count_span = '<div class="cart-count"><span>' . esc_html( $cart_item_count ) . '</span></div>';
 		}
 
-		$cart_link = apply_filters( 'pixelgrade_cart_menu_item_markup', '<li class="menu-item  menu-item--cart"><a class="js-open-cart" href="' . esc_url( get_permalink( wc_get_page_id( 'cart' ) ) ) . '">' . esc_html__( 'My Cart', '__components_txtd' ) . $cart_count_span . '</a></li>' );
+		$cart_link               = apply_filters( 'pixelgrade_cart_menu_item_markup', '<li class="menu-item  menu-item--cart"><a class="js-open-cart" href="' . esc_url( get_permalink( wc_get_page_id( 'cart' ) ) ) . '">' . esc_html__( 'My Cart', '__components_txtd' ) . $cart_count_span . '</a></li>' );
 		$cart_menu_item_location = apply_filters( 'pixelgrade_cart_menu_item_location', 'primary-left' );
 
 		// Add the cart link to the end of the menu.
 		if ( $args->theme_location === $cart_menu_item_location ) {
-            $items = $items . $cart_link;
+			$items = $items . $cart_link;
 		}
 
 		return $items;
 	}
 
 	public function changeReviewAvatarSize( $size ) {
-	    $size = 80;
-	    return $size;
+		$size = 80;
+
+		return $size;
+	}
+
+	public function singleProductCategory() {
+		$current_product = wc_get_product();
+
+		echo '<ul class="woocommerce-product-category c-meta__primary">';
+		echo '<li><a href="'. esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ) . '">' . esc_html__( 'Shop', '__components_txtd' ) . '</a></li>';
+		if ( ! empty( $current_product ) ) {
+			echo wc_get_product_category_list( $current_product->get_id(), '</li><li>', '<li>', '</li>' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		}
+		echo '</ul>';
+	}
+
+	public function singleProductHeaderStart() { ?>
+		<div class="woocommerce-product-header">
+	<?php }
+
+	public function singleProductHeaderEnd() {
+		echo '</div>';
+	}
+
+	public function appendAddToCartToCardAside() {
+
+		if ( 'product' !== get_post_type() ) {
+			return;
+		}
+
+		$product = wc_get_product();
+		$class = 'c-btn  add_to_cart_button';
+
+		if ( $product->is_type( 'simple' ) ) {
+			$class .= '  ajax_add_to_cart';
+		} ?>
+
+        <div class="c-card__add-to-cart">
+			<?php woocommerce_template_loop_add_to_cart( array( 'class' => $class ) ); ?>
+        </div>
+
+	<?php }
+
+	public function appendSaleFlashToCard() {
+
+		if ( 'product' !== get_post_type() ) {
+			return;
+		}
+
+		woocommerce_show_product_loop_sale_flash();
     }
 
-    public function singleProductCategory() {
-	    global $product;
+    public function outputCheckoutSiteIdentity() { ?>
 
-	    echo '<div class="woocommerce-product-category c-meta__primary">';
-	    echo wc_get_product_category_list( $product->get_id(), ' / ' ); // WPCS: XSS OK.
-	    echo '</div>';
-    }
+	    <h1 class="woocommerce-checkout-title"><a href="<?php echo esc_url( get_home_url() ); ?>"><span><?php echo esc_html( get_bloginfo( 'name' ) ) ?></span></a></h1>
 
-    public function singleProductHeaderStart() {
-	    echo '<div class="woocommerce-product-header">';
-    }
+    <?php }
 
-    public function singleProductHeaderEnd() {
-	    echo '</div>';
-    }
+    public function outputCheckoutBreadcrumbs() { ?>
 
-    public function outputCheckoutSiteIdentity() {
-	    echo '<h1 class="woocommerce-checkout-title"><span>'. get_bloginfo( 'name' ) .'</span></h1>';
-    }
-
-    public function outputCheckoutBreadcrumbs() {
-	    ob_start(); ?>
         <ul class="woocommerce-checkout-breadcrumbs">
-            <li><a href="<?php echo wc_get_cart_url(); ?>"><?php _e( 'Cart', '__components_txtd' ); ?></a></li>
-            <li><?php _e( 'Checkout', '__components_txtd' ); ?></li>
+            <li><a href="<?php echo esc_url( wc_get_cart_url() ); ?>"><?php esc_html_e( 'Cart', '__components_txtd' ); ?></a></li>
+            <li><?php esc_html_e( 'Checkout', '__components_txtd' ); ?></li>
         </ul>
-	    <?php echo ob_get_clean();
-    }
+
+    <?php }
+
+	function limitRelatedPostsCount( $args ) {
+		$args['posts_per_page'] = 3;
+		$args['columns'] = 3;
+
+		return $args;
+	}
 }

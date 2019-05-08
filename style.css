@@ -15395,6 +15395,9 @@ body {
     background-color: #FFF4E8;
     z-index: -1; }
 
+.woocommerce-product-header:after {
+  left: -100vw; }
+
 @media not screen and (min-width: 62.5em) {
   .woocommerce-product-header:after {
     content: none; } }

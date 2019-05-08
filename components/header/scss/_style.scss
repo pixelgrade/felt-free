@@ -1,6 +1,13 @@
+@import "variables";
+
 @import 'elements/burger';
 @import 'elements/branding';
 @import 'elements/site-header';
+@import 'elements/logo';
+
+.c-navbar__checkbox {
+  display: none;
+}
 
 @include below(lap) {
   @import 'elements/navbar-mobile';

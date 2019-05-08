@@ -43,3 +43,31 @@
         }
     }
 }
+
+.c-card__term-list {
+    @include specific(2) {
+        margin: 0;
+
+        &:before,
+        &:after {
+            content: none;
+        }
+    }
+}
+
+.c-card__excerpt .price {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.25em;
+
+    > * {
+        margin-left: 0.25em;
+        margin-right: 0.25em;
+    }
+}
+
+.c-card__footer {
+    a {
+        color: inherit;
+    }
+}
