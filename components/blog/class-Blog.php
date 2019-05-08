@@ -210,10 +210,11 @@ class Pixelgrade_Blog extends Pixelgrade_Component {
 			'loop-none'       => array(
 				'type'      => 'template_part',
 				'templates' => array(
-					array(
+					'content-none' => array(
 						'component_slug' => self::COMPONENT_SLUG,
 						'slug'           => 'content',
 						'name'           => 'none',
+						'lookup_parts_root' => true,
 					),
 				),
 				'checks'    => array(
@@ -779,7 +780,7 @@ class Pixelgrade_Blog extends Pixelgrade_Component {
 
 	public function registerPageBlock() {
 
-		$location = array( 'page' );
+		$location = pixelgrade_get_location( 'page' );
 		if ( is_front_page() ) {
 			$location[] = 'front-page';
 		}
@@ -1016,7 +1017,7 @@ class Pixelgrade_Blog extends Pixelgrade_Component {
 			$image_orientation = pixelgrade_get_post_thumbnail_aspect_ratio_class();
 
 			if ( ! empty( $image_orientation ) ) {
-				$classes[] = 'entry-image--' . $image_orientation;
+				$classes[] = 'entry-image--' . sanitize_html_class( $image_orientation );
 			}
 		}
 
@@ -1024,7 +1025,7 @@ class Pixelgrade_Blog extends Pixelgrade_Component {
 			$classes[] = 'is-customizer-preview';
 		}
 
-		if ( class_exists( 'PixCustomifyPlugin' ) ) {
+		if ( class_exists( 'PixCustomifyPlugin' ) && pixelgrade_user_has_access( 'pro-features' ) ) {
 			$classes[] = 'customify';
 		} else {
 			$classes[] = 'no-customify';

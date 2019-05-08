@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function pixelgrade_hero_class( $class = '', $location = '', $post = null ) {
 	// Separates classes with a single space, collates classes for hero element
-	echo 'class="' . join( ' ', pixelgrade_get_hero_class( $class, $location, $post ) ) . '"'; // WPCS: XSS OK.
+	echo 'class="' . esc_attr( join( ' ', pixelgrade_get_hero_class( $class, $location, $post ) ) ) . '"';
 }
 
 /**
@@ -86,7 +86,7 @@ function pixelgrade_get_hero_class( $class = '', $location = '', $post = null ) 
  */
 function pixelgrade_hero_slider_class( $class = '', $location = '', $post = null ) {
 	// Separates classes with a single space, collates classes for hero element
-	echo 'class="' . join( ' ', pixelgrade_get_hero_slider_class( $class, $location, $post ) ) . '"'; // WPCS: XSS OK.
+	echo 'class="' . esc_attr( join( ' ', pixelgrade_get_hero_slider_class( $class, $location, $post ) ) ) . '"';
 }
 
 /**
@@ -160,31 +160,7 @@ function pixelgrade_hero_slider_attributes( $attribute = '', $post = null ) {
 		return false;
 	}
 
-	// get the attributes
-	$attributes = pixelgrade_hero_get_slider_attributes( $attribute, $post->ID );
-
-	// generate a string attributes array, like array( 'rel="test"', 'href="boom"' )
-	$full_attributes = array();
-	foreach ( $attributes as $name => $value ) {
-		// we really don't want numeric keys as attributes names
-		if ( ! empty( $name ) && ! is_numeric( $name ) ) {
-			// if we get an array as value we will add them comma separated
-			if ( ! empty( $value ) && is_array( $value ) ) {
-				$value = join( ', ', $value );
-			}
-
-			// if we receive an empty array entry (but with a key) we will treat it like an attribute without value (i.e. itemprop)
-			if ( empty( $value ) ) {
-				$full_attributes[] = $name;
-			} else {
-				$full_attributes[] = $name . '="' . esc_attr( $value ) . '"';
-			}
-		}
-	}
-
-	if ( ! empty( $full_attributes ) ) {
-		echo join( ' ', $full_attributes ); // WPCS: XSS OK.
-	}
+	echo pixelgrade_generate_attributes_output( pixelgrade_hero_get_slider_attributes( $attribute, $post->ID ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	return true;
 }
@@ -270,13 +246,13 @@ function pixelgrade_hero_background_color_style( $post = null ) {
 
 	$background_color = trim( pixelgrade_hero_get_background_color( $post ) );
 	if ( ! empty( $background_color ) ) {
-		$output .= 'style="background-color: ' . $background_color . ';"';
+		$output .= 'style="background-color: ' . esc_attr( $background_color ) . ';"';
 	}
 
 	// allow others to make changes
 	$output = apply_filters( 'pixelgrade_hero_the_background_color_style', $output, $post );
 
-	echo $output; // WPCS: XSS OK.
+	echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	return true;
 }
@@ -328,7 +304,7 @@ function pixelgrade_hero_get_background_color( $post = null, $default = '#333' )
  */
 function pixelgrade_hero_background_class( $class = '', $location = '', $prefix = 'c-hero__background--' ) {
 	// Separates classes with a single space, collates classes for hero element
-	echo 'class="' . join( ' ', pixelgrade_get_hero_background_class( $class, $location, $prefix ) ) . '"'; // WPCS: XSS OK.
+	echo 'class="' . esc_attr( join( ' ', pixelgrade_get_hero_background_class( $class, $location, $prefix ) ) ) . '"';
 }
 
 /**
@@ -386,7 +362,7 @@ function pixelgrade_get_hero_background_class( $class = '', $location = '', $pre
  */
 function pixelgrade_hero_wrapper_class( $class = '', $location = '', $prefix = 'c-hero__wrapper--' ) {
 	// Separates classes with a single space, collates classes for hero element
-	echo 'class="' . join( ' ', pixelgrade_get_hero_wrapper_class( $class, $location, $prefix ) ) . '"'; // WPCS: XSS OK.
+	echo 'class="' . esc_attr( join( ' ', pixelgrade_get_hero_wrapper_class( $class, $location, $prefix ) ) ) . '"';
 }
 
 /**
@@ -895,14 +871,16 @@ function pixelgrade_hero_the_background_image( $slide = null, $opacity = 100 ) {
 	$image_meta      = get_post_meta( $slide['post_id'], '_wp_attachment_metadata', true );
 	$image_full_size = wp_get_attachment_image_src( $slide['post_id'], 'pixelgrade_hero_image' );
 
-	// the responsive image
-	$image_markup = '<img class="c-hero__image" itemprop="image" src="' . esc_url( $image_full_size[0] ) . '" alt="' . esc_attr( pixelgrade_hero_get_img_alt( $slide['post_id'] ) ) . '" ' . $opacity . '>';
-	$output      .= wp_image_add_srcset_and_sizes( $image_markup, $image_meta, $slide['post_id'] ) . "\n";
+	if ( ! empty( $image_full_size[0] ) ) {
+		// The responsive image
+		$image_markup = '<img class="c-hero__image" itemprop="image" src="' . esc_url( $image_full_size[0] ) . '" alt="' . esc_attr( pixelgrade_hero_get_img_alt( $slide['post_id'] ) ) . '" ' . $opacity . '>';
+		$output       .= wp_image_add_srcset_and_sizes( $image_markup, $image_meta, $slide['post_id'] ) . "\n";
+	}
 
 	// Allow others to make changes
 	$output = apply_filters( 'pixelgrade_hero_the_background_image', $output, $slide, $opacity );
 
-	echo $output; // WPCS: XSS OK.
+	echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 function pixelgrade_hero_get_img_alt( $image ) {
@@ -941,7 +919,7 @@ function pixelgrade_hero_the_background_video( $slide = null, $opacity = 100, $i
 		if ( has_post_thumbnail( $slide['post_id'] ) ) {
 			$image = wp_get_attachment_url( get_post_thumbnail_id( $slide['post_id'] ) );
 		}
-		$output .= '<div class="c-hero__video video-placeholder" data-src="' . $attachment->guid . '" data-poster="' . $image . '" ' . $opacity . '"></div>';
+		$output .= '<div class="c-hero__video video-placeholder" data-src="' . esc_attr( $attachment->guid ) . '" data-poster="' . esc_attr( $image ) . '" ' . $opacity . '"></div>';
 	} elseif ( false !== strpos( $mime_type, 'image' ) ) {
 
 		$attachment_fields = get_post_custom( $slide['post_id'] );
@@ -959,14 +937,14 @@ function pixelgrade_hero_the_background_video( $slide = null, $opacity = 100, $i
 		}
 
 		// prepare the video url if there is one
-		$video_url = ( isset( $attachment_fields['_link_media_to'][0] ) && $attachment_fields['_link_media_to'][0] == 'custom_video_url' && isset( $attachment_fields['_video_url'][0] ) && ! empty( $attachment_fields['_video_url'][0] ) ) ? esc_url( $attachment_fields['_video_url'][0] ) : '';
+		$video_url = ( isset( $attachment_fields['_link_media_to'][0] ) && $attachment_fields['_link_media_to'][0] == 'custom_video_url' && isset( $attachment_fields['_video_url'][0] ) && ! empty( $attachment_fields['_video_url'][0] ) ) ? $attachment_fields['_video_url'][0] : '';
 
 		if ( ! $ignore_video && ! empty( $video_url ) ) {
 			// should the video auto play?
 			$video_autoplay = ( $attachment_fields['_link_media_to'][0] == 'custom_video_url' && $attachment_fields['_video_autoplay'][0] === 'on' ) ? 'on' : '';
-			$output        .= '<div class="' . ( ! empty( $video_url ) ? 'c-hero__video video' : '' ) . ( $video_autoplay == 'on' ? ' video_autoplay' : '' ) . '" itemscope itemtype="http://schema.org/ImageObject" ' . ( ! empty( $video_autoplay ) ? 'data-video_autoplay="' . $video_autoplay . '"' : '' ) . ' ' . $opacity . ">\n";
+			$output        .= '<div class="' . ( ! empty( $video_url ) ? 'c-hero__video video' : '' ) . ( $video_autoplay == 'on' ? ' video_autoplay' : '' ) . '" itemscope itemtype="http://schema.org/ImageObject" ' . ( ! empty( $video_autoplay ) ? 'data-video_autoplay="' . esc_attr( $video_autoplay ) . '"' : '' ) . ' ' . $opacity . ">\n";
 			// the responsive image
-			$image_markup = '<img data-rsVideo="' . $video_url . '" class="rsImg" src="' . esc_url( $image_full_size[0] ) . '" alt="' . $attachment_fields['_wp_attachment_image_alt'][0] . '" />';
+			$image_markup = '<img data-rsVideo="' . esc_url( $video_url ) . '" class="rsImg" src="' . esc_url( $image_full_size[0] ) . '" alt="' . esc_attr( $attachment_fields['_wp_attachment_image_alt'][0] ) . '" />';
 			$output      .= wp_image_add_srcset_and_sizes( $image_markup, $image_meta, $slide['post_id'] ) . "\n";
 			$output      .= '</div>';
 		}
@@ -975,7 +953,7 @@ function pixelgrade_hero_the_background_video( $slide = null, $opacity = 100, $i
 	// allow others to make changes
 	$output = apply_filters( 'pixelgrade_hero_the_background_video', $output, $slide, $opacity, $ignore_video );
 
-	echo $output; // WPCS: XSS OK.
+	echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 /**
@@ -1014,7 +992,7 @@ function pixelgrade_hero_the_description( $content, $slide = null ) {
 
 		if ( ! empty( $new_post ) ) {
 			$original_post = $post;
-			$post          = $new_post; // @codingStandardsIgnoreLine
+			$post          = $new_post; // phpcs:ignore
 			setup_postdata( $post );
 		}
 	}
@@ -1028,7 +1006,7 @@ function pixelgrade_hero_the_description( $content, $slide = null ) {
 
 	$content = apply_filters( 'convert_chars', $content );
 
-	include_once ABSPATH . 'wp-admin/includes/plugin.php'; // @codingStandardsIgnoreLine
+	include_once ABSPATH . 'wp-admin/includes/plugin.php'; // phpcs:ignore
 
 	if ( function_exists( 'wpgrade_remove_spaces_around_shortcodes' ) ) {
 		$content = wpgrade_remove_spaces_around_shortcodes( $content );
@@ -1044,8 +1022,8 @@ function pixelgrade_hero_the_description( $content, $slide = null ) {
 
 	// If we had to modify the global post, we need to clean up and restore things to the way they were
 	if ( ! empty( $new_post ) ) {
-		$post = $original_post; // @codingStandardsIgnoreLine
-		wp_reset_postdata();
+		$post = $original_post; // phpcs:ignore
+		setup_postdata($post);
 	}
 }
 

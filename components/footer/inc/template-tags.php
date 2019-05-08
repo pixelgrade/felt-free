@@ -95,7 +95,7 @@ function pixelgrade_footer_the_sidebar( $sidebar_id, $sidebar_settings ) {
 		return;
 	}
 
-	$classes = array( 'widget-area', 'widget-area--' . $sidebar_id );
+	$classes = array( 'widget-area', 'widget-area--' . sanitize_html_class( $sidebar_id ) );
 	if ( ! empty( $sidebar_settings['container_class'] ) ) {
 		$extra_class = $sidebar_settings['container_class'];
 		if ( ! is_array( $extra_class ) ) {
@@ -105,7 +105,7 @@ function pixelgrade_footer_the_sidebar( $sidebar_id, $sidebar_settings ) {
 		$classes = array_merge( $classes, $extra_class );
 	} ?>
 
-<aside <?php pixelgrade_css_class( $classes, array( 'footer', 'sidebar', $sidebar_id ) ); ?>>
+<aside <?php pixelgrade_css_class( $classes, array( 'footer', 'sidebar', sanitize_html_class( $sidebar_id ), ) ); ?>>
 	<?php dynamic_sidebar( $sidebar_id ); ?>
 </aside>
 
@@ -185,7 +185,7 @@ function pixelgrade_footer_get_nav_menu( $args, $menu_location = '' ) {
  */
 function pixelgrade_footer_the_back_to_top_link() {
 	if ( pixelgrade_user_has_access( 'pro-features' ) ) {
-		echo pixelgrade_footer_get_back_to_top_link(); // WPCS: XSS OK.
+		echo pixelgrade_footer_get_back_to_top_link(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 
@@ -213,7 +213,7 @@ function pixelgrade_footer_the_copyright() {
 		if ( ! empty( $copyright_text ) ) {
 			$output .= "<div class=\"c-footer__copyright-text\">\n";
 
-			$output .= $copyright_text . "\n";
+			$output .= wp_kses_post( $copyright_text ) . "\n";
 
 			$hide_credits = pixelgrade_option( 'footer_hide_credits', false );
 			if ( empty( $hide_credits ) ) {
@@ -236,7 +236,7 @@ function pixelgrade_footer_the_copyright() {
 		$output .= "</div>\n";
 	}
 
-	echo apply_filters( 'pixelgrade_footer_the_copyright', $output ); // WPCS: XSS OK.
+	echo apply_filters( 'pixelgrade_footer_the_copyright', $output ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 /**
  * Get the footer copyright content (HTML or simple text).
@@ -260,7 +260,7 @@ function pixelgrade_footer_get_copyright_content() {
 
 function pixelgrade_get_footer_credits() {
 	/* translators: 1: the original theme name 2: Pixelgrade site link */
-	return '<span class="c-footer__credits">' . sprintf( esc_html__( 'Theme: %1$s by %2$s.', '__components_txtd' ), pixelgrade_get_original_theme_name(), '<a href="' . esc_url( pixelgrade_get_footer_credits_url() ) . '" target="_blank">Pixelgrade</a>' ) . '</span>';
+	return '<span class="c-footer__credits">' . sprintf( esc_html__( 'Theme: %1$s by %2$s.', '__components_txtd' ), esc_html( pixelgrade_get_original_theme_name() ), '<a href="' . esc_url( pixelgrade_get_footer_credits_url() ) . '" target="_blank">Pixelgrade</a>' ) . '</span>';
 }
 
 function pixelgrade_get_footer_credits_url() {
@@ -356,7 +356,7 @@ function pixelgrade_footer_get_zones() {
 			$zones[ $zone_id ]['classes'] = array();
 		}
 
-		$default_classes              = array( 'c-footer__zone', 'c-footer__zone--' . $zone_id );
+		$default_classes              = array( 'c-footer__zone', 'c-footer__zone--' . sanitize_html_class( $zone_id ) );
 		$zones[ $zone_id ]['classes'] = array_merge( $default_classes, $zone_settings['classes'] );
 	}
 
