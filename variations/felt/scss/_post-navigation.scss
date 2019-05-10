@@ -66,6 +66,8 @@
         .nav-title[class] {
             padding-top: 0;
             padding-bottom: 0;
+
+            @include leading-map($h3);
         }
     }
 }

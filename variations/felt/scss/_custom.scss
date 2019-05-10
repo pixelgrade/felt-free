@@ -292,6 +292,7 @@
 
   &:not(:first-child) {
     @include spacing(padding-top, 3em);
+    @include spacing(margin-top, 3em);
   }
 
   @include below(lap) {
@@ -460,12 +461,6 @@ ul.page-numbers {
     .entry-header {
       background-color: $sm-color-tertiary;
     }
-  }
-}
-
-.menu--primary {
-  li[class*=children] > a:before {
-    display: none;
   }
 }
 
