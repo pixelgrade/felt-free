@@ -127,6 +127,7 @@ function removeUnneededFiles() {
 		'docs',
 		'components/docs',
 		'components/.bin',
+		'components/.labels',
 		'components/.github',
 		'components/tests',
 		'components/.*',
@@ -138,6 +139,8 @@ function removeUnneededFiles() {
 		'components/phpunit*',
 		'components/style.css',
 		'variations',
+
+		'bin',
 	];
 
 	files_to_remove.forEach( function( e, k ) {
