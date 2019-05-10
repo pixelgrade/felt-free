@@ -30,7 +30,7 @@ $primary_meta_output   = $primary_meta !== 'none' ? pixelgrade_get_post_meta( $p
 $secondary_meta_output = $secondary_meta !== 'none' ? pixelgrade_get_post_meta( $secondary_meta ) : false;
 
 // Get the custom text for the view post button
-$link_post_label = trim( esc_html__( 'Read More', '__theme_txtd' ) );
+$link_post_label = trim( __( 'Read More', '__theme_txtd' ) );
 ?>
 
 <div <?php pixelgrade_hero_wrapper_class( $alignment ); ?>>
@@ -76,10 +76,10 @@ $link_post_label = trim( esc_html__( 'Read More', '__theme_txtd' ) );
 			<div class="c-hero__excerpt"><?php the_excerpt(); ?></div>
 		<?php }
 
-		if ( ! empty( $link_project_label ) ) { ?>
+		if ( ! empty( $link_post_label ) ) { ?>
 			<div class="c-hero__action">
 				<span class="link--arrow  light">
-					<?php echo $link_project_label; // WPCS: XSS OK. ?>
+					<?php echo esc_html( $link_post_label); // WPCS: XSS OK. ?>
 				</span>
 			</div>
 		<?php } ?>
