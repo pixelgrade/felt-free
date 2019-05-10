@@ -7,6 +7,6 @@
 	remote = https://github.com/pixelgrade/components.git
 	branch = master
 	commit = c6f5f3fede7d95c7fbd9af588b23e445db43450b
-	parent = 281b93ff0e16a3b9aec9223d9f28eb995cb39c4d
+	parent = 05ed30228aad1f625ce3278415903e13b1c4891a
 	method = merge
 	cmdver = 0.4.0
