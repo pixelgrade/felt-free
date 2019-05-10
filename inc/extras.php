@@ -345,6 +345,12 @@ function felt_wupdates_add_id_wporg( $ids = array() ) {
 // The 5 priority is intentional to allow for pro to overwrite.
 add_filter( 'wupdates_gather_ids', 'felt_wupdates_add_id_wporg', 5, 1 );
 
+function felt_add_post_card_letter(){
+
+	echo '<span class="c-card__letter">' . esc_html( mb_substr( get_the_title(), 0, 1 ) ) . '</span>';
+}
+add_action('pixelgrade_before_card_frame_end', 'felt_add_post_card_letter');
+
 function felt_maybe_load_pro_features() {
 	if ( true === pixelgrade_user_has_access( 'pro-features' ) ) {
 		pixelgrade_autoload_dir( 'inc/pro' );
