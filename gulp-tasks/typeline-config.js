@@ -62,7 +62,7 @@ var phpConfig = function( opts ) {
 			if ( typeof opts.closeTag !== 'undefined' ) {
 				php.push( opts.closeTag );
 			} else {
-				php.push( '?>' );
+				php.push( '\r\n' );
 			}
 
 			file.contents = new Buffer( php.join( '\r\n' ) );
