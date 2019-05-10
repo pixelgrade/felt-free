@@ -779,6 +779,28 @@ function felt_customify_blog_grid_section( $section_options, $options ) {
 				'blog_items_secondary_meta'          => array(
 					'default' => 'date',
 				),
+				'blog_items_heading'             => array(
+					'default' => 'title',
+				),
+				'blog_items_content'             => array(
+					'default' => 'excerpt',
+				),
+				'blog_items_footer'             => array(
+					'default' => 'read_more',
+				),
+				'blog_item_footer_color'             => array(
+					'default' => SM_DARK_PRIMARY,
+				),
+				'blog_item_footer_font'             => array(
+					'default' => array(
+						'font-family'    => 'IBM Plex Sans',
+						'font-weight'    => '500',
+						'font-size'      => 16,
+						'line-height'    => 1.3,
+						'letter-spacing' => 0,
+						'text-transform' => 'none',
+					),
+				),
 				'blog_item_title_color'              => array(
 					'default' => SM_DARK_PRIMARY,
 					'css'     => array(
