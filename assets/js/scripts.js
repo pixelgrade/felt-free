@@ -3241,6 +3241,9 @@ var Subscription = /*@__PURE__*/ (function () {
     };
     Subscription.prototype.add = function (teardown) {
         var subscription = teardown;
+        if (!teardown) {
+            return Subscription.EMPTY;
+        }
         switch (typeof teardown) {
             case 'function':
                 subscription = new Subscription(teardown);
@@ -3259,9 +3262,6 @@ var Subscription = /*@__PURE__*/ (function () {
                 }
                 break;
             default: {
-                if (!teardown) {
-                    return Subscription.EMPTY;
-                }
                 throw new Error('unrecognized teardown ' + teardown + ' added to Subscription.');
             }
         }
@@ -4061,10 +4061,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_isArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/isArray */ "./node_modules/rxjs/_esm5/internal/util/isArray.js");
 /* harmony import */ var _operators_map__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../operators/map */ "./node_modules/rxjs/_esm5/internal/operators/map.js");
 /* harmony import */ var _util_isObject__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../util/isObject */ "./node_modules/rxjs/_esm5/internal/util/isObject.js");
-/* harmony import */ var _util_isObservable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/isObservable */ "./node_modules/rxjs/_esm5/internal/util/isObservable.js");
-/* harmony import */ var _from__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./from */ "./node_modules/rxjs/_esm5/internal/observable/from.js");
-/** PURE_IMPORTS_START _Observable,_util_isArray,_operators_map,_util_isObject,_util_isObservable,_from PURE_IMPORTS_END */
-
+/* harmony import */ var _from__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./from */ "./node_modules/rxjs/_esm5/internal/observable/from.js");
+/** PURE_IMPORTS_START _Observable,_util_isArray,_operators_map,_util_isObject,_from PURE_IMPORTS_END */
 
 
 
@@ -4080,7 +4078,7 @@ function forkJoin() {
         if (Object(_util_isArray__WEBPACK_IMPORTED_MODULE_1__["isArray"])(first_1)) {
             return forkJoinInternal(first_1, null);
         }
-        if (Object(_util_isObject__WEBPACK_IMPORTED_MODULE_3__["isObject"])(first_1) && !Object(_util_isObservable__WEBPACK_IMPORTED_MODULE_4__["isObservable"])(first_1)) {
+        if (Object(_util_isObject__WEBPACK_IMPORTED_MODULE_3__["isObject"])(first_1) && Object.getPrototypeOf(first_1) === Object.prototype) {
             var keys = Object.keys(first_1);
             return forkJoinInternal(keys.map(function (key) { return first_1[key]; }), keys);
         }
@@ -4103,7 +4101,7 @@ function forkJoinInternal(sources, keys) {
         var completed = 0;
         var emitted = 0;
         var _loop_1 = function (i) {
-            var source = Object(_from__WEBPACK_IMPORTED_MODULE_5__["from"])(sources[i]);
+            var source = Object(_from__WEBPACK_IMPORTED_MODULE_4__["from"])(sources[i]);
             var hasValue = false;
             subscriber.add(source.subscribe({
                 next: function (value) {
@@ -7038,14 +7036,16 @@ function elementAt(index, defaultValue) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "endWith", function() { return endWith; });
 /* harmony import */ var _observable_concat__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../observable/concat */ "./node_modules/rxjs/_esm5/internal/observable/concat.js");
-/** PURE_IMPORTS_START _observable_concat PURE_IMPORTS_END */
+/* harmony import */ var _observable_of__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../observable/of */ "./node_modules/rxjs/_esm5/internal/observable/of.js");
+/** PURE_IMPORTS_START _observable_concat,_observable_of PURE_IMPORTS_END */
+
 
 function endWith() {
     var array = [];
     for (var _i = 0; _i < arguments.length; _i++) {
         array[_i] = arguments[_i];
     }
-    return function (source) { return _observable_concat__WEBPACK_IMPORTED_MODULE_0__["concat"].apply(void 0, [source].concat(array)); };
+    return function (source) { return Object(_observable_concat__WEBPACK_IMPORTED_MODULE_0__["concat"])(source, _observable_of__WEBPACK_IMPORTED_MODULE_1__["of"].apply(void 0, array)); };
 }
 //# sourceMappingURL=endWith.js.map
 
@@ -8766,13 +8766,17 @@ var PairwiseSubscriber = /*@__PURE__*/ (function (_super) {
         return _this;
     }
     PairwiseSubscriber.prototype._next = function (value) {
+        var pair;
         if (this.hasPrev) {
-            this.destination.next([this.prev, value]);
+            pair = [this.prev, value];
         }
         else {
             this.hasPrev = true;
         }
         this.prev = value;
+        if (pair) {
+            this.destination.next(pair);
+        }
     };
     return PairwiseSubscriber;
 }(_Subscriber__WEBPACK_IMPORTED_MODULE_1__["Subscriber"]));

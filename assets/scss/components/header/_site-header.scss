@@ -93,6 +93,11 @@ a[rel='home'] {
   justify-content: center;
 
   text-align: center;
+
+  &:first-child:not(:last-child),
+  &:last-child:not(:first-child) {
+    flex: 1;
+  }
 }
 
 .c-navbar__zone--left { 

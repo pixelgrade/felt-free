@@ -11064,10 +11064,6 @@ and the top and bottom ones rotate to form an X
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-    .c-navbar__zone:first-child:not(:last-child), .c-navbar__zone:last-child:not(:first-child) {
-      -webkit-box-flex: 1;
-          -ms-flex: 1 1 0px;
-              flex: 1 1 0; }
     .c-navbar > .c-navbar__zone {
       display: none; }
   .c-navbar__zone--push-left {
