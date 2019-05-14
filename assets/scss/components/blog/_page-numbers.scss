@@ -49,14 +49,22 @@ ul.page-numbers {
         padding: 0;
       }
     }
+
+    @include below(lap) {
+      justify-content: space-between;
+    }
   }
 
   > li > :not(.prev):not(.next) {
-    display: block;
+    display: none;
     min-width: 2em;
     line-height: 2;
     padding-left: 0.2em;
     text-align: center;
     font-style: normal;
+
+    @include above(lap) {
+      display: block;
+    }
   }
 }

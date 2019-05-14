@@ -6485,14 +6485,22 @@ ul.page-numbers[class][class] {
     ul.page-numbers[class][class] .next:after,
     ul.page-numbers[class][class] .prev:after {
       padding: 0; }
+  @media not screen and (min-width: 62.5em) {
+    ul.page-numbers[class][class] {
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; } }
 
 ul.page-numbers > li > :not(.prev):not(.next) {
-  display: block;
+  display: none;
   min-width: 2em;
   line-height: 2;
   padding-left: 0.2em;
   text-align: center;
   font-style: normal; }
+  @media only screen and (min-width: 62.5em) {
+    ul.page-numbers > li > :not(.prev):not(.next) {
+      display: block; } }
 
 .c-reading-bar {
   position: absolute;
@@ -6569,7 +6577,6 @@ ul.page-numbers > li > :not(.prev):not(.next) {
 .post-title__post-name {
   max-width: 30vw;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis; }
 
 .show-next-title .c-reading-bar__wrapper-title--next {
