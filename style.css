@@ -12172,6 +12172,10 @@ h1.site-title {
   .jetpack-social-navigation {
     position: relative; } }
 
+.site-logo img {
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0); }
+
 .admin-bar .site-header {
   top: 32px; }
 
