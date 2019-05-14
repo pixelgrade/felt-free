@@ -12,7 +12,7 @@ ul.page-numbers {
     list-style: none;
     padding-left: 0;
 
-    @include leading-map($h5);
+    //@include leading-map($h5);
 
     > * {
       @include spacing(padding-left, 1rem);
@@ -49,5 +49,14 @@ ul.page-numbers {
         padding: 0;
       }
     }
+  }
+
+  > li > :not(.prev):not(.next) {
+    display: block;
+    min-width: 2em;
+    line-height: 2;
+    padding-left: 0.2em;
+    text-align: center;
+    font-style: normal;
   }
 }

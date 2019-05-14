@@ -21,7 +21,13 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <?php if ( is_single() && ! is_attachment() ) { ?>
 
                     <div class="c-reading-bar  js-reading-bar  u-header-sides-spacing">
-                        <div class="c-reading-bar__wrapper-menu-trigger"><button class="c-reading-bar__menu-trigger  js-sticky-menu-trigger"><?php esc_html_e( 'Menu', '__theme_txtd' ); ?></button></div>
+                        <div class="c-reading-bar__wrapper-menu-trigger">
+                            <?php if ( has_nav_menu( 'primary-right' ) ) { ?>
+                                <button class="c-reading-bar__menu-trigger  js-sticky-menu-trigger">
+                                    <?php esc_html_e( 'Menu', '__theme_txtd' ); ?>
+                                </button>
+                            <?php } ?>
+                        </div>
                         <?php
                         $next_post = get_next_post();
                         if ( ! empty( $next_post ) && ! is_wp_error( $next_post ) ): ?>
