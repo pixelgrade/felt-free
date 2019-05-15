@@ -9545,6 +9545,15 @@ ul.page-numbers > li > :not(.prev):not(.next) {
       .featured-posts-slideshow .slick-dots .slick-active {
         color: inherit; } }
 
+.featured-posts-slideshow .c-hero__background-mask,
+.featured-posts-slideshow .c-hero__background {
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
+
+.featured-posts-slideshow .c-hero__background-mask {
+  overflow: hidden; }
+
 .featured-posts-slideshow .c-hero__slide {
   width: 100%;
   height: 100%; }

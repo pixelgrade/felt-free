@@ -4894,7 +4894,7 @@ figure {
   text-align: left; }
 
 .comment-form-subscriptions {
-  margin-top: 3.5px;
+  margin-top: 28px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4907,16 +4907,16 @@ figure {
           flex-direction: column; }
   @media only screen and (max-width: 1360px) {
     .comment-form-subscriptions {
-      margin-top: 3.49532px; } }
+      margin-top: 22.17822px; } }
   @media only screen and (max-width: 1024px) {
     .comment-form-subscriptions {
-      margin-top: 3.49065px; } }
+      margin-top: 18.36066px; } }
   @media only screen and (max-width: 768px) {
     .comment-form-subscriptions {
-      margin-top: 3.48599px; } }
+      margin-top: 15.66434px; } }
   @media only screen and (max-width: 320px) {
     .comment-form-subscriptions {
-      margin-top: 3.48134px; } }
+      margin-top: 13.65854px; } }
   .comment-form-subscriptions.comment-form-subscriptions.comment-form-subscriptions {
     margin-bottom: 28px; }
     @media only screen and (max-width: 1360px) {
@@ -15776,6 +15776,12 @@ body {
     .single .entry-header > .header-meta,
     .page .entry-header > .header-meta {
       padding-top: 10.46729px; } }
+
+.c-hero__background-mask,
+.c-hero__background {
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
 
 .woocommerce-header,
 .woocommerce-product-archive,
