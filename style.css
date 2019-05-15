@@ -3571,7 +3571,7 @@ p .alignnone {
   margin-right: auto; }
 
 figure {
-  width: 100%; }
+  max-width: 100%; }
   figure.alignleft, figure.alignright, figure.aligncenter, figure.alignnone {
     margin-top: 56px; }
     @media only screen and (max-width: 1360px) {
@@ -11670,7 +11670,8 @@ h1.site-title {
   .jetpack-social-navigation {
     position: relative; } }
 
-.site-logo img {
+.site-logo img,
+.custom-logo-link img {
   -webkit-transform: translateZ(0);
           transform: translateZ(0); }
 
