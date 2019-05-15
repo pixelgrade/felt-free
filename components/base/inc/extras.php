@@ -1140,7 +1140,7 @@ if ( ! function_exists( 'pixelgrade_the_card' ) ) {
 
 		$card_details = pixelgrade_get_card_contents( $component_slug ); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article <?php post_class(); ?>>
 
 			<div class="c-card">
 

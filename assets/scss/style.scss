@@ -1,3 +1,17 @@
+/**
+ *
+ * Table of Contents
+ * --------------------------------------------------
+ *  1.0   - Base Styles
+ *  2.0   - Components
+ *  3.0   - Widgets
+ *  4.0   - Page
+ *  5.0   - Header
+ *  6.0   - Footer
+ *  7.0   - Vendors
+ *  8.0   - Overwrites
+ * --------------------------------------------------
+ */
 
 // CONFIGURATION
 // ----------------------------------------
@@ -7,16 +21,17 @@
 // theme mixins and functions
 @import 'tools/mixins';
 
-// styling for 3rd party plugins used in the theme
-@import '../../node_modules/slick-carousel/slick/slick.scss';
-@import '../../node_modules/select2/src/scss/core';
-
 $content-class: '.entry-content';
 
 // COMPONENTS
 // ----------------------------------------
 
 // BASE - default
+
+/**
+ * 1.0 - Base styles
+ */
+
 @import '../../components/base/scss/style';
 
 #{$content-class} {
@@ -35,10 +50,20 @@ $content-class: '.entry-content';
 
 
 // HEADER - custom
+
+/**
+ * 5.0 - Header
+ */
+
 //@import '../../components/header/scss/style';
 @import 'components/header/style';
 
 // FOOTER - custom
+
+/**
+ * 6.0 - Footer
+ */
+
 //@import '../../components/footer/scss/style';
 @import 'components/footer/style';
 
@@ -57,6 +82,11 @@ $content-class: '.entry-content';
 @import 'components/intro';
 
 // styles for recommended WordPress plugins
+
+/**
+ * 7.0 - Vendor
+ */
+
 @import 'plugins/jetpack-recipe';
 @import 'plugins/tasty-recipes';
 
@@ -74,6 +104,10 @@ $content-class: '.entry-content';
 @import '../../components/base/scss/plugins/jetpack-social-navigation';
 
 @import 'components/select2';
+
+// styling for 3rd party plugins used in the theme
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+@import '../../node_modules/select2/src/scss/core';
 
 // jetpack-social-navigation theme overwrites
 [class].jetpack-social-navigation {
@@ -188,4 +222,9 @@ $content-class: '.entry-content';
 }
 
 // dirty overwrites - should be cleaned regularly
+
+/**
+ * 8.0 - Overwrites
+ */
+
 @import 'shame';
