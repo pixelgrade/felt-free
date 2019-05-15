@@ -4894,7 +4894,7 @@ figure {
   text-align: right; }
 
 .comment-form-subscriptions {
-  margin-top: 3.5px;
+  margin-top: 28px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4907,16 +4907,16 @@ figure {
           flex-direction: column; }
   @media only screen and (max-width: 1360px) {
     .comment-form-subscriptions {
-      margin-top: 3.49532px; } }
+      margin-top: 22.17822px; } }
   @media only screen and (max-width: 1024px) {
     .comment-form-subscriptions {
-      margin-top: 3.49065px; } }
+      margin-top: 18.36066px; } }
   @media only screen and (max-width: 768px) {
     .comment-form-subscriptions {
-      margin-top: 3.48599px; } }
+      margin-top: 15.66434px; } }
   @media only screen and (max-width: 320px) {
     .comment-form-subscriptions {
-      margin-top: 3.48134px; } }
+      margin-top: 13.65854px; } }
   .comment-form-subscriptions.comment-form-subscriptions.comment-form-subscriptions {
     margin-bottom: 28px; }
     @media only screen and (max-width: 1360px) {
@@ -7314,6 +7314,34 @@ ul.page-numbers > li > :not(.prev):not(.next) {
 .widget.dark {
   border-top-width: 0;
   margin-top: 0; }
+
+.o-layout__side .widget.widget_promo_box,
+.o-layout__side .widget.highlighted,
+.o-layout__side .widget.dark {
+  border-top: 0 solid transparent;
+  border-top-width: 56px;
+  background-clip: padding-box;
+  margin-top: 0; }
+  @media only screen and (max-width: 1360px) {
+    .o-layout__side .widget.widget_promo_box,
+    .o-layout__side .widget.highlighted,
+    .o-layout__side .widget.dark {
+      border-top-width: 42.87081px; } }
+  @media only screen and (max-width: 1024px) {
+    .o-layout__side .widget.widget_promo_box,
+    .o-layout__side .widget.highlighted,
+    .o-layout__side .widget.dark {
+      border-top-width: 34.72868px; } }
+  @media only screen and (max-width: 768px) {
+    .o-layout__side .widget.widget_promo_box,
+    .o-layout__side .widget.highlighted,
+    .o-layout__side .widget.dark {
+      border-top-width: 29.18567px; } }
+  @media only screen and (max-width: 320px) {
+    .o-layout__side .widget.widget_promo_box,
+    .o-layout__side .widget.highlighted,
+    .o-layout__side .widget.dark {
+      border-top-width: 25.16854px; } }
 
 .o-layout .widget-area--footer-featured > .widget:nth-of-type(2n+1):last-child:not(.highlighted):not(.widget_promo_box):not(.jetpack_subscription_widget) {
   margin-bottom: 0; }

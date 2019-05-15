@@ -6485,6 +6485,11 @@ ul.page-numbers[class][class] {
     ul.page-numbers[class][class] .next:after,
     ul.page-numbers[class][class] .prev:after {
       padding: 0; }
+  @media not screen and (min-width: 62.5em) {
+    ul.page-numbers[class][class] {
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; } }
 
 ul.page-numbers > li > :not(.prev):not(.next) {
   display: none;
@@ -6572,7 +6577,6 @@ ul.page-numbers > li > :not(.prev):not(.next) {
 .post-title__post-name {
   max-width: 30vw;
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis; }
 
 .show-next-title .c-reading-bar__wrapper-title--next {
@@ -7310,6 +7314,34 @@ ul.page-numbers > li > :not(.prev):not(.next) {
 .widget.dark {
   border-top-width: 0;
   margin-top: 0; }
+
+.o-layout__side .widget.widget_promo_box,
+.o-layout__side .widget.highlighted,
+.o-layout__side .widget.dark {
+  border-top: 0 solid transparent;
+  border-top-width: 56px;
+  background-clip: padding-box;
+  margin-top: 0; }
+  @media only screen and (max-width: 1360px) {
+    .o-layout__side .widget.widget_promo_box,
+    .o-layout__side .widget.highlighted,
+    .o-layout__side .widget.dark {
+      border-top-width: 42.87081px; } }
+  @media only screen and (max-width: 1024px) {
+    .o-layout__side .widget.widget_promo_box,
+    .o-layout__side .widget.highlighted,
+    .o-layout__side .widget.dark {
+      border-top-width: 34.72868px; } }
+  @media only screen and (max-width: 768px) {
+    .o-layout__side .widget.widget_promo_box,
+    .o-layout__side .widget.highlighted,
+    .o-layout__side .widget.dark {
+      border-top-width: 29.18567px; } }
+  @media only screen and (max-width: 320px) {
+    .o-layout__side .widget.widget_promo_box,
+    .o-layout__side .widget.highlighted,
+    .o-layout__side .widget.dark {
+      border-top-width: 25.16854px; } }
 
 .o-layout .widget-area--footer-featured > .widget:nth-of-type(2n+1):last-child:not(.highlighted):not(.widget_promo_box):not(.jetpack_subscription_widget) {
   margin-bottom: 0; }
@@ -12167,6 +12199,10 @@ h1.site-title {
     max-width: 50px; }
   .jetpack-social-navigation {
     position: relative; } }
+
+.site-logo img {
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0); }
 
 .admin-bar .site-header {
   top: 32px; }

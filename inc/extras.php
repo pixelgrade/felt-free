@@ -109,6 +109,12 @@ function felt_body_attributes( $attributes ) {
 		$attributes['data-color'] = pixelgrade_option( 'main_color' );
 	}
 
+	// Some schema.org magic
+	if ( is_page() ) {
+		$attributes['itemscope'] = '';
+		$attributes['itemtype'] = 'http://schema.org/WebPage';
+	}
+
 	$attributes['data-parallax'] = pixelgrade_option( 'parallax_amount' );
 
 	return $attributes;
