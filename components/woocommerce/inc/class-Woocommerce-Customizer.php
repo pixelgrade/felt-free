@@ -380,8 +380,8 @@ class Pixelgrade_Woocommerce_Customizer extends Pixelgrade_Singleton {
 						),
 						'css'         => array(
 							array(
-								'property' => 'dummy',
-								'selector' => '.dummy',
+								'property' => 'border-width',
+								'selector' => '.no-matching-selector',
 								'unit'     => 'px',
 							),
 						),

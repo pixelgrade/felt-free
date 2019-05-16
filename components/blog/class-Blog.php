@@ -876,12 +876,6 @@ class Pixelgrade_Blog extends Pixelgrade_Component {
 		// We will put this script inline since it is so small.
 		add_action( 'wp_print_footer_scripts', array( $this, 'skip_link_focus_fix' ) );
 
-		// Setup how things will behave in the WP admin area
-		add_action( 'admin_init', array( $this, 'adminInit' ) );
-
-		// Enqueue assets for the admin
-		add_action( 'admin_enqueue_scripts', array( $this, 'adminEnqueueScripts' ) );
-
 		/*
 		 * ================================
 		 * Hook-up to various places where we need to output things
@@ -940,35 +934,6 @@ class Pixelgrade_Blog extends Pixelgrade_Component {
 	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
 </script>
 		<?php
-	}
-
-	/**
-	 * Loaded when the WordPress dashboard is initialized.
-	 */
-	public function adminInit() {
-		/* register the admin styles and scripts specific to this component */
-//		wp_register_style( 'pixelgrade_blog-admin-style', pixelgrade_get_theme_file_uri( trailingslashit( PIXELGRADE_COMPONENTS_PATH ) . trailingslashit( self::COMPONENT_SLUG ) . 'css/admin.css' ), array(), $this->assets_version );
-//		wp_register_script( 'pixelgrade_blog-admin-scripts', pixelgrade_get_theme_file_uri( trailingslashit( PIXELGRADE_COMPONENTS_PATH ) . trailingslashit( self::COMPONENT_SLUG ) . 'js/admin.js' ), array(), $this->assets_version );
-
-	}
-
-	/**
-	 * Enqueue scripts and styles for the admin area.
-	 *
-	 * @param string $hook
-	 */
-	public function adminEnqueueScripts( $hook ) {
-		/* enqueue the admin styles and scripts specific to this component */
-//		if ( 'post.php' === $hook ) {
-//			wp_enqueue_style( 'pixelgrade_blog-admin-style' );
-//			wp_enqueue_script( 'pixelgrade_blog-admin-scripts' );
-//
-//			wp_localize_script(
-//				'pixelgrade_blog-admin-scripts', 'pixelgrade_blog_admin', array(
-//					'ajaxurl' => admin_url( 'admin-ajax.php' ),
-//				)
-//			);
-//		}
 	}
 
 	/**
