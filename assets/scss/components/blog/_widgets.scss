@@ -1,3 +1,17 @@
+.widget_archive,
+.widget_categories,
+.widget_meta,
+.widget_nav_menu,
+.widget_pages,
+.widget_recent_comments,
+.widget_recent_entries,
+.widget_rss,
+.widget_text,
+.widget_tag_cloud,
+.widget_search,
+.widget_calendar {
+  @extend .wordpress-default-widgets;
+}
 
 .widget {
 
@@ -23,6 +37,10 @@
     &:hover {
       text-decoration: none;
     }
+  }
+
+  a {
+    text-decoration: none;
   }
 
   // Helper Classes for Widgets
@@ -362,6 +380,19 @@
   }
 }
 
+// Fixed widgets spacings on article with portrait image
+.o-layout__side {
+  .widget.widget_promo_box,
+  .widget.highlighted,
+  .widget.dark {
+    border-top: 0 solid transparent;
+    @include spacing(border-top-width, 4rem);
+    background-clip: padding-box;
+
+    margin-top: 0;
+  }
+}
+
 // More Hacks
 .o-layout .widget-area--footer-featured > .widget:nth-of-type(2n+1):last-child {
 
@@ -447,6 +478,21 @@
     &:not(.is-loaded):not(.emoji) {
       opacity: 0;
     }
+  }
+}
+
+.wordpress-default-widgets {
+  ul ul {
+    counter-reset: submenu;
+    > li > a:before {
+      content: "- " counters(submenu, "- ", none);
+      counter-increment: submenu;
+    }
+  }
+
+  ul, ol {
+    list-style: none;
+    padding-left: 0;
   }
 }
 

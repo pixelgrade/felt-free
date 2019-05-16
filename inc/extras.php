@@ -95,7 +95,7 @@ function felt_body_classes( $classes ) {
 		$classes[] = 'is-customizer-preview';
 	}
 
-	if ( (pixelgrade_option( 'widgets_title_position' === 'sideways') || ( false === pixelgrade_user_has_access( 'pro-features' ) ) ) ) {
+	if ( pixelgrade_option( 'widgets_title_position' ) === 'sideways' && ( true === pixelgrade_user_has_access( 'pro-features' ) ) ) {
 		$classes[] = 'u-widget-title-sideways';
 	}
 
@@ -107,6 +107,12 @@ add_filter( 'body_class', 'felt_body_classes' );
 function felt_body_attributes( $attributes ) {
 	if ( pixelgrade_option( 'main_color' ) ) {
 		$attributes['data-color'] = pixelgrade_option( 'main_color' );
+	}
+
+	// Some schema.org magic
+	if ( is_page() ) {
+		$attributes['itemscope'] = '';
+		$attributes['itemtype'] = 'http://schema.org/WebPage';
 	}
 
 	$attributes['data-parallax'] = pixelgrade_option( 'parallax_amount' );
@@ -344,6 +350,12 @@ function felt_wupdates_add_id_wporg( $ids = array() ) {
 }
 // The 5 priority is intentional to allow for pro to overwrite.
 add_filter( 'wupdates_gather_ids', 'felt_wupdates_add_id_wporg', 5, 1 );
+
+function felt_add_post_card_letter(){
+
+	echo '<span class="c-card__letter">' . esc_html( mb_substr( get_the_title(), 0, 1 ) ) . '</span>';
+}
+add_action('pixelgrade_before_card_frame_end', 'felt_add_post_card_letter');
 
 function felt_maybe_load_pro_features() {
 	if ( true === pixelgrade_user_has_access( 'pro-features' ) ) {

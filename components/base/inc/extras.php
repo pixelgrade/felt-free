@@ -45,66 +45,65 @@ if ( ! function_exists( 'pixelgrade_option' ) ) {
 	/**
 	 * Get option from the database
 	 *
-	 * @param string $option_id The option name.
-	 * @param mixed  $default Optional. The default value to return when the option was not found or saved.
+	 * @param string $option_id           The option name.
+	 * @param mixed  $default             Optional. The default value to return when the option was not found or saved.
 	 * @param bool   $force_given_default Optional. When true, we will use the $default value provided for when the option was not saved at least once.
-	 *                            When false, we will let the option's default set value (in the Customify settings) kick in first, then our $default.
-	 *                            It basically, reverses the order of fallback, first the option's default, then our own.
-	 *                            This is ignored when $default is null.
+	 *                                    When false, we will let the option's default set value (in the Customify settings) kick in first, then our $default.
+	 *                                    It basically, reverses the order of fallback, first the option's default, then our own.
+	 *                                    This is ignored when $default is null.
 	 *
 	 * @return mixed
 	 */
 	function pixelgrade_option( $option_id, $default = null, $force_given_default = false ) {
-		/** @var PixCustomifyPlugin $pixcustomify_plugin */
-		global $pixcustomify_plugin;
-
-		if ( $pixcustomify_plugin !== null ) {
+		if ( function_exists( 'PixCustomifyPlugin' ) ) {
 			// Customify is present so we should get the value via it
 			// We need to account for the case where a option has an 'active_callback' defined in it's config
-			$options_config = $pixcustomify_plugin->get_options_configs();
-			if ( ! empty( $options_config ) && ! empty( $options_config[ $option_id ] ) && ! empty( $options_config[ $option_id ]['active_callback'] ) ) {
-				// This option has an active callback
-				// We need to "question" it
-				//
-				// IMPORTANT NOTICE:
-				//
-				// Be extra careful when setting up the options to not end up in a circular logic
-				// due to callbacks that get an option and that option has a callback that gets the initial option - INFINITE LOOPS :(
-				if ( is_callable( $options_config[ $option_id ]['active_callback'] ) ) {
-					// Now we call the function and if it returns false, this means that the control is not active
-					// Hence it's saved value doesn't matter
-					$active = call_user_func( $options_config[ $option_id ]['active_callback'] );
-					if ( empty( $active ) ) {
-						// If we need to force the default received; we respect that
-						if ( true === $force_given_default && null !== $default ) {
-							return $default;
-						} else {
-							// Else we return false
-							// because we treat the case when the active callback returns false as if the option would be non-existent
-							// We do not return the default configured value in this case
-							return false;
+			$options_config = PixCustomifyPlugin()->get_options_configs();
+			if ( ! empty( $options_config ) && ! empty( $options_config[ $option_id ] ) ) {
+				if ( ! empty( $options_config[ $option_id ]['active_callback'] ) ) {
+					// This option has an active callback
+					// We need to "question" it
+					//
+					// IMPORTANT NOTICE:
+					//
+					// Be extra careful when setting up the options to not end up in a circular logic
+					// due to callbacks that get an option and that option has a callback that gets the initial option - INFINITE LOOPS :(
+					if ( is_callable( $options_config[ $option_id ]['active_callback'] ) ) {
+						// Now we call the function and if it returns false, this means that the control is not active
+						// Hence it's saved value doesn't matter
+						$active = call_user_func( $options_config[ $option_id ]['active_callback'] );
+						if ( empty( $active ) ) {
+							// If we need to force the default received; we respect that
+							if ( true === $force_given_default && null !== $default ) {
+								return $default;
+							} else {
+								// Else we return false
+								// because we treat the case when the active callback returns false as if the option would be non-existent
+								// We do not return the default configured value in this case
+								return false;
+							}
 						}
 					}
 				}
-			}
 
-			// Now that the option is truly active, we need to see if we are not supposed to force over the option's default value
-			if ( $default !== null && false === $force_given_default ) {
-				// We will not pass the received $default here so Customify will fallback on the option's default value, if set
-				$customify_value = $pixcustomify_plugin->get_option( $option_id );
+				// Now that the option is truly active, we need to see if we are not supposed to force over the option's default value
+				if ( $default !== null && false === $force_given_default ) {
+					// We will not pass the received $default here so Customify will fallback on the option's default value, if set
+					$customify_value = PixCustomifyPlugin()->get_option( $option_id );
 
-				// We only fallback on the $default if none was given from Customify
-				if ( null === $customify_value ) {
-					return $default;
+					// We only fallback on the $default if none was given from Customify
+					if ( null === $customify_value ) {
+						return $default;
+					}
+				} else {
+					$customify_value = PixCustomifyPlugin()->get_option( $option_id, $default );
 				}
-			} else {
-				$customify_value = $pixcustomify_plugin->get_option( $option_id, $default );
-			}
 
-			return $customify_value;
+				return $customify_value;
+			}
 		}
 
-		// We don't have Customify present so we need to retrieve the option value the hard way.
+		// We don't have Customify present, or Customify doesn't "know" about this option ID, so we need to retrieve the option value the hard way.
 		$option_value = null;
 
 		// Fire the all-gathering-filter that Customify uses so we can get as much data about this option as possible.
@@ -115,8 +114,7 @@ if ( ! function_exists( 'pixelgrade_option' ) ) {
 		}
 
 		$option_config = pixelgrade_get_option_customizer_config( $option_id, $config );
-
-		if ( ! empty( $option_config ) && isset( $option_config['setting_type'] ) && $option_config['setting_type'] === 'option' ) {
+		if ( ! empty( $option_config ) && isset( $option_config['setting_type'] ) && 'option' === $option_config['setting_type'] ) {
 			// We need to retrieve it from the wp_options table
 			// If we have been explicitly given a setting ID we will use that
 			if ( ! empty( $option_config['setting_id'] ) ) {
@@ -134,15 +132,15 @@ if ( ! function_exists( 'pixelgrade_option' ) ) {
 			}
 		}
 
-		if ( null === $option_value ) {
-			if ( false === $force_given_default && isset( $option_config['default'] ) ) {
-				return $option_config['default'];
-			} else {
-				return $default;
-			}
+		if ( null !== $option_value ) {
+			return $option_value;
 		}
 
-		return $option_value;
+		if ( false === $force_given_default && isset( $option_config['default'] ) ) {
+			return $option_config['default'];
+		}
+
+		return $default;
 	}
 }
 
@@ -150,7 +148,7 @@ if ( ! function_exists( 'pixelgrade_option' ) ) {
  * Get the Customify configuration of a certain option.
  *
  * @param string $option_id
- * @param array $config
+ * @param array  $config
  *
  * @return array|false The option config or false on failure.
  */
@@ -200,7 +198,7 @@ function pixelgrade_get_option_customizer_config( $option_id, $config = array() 
  * Get the current location from the query var.
  *
  * @param string $default The default location to return in case the location is empty.
- * @param bool   $force When true, if the location is empty, if will return the $default location and set it in the query var.
+ * @param bool   $force   When true, if the location is empty, if will return the $default location and set it in the query var.
  *
  * @return array|string
  */
@@ -228,7 +226,7 @@ function pixelgrade_get_location( $default = '', $force = true ) {
  * By default, we will use a greedy tactic where we add to the location, not replace.
  *
  * @param string|array $location Optional. The location details.
- * @param bool         $merge Optional. Whether to merge the provided location with the current one, or to replace it.
+ * @param bool         $merge    Optional. Whether to merge the provided location with the current one, or to replace it.
  *
  * @return array|string
  */
@@ -345,6 +343,7 @@ function pixelgrade_standardize_location( $location ) {
  * It will use the new function in WP 4.7, but will fallback to the old way of doing things otherwise.
  *
  * @param string $file Optional. File to search for in the stylesheet directory.
+ *
  * @return string The path of the file.
  */
 function pixelgrade_get_theme_file_path( $file = '' ) {
@@ -364,10 +363,11 @@ function pixelgrade_get_theme_file_path( $file = '' ) {
 		/**
 		 * Filters the path to a file in the theme.
 		 *
-		 * @since WP 4.7.0
-		 *
 		 * @param string $path The file path.
 		 * @param string $file The requested file to search for.
+		 *
+		 * @since WP 4.7.0
+		 *
 		 */
 		return apply_filters( 'theme_file_path', $path, $file );
 	}
@@ -382,6 +382,7 @@ function pixelgrade_get_theme_file_path( $file = '' ) {
  * It will use the new function in WP 4.7, but will fallback to the old way of doing things otherwise.
  *
  * @param string $file Optional. File to search for in the stylesheet directory.
+ *
  * @return string The URL of the file.
  */
 function pixelgrade_get_theme_file_uri( $file = '' ) {
@@ -401,10 +402,11 @@ function pixelgrade_get_theme_file_uri( $file = '' ) {
 		/**
 		 * Filters the URL to a file in the theme.
 		 *
-		 * @since WP 4.7.0
-		 *
 		 * @param string $url  The file URL.
 		 * @param string $file The requested file to search for.
+		 *
+		 * @since WP 4.7.0
+		 *
 		 */
 		return apply_filters( 'theme_file_uri', $url, $file );
 	}
@@ -416,6 +418,7 @@ function pixelgrade_get_theme_file_uri( $file = '' ) {
  * It will use the new function in WP 4.7, but will fallback to the old way of doing things otherwise.
  *
  * @param string $file Optional. File to return the path for in the template directory.
+ *
  * @return string The path of the file.
  */
 function pixelgrade_get_parent_theme_file_path( $file = '' ) {
@@ -433,10 +436,11 @@ function pixelgrade_get_parent_theme_file_path( $file = '' ) {
 		/**
 		 * Filters the path to a file in the parent theme.
 		 *
-		 * @since WP 4.7.0
-		 *
 		 * @param string $path The file path.
 		 * @param string $file The requested file to search for.
+		 *
+		 * @since WP 4.7.0
+		 *
 		 */
 		return apply_filters( 'parent_theme_file_path', $path, $file );
 	}
@@ -448,6 +452,7 @@ function pixelgrade_get_parent_theme_file_path( $file = '' ) {
  * It will use the new function in WP 4.7, but will fallback to the old way of doing things otherwise.
  *
  * @param string $file Optional. File to return the URL for in the template directory.
+ *
  * @return string The URL of the file.
  */
 function pixelgrade_get_parent_theme_file_uri( $file = '' ) {
@@ -465,10 +470,11 @@ function pixelgrade_get_parent_theme_file_uri( $file = '' ) {
 		/**
 		 * Filters the URL to a file in the parent theme.
 		 *
+		 * @param string $url  The file URL.
+		 * @param string $file The requested file to search for.
+		 *
 		 * @since 4.7.0
 		 *
-		 * @param string $url The file URL.
-		 * @param string $file The requested file to search for.
 		 */
 		return apply_filters( 'parent_theme_file_uri', $url, $file );
 	}
@@ -479,10 +485,10 @@ function pixelgrade_get_parent_theme_file_uri( $file = '' ) {
  *
  * We do not support child themes at this time.
  *
- * @param string $path The path of the theme directory to autoload files from.
- * @param int    $depth The depth to which we should go in the directory. A depth of 0 means only the files directly in that
- *                     directory. Depth of 1 means also the first level subdirectories, and so on.
- *                     A depth of -1 means load everything.
+ * @param string $path   The path of the theme directory to autoload files from.
+ * @param int    $depth  The depth to which we should go in the directory. A depth of 0 means only the files directly in that
+ *                       directory. Depth of 1 means also the first level subdirectories, and so on.
+ *                       A depth of -1 means load everything.
  * @param string $method The method to use to load files. Supports require, require_once, include, include_once.
  *
  * @return false|int False on failure, otherwise the number of files loaded.
@@ -491,11 +497,13 @@ function pixelgrade_autoload_dir( $path, $depth = 0, $method = 'require_once' ) 
 	// If the $path starts with the absolute path to the WP install or the template directory, not good
 	if ( strpos( $path, ABSPATH ) === 0 && strpos( $path, get_template_directory() ) !== 0 ) {
 		_doing_it_wrong( __FUNCTION__, esc_html__( 'Please provide only paths in the theme for autoloading.', '__components_txtd' ), null );
+
 		return false;
 	}
 
 	if ( ! in_array( $method, array( 'require', 'require_once', 'include', 'include_once' ) ) ) {
 		_doing_it_wrong( __FUNCTION__, esc_html__( 'We support only require, require_once, include, and include_once.', '__components_txtd' ), null );
+
 		return false;
 	}
 
@@ -539,7 +547,7 @@ function pixelgrade_autoload_dir( $path, $depth = 0, $method = 'require_once' ) 
 	}
 
 	// Now we load files in subdirectories if that's the case
-	if ( $depth > 0 || -1 === $depth ) {
+	if ( $depth > 0 || - 1 === $depth ) {
 		if ( $depth > 0 ) {
 			$depth --;
 		}
@@ -566,7 +574,9 @@ function pixelgrade_get_theme_relative_path( $path ) {
 		return '';
 	}
 
-	$path = str_replace( trailingslashit( get_template_directory() ), '', $path );
+	$path = wp_normalize_path( $path );
+
+	$path = str_replace( wp_normalize_path( get_template_directory() ), '', $path );
 
 	return trailingslashit( $path );
 }
@@ -677,9 +687,9 @@ function pixelgrade_convert_exposure_to_frac( $shutter_speed ) {
 	if ( ( 1 / $shutter_speed ) > 1 ) {
 		$frac .= '1/';
 		if ( ( number_format( ( 1 / $shutter_speed ), 1 ) ) == 1.3
-			 or number_format( ( 1 / $shutter_speed ), 1 ) == 1.5
-			 or number_format( ( 1 / $shutter_speed ), 1 ) == 1.6
-			 or number_format( ( 1 / $shutter_speed ), 1 ) == 2.5
+		     or number_format( ( 1 / $shutter_speed ), 1 ) == 1.5
+		     or number_format( ( 1 / $shutter_speed ), 1 ) == 1.6
+		     or number_format( ( 1 / $shutter_speed ), 1 ) == 2.5
 		) {
 			$frac .= number_format( ( 1 / $shutter_speed ), 1, '.', '' );
 		} else {
@@ -697,11 +707,11 @@ function pixelgrade_convert_exposure_to_frac( $shutter_speed ) {
  *
  * This is a modified version of the one from core to account for resized urls - thumbnails
  *
- * @global wpdb $wpdb WordPress database abstraction object.
- *
- * @param string $url The URL to resolve.
+ * @param string $url  The URL to resolve.
  *
  * @return int|false The found post ID, or false on failure.
+ * @global wpdb  $wpdb WordPress database abstraction object.
+ *
  */
 function pixelgrade_attachment_url_to_postid( $url ) {
 	/** @var wpdb $wpdb */
@@ -710,6 +720,14 @@ function pixelgrade_attachment_url_to_postid( $url ) {
 	$dir  = wp_upload_dir();
 	$path = $url;
 
+	$site_url   = parse_url( $dir['url'] );
+	$image_path = parse_url( $path );
+
+	//force the protocols to match if needed
+	if ( isset( $image_path['scheme'] ) && ( $image_path['scheme'] !== $site_url['scheme'] ) ) {
+		$path = str_replace( $image_path['scheme'], $site_url['scheme'], $path );
+	}
+
 	if ( 0 === strpos( $path, $dir['baseurl'] . '/' ) ) {
 		$path = substr( $path, strlen( $dir['baseurl'] . '/' ) );
 	}
@@ -717,11 +735,21 @@ function pixelgrade_attachment_url_to_postid( $url ) {
 	// Remove the resizing details off the end of the file name
 	$path = preg_replace( '/-[0-9]{1,4}x[0-9]{1,4}\.(jpg|jpeg|png|gif|bmp)$/i', '.$1', $path );
 
-	$sql     = $wpdb->prepare(
-		"SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '_wp_attached_file' AND meta_value = %s",
-		$path
-	);
-	$post_id = $wpdb->get_var( $sql );
+	$query = new WP_Query( array(
+		'meta_query'     => array(
+			array(
+				'key'   => '_wp_attached_file',
+				'value' => $path,
+			),
+		),
+		'fields'         => 'ids',
+		'posts_per_page' => 1,
+		'no_found_rows'  => true,
+	) );
+
+	if ( ! empty( $query->posts ) ) {
+		$post_id = reset( $query->posts );
+	}
 
 	if ( empty( $post_id ) ) {
 		return false;
@@ -730,10 +758,11 @@ function pixelgrade_attachment_url_to_postid( $url ) {
 	/**
 	 * Filter an attachment id found by URL.
 	 *
+	 * @param int|null $post_id The post_id (if any) found by the function.
+	 * @param string   $url     The URL being looked up.
+	 *
 	 * @since 4.2.0
 	 *
-	 * @param int|null $post_id The post_id (if any) found by the function.
-	 * @param string $url The URL being looked up.
 	 */
 	$post_id = apply_filters( 'attachment_url_to_postid', $post_id, $url );
 
@@ -753,8 +782,8 @@ function pixelgrade_attachment_url_to_postid( $url ) {
  * @return string|false
  */
 function pixelgrade_image_src( $target, $size = null ) {
-	if ( isset( $_GET[$target] ) && ! empty( $target ) ) {
-		return pixelgrade_get_attachment_image_src( absint( $_GET[$target] ), $size );
+	if ( isset( $_GET[ $target ] ) && ! empty( $target ) ) {
+		return pixelgrade_get_attachment_image_src( absint( $_GET[ $target ] ), $size );
 	} else {
 		// empty target, or no query
 		$image = pixelgrade_option( $target );
@@ -762,6 +791,7 @@ function pixelgrade_image_src( $target, $size = null ) {
 			return pixelgrade_get_attachment_image_src( $image, $size );
 		}
 	}
+
 	return false;
 }
 
@@ -793,15 +823,15 @@ function pixelgrade_get_attachment_image_src( $id, $size = null ) {
  *
  * Inspired by the core function get_pagenum_link()
  *
- * @global WP_Rewrite $wp_rewrite
- *
- * @param string   $url The relative URL that you want modified.
- * @param int      $pagenum Optional. Page ID. Default 1.
- * @param bool     $escape Optional. Whether to escape the URL for display, with esc_url(). Defaults to true.
- *                            Otherwise, prepares the URL with esc_url_raw().
- * @param WP_Query $query Optional.
+ * @param string      $url     The relative URL that you want modified.
+ * @param int         $pagenum Optional. Page ID. Default 1.
+ * @param bool        $escape  Optional. Whether to escape the URL for display, with esc_url(). Defaults to true.
+ *                             Otherwise, prepares the URL with esc_url_raw().
+ * @param WP_Query    $query   Optional.
  *
  * @return string The full link URL for the given page number.
+ * @global WP_Rewrite $wp_rewrite
+ *
  */
 function pixelgrade_paginate_url( $url, $pagenum = 1, $escape = true, $query = null ) {
 	/** @var WP_Rewrite $wp_rewrite */
@@ -936,8 +966,8 @@ function pixelgrade_parse_content_tags( $content ) {
 	// We will go with the author for cases where we are in a post/page context
 	// Since we need to dd some heavy lifting, we will only do it when necessary
 	if ( false !== strpos( $content, '%first_name%' ) ||
-		 false !== strpos( $content, '%last_name%' ) ||
-		 false !== strpos( $content, '%display_name%' ) ) {
+	     false !== strpos( $content, '%last_name%' ) ||
+	     false !== strpos( $content, '%display_name%' ) ) {
 		$user_id = false;
 		// We need to get the current ID in more global manner
 		$current_object_id = get_queried_object_id();
@@ -1023,5 +1053,167 @@ if ( ! function_exists( 'pixelgrade_get_original_theme_name' ) ) {
 
 		// The ultimate fallback is the template directory, uppercased.
 		return ucwords( str_replace( array( '-', '_' ), ' ', $slug ) );
+	}
+}
+
+if ( ! function_exists( 'pixelgrade_get_post_details' ) ) {
+
+	function pixelgrade_get_post_details() {
+		$details = array();
+
+		$details['title']     = get_the_title();
+		$details['excerpt']   = get_the_excerpt();
+		$details['category']  = pixelgrade_get_post_meta( 'category' );
+		$details['tags']      = pixelgrade_get_post_meta( 'tags' );
+		$details['author']    = pixelgrade_get_post_meta( 'author' );
+		$details['date']      = pixelgrade_get_post_meta( 'date' );
+		$details['comments']  = pixelgrade_get_post_meta( 'comments' );
+		$details['read_more'] = '<a href="' . esc_url( get_the_permalink() ) . '" class="c-card__action">' . esc_html__( 'Read More', '__components_txtd' ) . '</a>';
+		$details['none']      = null;
+
+		return apply_filters( 'pixelgrade_card_post_details', $details );
+	}
+}
+
+if ( ! function_exists( 'pixelgrade_get_card_contents' ) ) {
+
+	function pixelgrade_get_card_contents( $component_slug = 'blog' ) {
+		$contents = array();
+		$details  = pixelgrade_get_post_details();
+
+		$chunks = apply_filters( 'pixelgrade_card_post_details_defaults', array(
+			'primary_meta'   => array(
+				'blog'        => 'category',
+				'woocommerce' => 'category',
+			),
+			'secondary_meta' => array(
+				'blog'        => 'date',
+				'woocommerce' => 'none',
+			),
+			'heading'        => array(
+				'blog'        => 'title',
+				'woocommerce' => 'title',
+			),
+			'content'        => array(
+				'blog'        => 'excerpt',
+				'woocommerce' => 'price',
+			),
+			'footer'         => array(
+				'blog'        => 'read_more',
+				'woocommerce' => 'none',
+			),
+		) );
+
+		foreach ( $chunks as $chunk_name => $defaults ) {
+			$source = pixelgrade_option( $component_slug . '_items_' . $chunk_name, $defaults[ $component_slug ] );
+
+			if ( ! empty( $source ) ) {
+				$content                 = $details[ $source ];
+				$contents[ $chunk_name ] = $content;
+			}
+		}
+
+		$meta = '';
+
+		if ( ! empty( $contents['primary_meta'] ) ) {
+			$meta .= '<div class="c-meta__primary">' . $contents['primary_meta'] . '</div>';
+			// Add a separator if we also have secondary meta
+			if ( ! empty ( $contents['secondary_meta'] ) ) {
+				$meta .= '<div class="c-meta__separator js-card-meta-separator"></div>';
+			}
+		}
+
+		if ( ! empty ( $contents['secondary_meta'] ) ) {
+			$meta .= '<div class="c-meta__secondary">' . $contents['secondary_meta'] . '</div>';
+		}
+
+		$contents['meta'] = $meta;
+
+		return $contents;
+	}
+}
+
+
+if ( ! function_exists( 'pixelgrade_the_card' ) ) {
+
+	function pixelgrade_the_card( $component_slug = 'blog', $location = '' ) {
+
+		$card_details = pixelgrade_get_card_contents( $component_slug ); ?>
+
+		<article <?php post_class(); ?>>
+
+			<div class="c-card">
+
+				<?php do_action( 'pixelgrade_after_entry_start', $location ); ?>
+
+				<div class="c-card__aside c-card__thumbnail-background">
+
+					<?php do_action( 'pixelgrade_after_card_aside_start' ); ?>
+
+					<div class="c-card__frame">
+
+						<?php
+						do_action( 'pixelgrade_after_card_frame_start' );
+
+						the_post_thumbnail( 'pixelgrade_card_image' );
+
+						do_action( 'pixelgrade_before_card_frame_end' ); ?>
+
+					</div>
+
+					<?php do_action( 'pixelgrade_before_card_aside_end' ); ?>
+
+				</div>
+
+				<div class="c-card__content">
+
+					<?php if ( ! empty( $card_details['meta'] ) ) { ?>
+						<div class="c-card__meta">
+							<div class="c-meta">
+								<?php
+								do_action( 'pixelgrade_before_card_meta', $location );
+								echo wp_kses_post( $card_details['meta'] );
+								do_action( 'pixelgrade_after_card_meta', $location );
+								?>
+							</div>
+						</div>
+					<?php }
+
+					if ( pixelgrade_option( 'blog_items_title_visibility', true ) && ! empty ( $card_details['heading'] ) ) { ?>
+						<h2 class="c-card__title">
+							<span><?php echo wp_kses_post( $card_details['heading'] ); ?></span>
+						</h2>
+					<?php }
+
+					if ( ! empty( $card_details['content'] ) ) { ?>
+						<div class="c-card__excerpt">
+							<?php echo wp_kses_post( $card_details['content'] ); ?>
+						</div>
+					<?php }
+
+					if ( ! empty( $card_details['footer'] ) ) { ?>
+						<div class="c-card__footer">
+							<?php echo wp_kses_post( $card_details['footer'] ); ?>
+						</div>
+					<?php } ?>
+
+				</div>
+
+				<a class="c-card__link" href="<?php the_permalink(); ?>"></a>
+                <div class="c-card__badge"></div>
+
+				<?php do_action( 'pixelgrade_before_entry_end', $location ); ?>
+
+			</div>
+
+		</article>
+
+		<?php
+		/**
+		 * pixelgrade_after_loop_entry hook.
+		 *
+		 * @hooked nothing() - 10 (outputs nothing)
+		 */
+		do_action( 'pixelgrade_after_loop_entry', $location );
 	}
 }

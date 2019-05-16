@@ -35,7 +35,7 @@ function typeline_get_theme_config( $path = '' ) {
 	}
 
 	// Read the theme's config file - it contains a variable $typeline_config
-	include $path; // @codingStandardsIgnoreLine
+	include $path; // phpcs:ignore
 	// If for some reason the file doesn't contain the variable, bail
 	if ( ! isset( $typeline_config ) ) {
 		return false;
@@ -89,10 +89,7 @@ function typeline_get_y( $x, $points ) {
  */
 function typeline_negative_value_cb( $value, $selector, $property, $unit ) {
 
-	$output = $selector . ' {
-		' . $property . ': ' . ( - 1 * $value ) . $unit . ';
-		}
-		';
+	$output = $selector . ' { ' . $property . ': ' . ( - 1 * $value ) . $unit . '; }';
 
 	return $output;
 }

@@ -105,7 +105,7 @@ class PixelgradeCare_Install_Notice {
                             }
                             $screenshot = $theme->get_screenshot();
                             if ( $screenshot ) { ?>
-                                <img src="<?php echo $screenshot; ?>" alt="Theme screenshot">
+                                <img src="<?php echo esc_attr( $screenshot ); ?>" alt="Theme screenshot">
                             <?php } ?>
                         </div>
 					</div>

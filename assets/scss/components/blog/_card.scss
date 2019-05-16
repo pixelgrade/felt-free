@@ -101,26 +101,3 @@
     opacity: .6;
   }
 }
-
-.sticky .c-card {
-
-  .c-card__frame,
-  .c-gallery--title-overlay & .c-card__content {
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      @include spacing(border-width, 1rem);
-      border-style: solid;
-      border-color: currentColor;
-    }
-  }
-
-  .c-gallery--title-overlay & .c-card__content {
-    @include spacing(padding, 2rem);
-  }
-}

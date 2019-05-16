@@ -210,10 +210,11 @@ class Pixelgrade_Blog extends Pixelgrade_Component {
 			'loop-none'       => array(
 				'type'      => 'template_part',
 				'templates' => array(
-					array(
+					'content-none' => array(
 						'component_slug' => self::COMPONENT_SLUG,
 						'slug'           => 'content',
 						'name'           => 'none',
+						'lookup_parts_root' => true,
 					),
 				),
 				'checks'    => array(
@@ -779,7 +780,7 @@ class Pixelgrade_Blog extends Pixelgrade_Component {
 
 	public function registerPageBlock() {
 
-		$location = array( 'page' );
+		$location = pixelgrade_get_location( 'page' );
 		if ( is_front_page() ) {
 			$location[] = 'front-page';
 		}
@@ -875,12 +876,6 @@ class Pixelgrade_Blog extends Pixelgrade_Component {
 		// We will put this script inline since it is so small.
 		add_action( 'wp_print_footer_scripts', array( $this, 'skip_link_focus_fix' ) );
 
-		// Setup how things will behave in the WP admin area
-		add_action( 'admin_init', array( $this, 'adminInit' ) );
-
-		// Enqueue assets for the admin
-		add_action( 'admin_enqueue_scripts', array( $this, 'adminEnqueueScripts' ) );
-
 		/*
 		 * ================================
 		 * Hook-up to various places where we need to output things
@@ -942,35 +937,6 @@ class Pixelgrade_Blog extends Pixelgrade_Component {
 	}
 
 	/**
-	 * Loaded when the WordPress dashboard is initialized.
-	 */
-	public function adminInit() {
-		/* register the admin styles and scripts specific to this component */
-//		wp_register_style( 'pixelgrade_blog-admin-style', pixelgrade_get_theme_file_uri( trailingslashit( PIXELGRADE_COMPONENTS_PATH ) . trailingslashit( self::COMPONENT_SLUG ) . 'css/admin.css' ), array(), $this->assets_version );
-//		wp_register_script( 'pixelgrade_blog-admin-scripts', pixelgrade_get_theme_file_uri( trailingslashit( PIXELGRADE_COMPONENTS_PATH ) . trailingslashit( self::COMPONENT_SLUG ) . 'js/admin.js' ), array(), $this->assets_version );
-
-	}
-
-	/**
-	 * Enqueue scripts and styles for the admin area.
-	 *
-	 * @param string $hook
-	 */
-	public function adminEnqueueScripts( $hook ) {
-		/* enqueue the admin styles and scripts specific to this component */
-//		if ( 'post.php' === $hook ) {
-//			wp_enqueue_style( 'pixelgrade_blog-admin-style' );
-//			wp_enqueue_script( 'pixelgrade_blog-admin-scripts' );
-//
-//			wp_localize_script(
-//				'pixelgrade_blog-admin-scripts', 'pixelgrade_blog_admin', array(
-//					'ajaxurl' => admin_url( 'admin-ajax.php' ),
-//				)
-//			);
-//		}
-	}
-
-	/**
 	 * Add classes to body classes.
 	 *
 	 * @param array $classes Classes for the body element.
@@ -1016,7 +982,7 @@ class Pixelgrade_Blog extends Pixelgrade_Component {
 			$image_orientation = pixelgrade_get_post_thumbnail_aspect_ratio_class();
 
 			if ( ! empty( $image_orientation ) ) {
-				$classes[] = 'entry-image--' . $image_orientation;
+				$classes[] = 'entry-image--' . sanitize_html_class( $image_orientation );
 			}
 		}
 
@@ -1024,7 +990,7 @@ class Pixelgrade_Blog extends Pixelgrade_Component {
 			$classes[] = 'is-customizer-preview';
 		}
 
-		if ( class_exists( 'PixCustomifyPlugin' ) ) {
+		if ( class_exists( 'PixCustomifyPlugin' ) && pixelgrade_user_has_access( 'pro-features' ) ) {
 			$classes[] = 'customify';
 		} else {
 			$classes[] = 'no-customify';

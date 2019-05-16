@@ -478,6 +478,11 @@
 
 }
 
+.site-logo img,
+.custom-logo-link img {
+  transform: translateZ(0);
+}
+
 .site-header {
   @include wp-offset(top, 0);
 

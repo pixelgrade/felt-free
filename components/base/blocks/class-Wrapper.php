@@ -356,7 +356,7 @@ class Pixelgrade_Wrapper {
 
 		// Glue the attributes
 		if ( ! empty( $classes ) ) {
-			return 'class="' . join( ' ', $classes ) . '"';
+			return 'class="' . esc_attr( join( ' ', $classes ) ) . '"';
 		}
 
 		return '';
@@ -456,9 +456,9 @@ class Pixelgrade_Wrapper {
 
 					// If we receive an empty array entry (but with a key) we will treat it like an attribute without value (i.e. itemprop)
 					if ( empty( $value ) ) {
-						$full_attributes[] = $name;
+						$full_attributes[] = esc_attr( $name );
 					} else {
-						$full_attributes[] = $name . '="' . esc_attr( $value ) . '"';
+						$full_attributes[] = esc_attr( $name ) . '="' . esc_attr( $value ) . '"';
 					}
 				}
 			}
@@ -525,7 +525,7 @@ class Pixelgrade_Wrapper {
 			}
 
 			if ( ! is_array( $data ) || ! is_object( $data ) ) {
-				_doing_it_wrong( __METHOD__, 'The wrapper\'s master callback didn\'t return a valid array of wrapper attributes! The master callback used: ' . print_r( $this->master_callback['callback'], true ), null ); // @codingStandardsIgnoreLine
+				_doing_it_wrong( __METHOD__, 'The wrapper\'s master callback didn\'t return a valid array of wrapper attributes! The master callback used: ' . print_r( $this->master_callback['callback'], true ), null ); // phpcs:ignore
 
 				return false;
 			}

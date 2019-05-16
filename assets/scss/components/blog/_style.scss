@@ -1,11 +1,19 @@
 @import "../../../../components/blog/scss/style";
 
+/**
+ * 2.0 - Components
+ */
+
 @import "author";
 @import "card";
 @import "header-dropcap";
 @import "post-meta";
 @import "page-numbers";
 @import "reading-bar";
+
+/**
+ * 3.0 - Widgets
+ */
 
 @import "widgets";
 @import "widget-area-post";
@@ -17,6 +25,10 @@
 @import "widget-slideshow";
 @import "widget-top-posts";
 @import "widget-title-sideways";
+
+/**
+ * 4.0 - Page
+ */
 
 @import "pages/sidebar";
 @import "pages/archive";

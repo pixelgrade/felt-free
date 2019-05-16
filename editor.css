@@ -89,14 +89,6 @@
   /**
  * A simple button object.
  */
-  /**
- * 1. Allow us to style box model properties.
- * 2. Line different sized buttons up a little nicer.
- * 3. Make buttons inherit font styles (often necessary when styling `input`s as
- *    buttons).
- * 4. Reset/normalize some styles.
- * 5. Force all button-styled elements to appear clickable.
- */
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; }
   .edit-post-visual-editor p:not(:last-child),
@@ -405,24 +397,30 @@
   @media only screen and (min-width: 42.5em) {
     .edit-post-visual-editor .twocolumn {
       -webkit-column-gap: 28px;
+         -moz-column-gap: 28px;
               column-gap: 28px;
       -webkit-column-count: 2;
+         -moz-column-count: 2;
               column-count: 2; } }
   @media only screen and (min-width: 42.5em) and (max-width: 1360px) {
     .edit-post-visual-editor .twocolumn {
       -webkit-column-gap: 22.17822px;
+         -moz-column-gap: 22.17822px;
               column-gap: 22.17822px; } }
   @media only screen and (min-width: 42.5em) and (max-width: 1024px) {
     .edit-post-visual-editor .twocolumn {
       -webkit-column-gap: 18.36066px;
+         -moz-column-gap: 18.36066px;
               column-gap: 18.36066px; } }
   @media only screen and (min-width: 42.5em) and (max-width: 768px) {
     .edit-post-visual-editor .twocolumn {
       -webkit-column-gap: 15.66434px;
+         -moz-column-gap: 15.66434px;
               column-gap: 15.66434px; } }
   @media only screen and (min-width: 42.5em) and (max-width: 320px) {
     .edit-post-visual-editor .twocolumn {
       -webkit-column-gap: 13.65854px;
+         -moz-column-gap: 13.65854px;
               column-gap: 13.65854px; } }
   .edit-post-visual-editor .c-btn {
     display: inline-block;
@@ -440,6 +438,7 @@
     font-size: 16px;
     color: #FFF;
     background-color: #FF6000;
+    border-radius: 0;
     -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
     transition: all 0.2s cubic-bezier(0, 0, 0.58, 1); }
     @media only screen and (max-width: 1360px) {
@@ -455,7 +454,7 @@
       .edit-post-visual-editor .c-btn {
         font-size: 14.87194px; } }
     .u-buttons-rounded .edit-post-visual-editor .c-btn {
-      border-radius: .3em; }
+      border-radius: 0.3em; }
     .u-buttons-pill .edit-post-visual-editor .c-btn {
       border-radius: 999em; }
     .u-underlined-links .edit-post-visual-editor .c-btn {
@@ -464,7 +463,13 @@
       background: none;
       border: 2px solid currentColor; }
       .u-buttons-outline .edit-post-visual-editor .c-btn:hover, .u-buttons-outline .edit-post-visual-editor .c-btn:active, .u-buttons-outline .edit-post-visual-editor .c-btn:focus {
-        background: none; }
+        background: none;
+        color: inherit; }
+    .edit-post-visual-editor .c-btn:hover, .edit-post-visual-editor .c-btn:active, .edit-post-visual-editor .c-btn:focus {
+      color: #FFF;
+      background-color: #000;
+      opacity: 1;
+      text-decoration: none; }
     .edit-post-visual-editor .c-btn--default {
       background-color: #111;
       color: #FFF; }
@@ -512,19 +517,19 @@
       -webkit-transform: translate(0, calc(0.5px - 50%));
               transform: translate(0, calc(0.5px - 50%)); }
   .edit-post-visual-editor .c-btn-directional--left {
-    padding-left: 120px; }
+    padding-left: 100px; }
     @media only screen and (max-width: 1360px) {
       .edit-post-visual-editor .c-btn-directional--left {
-        padding-left: 85.33333px; } }
+        padding-left: 72.72727px; } }
     @media only screen and (max-width: 1024px) {
       .edit-post-visual-editor .c-btn-directional--left {
-        padding-left: 66.2069px; } }
+        padding-left: 57.14286px; } }
     @media only screen and (max-width: 768px) {
       .edit-post-visual-editor .c-btn-directional--left {
-        padding-left: 54.08451px; } }
+        padding-left: 47.05882px; } }
     @media only screen and (max-width: 320px) {
       .edit-post-visual-editor .c-btn-directional--left {
-        padding-left: 45.71429px; } }
+        padding-left: 40px; } }
     .edit-post-visual-editor .c-btn-directional--left:before {
       left: 35px; }
       @media only screen and (max-width: 1360px) {
@@ -561,20 +566,20 @@
       -webkit-transform: translate3d(-5px, calc(0.5px - 50%), 0);
               transform: translate3d(-5px, calc(0.5px - 50%), 0); }
   .edit-post-visual-editor .c-btn-directional--right {
-    padding-right: 120px;
+    padding-right: 100px;
     text-align: left; }
     @media only screen and (max-width: 1360px) {
       .edit-post-visual-editor .c-btn-directional--right {
-        padding-right: 85.33333px; } }
+        padding-right: 72.72727px; } }
     @media only screen and (max-width: 1024px) {
       .edit-post-visual-editor .c-btn-directional--right {
-        padding-right: 66.2069px; } }
+        padding-right: 57.14286px; } }
     @media only screen and (max-width: 768px) {
       .edit-post-visual-editor .c-btn-directional--right {
-        padding-right: 54.08451px; } }
+        padding-right: 47.05882px; } }
     @media only screen and (max-width: 320px) {
       .edit-post-visual-editor .c-btn-directional--right {
-        padding-right: 45.71429px; } }
+        padding-right: 40px; } }
     .edit-post-visual-editor .c-btn-directional--right:before {
       right: 2.33333em; }
     .edit-post-visual-editor .c-btn-directional--right:after {
@@ -609,6 +614,7 @@
     font-size: 16px;
     color: #FFF;
     background-color: #FF6000;
+    border-radius: 0;
     -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
     transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
     text-decoration: none; }
@@ -625,7 +631,7 @@
       .edit-post-visual-editor .button[class][class][class][class][class] {
         font-size: 14.87194px; } }
     .u-buttons-rounded .edit-post-visual-editor .button[class][class][class][class][class] {
-      border-radius: .3em; }
+      border-radius: 0.3em; }
     .u-buttons-pill .edit-post-visual-editor .button[class][class][class][class][class] {
       border-radius: 999em; }
     .u-underlined-links .edit-post-visual-editor .button[class][class][class][class][class] {
@@ -634,7 +640,13 @@
       background: none;
       border: 2px solid currentColor; }
       .u-buttons-outline .edit-post-visual-editor .button[class][class][class][class][class]:hover, .u-buttons-outline .edit-post-visual-editor .button[class][class][class][class][class]:active, .u-buttons-outline .edit-post-visual-editor .button[class][class][class][class][class]:focus {
-        background: none; }
+        background: none;
+        color: inherit; }
+    .edit-post-visual-editor .button[class][class][class][class][class]:hover, .edit-post-visual-editor .button[class][class][class][class][class]:active, .edit-post-visual-editor .button[class][class][class][class][class]:focus {
+      color: #FFF;
+      background-color: #000;
+      opacity: 1;
+      text-decoration: none; }
     .edit-post-visual-editor .button[class][class][class][class][class].default {
       background-color: #111;
       color: #FFF; }
@@ -646,7 +658,7 @@
       width: 100%; }
     .edit-post-visual-editor .button[class][class][class][class][class].arrow {
       position: relative;
-      padding-right: 120px;
+      padding-right: 100px;
       text-align: left; }
       .edit-post-visual-editor .button[class][class][class][class][class].arrow:before, .edit-post-visual-editor .button[class][class][class][class][class].arrow:after {
         content: '';
@@ -687,16 +699,16 @@
                 transform: translate(0, calc(0.5px - 50%)); }
       @media only screen and (max-width: 1360px) {
         .edit-post-visual-editor .button[class][class][class][class][class].arrow {
-          padding-right: 85.33333px; } }
+          padding-right: 72.72727px; } }
       @media only screen and (max-width: 1024px) {
         .edit-post-visual-editor .button[class][class][class][class][class].arrow {
-          padding-right: 66.2069px; } }
+          padding-right: 57.14286px; } }
       @media only screen and (max-width: 768px) {
         .edit-post-visual-editor .button[class][class][class][class][class].arrow {
-          padding-right: 54.08451px; } }
+          padding-right: 47.05882px; } }
       @media only screen and (max-width: 320px) {
         .edit-post-visual-editor .button[class][class][class][class][class].arrow {
-          padding-right: 45.71429px; } }
+          padding-right: 40px; } }
       .edit-post-visual-editor .button[class][class][class][class][class].arrow:before {
         right: 2.33333em; }
       .edit-post-visual-editor .button[class][class][class][class][class].arrow:after {
@@ -792,7 +804,7 @@
     font-family: "PT Serif", serif;
     font-size: 20px;
     line-height: 1.6;
-    color: #333131; }
+    color: #161616; }
     @media only screen and (max-width: 1360px) {
       .edit-post-visual-editor.editor-styles-wrapper .editor-block-list__block,
       .edit-post-visual-editor.editor-styles-wrapper .editor-post-title__block,
@@ -872,7 +884,7 @@
   .edit-post-visual-editor pre {
     font-size: 1em; }
   .edit-post-visual-editor a {
-    color: #333131; }
+    color: #161616; }
     .edit-post-visual-editor a img {
       -webkit-transition: opacity 0.3s ease-out;
       transition: opacity 0.3s ease-out; }

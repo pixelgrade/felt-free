@@ -5,6 +5,7 @@ $woocommerce-mobile-breakpoint: 768px;
 
 @import "archive";
 @import "card";
+@import "customify";
 @import "pagination";
 
 @import "single-product";
@@ -100,5 +101,17 @@ $woocommerce-mobile-breakpoint: 768px;
 
     &:after {
         transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}
+
+.c-product-main {
+
+    .product_title span {
+        font-size: 1.33em;
+    }
+
+    .woocommerce-product-category,
+    .product_title {
+        margin-bottom: 0;
     }
 }

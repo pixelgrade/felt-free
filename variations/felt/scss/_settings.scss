@@ -12,7 +12,7 @@ $typography-spacing: 3rem;
 $sm-color-secondary: #FF6000;
 $sm-color-tertiary: #FFF4E8;
 $theme-accent-color: #FF6000;
-$theme-text-color: #333131;
+$theme-text-color: #161616;
 $theme-border-color: $color-gray-90;
 $theme-links-color: $color-gray-10;
 
@@ -73,7 +73,7 @@ $logo-font: (
 $header-font: (
   font-family: $theme-headings-font-family,
   font-size: 16px,
-  font-weight: normal,
+  font-weight: 500,
   line-height: 1
 );
 // ----------------------------------------
@@ -262,7 +262,7 @@ $card-letter-font: (
   font-family: $theme-headings-font-family,
   font-size: 250px,
   line-height: 1.735,
-  font-weight: 300,
+  font-weight: 700,
   text-transform: uppercase
 );
 
@@ -293,6 +293,7 @@ $blog-excerpt-visibility: true;
 // Colors
 // ----------------------------------------
 $blog-card-title-color: $theme-text-color;
+$blog-card-excerpt-color: $theme-text-color;
 $blog-primary-meta-color: $sm-color-secondary;
 $blog-secondary-meta-color: $sm-color-secondary;
 $blog-thumbnail-background: $header-background-color;

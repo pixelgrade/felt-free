@@ -70,7 +70,7 @@
 }
 
 .comment-form-subscriptions {
-	@include spacing(margin-top, .25rem);
+	@include spacing(margin-top, 2rem);
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
