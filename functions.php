@@ -174,7 +174,6 @@ function felt_scripts() {
 
 	/* The main theme stylesheet */
 	wp_enqueue_style( 'felt-style', get_template_directory_uri() . '/style.css', $main_style_deps, $theme->get( 'Version' ) );
-
 	wp_style_add_data( 'felt-style', 'rtl', 'replace' );
 
 	/* Scripts */

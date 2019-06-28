@@ -286,7 +286,6 @@ function felt_mce_before_init( $settings ) {
 
 	return $settings;
 }
-
 add_filter( 'tiny_mce_before_init', 'felt_mce_before_init' );
 
 // Remove the main category from the category list since we will show it separately
@@ -330,26 +329,6 @@ function felt_modify_embed_defaults() {
 	);
 }
 add_filter( 'embed_defaults', 'felt_modify_embed_defaults' );
-
-/**
- * Handle the WUpdates theme identification.
- *
- * @param array $ids
- *
- * @return array
- */
-function felt_wupdates_add_id_wporg( $ids = array() ) {
-	// First get the theme directory name (unique)
-	$slug = basename( get_template_directory() );
-
-	// Now add the predefined details about this product
-	// Do not tamper with these please!!!
-	$ids[ $slug ] = array( 'name' => 'Felt', 'slug' => 'felt', 'id' => 'M2lXe', 'type' => 'theme_modular_wporg', 'digest' => '6ab62dce327084698cf55c46dfb846ce', );
-
-	return $ids;
-}
-// The 5 priority is intentional to allow for pro to overwrite.
-add_filter( 'wupdates_gather_ids', 'felt_wupdates_add_id_wporg', 5, 1 );
 
 function felt_add_post_card_letter(){
 

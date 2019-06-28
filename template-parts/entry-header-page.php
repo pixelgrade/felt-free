@@ -16,4 +16,4 @@ $classes[] = 'u-page-title-color';
 
 $classes = apply_filters( 'components_entry_header_classes', $classes );
 
-the_title( '<h1 class="' . join( ' ', $classes ) . '">', '</h2>' );
+the_title( '<h1 class="' . esc_attr( join( ' ', $classes ) ) . '">', '</h2>' );

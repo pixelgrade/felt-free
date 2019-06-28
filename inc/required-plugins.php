@@ -10,23 +10,7 @@ require_once pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relativ
 
 function felt_register_required_plugins() {
 
-	$protocol = 'http:';
-	if ( is_ssl() ) {
-		$protocol = 'https:';
-	}
-
 	$plugins = array(
-		array(
-			'name'               => 'Pixelgrade Care',
-			'slug'               => 'pixelgrade-care',
-			'force_activation'   => false,
-			'force_deactivation' => false,
-			'required'           => false,
-			'source'             => $protocol . '//wupdates.com/api_wupl_version/JxbVe/2v5t1czd3vw4kmb5xqmyxj1kkwmnt9q0463lhj393r5yxtshdyg05jssgd4jglnfx7A2vdxtfdcf78r9r1sm217k4ht3r2g7pkdng5f6tgwyrk23wryA0pjxvs7gwhhb',
-			'external_url'       => $protocol . '//github.com/pixelgrade/pixelgrade_care',
-			'version'            => '1.5.0',
-			'is_automatic'       => false,
-		),
 	);
 
 	$config = array(
@@ -37,7 +21,7 @@ function felt_register_required_plugins() {
 		'is_automatic'     => false, // Automatically activate plugins after installation or not
 		'message'          => '', // Message to output right before the plugins table
 		'strings'          => array(
-			'page_title'                      => esc_html__( 'Install Required Plugins', '__theme_txtd' ),
+			'page_title'                      => esc_html__( 'Install Recommended Plugins', '__theme_txtd' ),
 			'menu_title'                      => esc_html__( 'Install Plugins', '__theme_txtd' ),
 			'installing'                      => esc_html__( 'Installing Plugin: %s', '__theme_txtd' ),
 			// %1$s = plugin name
@@ -60,7 +44,7 @@ function felt_register_required_plugins() {
 			// %1$s = plugin name(s)
 			'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', '__theme_txtd' ),
 			'activate_link'                   => _n_noop( 'Activate installed plugin', 'Activate installed plugins', '__theme_txtd' ),
-			'return'                          => esc_html__( 'Return to Required Plugins Installer', '__theme_txtd' ),
+			'return'                          => esc_html__( 'Return to Recommended Plugins Installer', '__theme_txtd' ),
 			'plugin_activated'                => esc_html__( 'Plugin activated successfully.', '__theme_txtd' ),
 			'complete'                        => esc_html__( 'All plugins installed and activated successfully. %s', '__theme_txtd' )
 			// %1$s = dashboard link

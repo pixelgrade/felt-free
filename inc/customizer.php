@@ -157,6 +157,6 @@ function felt_customizer_partial_transparent_logo() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function felt_customize_preview_js() {
-	wp_enqueue_script( 'felt_customizer', pixelgrade_get_theme_file_uri( '/assets/js/customizer.js' ), array( 'customize-preview' ), '20171201', true );
+	wp_enqueue_script( 'felt_customizer', pixelgrade_get_theme_file_uri( '/assets/js/customizer.js' ), array( 'customize-preview' ), '20190601', true );
 }
 add_action( 'customize_preview_init', 'felt_customize_preview_js' );

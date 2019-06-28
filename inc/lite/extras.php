@@ -24,9 +24,9 @@ function felt_lite_widgets_message( $html_message, $args, $instance ) {
 	foreach ( $disallowed_widgets as $widget ) {
 		if ( 0 === strpos( $args['widget_id'], $widget ) ) {
 			$html_message = '<div class="c-alert  c-alert--danger">
-                    <h4 class="c-alert__title">'. esc_html__( '🤦 Widget Type Not Available In Lite Version', '__theme_txtd' ) . '</h4>
+                    <h4 class="c-alert__title">'. esc_html__( '🤦 Widget Type Not Available In Free Version', '__theme_txtd' ) . '</h4>
                     <div class="c-alert__body">
-                        <p>'.  sprintf( esc_html__( 'The %s is not available in the Lite version, but hey, the Pro version is just around the corner!', '__theme_txtd' ), '<em>' . $args['widget_name'] . '</em>' ) .'</p>
+                        <p>'.  sprintf( esc_html__( 'The %s is not available in the Free version, but hey, the Pro version is just around the corner!', '__theme_txtd' ), '<em>' . $args['widget_name'] . '</em>' ) .'</p>
                     </div>
                 </div>';
 		}
@@ -56,7 +56,7 @@ function felt_lite_customize_register( $wp_customize ) {
 			'title'       => '' . esc_html__( 'View PRO Version', '__theme_txtd' ),
 			'priority'    => 2,
 			'description' => sprintf(
-			/* translators: The upsell link. */
+				/* translators: The upsell link. */
 				__(
 					'<div class="upsell-container">
 				<h2>Need More? Go PRO</h2>

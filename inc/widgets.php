@@ -170,7 +170,6 @@ function felt_custom_widgets_init() {
 	require_once pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'widgets/class-CategoriesImageGridWidget.php' );
 	register_widget( 'Pixelgrade_CategoriesImageGridWidget' );
 }
-
 add_action( 'widgets_init', 'felt_custom_widgets_init', 10 );
 
 if ( ! function_exists( 'felt_the_footer_featured_area' ) ) {
