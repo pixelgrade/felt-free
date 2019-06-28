@@ -12,5 +12,3 @@ components/tests/php/vendor
 *.map
 
 gulpconfig.json
-
-package-lock.json
