@@ -8,6 +8,10 @@
  * @since 1.0.0
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
+
 if ( is_active_sidebar( 'archive-1' ) ) {
 	dynamic_sidebar( 'archive-1' );
-} ?>
+}
