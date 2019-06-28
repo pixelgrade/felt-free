@@ -18,11 +18,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @param string|array $class Optional. One or more classes to add to the class list.
  * @param string|array $location Optional. The place (template) where the classes are displayed. This is a hint for filters.
- * @param int|WP_Post  $post    Optional. Post ID or WP_Post object. Defaults to current post.
+ * @param int|WP_Post  $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
  */
-function pixelgrade_hero_class( $class = '', $location = '', $post = null ) {
+function pixelgrade_hero_class( $class = '', $location = '', $current_post = null ) {
 	// Separates classes with a single space, collates classes for hero element
-	echo 'class="' . esc_attr( join( ' ', pixelgrade_get_hero_class( $class, $location, $post ) ) ) . '"';
+	echo 'class="' . esc_attr( join( ' ', pixelgrade_get_hero_class( $class, $location, $current_post ) ) ) . '"';
 }
 
 /**
@@ -30,28 +30,28 @@ function pixelgrade_hero_class( $class = '', $location = '', $post = null ) {
  *
  * @param string|array $class Optional. One or more classes to add to the class list.
  * @param string|array $location Optional. The place (template) where the classes are displayed. This is a hint for filters.
- * @param int|WP_Post  $post    Optional. Post ID or WP_Post object. Defaults to current post.
+ * @param int|WP_Post  $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
  *
  * @return array Array of classes.
  */
-function pixelgrade_get_hero_class( $class = '', $location = '', $post = null ) {
+function pixelgrade_get_hero_class( $class = '', $location = '', $current_post = null ) {
 	// We might be on a page set as a page for posts and the $post will be the first post in the loop
 	// So we check first
-	if ( empty( $post ) && is_home() ) {
+	if ( empty( $current_post ) && is_home() ) {
 		// find the id of the page for posts
-		$post = get_option( 'page_for_posts' );
+		$current_post = get_option( 'page_for_posts' );
 	}
 
 	// First make sure we have a post
-	$post = get_post( $post );
+	$current_post = get_post( $current_post );
 
 	$classes = array();
 
 	$classes[] = 'c-hero';
 
-	if ( ! empty( $post ) ) {
+	if ( ! empty( $current_post ) ) {
 		// add the hero height class
-		$classes[] = pixelgrade_hero_get_height( $location, $post );
+		$classes[] = pixelgrade_hero_get_height( $location, $current_post );
 	}
 
 	if ( ! empty( $class ) ) {
@@ -70,9 +70,9 @@ function pixelgrade_get_hero_class( $class = '', $location = '', $post = null ) 
 	 * @param array $classes An array of hero classes.
 	 * @param array $class   An array of additional classes added to the hero.
 	 * @param string|array $location   The place (template) where the classes are displayed.
-	 * @param int|WP_Post $post    Optional. Post ID or WP_Post object. Defaults to current post.
+	 * @param int|WP_Post $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
 	 */
-	$classes = apply_filters( 'pixelgrade_hero_class', $classes, $class, $location, $post );
+	$classes = apply_filters( 'pixelgrade_hero_class', $classes, $class, $location, $current_post );
 
 	return array_unique( $classes );
 }
@@ -82,11 +82,11 @@ function pixelgrade_get_hero_class( $class = '', $location = '', $post = null ) 
  *
  * @param string|array $class Optional. One or more classes to add to the class list.
  * @param string|array $location Optional. The place (template) where the classes are displayed. This is a hint for filters.
- * @param int|WP_Post  $post    Optional. Post ID or WP_Post object. Defaults to current post.
+ * @param int|WP_Post  $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
  */
-function pixelgrade_hero_slider_class( $class = '', $location = '', $post = null ) {
+function pixelgrade_hero_slider_class( $class = '', $location = '', $current_post = null ) {
 	// Separates classes with a single space, collates classes for hero element
-	echo 'class="' . esc_attr( join( ' ', pixelgrade_get_hero_slider_class( $class, $location, $post ) ) ) . '"';
+	echo 'class="' . esc_attr( join( ' ', pixelgrade_get_hero_slider_class( $class, $location, $current_post ) ) ) . '"';
 }
 
 /**
@@ -94,20 +94,20 @@ function pixelgrade_hero_slider_class( $class = '', $location = '', $post = null
  *
  * @param string|array $class Optional. One or more classes to add to the class list.
  * @param string|array $location Optional. The place (template) where the classes are displayed. This is a hint for filters.
- * @param int|WP_Post  $post    Optional. Post ID or WP_Post object. Defaults to current post.
+ * @param int|WP_Post  $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
  *
  * @return array Array of classes.
  */
-function pixelgrade_get_hero_slider_class( $class = '', $location = '', $post = null ) {
+function pixelgrade_get_hero_slider_class( $class = '', $location = '', $current_post = null ) {
 	// We might be on a page set as a page for posts and the $post will be the first post in the loop
 	// So we check first
-	if ( empty( $post ) && is_home() ) {
+	if ( empty( $current_post ) && is_home() ) {
 		// find the id of the page for posts
-		$post = get_option( 'page_for_posts' );
+		$current_post = get_option( 'page_for_posts' );
 	}
 
 	// First make sure we have a post
-	$post = get_post( $post );
+	$current_post = get_post( $current_post );
 
 	$classes = array();
 
@@ -129,9 +129,9 @@ function pixelgrade_get_hero_slider_class( $class = '', $location = '', $post = 
 	 * @param array $classes An array of hero classes.
 	 * @param array $class   An array of additional classes added to the hero.
 	 * @param string|array $location   The place (template) where the classes are displayed.
-	 * @param int|WP_Post $post    Optional. Post ID or WP_Post object. Defaults to current post.
+	 * @param int|WP_Post $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
 	 */
-	$classes = apply_filters( 'pixelgrade_hero_slider_class', $classes, $class, $location, $post );
+	$classes = apply_filters( 'pixelgrade_hero_slider_class', $classes, $class, $location, $current_post );
 
 	return array_unique( $classes );
 }
@@ -140,50 +140,50 @@ function pixelgrade_get_hero_slider_class( $class = '', $location = '', $post = 
  * Display the attributes for the hero element.
  *
  * @param string|array $attribute One or more attributes to add to the attributes list.
- * @param int|WP_Post  $post    Optional. Post ID or WP_Post object. Defaults to current post.
+ * @param int|WP_Post  $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
  *
  * @return bool
  */
-function pixelgrade_hero_slider_attributes( $attribute = '', $post = null ) {
+function pixelgrade_hero_slider_attributes( $attribute = '', $current_post = null ) {
 	// We might be on a page set as a page for posts and the $post will be the first post in the loop
 	// So we check first
-	if ( empty( $post ) && is_home() ) {
+	if ( empty( $current_post ) && is_home() ) {
 		// find the id of the page for posts
-		$post = get_option( 'page_for_posts' );
+		$current_post = get_option( 'page_for_posts' );
 	}
 
 	// First make sure we have a post
-	$post = get_post( $post );
+	$current_post = get_post( $current_post );
 
 	// bail if we don't have a post to work with
-	if ( empty( $post ) ) {
+	if ( empty( $current_post ) ) {
 		return false;
 	}
 
-	echo pixelgrade_generate_attributes_output( pixelgrade_hero_get_slider_attributes( $attribute, $post->ID ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo pixelgrade_generate_attributes_output( pixelgrade_hero_get_slider_attributes( $attribute, $current_post->ID ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	return true;
 }
 
 /**
  * @param string|array $attribute One or more attributes to add to the attributes list.
- * @param int|WP_Post  $post    Optional. Post ID or WP_Post object. Defaults to current post.
+ * @param int|WP_Post  $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
  *
  * @return array|bool
  */
-function pixelgrade_hero_get_slider_attributes( $attribute = array(), $post = null ) {
+function pixelgrade_hero_get_slider_attributes( $attribute = array(), $current_post = null ) {
 	// We might be on a page set as a page for posts and the $post will be the first post in the loop
 	// So we check first
-	if ( empty( $post ) && is_home() ) {
+	if ( empty( $current_post ) && is_home() ) {
 		// find the id of the page for posts
-		$post = get_option( 'page_for_posts' );
+		$current_post = get_option( 'page_for_posts' );
 	}
 
 	// First make sure we have a post
-	$post = get_post( $post );
+	$current_post = get_post( $current_post );
 
 	// bail if we don't have a post to work with
-	if ( empty( $post ) ) {
+	if ( empty( $current_post ) ) {
 		return false;
 	}
 
@@ -197,8 +197,8 @@ function pixelgrade_hero_get_slider_attributes( $attribute = array(), $post = nu
 	}
 
 	// Should we autoplay the slideshow?
-	$slider_autoplay = get_post_meta( $post->ID, '_hero_slideshow_options__autoplay', true );
-	$slider_delay    = $slider_autoplay ? get_post_meta( $post->ID, '_hero_slideshow_options__delay', true ) : false;
+	$slider_autoplay = get_post_meta( $current_post->ID, '_hero_slideshow_options__autoplay', true );
+	$slider_delay    = $slider_autoplay ? get_post_meta( $current_post->ID, '_hero_slideshow_options__delay', true ) : false;
 
 	if ( $slider_autoplay ) {
 		$attributes['data-autoplay']       = '';
@@ -212,9 +212,9 @@ function pixelgrade_hero_get_slider_attributes( $attribute = array(), $post = nu
 	 *
 	 * @param array $attributes An array of attributes.
 	 * @param array $attribute  An array of additional attributes added to the element.
-	 * @param int|WP_Post $post    Optional. Post ID or WP_Post object. Defaults to current post.
+	 * @param int|WP_Post $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
 	 */
-	$attributes = apply_filters( 'pixelgrade_hero_slider_attributes', $attributes, $attribute, $post );
+	$attributes = apply_filters( 'pixelgrade_hero_slider_attributes', $attributes, $attribute, $current_post );
 
 	return array_unique( $attributes );
 }
@@ -222,35 +222,35 @@ function pixelgrade_hero_get_slider_attributes( $attribute = array(), $post = nu
 /**
  * Display the inline style based on the current post's hero background color setting
  *
- * @param int|WP_Post $post    Optional. Post ID or WP_Post object. Defaults to current post.
+ * @param int|WP_Post $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
  *
  * @return bool
  */
-function pixelgrade_hero_background_color_style( $post = null ) {
+function pixelgrade_hero_background_color_style( $current_post = null ) {
 	// We might be on a page set as a page for posts and the $post will be the first post in the loop
 	// So we check first
-	if ( empty( $post ) && is_home() ) {
+	if ( empty( $current_post ) && is_home() ) {
 		// find the id of the page for posts
-		$post = get_option( 'page_for_posts' );
+		$current_post = get_option( 'page_for_posts' );
 	}
 
 	// First make sure we have a post
-	$post = get_post( $post );
+	$current_post = get_post( $current_post );
 
 	// bail if we don't have a post to work with
-	if ( empty( $post ) ) {
+	if ( empty( $current_post ) ) {
 		return false;
 	}
 
 	$output = '';
 
-	$background_color = trim( pixelgrade_hero_get_background_color( $post ) );
+	$background_color = trim( pixelgrade_hero_get_background_color( $current_post ) );
 	if ( ! empty( $background_color ) ) {
 		$output .= 'style="background-color: ' . esc_attr( $background_color ) . ';"';
 	}
 
 	// allow others to make changes
-	$output = apply_filters( 'pixelgrade_hero_the_background_color_style', $output, $post );
+	$output = apply_filters( 'pixelgrade_hero_the_background_color_style', $output, $current_post );
 
 	echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
@@ -260,31 +260,31 @@ function pixelgrade_hero_background_color_style( $post = null ) {
 /**
  * Get the hero background color meta value. It will return the default color string in case the meta is empty or invalid (like '#')
  *
- * @param int|WP_Post $post    Optional. Post ID or WP_Post object. Defaults to current post.
+ * @param int|WP_Post $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
  * @param string      $default Optional. The default hexa color string to return in case the meta value is empty
  *
  * @return bool|string
  */
-function pixelgrade_hero_get_background_color( $post = null, $default = '#333' ) {
+function pixelgrade_hero_get_background_color( $current_post = null, $default = '#333' ) {
 	// We might be on a page set as a page for posts and the $post will be the first post in the loop
 	// So we check first
-	if ( empty( $post ) && is_home() ) {
+	if ( empty( $current_post ) && is_home() ) {
 		// find the id of the page for posts
-		$post = get_option( 'page_for_posts' );
+		$current_post = get_option( 'page_for_posts' );
 	}
 
 	// First make sure we have a post
-	$post = get_post( $post );
+	$current_post = get_post( $current_post );
 
 	// bail if we don't have a post to work with
-	if ( empty( $post ) ) {
+	if ( empty( $current_post ) ) {
 		return false;
 	}
 
-	if ( get_post_type( $post ) == 'page' ) {
-		$color = get_post_meta( $post->ID, '_hero_background_color', true );
+	if ( get_post_type( $current_post ) == 'page' ) {
+		$color = get_post_meta( $current_post->ID, '_hero_background_color', true );
 	} else {
-		$color = get_post_meta( $post->ID, '_project_color', true );
+		$color = get_post_meta( $current_post->ID, '_project_color', true );
 	}
 
 	// use a default color in case something went wrong - actually a gray
@@ -453,30 +453,30 @@ function pixelgrade_the_hero( $location = '' ) {
  * Determine if we actually have data that can make up a hero. Prevent empty markup from being shown.
  *
  * @param string|array $location Optional. The place (template) where this is needed.
- * @param int|WP_Post  $post    Optional. Post ID or WP_Post object. Defaults to current post.
+ * @param int|WP_Post  $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
  *
  * @return bool
  */
-function pixelgrade_hero_is_hero_needed( $location = '', $post = null ) {
+function pixelgrade_hero_is_hero_needed( $location = '', $current_post = null ) {
 	// We might be on a page set as a page for posts and the $post will be the first post in the loop
 	// So we check first
 	if ( is_home() ) {
 		// find the id of the page for posts
-		$post = get_option( 'page_for_posts' );
+		$current_post = get_option( 'page_for_posts' );
 	}
 
 	// We might be on a page set as a page for projects and the $post will be the first project in the loop
 	// So we check first
 	if ( pixelgrade_is_page_for_projects() ) {
 		// find the id of the page for projects
-		$post = get_option( 'page_for_projects' );
+		$current_post = get_option( 'page_for_projects' );
 	}
 
 	// First make sure we have a post
-	$post = get_post( $post );
+	$current_post = get_post( $current_post );
 
 	// bail if we don't have a post to work with
-	if ( empty( $post ) ) {
+	if ( empty( $current_post ) ) {
 		return false;
 	}
 
@@ -485,20 +485,20 @@ function pixelgrade_hero_is_hero_needed( $location = '', $post = null ) {
 	// First test if the post type is in the Hero component's config list of allowed post types
 	$hero_component        = Pixelgrade_Hero();
 	$hero_component_config = $hero_component->getConfig();
-	if ( ! empty( $hero_component_config['post_types'] ) && is_array( $hero_component_config['post_types'] ) && ! in_array( get_post_type( $post ), $hero_component_config['post_types'] ) ) {
+	if ( ! empty( $hero_component_config['post_types'] ) && is_array( $hero_component_config['post_types'] ) && ! in_array( get_post_type( $current_post ), $hero_component_config['post_types'] ) ) {
 		$is_needed = false;
 	}
 
 	// handle the map hero separately
 	if ( $is_needed && pixelgrade_in_location( 'map', $location ) ) {
 		// get the Google Maps URL
-		$map_url = get_post_meta( $post->ID, '_hero_map_url', true );
+		$map_url = get_post_meta( $current_post->ID, '_hero_map_url', true );
 		if ( empty( $map_url ) ) {
 			$is_needed = false;
 		}
 	} elseif ( $is_needed ) {
 		// get all the images/videos/featured projects ids that we will use as slides (we also cover for when there are none)
-		$slides = pixelgrade_hero_get_slides_ids( $post );
+		$slides = pixelgrade_hero_get_slides_ids( $current_post );
 
 		if ( empty( $slides ) ) {
 			$is_needed = false;
@@ -506,38 +506,38 @@ function pixelgrade_hero_is_hero_needed( $location = '', $post = null ) {
 	}
 
 	// Allow others to short-circuit us on this one
-	return apply_filters( 'pixelgrade_hero_is_hero_needed', $is_needed, $location, $post );
+	return apply_filters( 'pixelgrade_hero_is_hero_needed', $is_needed, $location, $current_post );
 }
 
 /**
  * Return the CSS class corresponding to the set height of the hero.
  *
  * @param string|array $location Optional. The place (template) where this is needed.
- * @param int|WP_Post  $post    Optional. Post ID or WP_Post object. Defaults to current post.
+ * @param int|WP_Post  $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
  *
  * @return false|string
  */
-function pixelgrade_hero_get_height( $location = '', $post = null ) {
+function pixelgrade_hero_get_height( $location = '', $current_post = null ) {
 	// We might be on a page set as a page for posts and the $post will be the first post in the loop
 	// So we check first
-	if ( empty( $post ) && is_home() ) {
+	if ( empty( $current_post ) && is_home() ) {
 		// find the id of the page for posts
-		$post = get_option( 'page_for_posts' );
+		$current_post = get_option( 'page_for_posts' );
 	}
 
 	// First make sure we have a post
-	$post = get_post( $post );
+	$current_post = get_post( $current_post );
 
 	// bail if we don't have a post to work with
-	if ( empty( $post ) ) {
+	if ( empty( $current_post ) ) {
 		return false;
 	}
 
 	// handle the map hero separately
 	if ( pixelgrade_in_location( 'map', $location ) ) {
-		$hero_height = trim( get_post_meta( $post->ID, '_hero_map_height', true ) );
+		$hero_height = trim( get_post_meta( $current_post->ID, '_hero_map_height', true ) );
 	} else {
-		$hero_height = trim( get_post_meta( $post->ID, '_hero_height', true ) );
+		$hero_height = trim( get_post_meta( $current_post->ID, '_hero_height', true ) );
 	}
 
 	// by default we show a full-height hero/header
@@ -551,23 +551,23 @@ function pixelgrade_hero_get_height( $location = '', $post = null ) {
 /**
  * Returns the attachment ids corresponding to each slide.
  *
- * @param int|WP_Post $post    Optional. Post ID or WP_Post object. Defaults to current post.
+ * @param int|WP_Post $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
  *
  * @return array|bool|mixed
  */
-function pixelgrade_hero_get_slides_ids( $post = null ) {
+function pixelgrade_hero_get_slides_ids( $current_post = null ) {
 	// We might be on a page set as a page for posts and the $post will be the first post in the loop
 	// So we check first
 	if ( is_home() ) {
 		// find the id of the page for posts
-		$post = get_option( 'page_for_posts' );
+		$current_post = get_option( 'page_for_posts' );
 	}
 
 	// First make sure we have a post
-	$post = get_post( $post );
+	$current_post = get_post( $current_post );
 
 	// bail if we don't have a post to work with
-	if ( empty( $post ) ) {
+	if ( empty( $current_post ) ) {
 		return false;
 	}
 
@@ -575,11 +575,11 @@ function pixelgrade_hero_get_slides_ids( $post = null ) {
 
 	/* IF - PixTypes is not active we need to take a different route as no metaboxes will be present */
 	if ( ! class_exists( 'PixTypesPlugin' ) ) {
-		if ( has_post_thumbnail( $post ) ) {
+		if ( has_post_thumbnail( $current_post ) ) {
 			$to_return[] = array(
-				'post_id'        => get_post_thumbnail_id( $post ),
+				'post_id'        => get_post_thumbnail_id( $current_post ),
 				'type'           => 'image',
-				'source_post_id' => $post->ID,
+				'source_post_id' => $current_post->ID,
 				'source_meta'    => '_thumbnail_id',
 			);
 		}
@@ -588,7 +588,7 @@ function pixelgrade_hero_get_slides_ids( $post = null ) {
 		/* ELSE - We can get slides from 3 sources: images, videos and featured projects */
 
 		// First get the Hero Images attachment ids
-		$attachment_ids = get_post_meta( $post->ID, '_hero_background_gallery', true );
+		$attachment_ids = get_post_meta( $current_post->ID, '_hero_background_gallery', true );
 		if ( ! empty( $attachment_ids ) ) {
 			$attachment_ids = Pixelgrade_Value::maybeExplodeList( $attachment_ids );
 
@@ -599,17 +599,17 @@ function pixelgrade_hero_get_slides_ids( $post = null ) {
 					$attachment_ids[ $key ] = array(
 						'post_id'        => $attachment_id,
 						'type'           => 'image',
-						'source_post_id' => $post->ID,
+						'source_post_id' => $current_post->ID,
 						'source_meta'    => '_hero_background_gallery',
 					);
 				}
 			}
 
-			$to_return = array_merge( $to_return, apply_filters( 'pixelgrade_hero_image_slides_ids', $attachment_ids, $post ) );
+			$to_return = array_merge( $to_return, apply_filters( 'pixelgrade_hero_image_slides_ids', $attachment_ids, $current_post ) );
 		}
 
 		// Secondly, the Hero Videos attachment ids
-		$videos_ids = get_post_meta( $post->ID, '_hero_background_videos', true );
+		$videos_ids = get_post_meta( $current_post->ID, '_hero_background_videos', true );
 		if ( ! empty( $videos_ids ) ) {
 			$videos_ids = Pixelgrade_Value::maybeExplodeList( $videos_ids );
 
@@ -620,21 +620,21 @@ function pixelgrade_hero_get_slides_ids( $post = null ) {
 					$videos_ids[ $key ] = array(
 						'post_id'        => $attachment_id,
 						'type'           => 'video',
-						'source_post_id' => $post->ID,
+						'source_post_id' => $current_post->ID,
 						'source_meta'    => '_hero_background_videos',
 					);
 				}
 			}
 
-			$to_return = array_merge( $to_return, apply_filters( 'pixelgrade_hero_video_slides_ids', $videos_ids, $post ) );
+			$to_return = array_merge( $to_return, apply_filters( 'pixelgrade_hero_video_slides_ids', $videos_ids, $current_post ) );
 		}
 
 		// If we have nothing but have a featured image, use that as it's still better than nothing
-		if ( empty( $to_return ) && has_post_thumbnail( $post ) ) {
+		if ( empty( $to_return ) && has_post_thumbnail( $current_post ) ) {
 			$to_return[] = array(
-				'post_id'        => get_post_thumbnail_id( $post ),
+				'post_id'        => get_post_thumbnail_id( $current_post ),
 				'type'           => 'image',
-				'source_post_id' => $post->ID,
+				'source_post_id' => $current_post->ID,
 				'source_meta'    => '_thumbnail_id',
 			);
 		}
@@ -642,16 +642,16 @@ function pixelgrade_hero_get_slides_ids( $post = null ) {
 		// If we have made it thus far and still haven't found some images or videos, but there is some hero content, add the 0 id to the list
 		// this way the hero loop will work, bypassing the attachment part (there is no attachment with the id 0)
 		// also, this prevents from mistakenly counting the number of slides needed (1 instead of 2 for example -> we would assume no slideshow would be needed)
-		if ( empty( $to_return ) && pixelgrade_hero_has_description( $post ) ) {
+		if ( empty( $to_return ) && pixelgrade_hero_has_description( $current_post ) ) {
 			$to_return[] = array(
 				'post_id'        => 0,
 				'type'           => 'blank',
-				'source_post_id' => $post->ID,
+				'source_post_id' => $current_post->ID,
 			);
 		}
 
 		// Thirdly, the Featured Projects
-		$featured_projects_ids = pixelgrade_hero_get_featured_projects_ids( $post );
+		$featured_projects_ids = pixelgrade_hero_get_featured_projects_ids( $current_post );
 
 		if ( ! empty( $featured_projects_ids ) ) {
 			// We will augment each with extra information so we can identify precisely what it is and where it came from
@@ -659,18 +659,18 @@ function pixelgrade_hero_get_slides_ids( $post = null ) {
 				$featured_projects_ids[ $key ] = array(
 					'post_id'        => $project_id,
 					'type'           => 'featured-project',
-					'source_post_id' => $post->ID,
+					'source_post_id' => $current_post->ID,
 					'source_meta'    => '_hero_featured_projects_ids',
 				);
 			}
 
-			$to_return = array_merge( $to_return, apply_filters( 'pixelgrade_hero_featured_projects_slides_ids', $featured_projects_ids, $post ) );
+			$to_return = array_merge( $to_return, apply_filters( 'pixelgrade_hero_featured_projects_slides_ids', $featured_projects_ids, $current_post ) );
 		}
 	}
 
 	// @todo Maybe we could use caching here?
 	// allow others to make changes
-	$to_return = apply_filters( 'pixelgrade_hero_slides_ids', $to_return, $post );
+	$to_return = apply_filters( 'pixelgrade_hero_slides_ids', $to_return, $current_post );
 
 	// Now return the slides we have found
 	// They should be in this order: images, videos, featured projects
@@ -680,24 +680,24 @@ function pixelgrade_hero_get_slides_ids( $post = null ) {
 /**
  * Get the post's hero featured project IDs, if there are some.
  *
- * @param WP_Post $post
+ * @param WP_Post $current_post
  *
  * @return array|bool
  */
-function pixelgrade_hero_get_featured_projects_ids( $post = null ) {
+function pixelgrade_hero_get_featured_projects_ids( $current_post = null ) {
 	// First make sure we have a post
-	$post = get_post( $post );
+	$current_post = get_post( $current_post );
 
 	// bail if we don't have a post to work with
-	if ( empty( $post ) ) {
+	if ( empty( $current_post ) ) {
 		return false;
 	}
 
-	$featured_projects = get_post_meta( $post->ID, '_hero_featured_projects_ids', true );
+	$featured_projects = get_post_meta( $current_post->ID, '_hero_featured_projects_ids', true );
 
 	// If we haven't found anything, try the legacy field key
 	if ( empty( $featured_projects ) ) {
-		$featured_projects = get_post_meta( $post->ID, '_portfolio_featured_projects', true );
+		$featured_projects = get_post_meta( $current_post->ID, '_portfolio_featured_projects', true );
 	}
 
 	if ( ! empty( $featured_projects ) ) {
@@ -710,40 +710,40 @@ function pixelgrade_hero_get_featured_projects_ids( $post = null ) {
 /**
  * Determine whether a post has a hero description.
  *
- * @param int|WP_Post $post    Optional. Post ID or WP_Post object. Defaults to current post.
+ * @param int|WP_Post $current_post    Optional. Post ID or WP_Post object. Defaults to current post.
  *
  * @return bool
  */
-function pixelgrade_hero_has_description( $post = null ) {
+function pixelgrade_hero_has_description( $current_post = null ) {
 	// We might be on a page set as a page for posts and the $post will be the first post in the loop
 	// So we check first
-	if ( empty( $post ) && is_home() ) {
+	if ( empty( $current_post ) && is_home() ) {
 		// find the id of the page for posts
-		$post = get_option( 'page_for_posts' );
+		$current_post = get_option( 'page_for_posts' );
 	}
 
 	// First make sure we have a post
-	$post = get_post( $post );
+	$current_post = get_post( $current_post );
 
 	// bail if we don't have a post to work with
-	if ( empty( $post ) ) {
+	if ( empty( $current_post ) ) {
 		return false;
 	}
 
 	$has_desc = false;
 
-	if ( is_page( $post->ID ) && get_page_template_slug( $post->ID ) == 'page-templates/contact.php' ) {
+	if ( is_page( $current_post->ID ) && get_page_template_slug( $current_post->ID ) == 'page-templates/contact.php' ) {
 		$has_desc = true;
-	} elseif ( is_single( $post->ID ) && 'post' === get_post_type( $post->ID ) ) {
+	} elseif ( is_single( $current_post->ID ) && 'post' === get_post_type( $current_post->ID ) ) {
 		$has_desc = true;
 	} else {
-		$cover_description = get_post_meta( $post->ID, '_hero_content_description', true );
+		$cover_description = get_post_meta( $current_post->ID, '_hero_content_description', true );
 		if ( ! empty( $cover_description ) ) {
 			$has_desc = true;
 		}
 	}
 
-	return apply_filters( 'pixelgrade_hero_has_description', $has_desc, $post );
+	return apply_filters( 'pixelgrade_hero_has_description', $has_desc, $current_post );
 }
 
 /**
@@ -1030,25 +1030,25 @@ function pixelgrade_hero_the_description( $content, $slide = null ) {
 /**
  * Get the alignment setting for the hero content as set in the meta fields.
  *
- * @param WP_Post|int $post Optional. Default to global post.
+ * @param WP_Post|int $current_post Optional. Default to global post.
  *
  * @return bool|string
  */
-function pixelgrade_hero_get_content_alignment( $post = null ) {
+function pixelgrade_hero_get_content_alignment( $current_post = null ) {
 	// First make sure we have a post
-	$post = get_post( $post );
+	$current_post = get_post( $current_post );
 
 	// bail if we don't have a post to work with
-	if ( empty( $post ) ) {
+	if ( empty( $current_post ) ) {
 		return false;
 	}
 
 	if ( ! class_exists( 'PixTypesPlugin' ) ) {
 		$alignment = '';
 	} else {
-		$alignment = get_post_meta( $post->ID, '_hero_description_alignment', true );
+		$alignment = get_post_meta( $current_post->ID, '_hero_description_alignment', true );
 	}
 
 	// Allow others to have a say in this
-	return apply_filters( 'pixelgrade_hero_content_alignment', $alignment, $post );
+	return apply_filters( 'pixelgrade_hero_content_alignment', $alignment, $current_post );
 }
