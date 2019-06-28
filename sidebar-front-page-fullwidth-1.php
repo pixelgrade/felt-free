@@ -1,4 +1,3 @@
-
 <?php
 /**
  * The sidebar containing the Front Page Full Width Area #1 widget area.
