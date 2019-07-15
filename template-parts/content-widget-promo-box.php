@@ -26,20 +26,20 @@ if ( ! empty( $headline ) || ! empty( $description ) || ( ! empty( $button_text 
 	<div class="c-promo__content">
 
 		<?php if ( ! empty( $title ) ) { ?>
-			<div class="c-promo__subtitle h6"><?php echo $title; // WPCS: XSS OK. ?></div>
+			<div class="c-promo__subtitle h6"><?php echo $title; // phpcs:ignore Standard.Category.SniffName.ErrorCode. ?></div>
 		<?php } ?>
 
 		<?php if ( ! empty( $headline ) ) { ?>
-			<div class="c-promo__title"><div><?php echo $headline; // WPCS: XSS OK. ?></div></div>
+			<div class="c-promo__title"><div><?php echo $headline; // phpcs:ignore Standard.Category.SniffName.ErrorCode. ?></div></div>
 		<?php } ?>
 
 		<?php if ( ! empty( $description ) ) { ?>
-			<div class="c-promo__description"><div><?php echo $description; // WPCS: XSS OK. ?></div></div>
+			<div class="c-promo__description"><div><?php echo $description; // phpcs:ignore Standard.Category.SniffName.ErrorCode. ?></div></div>
 		<?php } ?>
 
 		<?php if ( ! empty( $button_text ) && ! empty( $button_url ) ) { ?>
 			<div class="c-promo__action">
-				<a href="<?php echo esc_url( $button_url ); ?>" class="c-promo__btn c-btn c-btn-directional c-btn-directional--right"><?php echo $button_text; // WPCS: XSS OK. ?></a>
+				<a href="<?php echo esc_url( $button_url ); ?>" class="c-promo__btn c-btn c-btn-directional c-btn-directional--right"><?php echo $button_text; // phpcs:ignore Standard.Category.SniffName.ErrorCode. ?></a>
 			</div>
 		<?php } ?>
 

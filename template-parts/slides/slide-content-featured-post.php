@@ -50,7 +50,7 @@ $link_post_label = trim( esc_html__( 'Read More', '__theme_txtd' ) );
 				<div class="c-meta">
 					<?php
 					if ( $primary_meta_output ) {
-						echo '<div class="c-meta__primary">' . $primary_meta_output . '</div>'; // WPCS: XSS OK.
+						echo '<div class="c-meta__primary">' . $primary_meta_output . '</div>'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 						// Add a separator if we also have secondary meta
 						if ( $secondary_meta_output ) {
 							echo '<div class="c-meta__separator js-card-meta-separator"></div>';
@@ -58,7 +58,7 @@ $link_post_label = trim( esc_html__( 'Read More', '__theme_txtd' ) );
 					}
 
 					if ( $secondary_meta_output ) {
-						echo '<div class="c-meta__secondary">' . $secondary_meta_output . '</div>'; // WPCS: XSS OK.
+						echo '<div class="c-meta__secondary">' . $secondary_meta_output . '</div>'; // phpcs:ignore Standard.Category.SniffName.ErrorCode.
 					} ?>
 				</div>
 			</div>
@@ -79,7 +79,7 @@ $link_post_label = trim( esc_html__( 'Read More', '__theme_txtd' ) );
 		if ( ! empty( $link_post_label ) ) { ?>
 			<div class="c-hero__action">
 				<span class="link--arrow  light">
-					<?php echo esc_html( $link_post_label); // WPCS: XSS OK. ?>
+					<?php echo esc_html( $link_post_label); // phpcs:ignore Standard.Category.SniffName.ErrorCode. ?>
 				</span>
 			</div>
 		<?php } ?>

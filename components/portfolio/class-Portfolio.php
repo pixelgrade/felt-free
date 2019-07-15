@@ -586,7 +586,7 @@ class Pixelgrade_Portfolio extends Pixelgrade_Component {
 	 */
 	public function handlePageForProjectsPermalink( $link, $post_type ) {
 		if ( 'jetpack-portfolio' === $post_type && get_option( 'page_for_projects' ) ) {
-			return get_permalink( get_option( 'page_for_projects' ) );
+			return esc_url( get_permalink( get_option( 'page_for_projects' ) ) );
 		}
 
 		return $link;
