@@ -336,15 +336,7 @@ function felt_add_post_card_letter(){
 }
 add_action('pixelgrade_before_card_frame_end', 'felt_add_post_card_letter');
 
-function felt_maybe_load_pro_features() {
-	if ( true === pixelgrade_user_has_access( 'pro-features' ) ) {
-		pixelgrade_autoload_dir( 'inc/pro' );
-	} else {
-		pixelgrade_autoload_dir( 'inc/lite' );
-	}
-}
-// We want to do this as early as possible. So the zero priority is as intended.
-add_action( 'after_setup_theme', 'felt_maybe_load_pro_features', 0 );
-
 add_filter( 'pixelgrade_add_categories_to_content', '__return_true', 9999 );
 add_filter( 'pixelgrade_add_tags_to_content', '__return_true', 9999 );
+
+pixelgrade_autoload_dir( 'inc/lite' );

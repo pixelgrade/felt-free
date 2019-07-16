@@ -20,10 +20,6 @@ function felt_setup_components() {
 	add_theme_support( 'pixelgrade-header-component' );
 	add_theme_support( 'pixelgrade-footer-component' );
 	add_theme_support( 'pixelgrade-gallery-settings-component' );
-
-	if ( pixelgrade_user_has_access( 'woocommerce' ) ) {
-		add_theme_support( 'pixelgrade-woocommerce-component' );
-	}
 }
 add_action( 'after_setup_theme', 'felt_setup_components', 10 );
 
@@ -48,22 +44,8 @@ add_action( 'after_setup_theme', 'felt_remove_header_component_filters' );
 
 function felt_customize_header_config( $config ) {
 	// Don't output empty markup
-	$config['zones']['left']['display_blank']  = ! pixelgrade_user_has_access( 'pro-features' );
+	$config['zones']['left']['display_blank']  = true;
 	$config['zones']['right']['display_blank'] = false;
-
-	if ( pixelgrade_user_has_access( 'pro-features' ) ) {
-		// Customize the nav menu locations
-		// Change the nav menu location's title
-		$config['menu_locations']['primary-left']['title'] = esc_html__( 'Top Menu', '__theme_txtd' );
-		// Deactivate the default zone behaviour
-		$config['menu_locations']['primary-left']['zone_callback'] = false;
-		// Set the nav menu location's CSS id
-		$config['menu_locations']['primary-left']['nav_menu_args']['menu_id'] = 'menu-2';
-		// Set the nav menu location CSS class
-		$config['menu_locations']['primary-left']['nav_menu_args']['menu_class'] = 'menu  menu--secondary';
-		// Set the nav menu depth
-		$config['menu_locations']['primary-left']['nav_menu_args']['depth'] = 1;
-	}
 
 	// Change the nav menu location's title
 	$config['menu_locations']['primary-right']['title'] = esc_html__( 'Main Menu', '__theme_txtd' );
@@ -73,15 +55,6 @@ function felt_customize_header_config( $config ) {
 	$config['menu_locations']['primary-right']['nav_menu_args']['menu_id'] = 'menu-1';
 	// Set the nav menu location CSS class
 	$config['menu_locations']['primary-right']['nav_menu_args']['menu_class'] = 'menu  menu--primary';
-
-	if ( pixelgrade_user_has_access( 'pro-features' ) ) {
-		// The Social Menu should be in the left zone
-		$config['menu_locations']['jetpack-social-menu']['default_zone'] = 'left';
-		// Make sure there is no callback
-		$config['menu_locations']['jetpack-social-menu']['zone_callback'] = false;
-		// Make sure it comes after the menu
-		$config['menu_locations']['jetpack-social-menu']['order'] = 20;
-	}
 
 	return $config;
 }
@@ -109,10 +82,7 @@ function felt_customize_footer_config( $config ) {
 	$config['zones']['middle']['display_blank'] = false;
 	$config['zones']['bottom']['display_blank'] = false;
 
-
-	if ( ! pixelgrade_user_has_access( 'pro-features' ) ) {
-		unset( $config['sidebars']['sidebar-footer'] );
-	}
+	unset( $config['sidebars']['sidebar-footer'] );
 
 	return $config;
 }
