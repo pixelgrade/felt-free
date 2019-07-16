@@ -65,18 +65,6 @@ function felt_pro_archive_index_sidebar() {
 }
 add_action( 'widgets_init', 'felt_pro_archive_index_sidebar', 31 );
 
-function felt_pro_custom_widgets_init() {
-	/**
-     * Promo Box Widget available only in PRO version
-     */
-	$path = pixelgrade_get_parent_theme_file_path( 'inc/widgets/class-PromoBoxWidget.php' );
-	if ( ! empty( $path ) ) {
-		require_once $path;
-		register_widget( 'Pixelgrade_PromoBoxWidget' );
-	}
-}
-add_action( 'widgets_init', 'felt_pro_custom_widgets_init', 32 );
-
 function felt_pro_footer_credits_url( $url ) {
 	return 'https://pixelgrade.com/?utm_source=felt-pro-clients&utm_medium=footer&utm_campaign=felt-pro';
 }
