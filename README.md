@@ -1,7 +1,7 @@
 # Felt: A Free Magazine-Style WordPress Theme
 ### Felt is a magazine-style WordPress theme for publishers of all kinds who want to showcase their fresh ideas. Thanks to the modular layout, multiple widget areas and a hand-full of custom and unique widgets, you can highlight what's truly important for your tribe and stand out from the crowd. Its responsive design, multilingual support, and compatibility with the new Gutenberg editor will allow you to adapt this theme to multiple usage scenarios and personalize it to match your needs. No matter if you are a blogger, journalist, designer, DIY artist, photographer or small entrepreneur, this theme will fit perfectly every time.
 
-[Download for Free](https://downloads.wordpress.org/theme/felt.latest-stable.zip) &nbsp;·&nbsp; [Demo Preview](https://demos.pixelgrade.com/felt-lite/) &nbsp;·&nbsp; [ Felt Pro](https://pixelgrade.com/themes/felt-pro/)
+[View Demo](https://demos.pixelgrade.com/felt-lite/) &nbsp;·&nbsp; [Documentation](https://pixelgrade.com/felt-lite-documentation/) &nbsp;·&nbsp; [Download for Free](https://downloads.wordpress.org/theme/felt.latest-stable.zip) &nbsp;·&nbsp; [View Pro Version](https://pixelgrade.com/themes/felt-pro/)
 
 [![](https://img.shields.io/github/issues-closed/pixelgrade/felt-free.svg?color=6cc644&label=Issues)](https://github.com/pixelgrade/felt-free/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aclosed+) [![](https://img.shields.io/github/issues/pixelgrade/felt-free.svg?color=4078c0&label=%20)](https://github.com/pixelgrade/felt-free/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen)
 
