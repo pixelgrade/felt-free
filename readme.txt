@@ -24,7 +24,7 @@ Felt is a free magazine-style WordPress theme for publishers of all kinds who wa
 == Changelog ==
 
 = 2.4.2.2 =
-* Fixed skip link focus.git stat
+* Fixed skip link focus.
 
 = 2.4.2.1 =
 * Cleanup and security improvements.
