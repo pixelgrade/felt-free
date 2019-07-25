@@ -4,7 +4,7 @@ Description: Felt is a free magazine-style WordPress theme for publishers of all
 Tags: blog, entertainment, translation-ready, theme-options, featured-images, custom-colors, custom-menu, custom-logo, two-columns, three-columns, four-columns, editor-style, full-width-template, sticky-post, threaded-comments, rtl-language-support
 Requires at least: 4.9.9
 Tested up to: 5.2.2
-Stable tag: 2.4.2.2
+Stable tag: 2.4.2.3
 Requires PHP: 5.3.0
 License: GPLv2 or later
 License URI: LICENSE
@@ -25,7 +25,7 @@ Felt is a free magazine-style WordPress theme for publishers of all kinds who wa
 
 = 2.4.2.3 =
 * Fixed an issue related to Windows environments.
-* Cleanup.
+* Cleanup and standardization.
 
 = 2.4.2.2 =
 * Fixed skip link focus.
