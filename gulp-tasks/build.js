@@ -229,27 +229,27 @@ function makeZip() {
 		variation = argv.variation;
 	}
 
-	var versionString = '';
-
-	// get theme version from styles.css
-	var contents = fs.readFileSync( "./style.css", "utf8" );
-
-	// split it by lines
-	var lines = contents.split( /[\r\n]/ );
-
-	function checkIfVersionLine( value, index, ar ) {
-		var myRegEx = /^[Vv]ersion:/;
-		return myRegEx.test( value );
-	}
-
-	// apply the filter
-	var versionLine = lines.filter( checkIfVersionLine );
-
-	versionString = versionLine[0].replace( /^[Vv]ersion:/, '' ).trim();
-	versionString = '-' + versionString.replace( /\./g, '-' );
+	// var versionString = '';
+	//
+	// // get theme version from styles.css
+	// var contents = fs.readFileSync( "./style.css", "utf8" );
+	//
+	// // split it by lines
+	// var lines = contents.split( /[\r\n]/ );
+	//
+	// function checkIfVersionLine( value, index, ar ) {
+	// 	var myRegEx = /^[Vv]ersion:/;
+	// 	return myRegEx.test( value );
+	// }
+	//
+	// // apply the filter
+	// var versionLine = lines.filter( checkIfVersionLine );
+	//
+	// versionString = versionLine[0].replace( /^[Vv]ersion:/, '' ).trim();
+	// versionString = '-' + versionString.replace( /\./g, '-' );
 
 	return gulp.src( './' )
-		.pipe( plugins.exec( 'cd ./../; rm -rf ' + variation[0].toUpperCase() + variation.slice( 1 ) + '*.zip; cd ./build/; zip -r -X ./../' + variation[0].toUpperCase() + variation.slice( 1 ) + '-Installer' + versionString + '.zip ./; cd ./../; rm -rf build' ) );
+		.pipe( plugins.exec( 'cd ./../; rm -rf ' + variation + '*.zip; cd ./build/; zip -r -X ./../' + variation + '.zip ./; cd ./../; rm -rf build' ) );
 }
 makeZip.description = 'Create the theme installer archive and delete the build folder';
 gulp.task( 'make-zip', makeZip );
