@@ -9,7 +9,6 @@ var gulp = require( 'gulp' ),
 	del = require( 'del' ),
 	fs = require( 'fs' ),
 	plugins = require( 'gulp-load-plugins' )(),
-	rsync = require('gulp-rsync'),
 	argv = require('yargs').argv,
 	cp = require('child_process');
 
@@ -46,7 +45,7 @@ function copyFolder() {
 			silent: true,
 			continueOnError: true // default: false
 		} ) )
-		.pipe(rsync({
+		.pipe(plugins.rsync({
 			root: dir,
 			destination: '../build/' + variation + '/',
 			// archive: true,
