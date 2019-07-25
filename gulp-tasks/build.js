@@ -139,11 +139,6 @@ function removeUnneededFiles() {
 		'components/phpunit*',
 		'components/style.css',
 
-		// These components are not used in the free version
-		'components/multipage',
-		'components/portfolio',
-		'components/woocommerce',
-
 		'variations',
 
 		'bin',

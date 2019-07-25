@@ -103,19 +103,3 @@ add_filter( 'pixelgrade_footer_display_sidebar', 'felt_prevent_footer_sidebar_on
  * END CUSTOMIZING THE FOOTERs
  * ==========================
  */
-
-/*========================*/
-/* CUSTOMIZING WOOCOMMERCE */
-/*========================*/
-
-function felt_output_dropcap_in_single_product_page() {
-	global $product;
-
-	echo '<div class="header-dropcap">' . esc_html( substr( $product->get_title(), 0, 1 ) ) . '</div>';
-}
-add_action( 'woocommerce_single_product_summary', 'felt_output_dropcap_in_single_product_page', 6 );
-
-/**
- * END CUSTOMIZING WOOCOMMERCE
- * ==========================
- */
