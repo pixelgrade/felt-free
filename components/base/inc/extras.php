@@ -523,7 +523,6 @@ function pixelgrade_autoload_dir( $path, $depth = 0, $method = 'require_once' ) 
 	try {
 		$iterator = new DirectoryIterator( $path );
 	} catch ( Exception $exception ) {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'We have failed to autoload this path: ' . $path . "\n" . ' There was this exception thrown: ' . $exception->getMessage(), '__components_txtd' ), null );
 		// Just bail.
 		return false;
 	}
