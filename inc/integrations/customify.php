@@ -187,12 +187,15 @@ function felt_lite_fill_customify_options( $options ) {
 			'type'  => 'hidden',
 			'options'   => array(
 				'header_navigation_links_color'   => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_DARK_PRIMARY,
 				),
 				'header_links_active_color'       => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_COLOR_PRIMARY,
 				),
 				'header_background'               => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_LIGHT_SECONDARY,
 					'css'     => array(
 						array(
@@ -225,7 +228,7 @@ function felt_lite_fill_customify_options( $options ) {
 					),
 				),
 				'header_sticky_text_color'         => array(
-					'type'    => 'color',
+					'type'    => 'hidden_control',
 					'label'   => esc_html__( '(S) Navigation Links Color', '__theme_txtd' ),
 					'live'    => true,
 					'default' => FELTLITE_SM_LIGHT_SECONDARY,
@@ -244,7 +247,7 @@ function felt_lite_fill_customify_options( $options ) {
 				),
 				'header_sticky_active_links_color' => array(
 					'default' => FELTLITE_SM_LIGHT_PRIMARY,
-					'type'    => 'color',
+					'type'    => 'hidden_control',
 					'label'   => esc_html__( '(S) Links Active Color', '__theme_txtd' ),
 					'live'    => true,
 					'css'     => array(
@@ -264,7 +267,7 @@ function felt_lite_fill_customify_options( $options ) {
 					),
 				),
 				'header_sticky_background'         => array(
-					'type'    => 'color',
+					'type'    => 'hidden_control',
 					'label'   => esc_html__( '(S) Header Background', '__theme_txtd' ),
 					'live'    => true,
 					'default' => FELTLITE_SM_COLOR_PRIMARY,
@@ -290,6 +293,7 @@ function felt_lite_fill_customify_options( $options ) {
 			'options'   => array(
 				'main_content_border_color'            => array(
 					'default' => '#F7F6F5',
+					'type'    => 'hidden_control',
 					'css'     => array(
 						array(
 							'property' => 'border-color',
@@ -298,6 +302,7 @@ function felt_lite_fill_customify_options( $options ) {
 					),
 				),
 				'main_content_page_title_color'        => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_DARK_PRIMARY,
 					'css' => array(
 						array(
@@ -307,6 +312,7 @@ function felt_lite_fill_customify_options( $options ) {
 					),
 				),
 				'main_content_body_text_color'         => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_DARK_SECONDARY,
 					'css'     => array(
 						array(
@@ -339,9 +345,11 @@ function felt_lite_fill_customify_options( $options ) {
 					),
 				),
 				'main_content_body_link_color'         => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_DARK_PRIMARY,
 				),
 				'main_content_body_link_active_color'  => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_COLOR_PRIMARY,
 					'css'     => array(
 						array(
@@ -359,6 +367,7 @@ function felt_lite_fill_customify_options( $options ) {
 					),
 				),
 				'main_content_heading_1_color'         => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_DARK_PRIMARY,
 					'css'     => array(
 						array(
@@ -368,6 +377,7 @@ function felt_lite_fill_customify_options( $options ) {
 					),
 				),
 				'main_content_heading_2_color'         => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_DARK_PRIMARY,
 					'css'     => array(
 						array(
@@ -377,6 +387,7 @@ function felt_lite_fill_customify_options( $options ) {
 					),
 				),
 				'main_content_heading_3_color'         => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_DARK_PRIMARY,
 					'css'     => array(
 						array(
@@ -386,6 +397,7 @@ function felt_lite_fill_customify_options( $options ) {
 					),
 				),
 				'main_content_heading_4_color'         => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_DARK_PRIMARY,
 					'css'     => array(
 						array(
@@ -395,6 +407,7 @@ function felt_lite_fill_customify_options( $options ) {
 					),
 				),
 				'main_content_heading_5_color'         => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_DARK_PRIMARY,
 					'css'     => array(
 						array(
@@ -404,6 +417,7 @@ function felt_lite_fill_customify_options( $options ) {
 					),
 				),
 				'main_content_heading_6_color'         => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_COLOR_PRIMARY,
 					'css'     => array(
 						array(
@@ -413,7 +427,7 @@ function felt_lite_fill_customify_options( $options ) {
 					),
 				),
 				'main_content_content_background_color'     => array(
-					'type'    => 'color',
+					'type'    => 'hidden_control',
 					'label'   => esc_html__( 'Content Background Color', '__components_txtd' ),
 					'live'    => true,
 					'default' => null, // this should be set by the theme (previously #F5FBFE)
@@ -431,6 +445,7 @@ function felt_lite_fill_customify_options( $options ) {
 			'type'  => 'hidden',
 			'options'   => array(
 				'footer_body_text_color'       => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_LIGHT_PRIMARY,
 					'css'     => array(
 						array(
@@ -445,9 +460,11 @@ function felt_lite_fill_customify_options( $options ) {
 					),
 				),
 				'footer_links_color'           => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_LIGHT_PRIMARY
 				),
 				'footer_background'            => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_DARK_SECONDARY,
 					'css'     => array(
 						array(
@@ -469,6 +486,7 @@ function felt_lite_fill_customify_options( $options ) {
 			'type'  => 'hidden',
 			'options'   => array(
 				'buttons_color'      => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_COLOR_PRIMARY,
 					'css'     => array(
 						array(
@@ -482,6 +500,7 @@ function felt_lite_fill_customify_options( $options ) {
 					),
 				),
 				'buttons_text_color' => array(
+					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_LIGHT_PRIMARY,
 					'css'     => array(
 						array(
