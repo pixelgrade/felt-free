@@ -188,11 +188,31 @@ function felt_lite_fill_customify_options( $options ) {
 			'options'   => array(
 				'header_navigation_links_color'   => array(
 					'type'    => 'hidden_control',
+					'live'    => true,
 					'default' => FELTLITE_SM_DARK_PRIMARY,
+					'css'     => array(
+						array(
+							'property' => 'color',
+							'selector' => '.c-navbar, .c-navbar li',
+						),
+					),
 				),
 				'header_links_active_color'       => array(
 					'type'    => 'hidden_control',
+					'live'    => true,
 					'default' => FELTLITE_SM_COLOR_PRIMARY,
+					'css'     => array(
+						array(
+							'property' => 'color',
+							'selector' => '
+								.c-navbar [class*="current-menu"],
+								.c-navbar li:hover',
+						),
+						array(
+							'property' => 'border-top-color',
+							'selector' => '.c-navbar [class*="children"]:hover:after',
+						),
+					),
 				),
 				'header_background'               => array(
 					'type'    => 'hidden_control',
@@ -301,14 +321,14 @@ function felt_lite_fill_customify_options( $options ) {
 						),
 					),
 				),
-				'main_content_page_title_color'        => array(
+				'main_content_page_title_color'             => array(
 					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_DARK_PRIMARY,
-					'css' => array(
+					'css'     => array(
 						array(
-							'property' => 'background-color',
-							'selector' => ''
-						)
+							'property' => 'color',
+							'selector' => '.u-page-title-color',
+						),
 					),
 				),
 				'main_content_body_text_color'         => array(
@@ -344,9 +364,16 @@ function felt_lite_fill_customify_options( $options ) {
 						),
 					),
 				),
-				'main_content_body_link_color'         => array(
+				'main_content_body_link_color'              => array(
 					'type'    => 'hidden_control',
+					'live'    => true,
 					'default' => FELTLITE_SM_DARK_PRIMARY,
+					'css'     => array(
+						array(
+							'property' => 'color',
+							'selector' => 'a',
+						),
+					),
 				),
 				'main_content_body_link_active_color'  => array(
 					'type'    => 'hidden_control',
@@ -426,15 +453,60 @@ function felt_lite_fill_customify_options( $options ) {
 						),
 					),
 				),
-				'main_content_content_background_color'     => array(
-					'type'    => 'hidden_control',
-					'label'   => esc_html__( 'Content Background Color', '__components_txtd' ),
-					'live'    => true,
-					'default' => null, // this should be set by the theme (previously #F5FBFE)
+				'main_content_content_background_color' => array(
+					'default' => FELTLITE_SM_LIGHT_PRIMARY,
+					'type'  => 'hidden_control',
 					'css'     => array(
 						array(
 							'property' => 'background-color',
-							'selector' => '.u-content-background, .mce-content-body',
+							'selector' => '
+								.mce-content-body,
+								.u-content-background,
+								.edit-post-visual-editor,
+								.c-search-overlay,
+								.single-post .widget-area--post,
+								.widget_featured_posts_carousel .slick-slider .slick-list:after,
+								.widget_promo_box--dark .c-promo__btn[class],
+								.nav--is-open .c-navbar__content'
+						),
+						array(
+							'property' => 'color',
+							'selector' => '
+                                .entry-content blockquote::before,
+                                .c-hero__content blockquote::before,
+                                .comment-content blockquote::before,
+                                .mce-content-body blockquote::before,
+                                .header-dropcap,
+                                div.jetpack-recipe div.jetpack-recipe-directions ol li:after, div.jetpack-recipe div.jetpack-recipe-directions ul li:after,
+                                .menu--primary .sub-menu.sub-menu li[class].hover>a,
+                                .menu--primary .sub-menu.sub-menu li[class] a,
+                                .widget_promo_box--dark,
+                                #content .sharedaddy[class] .sd-social-icon .sd-content.sd-content ul li[class*=\'share-\'] a.sd-button:before'
+						),
+						array(
+							'property'        => 'color',
+							'selector'        => '.c-card__letter',
+							'callback_filter' => 'felt_card_letter_color'
+						),
+						array(
+							'property' => 'outline-color',
+							'selector' => '.single-post .widget-area--post:before',
+						),
+						array(
+							'property'        => 'box-shadow',
+							'selector'        => '
+								.entry-content a:not([class]), 
+								.comment__content a',
+							'callback_filter' => 'links_box_shadow_cb'
+						),
+						array(
+							'property'        => 'box-shadow',
+							'selector'        => '
+								.entry-content a:not([class]):hover, 
+								.comment__content a:hover, 
+								.widget a:hover,
+								.c-footer .widget a:hover',
+							'callback_filter' => 'links_hover_box_shadow_cb'
 						),
 					),
 				),
@@ -459,9 +531,16 @@ function felt_lite_fill_customify_options( $options ) {
 						),
 					),
 				),
-				'footer_links_color'           => array(
+				'footer_links_color'             => array(
 					'type'    => 'hidden_control',
-					'default' => FELTLITE_SM_LIGHT_PRIMARY
+					'live'    => true,
+					'default' => FELTLITE_SM_LIGHT_PRIMARY,
+					'css'     => array(
+						array(
+							'property' => 'color',
+							'selector' => '.c-footer a',
+						),
+					),
 				),
 				'footer_background'            => array(
 					'type'    => 'hidden_control',
@@ -515,9 +594,16 @@ function felt_lite_fill_customify_options( $options ) {
 			'title' => '',
 			'type'  => 'hidden',
 			'options'   => array(
-				'blog_item_footer_color'             => array(
+				'blog_item_footer_color'                  => array(
 					'type'  => 'hidden_control',
+					'live'    => true,
 					'default' => FELTLITE_SM_DARK_PRIMARY,
+					'css'     => array(
+						array(
+							'property' => 'color',
+							'selector' => '.c-gallery--blog .c-card__footer',
+						),
+					),
 				),
 				'blog_item_title_color'              => array(
 					'type'  => 'hidden_control',
@@ -529,9 +615,16 @@ function felt_lite_fill_customify_options( $options ) {
 						),
 					),
 				),
-				'blog_item_excerpt_color'            => array(
+				'blog_item_excerpt_color'                 => array(
 					'type'  => 'hidden_control',
+					'live'    => true,
 					'default' => FELTLITE_SM_DARK_PRIMARY,
+					'css'     => array(
+						array(
+							'property' => 'color',
+							'selector' => '.c-gallery--blog .c-card__excerpt, .c-card__excerpt',
+						),
+					),
 				),
 				'blog_item_meta_primary_color'       => array(
 					'type'  => 'hidden_control',
