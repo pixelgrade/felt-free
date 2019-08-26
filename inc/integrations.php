@@ -10,7 +10,9 @@
  * Load Customify compatibility file.
  * https://pixelgrade.com/
  */
-require pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'integrations/customify.php' );
+if ( class_exists( 'PixCustomifyPlugin' )) {
+	require pixelgrade_get_parent_theme_file_path( pixelgrade_get_theme_relative_path( __DIR__ ) . 'integrations/customify.php' );
+}
 
 /**
  * Load Jetpack compatibility file.
