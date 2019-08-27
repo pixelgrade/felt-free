@@ -5683,6 +5683,9 @@ blockquote {
 .aspect-ratio-landscape .c-card__frame {
   padding-top: 75%; }
 
+.widget_featured_posts_slideshow .c-card__frame {
+  padding-top: 100%; }
+
 .c-card__link,
 .c-card__frame img {
   display: block; }
@@ -9012,7 +9015,8 @@ ul.page-numbers > li > :not(.prev):not(.next) {
 .featured-posts-slideshow .c-hero__background {
   will-change: transform;
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden; }
+          backface-visibility: hidden;
+  background-color: #333; }
 
 .featured-posts-slideshow .c-hero__background-mask {
   overflow: hidden; }

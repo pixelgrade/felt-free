@@ -25,6 +25,10 @@
   .aspect-ratio-landscape & {
     padding-top: percentage(3/4);
   }
+
+  .widget_featured_posts_slideshow & {
+    padding-top: 100%;
+  }
 }
 
 .c-card__link,

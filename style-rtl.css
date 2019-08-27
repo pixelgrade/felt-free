@@ -5683,6 +5683,9 @@ blockquote {
 .aspect-ratio-landscape .c-card__frame {
   padding-top: 75%; }
 
+.widget_featured_posts_slideshow .c-card__frame {
+  padding-top: 100%; }
+
 .c-card__link,
 .c-card__frame img {
   display: block; }
