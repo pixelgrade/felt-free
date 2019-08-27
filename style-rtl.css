@@ -8683,7 +8683,11 @@ ul.page-numbers > li > :not(.prev):not(.next) {
     margin-right: 0; }
   .widget--full [id="subscribe-submit"],
   .widget--content [id="subscribe-submit"] {
-    width: 100%; } }
+    width: 100%;
+    padding-left: 0; }
+    .widget--full [id="subscribe-submit"] button,
+    .widget--content [id="subscribe-submit"] button {
+      width: 100%; } }
 
 @media only screen and (min-width: 42.5em) {
   .widget--full [id="subscribe-email"],
@@ -9015,7 +9019,8 @@ ul.page-numbers > li > :not(.prev):not(.next) {
 .featured-posts-slideshow .c-hero__background {
   will-change: transform;
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden; }
+          backface-visibility: hidden;
+  background-color: #333; }
 
 .featured-posts-slideshow .c-hero__background-mask {
   overflow: hidden; }

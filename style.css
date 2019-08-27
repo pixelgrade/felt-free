@@ -8441,98 +8441,11 @@ ul.page-numbers > li > :not(.prev):not(.next) {
 
 .jetpack_subscription_widget [id="subscribe-submit"],
 .widget_blog_subscription [id="subscribe-submit"] {
-  display: inline-block;
-  /* [1] */
-  vertical-align: middle;
-  /* [2] */
-  text-align: center;
-  /* [4] */
-  cursor: pointer;
-  /* [5] */
-  position: relative;
-  padding-right: 100px;
-  text-align: left;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   padding-right: 0;
   background: none; }
-  .jetpack_subscription_widget [id="subscribe-submit"]:before, .jetpack_subscription_widget [id="subscribe-submit"]:after,
-  .widget_blog_subscription [id="subscribe-submit"]:before,
-  .widget_blog_subscription [id="subscribe-submit"]:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    z-index: 100;
-    color: inherit;
-    margin-top: -1px;
-    -webkit-transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
-    transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
-    -webkit-transition-property: -webkit-transform;
-    transition-property: -webkit-transform;
-    transition-property: transform;
-    transition-property: transform, -webkit-transform; }
-  .jetpack_subscription_widget [id="subscribe-submit"]:before,
-  .widget_blog_subscription [id="subscribe-submit"]:before {
-    width: 35px;
-    height: 1px;
-    background-color: currentColor; }
-    @media only screen and (max-width: 1360px) {
-      .jetpack_subscription_widget [id="subscribe-submit"]:before,
-      .widget_blog_subscription [id="subscribe-submit"]:before {
-        width: 27.48466px; } }
-    @media only screen and (max-width: 1024px) {
-      .jetpack_subscription_widget [id="subscribe-submit"]:before,
-      .widget_blog_subscription [id="subscribe-submit"]:before {
-        width: 22.62626px; } }
-    @media only screen and (max-width: 768px) {
-      .jetpack_subscription_widget [id="subscribe-submit"]:before,
-      .widget_blog_subscription [id="subscribe-submit"]:before {
-        width: 19.22747px; } }
-    @media only screen and (max-width: 320px) {
-      .jetpack_subscription_widget [id="subscribe-submit"]:before,
-      .widget_blog_subscription [id="subscribe-submit"]:before {
-        width: 16.71642px; } }
-  .jetpack_subscription_widget [id="subscribe-submit"]:after,
-  .widget_blog_subscription [id="subscribe-submit"]:after {
-    display: block;
-    width: 0;
-    height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    -webkit-transform: translate(0, calc(0.5px - 50%));
-            transform: translate(0, calc(0.5px - 50%)); }
-  @media only screen and (max-width: 1360px) {
-    .jetpack_subscription_widget [id="subscribe-submit"],
-    .widget_blog_subscription [id="subscribe-submit"] {
-      padding-right: 72.72727px; } }
-  @media only screen and (max-width: 1024px) {
-    .jetpack_subscription_widget [id="subscribe-submit"],
-    .widget_blog_subscription [id="subscribe-submit"] {
-      padding-right: 57.14286px; } }
-  @media only screen and (max-width: 768px) {
-    .jetpack_subscription_widget [id="subscribe-submit"],
-    .widget_blog_subscription [id="subscribe-submit"] {
-      padding-right: 47.05882px; } }
-  @media only screen and (max-width: 320px) {
-    .jetpack_subscription_widget [id="subscribe-submit"],
-    .widget_blog_subscription [id="subscribe-submit"] {
-      padding-right: 40px; } }
-  .jetpack_subscription_widget [id="subscribe-submit"]:before,
-  .widget_blog_subscription [id="subscribe-submit"]:before {
-    right: 2.33333em; }
-  .jetpack_subscription_widget [id="subscribe-submit"]:after,
-  .widget_blog_subscription [id="subscribe-submit"]:after {
-    right: calc(7em/3 - 5px);
-    border-left: 5px solid currentColor; }
-  .jetpack_subscription_widget [id="subscribe-submit"]:hover:before,
-  .widget_blog_subscription [id="subscribe-submit"]:hover:before {
-    -webkit-transform: translate3d(5px, 0, 0);
-            transform: translate3d(5px, 0, 0); }
-  .jetpack_subscription_widget [id="subscribe-submit"]:hover:after,
-  .widget_blog_subscription [id="subscribe-submit"]:hover:after {
-    -webkit-transform: translate3d(5px, calc(0.5px - 50%), 0);
-            transform: translate3d(5px, calc(0.5px - 50%), 0); }
   .jetpack_subscription_widget [id="subscribe-submit"] [type="submit"],
   .widget_blog_subscription [id="subscribe-submit"] [type="submit"] {
     position: relative;
@@ -8683,7 +8596,11 @@ ul.page-numbers > li > :not(.prev):not(.next) {
     margin-left: 0; }
   .widget--full [id="subscribe-submit"],
   .widget--content [id="subscribe-submit"] {
-    width: 100%; } }
+    width: 100%;
+    padding-right: 0; }
+    .widget--full [id="subscribe-submit"] button,
+    .widget--content [id="subscribe-submit"] button {
+      width: 100%; } }
 
 @media only screen and (min-width: 42.5em) {
   .widget--full [id="subscribe-email"],
