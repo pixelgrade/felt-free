@@ -186,3 +186,14 @@
   }
 
 }
+
+.slick-prev,
+.slick-next {
+  background-color: transparent;
+  border: 0;
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+}

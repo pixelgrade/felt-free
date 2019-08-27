@@ -9015,6 +9015,15 @@ ul.page-numbers > li > :not(.prev):not(.next) {
   .site-header--inverted .c-navbar li:hover {
     color: #FFFFFF; }
 
+.slick-prev,
+.slick-next {
+  background-color: transparent;
+  border: 0; }
+  .slick-prev:active, .slick-prev:hover,
+  .slick-next:active,
+  .slick-next:hover {
+    outline: 0; }
+
 .widget_top-posts ul {
   margin-left: -28px;
   margin-right: -28px;

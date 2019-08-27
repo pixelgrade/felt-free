@@ -30,8 +30,8 @@ export class Carousel extends BaseComponent {
   protected defaultSlickOptions = {
     dots: false,
     fade: false,
-    nextArrow: '<div class="slick-next"></div>',
-    prevArrow: '<div class="slick-prev"></div>',
+    nextArrow: '<button class="slick-next"></button>',
+    prevArrow: '<button class="slick-prev"></button>',
     speed: 500,
   };
   protected slickOptions = this.defaultSlickOptions;
