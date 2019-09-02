@@ -22,9 +22,13 @@
  * ============= */
 
 add_filter( 'customify_filter_fields', 'felt_lite_add_customify_options', 11, 1 );
-add_filter( 'customify_filter_fields', 'felt_lite_add_customify_style_manager_section', 12, 1 );
+add_filter( 'customify_filter_fields', 'felt_lite_add_customify_style_manager_section', 13, 1 );
 
-add_filter( 'customify_filter_fields', 'felt_lite_fill_customify_options', 20 );
+add_filter( 'customify_filter_fields', 'felt_lite_fill_customify_options', 50 );
+
+define( 'FELTLITE_SERIF_FONT', 'PT Serif' );
+define( 'FELTLITE_SANS_SERIF_FONT', 'HK Grotesk' );
+define( 'FELTLITE_SITE_TITLE_FONT', 'Caudex' );
 
 // Color Constants
 define( 'FELTLITE_SM_COLOR_PRIMARY', '#ff6000' );
@@ -140,12 +144,7 @@ function felt_lite_add_customify_style_manager_section( $options ) {
 		),
 	);
 
-	// The section might be already defined, thus we merge, not replace the entire section config.
-	if ( class_exists( 'Customify_Array' ) && method_exists( 'Customify_Array', 'array_merge_recursive_distinct' ) ) {
-		$options['sections']['style_manager_section'] = Customify_Array::array_merge_recursive_distinct( $options['sections']['style_manager_section'], $new_config );
-	} else {
-		$options['sections']['style_manager_section'] = array_merge_recursive( $options['sections']['style_manager_section'], $new_config );
-	}
+	$options['sections']['style_manager_section'] = Pixelgrade_Config::merge( $options['sections']['style_manager_section'], $new_config );
 
 	return $options;
 }
@@ -168,6 +167,7 @@ function felt_lite_fill_customify_options( $options ) {
 		'.button[class][class][class][class][class]'
 	) );
 
+	$buttons_default = implode( ',', $buttons );
 	$buttons_solid   = implode( ',', array_map( 'pixelgrade_prefix_solid_buttons', $buttons ) );
 	$buttons_outline = implode( ',', array_map( 'pixelgrade_prefix_outline_buttons', $buttons ) );
 
@@ -184,13 +184,55 @@ function felt_lite_fill_customify_options( $options ) {
 			'title' => '',
 			'type'  => 'hidden',
 			'options'   => array(
-
+				'widgets_title_position' => array(
+					'type'    => 'hidden_control',
+					'default'  => 'sideways',
+				),
 			)
 		),
 		'header_section'    => array(
 			'title' => '',
 			'type'  => 'hidden',
 			'options'   => array(
+				'header_logo_height'              => array(
+					'type'    => 'hidden_control',
+					'default' => 145,
+				),
+				'header_height'                   => array(
+					'type'    => 'hidden_control',
+					'default'     => 53,
+					'input_attrs' => array(
+						'step' => 1,
+					),
+					'css'         => array(
+						array(
+							'property' => 'min-height',
+							'selector' => '.menu--primary, .site-header-sticky',
+							'unit'     => 'px',
+						),
+					)
+				),
+				'header_navigation_links_spacing' => array(
+					'type'    => 'hidden_control',
+					'default' => 56,
+				),
+				'header_position'                 => array(
+					'type'    => 'hidden_control',
+					'default' => 'sticky'
+				),
+				'header_width'                    => array(
+					'type'    => 'hidden_control',
+					'default' => 'container',
+				),
+				'header_sides_spacing'            => array(
+					'type'    => 'hidden_control',
+					'default' => 30,
+				),
+				'header_links_active_style'       => array(
+					'type'    => 'hidden_control',
+					'default' => 'active'
+				),
+
 				'header_navigation_links_color'   => array(
 					'type'    => 'hidden_control',
 					'live'    => true,
@@ -307,12 +349,277 @@ function felt_lite_fill_customify_options( $options ) {
 						),
 					),
 				),
+
+				// [Sub Section] Sticky Header added bellow
+				// Fonts
+				'header_site_title_font'          => array(
+					'type'    => 'hidden_control',
+					'fields'  => array(
+						'font-size' => array(
+							'max' => 150,
+						),
+					),
+					'default' => array(
+						'font-family'    => FELTLITE_SITE_TITLE_FONT,
+						'font-weight'    => '700',
+						'font-size'      => 100,
+						'line-height'    => 1,
+						'letter-spacing' => 0,
+						'text-transform' => 'none',
+					),
+				),
+				'header_navigation_font'          => array(
+					'type'    => 'hidden_control',
+					'selector' => '.c-navbar, .c-reading-bar',
+					'default'  => array(
+						'font-family'    => FELTLITE_SANS_SERIF_FONT,
+						'font-weight'    => '500',
+						'font-size'      => 16,
+						'line-height'    => 1,
+						'letter-spacing' => 0,
+						'text-transform' => 'none'
+					),
+				),
 			)
 		),
 		'main_content'  => array(
 			'title' => '',
 			'type'  => 'hidden',
 			'options'   => array(
+				'main_content_container_width'         => array(
+					'type'    => 'hidden_control',
+					'default' => 1300,
+				),
+				'main_content_container_sides_spacing' => array(
+					'type'    => 'hidden_control',
+					'default' => 40,
+				),
+				'main_content_container_padding'       => array(
+					'type'    => 'hidden_control',
+					'default' => 0,
+				),
+				'main_content_content_width'           => array(
+					'type'    => 'hidden_control',
+					'default' => 885,
+					'css'     => array(
+						array(
+							'property' => 'max-width',
+							'selector' => '
+								.u-content-width>:not([class*=align]):not([class*=gallery]),
+								.mce-content-body:not([class*="page-template-full-width"]) > :not([class*="align"]):not([data-wpview-type*="gallery"])',
+							'unit'     => 'px',
+						),
+					),
+				),
+				'main_content_border_width'            => array(
+					'type'    => 'hidden_control',
+					'default' => 0,
+					'css'     => array(
+						array(
+							'property'        => 'border-width',
+							'selector'        => '.u-border-width',
+							'unit'            => 'px',
+							'callback_filter' => 'typeline_spacing_cb'
+						),
+						array(
+							'property'        => 'border-bottom-width',
+							'selector'        => '#infinite-footer',
+							'unit'            => 'px',
+							'callback_filter' => 'typeline_spacing_cb'
+						),
+						array(
+							'property'        => 'padding-left',
+							'selector'        => '.c-navbar__content',
+							'unit'            => 'px',
+							'callback_filter' => 'typeline_spacing_cb'
+						),
+						array(
+							'property'        => 'top',
+							'selector'        => '.site-header-sticky',
+							'unit'            => 'px',
+							'callback_filter' => 'typeline_spacing_cb'
+						),
+						array(
+							'property'        => 'left',
+							'selector'        => '.site-header-sticky',
+							'unit'            => 'px',
+							'callback_filter' => 'typeline_spacing_cb'
+						),
+						array(
+							'property'        => 'right',
+							'selector'        => '.site-header-sticky',
+							'unit'            => 'px',
+							'callback_filter' => 'typeline_spacing_cb'
+						),
+						array(
+							'property'        => 'left',
+							'selector'        => '.o-layout__full .featured-posts-slideshow .slick-prev',
+							'unit'            => 'px',
+							'callback_filter' => 'typeline_spacing_cb'
+						),
+						array(
+							'property'        => 'right',
+							'selector'        => '.o-layout__full .featured-posts-slideshow .slick-next',
+							'unit'            => 'px',
+							'callback_filter' => 'typeline_spacing_cb'
+						),
+						array(
+							'property'        => 'min-height',
+							'selector'        => '.admin-bar .site-header--inverted',
+							'unit'            => 'px',
+							'callback_filter' => 'felt_inverted_site_header_height'
+						)
+					),
+				),
+				'main_content_underlined_body_links'   => array(
+					'type'    => 'hidden_control',
+					'default' => 1,
+				),
+				'main_content_body_text_font'          => array(
+					'type'    => 'hidden_control',
+					'selector' => 'body, .c-reading-bar__wrapper-title',
+					'default'  => array(
+						'font-family'    => FELTLITE_SERIF_FONT,
+						'font-weight'    => '400',
+						'font-size'      => 20,
+						'line-height'    => 1.6,
+						'letter-spacing' => 0,
+						'text-transform' => 'none',
+					),
+				),
+
+				'main_content_page_title_font' => array(
+					'type'    => 'hidden_control',
+					'selector' => '.single .entry-title, .h0, .header-dropcap, .dropcap',
+					'default'  => array(
+						'font-family'    => FELTLITE_SANS_SERIF_FONT,
+						'font-weight'    => '700',
+						'font-size'      => 50,
+						'line-height'    => 1.2,
+						'letter-spacing' => 0,
+						'text-transform' => 'none',
+					),
+				),
+
+				'main_content_paragraph_text_font' => array(
+					'type'    => 'hidden_control',
+					'default' => array(
+						'font-family'    => FELTLITE_SERIF_FONT,
+						'font-weight'    => '400',
+						'font-size'      => 20,
+						'line-height'    => 1.5,
+						'letter-spacing' => 0,
+						'text-transform' => 'none',
+					),
+				),
+
+				'main_content_quote_block_font' => array(
+					'type'    => 'hidden_control',
+					'selector' => $options['sections']['main_content']['options']['main_content_quote_block_font']['selector'] . ',
+						.edit-post-visual-editor[class][class] blockquote',
+					'default'  => array(
+						'font-family'    => FELTLITE_SANS_SERIF_FONT,
+						'font-weight'    => '700',
+						'font-size'      => 50,
+						'line-height'    => 1.2,
+						'letter-spacing' => 0,
+						'text-transform' => 'none',
+					),
+				),
+
+				// [Sub Section] Headings Fonts
+				'main_content_heading_1_font'   => array(
+					'type'    => 'hidden_control',
+					'default' => array(
+						'font-family'    => FELTLITE_SANS_SERIF_FONT,
+						'font-weight'    => '700',
+						'font-size'      => 36,
+						'line-height'    => 1.1,
+						'letter-spacing' => 0,
+						'text-transform' => 'none',
+					),
+				),
+
+				'main_content_heading_2_font' => array(
+					'type'    => 'hidden_control',
+					'default' => array(
+						'font-family'    => FELTLITE_SANS_SERIF_FONT,
+						'font-weight'    => '700',
+						'font-size'      => 26,
+						'line-height'    => 1.2,
+						'letter-spacing' => 0,
+						'text-transform' => 'none',
+					),
+				),
+
+				'main_content_heading_3_font' => array(
+					'type'    => 'hidden_control',
+					'selector' => $options['sections']['main_content']['options']['main_content_heading_4_font']['selector'] . ', 
+						.post-navigation .nav-title
+					',
+					'default' => array(
+						'font-family'    => FELTLITE_SANS_SERIF_FONT,
+						'font-weight'    => '700',
+						'font-size'      => 21,
+						'line-height'    => 1.2,
+						'letter-spacing' => 0,
+						'text-transform' => 'none',
+					),
+				),
+
+				'main_content_heading_4_font' => array(
+					'type'    => 'hidden_control',
+					'selector' => $options['sections']['main_content']['options']['main_content_heading_4_font']['selector'] . ', 
+						.c-footer .menu,
+						.entry-content .sd-content,
+						.header-meta,
+						.intro
+					',
+					'default'  => array(
+						'font-family'    => FELTLITE_SANS_SERIF_FONT,
+						'font-weight'    => '500',
+						'font-size'      => 16,
+						'line-height'    => 1.2,
+						'letter-spacing' => 0,
+						'text-transform' => 'none',
+					),
+				),
+
+				'main_content_heading_5_font' => array(
+					'type'    => 'hidden_control',
+					'default'  => array(
+						'font-family'    => FELTLITE_SANS_SERIF_FONT,
+						'font-weight'    => '700',
+						'font-size'      => 14,
+						'line-height'    => 1.2,
+						'letter-spacing' => 0.15,
+						'text-transform' => 'uppercase',
+					),
+				),
+
+				'main_content_heading_6_font'           => array(
+					'type'    => 'hidden_control',
+					'selector' => $options['sections']['main_content']['options']['main_content_heading_6_font']['selector'] . ',
+						.comment-reply-title a, 
+						.comment__metadata a, 
+						.edit-link a, 
+						.logged-in-as a, 
+						.reply a,
+						.entry-content .cats[class] > a,
+						.entry-content .cats[class] > a:hover,
+						.post-navigation .nav-links__label,
+						.c-author__links
+					',
+					'default' => array(
+						'font-family'    => FELTLITE_SANS_SERIF_FONT,
+						'font-weight'    => '500',
+						'font-size'      => 13,
+						'line-height'    => 1.2,
+						'letter-spacing' => 0.15,
+						'text-transform' => 'uppercase',
+					),
+				),
+
 				'main_content_border_color'            => array(
 					'default' => '#F7F6F5',
 					'type'    => 'hidden_control',
@@ -518,6 +825,64 @@ function felt_lite_fill_customify_options( $options ) {
 			'title' => '',
 			'type'  => 'hidden',
 			'options'   => array(
+				// [Section] Layout
+				'copyright_text'               => array(
+					'type'    => 'hidden_control',
+					'default' => esc_html__( '&copy; %year% %site-title%.', '__theme_txtd' ),
+				),
+				'footer_top_spacing'           => array(
+					'type'    => 'hidden_control',
+					'default' => 80,
+					'css'     => array(
+						// Component
+						array(
+							'property'        => 'padding-top',
+							'selector'        => '.u-footer-top-spacing',
+							'unit'            => 'px',
+							'callback_filter' => 'typeline_spacing_cb',
+						),
+						// Custom for Felt
+						array(
+							'property'        => 'margin-top',
+							'selector'        => '.c-footer__zone:not(:empty)+.c-footer__zone',
+							'unit'            => 'px',
+							'callback_filter' => 'typeline_spacing_cb',
+						),
+					),
+				),
+				'footer_bottom_spacing'        => array(
+					'type'    => 'hidden_control',
+					'default' => 56,
+					'css'     => array(
+						// Component
+						array(
+							'property'        => 'padding-bottom',
+							'selector'        => '.u-footer-bottom-spacing',
+							'unit'            => 'px',
+							'callback_filter' => 'typeline_spacing_cb',
+						),
+						// Custom for Felt
+						array(
+							'property'        => 'padding-top',
+							'selector'        => '.c-footer__zone--bottom:not(:first-child)',
+							'unit'            => 'px',
+							'callback_filter' => 'typeline_spacing_cb',
+						),
+					),
+				),
+				'footer_hide_back_to_top_link' => array(
+					'type'    => 'hidden_control',
+					'default' => false,
+				),
+				'footer_hide_credits'          => array(
+					'type'    => 'hidden_control',
+					'default' => false,
+				),
+				'footer_layout'                => array(
+					'type'    => 'hidden_control',
+					'default' => 'row',
+				),
+
 				'footer_body_text_color'       => array(
 					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_LIGHT_PRIMARY,
@@ -566,6 +931,14 @@ function felt_lite_fill_customify_options( $options ) {
 			'title' => '',
 			'type'  => 'hidden',
 			'options'   => array(
+				'buttons_style'      => array(
+					'type'    => 'hidden_control',
+					'default' => 'solid'
+				),
+				'buttons_shape'      => array(
+					'type'    => 'hidden_control',
+					'default' => 'square'
+				),
 				'buttons_color'      => array(
 					'type'    => 'hidden_control',
 					'default' => FELTLITE_SM_COLOR_PRIMARY,
@@ -590,12 +963,104 @@ function felt_lite_fill_customify_options( $options ) {
 						)
 					),
 				),
+				'buttons_font'       => array(
+					'type'    => 'hidden_control',
+					'selector' => $buttons_default,
+					'default'  => array(
+						'font-family'    => FELTLITE_SANS_SERIF_FONT,
+						'font-weight'    => '500',
+						'font-size'      => 16,
+						'line-height'    => 1.2,
+						'letter-spacing' => 0,
+					),
+				),
 			)
 		),
 		'blog_grid' => array(
 			'title' => '',
 			'type'  => 'hidden',
 			'options'   => array(
+				'blog_grid_width'                    => array(
+					'type'    => 'hidden_control',
+					'default' => 1300,
+				),
+				'blog_container_sides_spacing'       => array(
+					'type'    => 'hidden_control',
+					'default' => 60,
+				),
+				'blog_grid_layout'                   => array(
+					'type'    => 'hidden_control',
+					'default' => 'regular',
+				),
+				'blog_items_aspect_ratio'            => array(
+					'type'    => 'hidden_control',
+					'default' => 120,
+					'css'     => array(
+						array(
+							'property'        => 'dummy',
+							'selector'        => '.c-card__frame',
+							'callback_filter' => 'pixelgrade_aspect_ratio_cb',
+							'unit'            => '%',
+						),
+					),
+				),
+				'blog_items_per_row'                 => array(
+					'type'    => 'hidden_control',
+					'default' => 3,
+				),
+				'blog_items_vertical_spacing'        => array(
+					'type'    => 'hidden_control',
+					'default' => 40,
+				),
+				'blog_items_horizontal_spacing'      => array(
+					'type'    => 'hidden_control',
+					'default' => 40,
+				),
+				// [Sub Section] Items Title
+				'blog_items_title_position'          => array(
+					'type'    => 'hidden_control',
+					'default' => 'below',
+				),
+				'blog_items_title_alignment_nearby'  => array(
+					'type'    => 'hidden_control',
+					'default' => 'left',
+				),
+				'blog_items_title_alignment_overlay' => array(
+					'type'    => 'hidden_control',
+					'default' => 'middle-center',
+				),
+				// Title Visiblity
+				'blog_items_title_visibility'        => array(
+					'type'    => 'hidden_control',
+					'default' => 1,
+				),
+				// Excerpt Visiblity
+				'blog_items_excerpt_visibility'      => array(
+					'type'    => 'hidden_control',
+					'default' => 1,
+				),
+				// [Sub Section] Items Meta
+				'blog_items_primary_meta'            => array(
+					'type'    => 'hidden_control',
+					'default' => 'category',
+				),
+				'blog_items_secondary_meta'          => array(
+					'type'    => 'hidden_control',
+					'default' => 'date',
+				),
+				'blog_items_heading'             => array(
+					'type'    => 'hidden_control',
+					'default' => 'title',
+				),
+				'blog_items_content'             => array(
+					'type'    => 'hidden_control',
+					'default' => 'excerpt',
+				),
+				'blog_items_footer'             => array(
+					'type'    => 'hidden_control',
+					'default' => 'read_more',
+				),
+
 				'blog_item_footer_color'                  => array(
 					'type'  => 'hidden_control',
 					'live'    => true,
@@ -607,6 +1072,17 @@ function felt_lite_fill_customify_options( $options ) {
 						),
 					),
 				),
+				'blog_item_footer_font'             => array(
+					'type'    => 'hidden_control',
+					'default' => array(
+						'font-family'    => 'IBM Plex Sans',
+						'font-weight'    => '500',
+						'font-size'      => 16,
+						'line-height'    => 1.3,
+						'letter-spacing' => 0,
+						'text-transform' => 'none',
+					),
+				),
 				'blog_item_title_color'              => array(
 					'type'  => 'hidden_control',
 					'default' => FELTLITE_SM_DARK_PRIMARY,
@@ -615,6 +1091,17 @@ function felt_lite_fill_customify_options( $options ) {
 							'property' => 'color',
 							'selector' => '.c-card__title',
 						),
+					),
+				),
+				'blog_item_excerpt_font'             => array(
+					'type'    => 'hidden_control',
+					'default' => array(
+						'font-family'    => FELTLITE_SERIF_FONT,
+						'font-weight'    => '400',
+						'font-size'      => 16,
+						'line-height'    => 1.5,
+						'letter-spacing' => 0,
+						'text-transform' => 'none',
 					),
 				),
 				'blog_item_excerpt_color'                 => array(
@@ -658,15 +1145,48 @@ function felt_lite_fill_customify_options( $options ) {
 						),
 					),
 				),
+
+				// [Sub Section] Thumbnail Hover
+				'blog_item_thumbnail_hover_opacity'  => array(
+					'type'    => 'hidden_control',
+					'default' => 1,
+					'css'     => array(
+						array(
+							'property' => 'opacity',
+							'selector' => '.c-card:hover .c-card__frame',
+							'unit'     => '',
+						),
+					),
+				),
+				'blog_item_title_font'               => array(
+					'type'    => 'hidden_control',
+					'selector' => '.c-card__title, .c-card__letter',
+					'default'  => array(
+						'font-family'    => FELTLITE_SANS_SERIF_FONT,
+						'font-weight'    => '700',
+						'font-size'      => 21,
+						'line-height'    => 1.3,
+						'letter-spacing' => 0,
+						'text-transform' => 'none',
+					),
+				),
+				'blog_item_meta_font'                => array(
+					'type'    => 'hidden_control',
+					'selector' => '.c-meta__primary, .c-meta__secondary',
+					'default'  => array(
+						'font-family'    => FELTLITE_SANS_SERIF_FONT,
+						'font-weight'    => '500',
+						'font-size'      => 13,
+						'line-height'    => 1.1,
+						'letter-spacing' => 0.1,
+						'text-transform' => 'uppercase',
+					),
+				),
 			)
 		)
 	);
 
-	if ( class_exists( 'Customify_Array' ) && method_exists( 'Customify_Array', 'array_merge_recursive_distinct' ) ) {
-		$options['sections'] = Customify_Array::array_merge_recursive_distinct( $options['sections'], $new_config );
-	} else {
-		$options['sections'] = array_merge_recursive( $options['sections'], $new_config );
-	}
+	$options['sections'] = Pixelgrade_Config::merge( $options['sections'], $new_config );
 
 	return $options;
 }

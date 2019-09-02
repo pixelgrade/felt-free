@@ -1,7 +1,7 @@
 Theme Name: Felt
 Contributors: pixelgrade, babbardel, vlad.olaru, razvanonofrei
 Description: Felt is a free magazine-style WordPress theme for publishers of all kinds who want to showcase their fresh ideas. Thanks to the modular layout, multiple widget areas and a hand-full of custom and unique widgets, you can highlight what's truly important for your tribe and stand out from the crowd. Its responsive design, multilingual support, and compatibility with the new Gutenberg editor will allow you to adapt this theme to multiple usage scenarios and personalize it to match your needs. No matter if you are a blogger, journalist, designer, DIY artist, photographer or small entrepreneur, this theme will fit perfectly every time.
-Version: 2.4.3
+Version: 2.4.2.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: felt
@@ -10,7 +10,7 @@ Tags: blog, entertainment, translation-ready, theme-options, featured-images, cu
 Requires at least: 4.9.9
 Tested up to: 5.2.2
 Requires PHP: 5.3.0
-Stable tag: 2.4.3
+Stable tag: 2.4.2.5
 
 Felt is a free magazine-style WordPress theme for publishers who want to showcase their fresh ideas.
 
@@ -26,9 +26,10 @@ Felt is a free magazine-style WordPress theme for publishers of all kinds who wa
 
 == Changelog ==
 
-= 2.4.3 =
-* Added Style Manager.
-* Added Customify recommended plugin.
+= 2.4.2.5 =
+* Added new color customization features via our Customify plugin (Style Manager).
+* Made sure that keyboard navigation works as expected (accessibility enhancement).
+* Minor styling fixes.
 
 = 2.4.2.4 =
 * Added Pixelgrade Assistant recommended plugin.

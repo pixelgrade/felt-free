@@ -625,6 +625,7 @@ if ( ! class_exists( 'Pixelgrade_Config' ) ) :
 		 * @return bool
 		 */
 		public static function validateCustomizerSectionConfigDefaults( $modified_config, $original_config, $filter_to_use = '' ) {
+			return false;
 			if ( ! is_array( $modified_config ) || ! is_array( $original_config ) ) {
 				return false;
 			}
