@@ -172,10 +172,8 @@ function felt_scripts() {
 	wp_enqueue_style( 'felt-google-fonts', felt_google_fonts_url() );
 
 	/* Default Self-hosted Fonts should be loaded when Customify is off */
-	if ( ! class_exists( 'PixCustomifyPlugin' ) || ! pixelgrade_user_has_access( 'pro-features' ) ) {
-		wp_register_style( 'felt-fonts-hkgrotesk', felt_hkgrotesk_font_url() );
-		$main_style_deps[] = 'felt-fonts-hkgrotesk';
-	}
+	wp_register_style( 'felt-fonts-hkgrotesk', felt_hkgrotesk_font_url() );
+	$main_style_deps[] = 'felt-fonts-hkgrotesk';
 
 	/* The main theme stylesheet */
 	wp_enqueue_style( 'felt-style', get_template_directory_uri() . '/style.css', $main_style_deps, $theme->get( 'Version' ) );

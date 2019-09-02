@@ -140,7 +140,12 @@ function felt_lite_add_customify_style_manager_section( $options ) {
 		),
 	);
 
-	$options['sections']['style_manager_section'] = Customify_Array::array_merge_recursive_distinct( $options['sections']['style_manager_section'], $new_config );
+	// The section might be already defined, thus we merge, not replace the entire section config.
+	if ( class_exists( 'Customify_Array' ) && method_exists( 'Customify_Array', 'array_merge_recursive_distinct' ) ) {
+		$options['sections']['style_manager_section'] = Customify_Array::array_merge_recursive_distinct( $options['sections']['style_manager_section'], $new_config );
+	} else {
+		$options['sections']['style_manager_section'] = array_merge_recursive( $options['sections']['style_manager_section'], $new_config );
+	}
 
 	return $options;
 }
@@ -249,7 +254,6 @@ function felt_lite_fill_customify_options( $options ) {
 				),
 				'header_sticky_text_color'         => array(
 					'type'    => 'hidden_control',
-					'label'   => esc_html__( '(S) Navigation Links Color', '__theme_txtd' ),
 					'live'    => true,
 					'default' => FELTLITE_SM_LIGHT_SECONDARY,
 					'css'     => array(
@@ -268,7 +272,6 @@ function felt_lite_fill_customify_options( $options ) {
 				'header_sticky_active_links_color' => array(
 					'default' => FELTLITE_SM_LIGHT_PRIMARY,
 					'type'    => 'hidden_control',
-					'label'   => esc_html__( '(S) Links Active Color', '__theme_txtd' ),
 					'live'    => true,
 					'css'     => array(
 						array(
@@ -288,7 +291,6 @@ function felt_lite_fill_customify_options( $options ) {
 				),
 				'header_sticky_background'         => array(
 					'type'    => 'hidden_control',
-					'label'   => esc_html__( '(S) Header Background', '__theme_txtd' ),
 					'live'    => true,
 					'default' => FELTLITE_SM_COLOR_PRIMARY,
 					'css'     => array(
@@ -486,7 +488,7 @@ function felt_lite_fill_customify_options( $options ) {
 						array(
 							'property'        => 'color',
 							'selector'        => '.c-card__letter',
-							'callback_filter' => 'felt_card_letter_color'
+							'callback_filter' => 'felt_lite_card_letter_color'
 						),
 						array(
 							'property' => 'outline-color',
@@ -497,7 +499,7 @@ function felt_lite_fill_customify_options( $options ) {
 							'selector'        => '
 								.entry-content a:not([class]), 
 								.comment__content a',
-							'callback_filter' => 'links_box_shadow_cb'
+							'callback_filter' => 'felt_lite_links_box_shadow_cb'
 						),
 						array(
 							'property'        => 'box-shadow',
@@ -506,7 +508,7 @@ function felt_lite_fill_customify_options( $options ) {
 								.comment__content a:hover, 
 								.widget a:hover,
 								.c-footer .widget a:hover',
-							'callback_filter' => 'links_hover_box_shadow_cb'
+							'callback_filter' => 'felt_lite_links_hover_box_shadow_cb'
 						),
 					),
 				),
@@ -660,12 +662,16 @@ function felt_lite_fill_customify_options( $options ) {
 		)
 	);
 
-	$options['sections'] = Customify_Array::array_merge_recursive_distinct( $options['sections'], $new_config );
+	if ( class_exists( 'Customify_Array' ) && method_exists( 'Customify_Array', 'array_merge_recursive_distinct' ) ) {
+		$options['sections'] = Customify_Array::array_merge_recursive_distinct( $options['sections'], $new_config );
+	} else {
+		$options['sections'] = array_merge_recursive( $options['sections'], $new_config );
+	}
 
 	return $options;
 }
 
-function felt_colorislight( $hex ) {
+function felt_lite_colorislight( $hex ) {
 	$hex       = str_replace( '#', '', $hex );
 	$r         = ( hexdec( substr( $hex, 0, 2 ) ) / 255 );
 	$g         = ( hexdec( substr( $hex, 2, 2 ) ) / 255 );
@@ -675,14 +681,14 @@ function felt_colorislight( $hex ) {
 	return ( $lightness >= 70 ? true : false );
 }
 
-function felt_card_letter_color( $value, $selector, $property, $unit ) {
+function felt_lite_card_letter_color( $value, $selector, $property, $unit ) {
 	$output              = '';
 	$no_image_background = pixelgrade_option( 'header_background' );
 	$image_background    = pixelgrade_option( 'blog_item_thumbnail_background' );
 	$dark_color          = pixelgrade_option( 'blog_item_title_color' );
 	$light_color         = pixelgrade_option( 'main_content_content_background_color' );
-	$no_image_color      = felt_colorislight( $no_image_background ) ? $dark_color : $light_color;
-	$image_color         = felt_colorislight( $image_background ) ? $dark_color : $light_color;
+	$no_image_color      = felt_lite_colorislight( $no_image_background ) ? $dark_color : $light_color;
+	$image_color         = felt_lite_colorislight( $image_background ) ? $dark_color : $light_color;
 	$output              .= $selector . ' {' . PHP_EOL .
 	                        $property . ': ' . $no_image_color . ';' . PHP_EOL .
 	                        '}' . PHP_EOL .
@@ -694,7 +700,7 @@ function felt_card_letter_color( $value, $selector, $property, $unit ) {
 }
 
 // @todo check this out
-function links_box_shadow_cb( $value, $selector, $property, $unit ) {
+function felt_lite_links_box_shadow_cb( $value, $selector, $property, $unit ) {
 	$output = '';
 	$output .= $selector . ' {' . PHP_EOL .
 	           $property . ': ' . $value . ' 0 1.5em inset;' . PHP_EOL .
@@ -703,9 +709,9 @@ function links_box_shadow_cb( $value, $selector, $property, $unit ) {
 	return $output;
 }
 
-function links_box_shadow_cb_customizer_preview() {
+function felt_lite_links_box_shadow_cb_customizer_preview() {
 	$js = "
-function links_box_shadow_cb( value, selector, property, unit ) {
+function felt_lite_links_box_shadow_cb( value, selector, property, unit ) {
     var css = '',
         style = document.getElementById('felt_links_box_shadow_cb_style_tag'),
         head = document.head || document.getElementsByTagName('head')[0];
@@ -728,9 +734,9 @@ function links_box_shadow_cb( value, selector, property, unit ) {
 }" . PHP_EOL;
 	wp_add_inline_script( 'customify-previewer-scripts', $js );
 }
-add_action( 'customize_preview_init', 'links_box_shadow_cb_customizer_preview', 20 );
+add_action( 'customize_preview_init', 'felt_lite_links_box_shadow_cb_customizer_preview', 20 );
 
-function links_hover_box_shadow_cb( $value, $selector, $property, $unit ) {
+function felt_lite_links_hover_box_shadow_cb( $value, $selector, $property, $unit ) {
 	$output = '';
 	$output .= $selector . ' {' . PHP_EOL .
 	           $property . ': ' . $value . ' 0 0 inset;' . PHP_EOL .
@@ -739,11 +745,11 @@ function links_hover_box_shadow_cb( $value, $selector, $property, $unit ) {
 	return $output;
 }
 
-function links_hover_box_shadow_cb_customizer_preview() {
+function felt_lite_links_hover_box_shadow_cb_customizer_preview() {
 	$js = "
-function links_hover_box_shadow_cb( value, selector, property, unit ) {
+function felt_lite_links_hover_box_shadow_cb( value, selector, property, unit ) {
     var css = '',
-        style = document.getElementById('links_hover_box_shadow_cb_style_tag'),
+        style = document.getElementById('felt_lite_links_hover_box_shadow_cb_style_tag'),
         head = document.head || document.getElementsByTagName('head')[0];
     css += selector + ' {' +
         property + ': ' + value + ' 0 0 inset;' +
@@ -752,7 +758,7 @@ function links_hover_box_shadow_cb( value, selector, property, unit ) {
         style.innerHTML = css;
     } else {
         style = document.createElement('style');
-        style.setAttribute('id', 'links_hover_box_shadow_cb_style_tag');
+        style.setAttribute('id', 'felt_lite_links_hover_box_shadow_cb_style_tag');
         style.type = 'text/css';
         if ( style.styleSheet ) {
             style.styleSheet.cssText = css;
@@ -764,17 +770,9 @@ function links_hover_box_shadow_cb( value, selector, property, unit ) {
 }" . PHP_EOL;
 	wp_add_inline_script( 'customify-previewer-scripts', $js );
 }
-add_action( 'customize_preview_init', 'links_hover_box_shadow_cb_customizer_preview', 20 );
+add_action( 'customize_preview_init', 'felt_lite_links_hover_box_shadow_cb_customizer_preview', 20 );
 
-function felt_inverted_site_header_height( $value, $selector, $property, $unit ) {
-	$output = $selector . ' { ' .
-	          $property . ': calc(100vh - ' . $value . $unit . ');' .
-	          '}';
-
-	return $output;
-}
-
-function felt_add_customify_theme_fonts( $fonts ) {
+function felt_lite_add_customify_theme_fonts( $fonts ) {
 	$fonts['HK Grotesk'] = array(
 		'family'   => 'HK Grotesk',
 		'src'      => get_template_directory_uri() . '/assets/fonts/hkgrotesk/stylesheet.css',
@@ -783,13 +781,13 @@ function felt_add_customify_theme_fonts( $fonts ) {
 
 	return $fonts;
 }
-add_filter( 'customify_theme_fonts', 'felt_add_customify_theme_fonts' );
+add_filter( 'customify_theme_fonts', 'felt_lite_add_customify_theme_fonts' );
 
 function felt_lite_add_default_color_palette( $color_palettes ) {
 
 	$color_palettes = array_merge( array(
 		'default' => array(
-			'label'   => esc_html__( 'Theme Default', 'felt' ),
+			'label'   => esc_html__( 'Theme Default', '__theme_txtd' ),
 			'preview' => array(
 				'background_image_url' => 'https://cloud.pixelgrade.com/wp-content/uploads/2018/09/vivid-autumn-palette-400x156.png',
 			),
@@ -809,5 +807,4 @@ function felt_lite_add_default_color_palette( $color_palettes ) {
 
 	return $color_palettes;
 }
-
 add_filter( 'customify_get_color_palettes', 'felt_lite_add_default_color_palette' );
