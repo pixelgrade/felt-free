@@ -1203,7 +1203,7 @@ function felt_lite_colorislight( $hex ) {
 
 function felt_lite_card_letter_color( $value, $selector, $property, $unit ) {
 	$output              = '';
-	$no_image_background = pixelgrade_option( 'header_background' );
+	$no_image_background = pixelgrade_option( 'blog_item_title_color' );
 	$image_background    = pixelgrade_option( 'blog_item_thumbnail_background' );
 	$dark_color          = pixelgrade_option( 'blog_item_title_color' );
 	$light_color         = pixelgrade_option( 'main_content_content_background_color' );

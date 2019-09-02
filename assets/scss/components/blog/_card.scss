@@ -1,3 +1,16 @@
+.c-card {
+  &:focus-within {
+    .c-card__letter {
+      opacity: .7;
+      transform: translateY(-50%) translateX(-50%);
+    }
+
+    .c-card__frame img {
+      opacity: .7;
+    }
+  }
+}
+
 .c-card__meta[class][class] {
 
   a {
