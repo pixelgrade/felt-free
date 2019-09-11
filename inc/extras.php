@@ -134,7 +134,7 @@ if ( ! function_exists( 'felt_google_fonts_url' ) ) :
 		$fonts_url = '';
 		$fonts     = array();
 		$subsets   = 'latin,latin-ext';
-
+		$display   = 'swap';
 
 		/* Translators: If there are characters in your language that are not
 		* supported by Playfair Display, translate this to 'off'. Do not translate
@@ -185,6 +185,7 @@ if ( ! function_exists( 'felt_google_fonts_url' ) ) :
 			$fonts_url = add_query_arg( array(
 				'family' => rawurlencode( implode( '|', $fonts ) ),
 				'subset' => rawurlencode( $subsets ),
+				'display'=> rawurlencode( $display ),
 			), '//fonts.googleapis.com/css' );
 		}
 
