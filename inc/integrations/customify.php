@@ -467,7 +467,7 @@ function felt_lite_fill_customify_options( $options ) {
 							'property'        => 'min-height',
 							'selector'        => '.admin-bar .site-header--inverted',
 							'unit'            => 'px',
-							'callback_filter' => 'felt_inverted_site_header_height'
+							'callback_filter' => 'felt_lite_inverted_site_header_height'
 						)
 					),
 				),
@@ -1328,3 +1328,11 @@ function felt_lite_add_default_color_palette( $color_palettes ) {
 	return $color_palettes;
 }
 add_filter( 'customify_get_color_palettes', 'felt_lite_add_default_color_palette' );
+
+function felt_lite_inverted_site_header_height( $value, $selector, $property, $unit ) {
+	$output = $selector . ' { ' .
+	          $property . ': calc(100vh - ' . $value . $unit . ');' .
+	          '}';
+
+	return $output;
+}
