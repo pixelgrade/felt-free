@@ -12011,7 +12011,7 @@ h1.site-title {
   font-weight: 700;
   float: right;
   padding-left: 0.1em;
-  margin-top: -0.05em;
+  margin-top: 0;
   margin-right: -0.05em;
   margin-bottom: -.1em;
   text-shadow: -3px 3px 0 rgba(56, 60, 80, 0.22); }
@@ -12057,7 +12057,7 @@ h1.site-title {
         margin-bottom: 10.42442px; } }
   .dropcap[class] {
     font-size: 5.4em;
-    line-height: 0.9; }
+    line-height: 1; }
   .dropcap[class]:before, .dropcap[class]:after {
     content: none; }
 
