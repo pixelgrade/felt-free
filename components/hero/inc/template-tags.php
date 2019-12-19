@@ -873,7 +873,7 @@ function pixelgrade_hero_the_background_image( $slide = null, $opacity = 100 ) {
 
 	if ( ! empty( $image_full_size[0] ) ) {
 		// The responsive image
-		$image_markup = '<img class="c-hero__image" itemprop="image" src="' . esc_url( $image_full_size[0] ) . '" alt="' . esc_attr( pixelgrade_hero_get_img_alt( $slide['post_id'] ) ) . '" ' . $opacity . '>';
+		$image_markup = '<img class="c-hero__image" itemprop="image" src="' . esc_url( $image_full_size[0] ) . '"  loading="lazy" alt="' . esc_attr( pixelgrade_hero_get_img_alt( $slide['post_id'] ) ) . '" ' . $opacity . '>';
 		$output       .= wp_image_add_srcset_and_sizes( $image_markup, $image_meta, $slide['post_id'] ) . "\n";
 	}
 
