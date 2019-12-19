@@ -825,6 +825,202 @@
       .edit-post-visual-editor.editor-styles-wrapper .editor-post-title__block,
       .edit-post-visual-editor.editor-styles-wrapper .wp-block-paragraph {
         font-size: 17.41935px; } }
+  .edit-post-visual-editor.editor-styles-wrapper .h1, .edit-post-visual-editor.editor-styles-wrapper h1 {
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 36px;
+    line-height: 1.22;
+    font-weight: 700;
+    color: #161616; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h1, .edit-post-visual-editor.editor-styles-wrapper h1 {
+        font-size: 31.61677px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h1, .edit-post-visual-editor.editor-styles-wrapper h1 {
+        font-size: 28.18505px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h1, .edit-post-visual-editor.editor-styles-wrapper h1 {
+        font-size: 25.42536px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h1, .edit-post-visual-editor.editor-styles-wrapper h1 {
+        font-size: 23.15789px; } }
+    .edit-post-visual-editor.editor-styles-wrapper .h1:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h1:not(:last-child) {
+      margin-bottom: 35px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h1:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h1:not(:last-child) {
+          margin-bottom: 27.48466px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h1:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h1:not(:last-child) {
+          margin-bottom: 22.62626px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h1:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h1:not(:last-child) {
+          margin-bottom: 19.22747px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h1:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h1:not(:last-child) {
+          margin-bottom: 16.71642px; } }
+  .edit-post-visual-editor.editor-styles-wrapper .h2, .edit-post-visual-editor.editor-styles-wrapper h2 {
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 26px;
+    line-height: 1.19;
+    font-weight: 700;
+    color: #161616; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h2, .edit-post-visual-editor.editor-styles-wrapper h2 {
+        font-size: 24.04357px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h2, .edit-post-visual-editor.editor-styles-wrapper h2 {
+        font-size: 22.36096px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h2, .edit-post-visual-editor.editor-styles-wrapper h2 {
+        font-size: 20.89845px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h2, .edit-post-visual-editor.editor-styles-wrapper h2 {
+        font-size: 19.61551px; } }
+    .edit-post-visual-editor.editor-styles-wrapper .h2:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h2:not(:last-child) {
+      margin-bottom: 35px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h2:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h2:not(:last-child) {
+          margin-bottom: 27.48466px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h2:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h2:not(:last-child) {
+          margin-bottom: 22.62626px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h2:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h2:not(:last-child) {
+          margin-bottom: 19.22747px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h2:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h2:not(:last-child) {
+          margin-bottom: 16.71642px; } }
+  .edit-post-visual-editor.editor-styles-wrapper .h3, .edit-post-visual-editor.editor-styles-wrapper h3 {
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 21px;
+    line-height: 1.19;
+    font-weight: 700;
+    color: #161616; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h3, .edit-post-visual-editor.editor-styles-wrapper h3 {
+        font-size: 20.13664px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h3, .edit-post-visual-editor.editor-styles-wrapper h3 {
+        font-size: 19.34147px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h3, .edit-post-visual-editor.editor-styles-wrapper h3 {
+        font-size: 18.60671px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h3, .edit-post-visual-editor.editor-styles-wrapper h3 {
+        font-size: 17.92574px; } }
+    .edit-post-visual-editor.editor-styles-wrapper .h3:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h3:not(:last-child) {
+      margin-bottom: 35px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h3:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h3:not(:last-child) {
+          margin-bottom: 27.48466px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h3:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h3:not(:last-child) {
+          margin-bottom: 22.62626px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h3:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h3:not(:last-child) {
+          margin-bottom: 19.22747px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h3:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h3:not(:last-child) {
+          margin-bottom: 16.71642px; } }
+  .edit-post-visual-editor.editor-styles-wrapper .h4, .edit-post-visual-editor.editor-styles-wrapper h4 {
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 16px;
+    line-height: 1.19;
+    font-weight: 500;
+    color: #161616; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h4, .edit-post-visual-editor.editor-styles-wrapper h4 {
+        font-size: 15.70224px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h4, .edit-post-visual-editor.editor-styles-wrapper h4 {
+        font-size: 15.41536px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h4, .edit-post-visual-editor.editor-styles-wrapper h4 {
+        font-size: 15.13877px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h4, .edit-post-visual-editor.editor-styles-wrapper h4 {
+        font-size: 14.87194px; } }
+    .edit-post-visual-editor.editor-styles-wrapper .h4:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h4:not(:last-child) {
+      margin-bottom: 35px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h4:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h4:not(:last-child) {
+          margin-bottom: 27.48466px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h4:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h4:not(:last-child) {
+          margin-bottom: 22.62626px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h4:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h4:not(:last-child) {
+          margin-bottom: 19.22747px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h4:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h4:not(:last-child) {
+          margin-bottom: 16.71642px; } }
+  .edit-post-visual-editor.editor-styles-wrapper .h5, .edit-post-visual-editor.editor-styles-wrapper h5 {
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 14px;
+    line-height: 1.07;
+    font-weight: normal;
+    letter-spacing: 0.07143em;
+    text-transform: uppercase;
+    color: #161616; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h5, .edit-post-visual-editor.editor-styles-wrapper h5 {
+        font-size: 13.82438px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h5, .edit-post-visual-editor.editor-styles-wrapper h5 {
+        font-size: 13.65311px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h5, .edit-post-visual-editor.editor-styles-wrapper h5 {
+        font-size: 13.48603px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h5, .edit-post-visual-editor.editor-styles-wrapper h5 {
+        font-size: 13.32299px; } }
+    .edit-post-visual-editor.editor-styles-wrapper .h5:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h5:not(:last-child) {
+      margin-bottom: 28px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h5:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h5:not(:last-child) {
+          margin-bottom: 22.17822px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h5:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h5:not(:last-child) {
+          margin-bottom: 18.36066px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h5:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h5:not(:last-child) {
+          margin-bottom: 15.66434px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h5:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h5:not(:last-child) {
+          margin-bottom: 13.65854px; } }
+  .edit-post-visual-editor.editor-styles-wrapper .h6, .edit-post-visual-editor.editor-styles-wrapper h6 {
+    font-family: "HK Grotesk", sans-serif;
+    font-size: 13px;
+    line-height: 1.23077;
+    font-weight: normal;
+    letter-spacing: 0.07692em;
+    text-transform: uppercase;
+    color: #FF6000; }
+    @media only screen and (max-width: 1360px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h6, .edit-post-visual-editor.editor-styles-wrapper h6 {
+        font-size: 12.8691px; } }
+    @media only screen and (max-width: 1024px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h6, .edit-post-visual-editor.editor-styles-wrapper h6 {
+        font-size: 12.74082px; } }
+    @media only screen and (max-width: 768px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h6, .edit-post-visual-editor.editor-styles-wrapper h6 {
+        font-size: 12.61507px; } }
+    @media only screen and (max-width: 320px) {
+      .edit-post-visual-editor.editor-styles-wrapper .h6, .edit-post-visual-editor.editor-styles-wrapper h6 {
+        font-size: 12.49177px; } }
+    .edit-post-visual-editor.editor-styles-wrapper .h6:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h6:not(:last-child) {
+      margin-bottom: 14px; }
+      @media only screen and (max-width: 1360px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h6:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h6:not(:last-child) {
+          margin-bottom: 12.89431px; } }
+      @media only screen and (max-width: 1024px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h6:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h6:not(:last-child) {
+          margin-bottom: 11.95049px; } }
+      @media only screen and (max-width: 768px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h6:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h6:not(:last-child) {
+          margin-bottom: 11.13541px; } }
+      @media only screen and (max-width: 320px) {
+        .edit-post-visual-editor.editor-styles-wrapper .h6:not(:last-child), .edit-post-visual-editor.editor-styles-wrapper h6:not(:last-child) {
+          margin-bottom: 10.42442px; } }
   .edit-post-visual-editor .wp-block-html .editor-plain-text {
     color: inherit; }
   .edit-post-visual-editor .wp-block-quote,

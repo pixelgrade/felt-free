@@ -12057,7 +12057,8 @@ h1.site-title {
         margin-bottom: 10.42442px; } }
   .dropcap[class] {
     font-size: 5.4em;
-    line-height: 1; }
+    line-height: 1;
+    margin-bottom: -15px; }
   .dropcap[class]:before, .dropcap[class]:after {
     content: none; }
 

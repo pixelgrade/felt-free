@@ -37,6 +37,37 @@ $content-class: '.edit-post-visual-editor';
       @include leading-map($body-font);
       color: $body-text-color;
     }
+
+    .h1, h1 {
+      @include leading-map($h1);
+      color: $h1-color;
+    }
+
+    .h2, h2 {
+      @include leading-map($h2);
+      color: $h2-color;
+    }
+
+    .h3, h3 {
+      @include leading-map($h3);
+      color: $h3-color;
+    }
+
+    .h4, h4 {
+      @include leading-map($h4);
+      color: $h4-color;
+    }
+
+    .h5, h5 {
+      @include leading-map($h5);
+      color: $h5-color;
+    }
+
+    .h6, h6 {
+      @include leading-map($h6);
+      color: $h6-color;
+    }
+
   }
 
   .wp-block-html .editor-plain-text {
