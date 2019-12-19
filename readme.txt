@@ -27,7 +27,7 @@ Felt is a free magazine-style WordPress theme for publishers of all kinds who wa
 == Changelog ==
 
 = 2.4.3 =
-* Added lazy loading attribute to thumbnails and hero images.
+* Added lazy loading attribute for thumbnails and hero images.
 * Convert all demo content to Gutenberg blocks.
 * Fixed Slideshow widget height.
 * Improved dropcap style.
