@@ -4,7 +4,7 @@ Theme URI: https://github.com/pixelgrade/felt-free
 Author: Pixelgrade
 Author URI: https://pixelgrade.com
 Description: Felt is a magazine-style WordPress theme for publishers of all kinds who want to showcase their fresh ideas. Thanks to the modular layout, multiple widget areas and a hand-full of custom and unique widgets, you can highlight what's truly important for your tribe and stand out from the crowd. Its responsive design, multilingual support, and compatibility with the new Gutenberg editor will allow you to adapt this theme to multiple usage scenarios and personalize it to match your needs. No matter if you are a blogger, journalist, designer, DIY artist, photographer or small entrepreneur, this theme will fit perfectly every time.
-Version: 2.4.2.5
+Version: 2.4.3
 Tested up to: 5.2.2
 Requires at least: WordPress 4.9.9
 License: GNU General Public License v2 or later
@@ -1870,22 +1870,22 @@ a {
               transform: translate3d(5px, calc(0.5px - 50%), 0); }
 
 ::-webkit-input-placeholder {
-  color: #3B3B3B;
+  color: currentColor;
   opacity: .6;
   font-style: italic; }
 
 ::-moz-placeholder {
-  color: #3B3B3B;
+  color: currentColor;
   opacity: .6;
   font-style: italic; }
 
 :-ms-input-placeholder {
-  color: #3B3B3B;
+  color: currentColor;
   opacity: .6;
   font-style: italic; }
 
 :-moz-placeholder {
-  color: #3B3B3B;
+  color: currentColor;
   opacity: .6;
   font-style: italic; }
 
@@ -4299,7 +4299,7 @@ figure {
   .comment-form label {
     display: block;
     font-size: 90%;
-    color: #3B3B3B;
+    color: currentColor;
     padding-bottom: 14px;
     margin: 0;
     cursor: pointer; }
@@ -5664,6 +5664,14 @@ blockquote {
     transition: all 0.15s ease-out; }
     .c-author__footer a:hover {
       color: inherit; }
+
+.c-card:focus-within .c-card__letter {
+  opacity: .7;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%); }
+
+.c-card:focus-within .c-card__frame img {
+  opacity: .7; }
 
 .c-card__meta[class][class] a {
   text-decoration: none;
@@ -12003,7 +12011,7 @@ h1.site-title {
   font-weight: 700;
   float: left;
   padding-right: 0.1em;
-  margin-top: -0.05em;
+  margin-top: 0;
   margin-left: -0.05em;
   margin-bottom: -.1em;
   text-shadow: 3px 3px 0 rgba(56, 60, 80, 0.22); }
@@ -12049,7 +12057,8 @@ h1.site-title {
         margin-bottom: 10.42442px; } }
   .dropcap[class] {
     font-size: 5.4em;
-    line-height: 0.9; }
+    line-height: 1;
+    margin-bottom: -15px; }
   .dropcap[class]:before, .dropcap[class]:after {
     content: none; }
 
@@ -13589,7 +13598,7 @@ span.wpcf7-list-item {
 
 .wpcf7-list-item-label,
 .wpcf7-form label {
-  color: #3B3B3B;
+  color: currentColor;
   padding-bottom: 14px;
   margin: 0;
   cursor: pointer;
@@ -13668,7 +13677,7 @@ span.wpcf7-list-item {
       margin-bottom: 0;
       float: none; }
     .contact-form > div > .grunion-field-label:not(.checkbox):not(.radio) {
-      color: #3B3B3B;
+      color: currentColor;
       padding-bottom: 14px;
       margin: 0;
       cursor: pointer; }
@@ -13745,7 +13754,7 @@ span.wpcf7-list-item {
       margin-bottom: 16.71642px; } }
 
 .nf-form-cont .label-above .nf-field-label label {
-  color: #3B3B3B;
+  color: currentColor;
   padding-bottom: 14px;
   margin: 0;
   cursor: pointer;
@@ -13804,7 +13813,7 @@ div.wpforms-container[class] {
   div.wpforms-container[class] .wpforms-form ul:before {
     margin: 0 !important; }
   div.wpforms-container[class] .wpforms-form .wpforms-field-label {
-    color: #3B3B3B;
+    color: currentColor;
     padding-bottom: 14px;
     margin: 0;
     cursor: pointer;

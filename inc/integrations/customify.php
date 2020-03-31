@@ -467,7 +467,7 @@ function felt_lite_fill_customify_options( $options ) {
 							'property'        => 'min-height',
 							'selector'        => '.admin-bar .site-header--inverted',
 							'unit'            => 'px',
-							'callback_filter' => 'felt_inverted_site_header_height'
+							'callback_filter' => 'felt_lite_inverted_site_header_height'
 						)
 					),
 				),
@@ -1203,7 +1203,7 @@ function felt_lite_colorislight( $hex ) {
 
 function felt_lite_card_letter_color( $value, $selector, $property, $unit ) {
 	$output              = '';
-	$no_image_background = pixelgrade_option( 'header_background' );
+	$no_image_background = pixelgrade_option( 'blog_item_title_color' );
 	$image_background    = pixelgrade_option( 'blog_item_thumbnail_background' );
 	$dark_color          = pixelgrade_option( 'blog_item_title_color' );
 	$light_color         = pixelgrade_option( 'main_content_content_background_color' );
@@ -1328,3 +1328,11 @@ function felt_lite_add_default_color_palette( $color_palettes ) {
 	return $color_palettes;
 }
 add_filter( 'customify_get_color_palettes', 'felt_lite_add_default_color_palette' );
+
+function felt_lite_inverted_site_header_height( $value, $selector, $property, $unit ) {
+	$output = $selector . ' { ' .
+	          $property . ': calc(100vh - ' . $value . $unit . ');' .
+	          '}';
+
+	return $output;
+}

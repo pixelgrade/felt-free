@@ -1165,7 +1165,7 @@ if ( ! function_exists( 'pixelgrade_the_card' ) ) {
 						<?php
 						do_action( 'pixelgrade_after_card_frame_start' );
 
-						the_post_thumbnail( 'pixelgrade_card_image' );
+						the_post_thumbnail( 'pixelgrade_card_image', array( 'loading' => 'lazy' ) );
 
 						do_action( 'pixelgrade_before_card_frame_end' ); ?>
 
