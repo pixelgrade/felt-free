@@ -34,7 +34,7 @@
 		"gulp-sass": "^4.0.2",
 		"gulp-sourcemaps": "^2.6.5",
 		"gulp-util": "^3.0.8",
-		"jquery": "^3.4.1",
+		"jquery": "^3.5.0",
 		"js-cookie": "^2.2.1",
 		"masonry-layout": "^4.2.2",
 		"require-dir": "^1.2.0",
