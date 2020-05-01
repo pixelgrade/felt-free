@@ -8,7 +8,7 @@
  * or theme author for support.
  *
  * @package   TGM-Plugin-Activation
- * @version   2.6.1
+ * @version   2.6.5 for Theme
  * @link      http://tgmpluginactivation.com/
  * @author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright Copyright (c) 2011, Thomas Griffin
@@ -55,7 +55,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @const string Version number.
 		 */
-		const TGMPA_VERSION = '2.6.1';
+		const TGMPA_VERSION = '2.6.5'; // Version bump by Pixelgrade!!!
 
 		/**
 		 * Regular expression to test if a URL is a WP plugin repo URL.
@@ -1023,6 +1023,12 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				return;
 			}
 
+			// Pixelgrade addition!!!
+			// Allow others to prevent notices.
+			if ( ! apply_filters( 'tgmpa_show_admin_notices', true ) ) {
+				return;
+			}
+
 			// Store for the plugin slugs by message type.
 			$message = array();
 
@@ -1084,6 +1090,13 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				}
 			}
 			unset( $slug, $plugin );
+
+			// Pixelgrade addition!!!
+			// Allow others to filter notices.
+			$message = apply_filters( 'tgmpa_admin_notices', $message, $total_required_action_count, $install_link_count, $activate_link_count, $update_link_count, $this );
+			// Pixelgrade addition!!!
+			// Allow others to filter notices total required action count.
+			$total_required_action_count = apply_filters( 'tgmpa_admin_notices_total_required_action_count', $total_required_action_count, $this );
 
 			// If we have notices to display, we move forward.
 			if ( ! empty( $message ) || $total_required_action_count > 0 ) {
@@ -1324,6 +1337,24 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		}
 
 		/**
+		 * Remove individual plugin from our collection of plugins.
+		 *
+		 * Pixelgrade addition!!!
+		 *
+		 * @since 2.6.2
+		 *
+		 * @param string $plugin_slug
+		 */
+		public function deregister( $plugin_slug ) {
+			if ( empty( $plugin_slug ) || ! is_string( $plugin_slug ) || ! isset( $this->plugins[ $plugin_slug ] ) ) {
+				return;
+			}
+
+			unset( $this->plugins[ $plugin_slug ] );
+			unset( $this->sort_order[ $plugin_slug ] );
+		}
+
+		/**
 		 * Determine what type of source the plugin comes from.
 		 *
 		 * @since 2.5.0
@@ -1467,6 +1498,14 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 			foreach ( $keys as $key ) {
 				if ( preg_match( '|^' . $slug . '/|', $key ) ) {
+					return $key;
+				}
+
+				// This is a Pixelgrade addition!!!
+				// We want to be a little lenient and discover installed (but not activated) plugins
+				// that may have their directory changed, but that still have their main PHP file with the same name as the plugin slug.
+				// This is pretty safe.
+				if ( false !== strpos( $key, '/' . $slug . '.php' ) ) {
 					return $key;
 				}
 			}
