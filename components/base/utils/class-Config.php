@@ -337,7 +337,7 @@ if ( ! class_exists( 'Pixelgrade_Config' ) ) :
 					if ( empty( $check['args'] ) ) {
 						$check['args'] = array();
 					}
-					$response = call_user_func_array( $check['callback'], $check['args'] );
+					$response = call_user_func_array( $check['callback'], array_values( $check['args'] ) );
 				} else {
 					// If the provided array is not callable (most probably due to the fact the method doesn't exist)
 					// we will fail the check.

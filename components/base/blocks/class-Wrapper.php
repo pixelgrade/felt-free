@@ -517,7 +517,7 @@ class Pixelgrade_Wrapper {
 			if ( ! empty( $this->master_callback['args'] ) ) {
 				$args = $this->master_callback['args'];
 			}
-			$data = call_user_func_array( $this->master_callback['callback'], $args );
+			$data = call_user_func_array( $this->master_callback['callback'], array_values( $args ) );
 
 			// We bail if the master callback returned nothing - this is a sign from above!
 			if ( empty( $data ) ) {
